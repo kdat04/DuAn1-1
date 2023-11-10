@@ -1,0 +1,206 @@
+body {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Nunito Sans, sans-serif;
+}
+
+header {
+    margin: 0 200px auto;
+}
+
+.header_content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header_img img {
+    width: 115px;
+}
+
+.header_text{
+    z-index: 10;
+}
+
+.header_text>ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    gap: 25px;
+    color: #a1a1a1;
+    transform: translateX(-10%);
+}
+
+.header_text ul li {
+    position: relative;
+}
+
+.header_text ul li i {
+    margin: 5px;
+    padding: 5px;
+}
+
+.header_seach {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #a1a1a1;
+    cursor: pointer;
+}
+
+.header_dn a{
+    text-decoration: none;
+    color: #a1a1a1;
+}
+
+.sub_menu {
+    position: absolute;
+    display: none;
+    list-style-type: none;
+    width: 150px;
+    box-shadow: 0 0 10px 0px rgb(168, 168, 168);
+    border-radius: 5px;
+    background-color: white;
+    padding-left: 10px;
+}
+
+.sub_menu>li>a {
+    width: auto;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #a1a1a1;
+    transition: all 0.3s;
+}
+
+li:hover .sub_menu {
+    display: block;
+}
+
+.sub_menu a:hover {
+    color: #E68425;
+}
+
+.sub_film {
+    width: auto;
+}
+
+.Movie_showing .Movie_tong {
+    display: flex;
+    gap: 20px;
+    padding:0 20px;
+    z-index: 1;
+}
+
+.Movie {
+    position: relative;
+    height: 290px;
+}
+
+.Movie_showing img,
+.Movie_coming_soon img {
+    width: 160px;
+    border-radius: 5px;
+}
+
+.Movie_showing h3,
+.Movie_coming_soon h3 {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 15px 10px;
+    padding-left: 3px;
+    border-left: 3px solid #034EA2;
+}
+
+.Movie_showing .Movie button,
+.Movie_coming_soon .Movie button {
+    z-index: -1;
+    position: absolute;
+    left: 15px;
+    top: 100px;
+    border: none;
+    padding: 5px 20px;
+    background-color: #E68425;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.Movie_showing .Movie:hover button,
+.Movie_coming_soon .Movie:hover button {
+    z-index: 0;
+}
+
+.Movie_showing .Movie:hover img,
+.Movie_coming_soon .Movie:hover img {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.Movie_showing .Movie button:hover,
+.Movie_coming_soon .Movie button:hover {
+    background-color: #034EA2;
+    cursor: pointer;
+}
+
+.dktv {
+    display: none;
+    position: absolute;
+    margin-left: -570px;
+}
+
+.dktv ul {
+    list-style-type: none;
+    display: flex;
+    box-shadow: 0 0 10px 0px rgb(168, 168, 168);
+    border-radius: 5px;
+    gap: 20px;
+    padding: 20px;
+    background-color: white;
+}
+
+.dktv>ul>li {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+}
+
+.dktv ul li img {
+    width: 130px;
+    height: 100px;
+}
+
+.dktv ul li a {
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #E68425;
+    color: #E68425;
+}
+
+.dktv ul>.dk {
+    width: 200px;
+    gap: 5px;
+}
+
+.dktv ul>.dk a {
+    color: white;
+    background-color: #E68425;
+    transition: all 0.3s;
+}
+
+.dktv ul>.dk a:hover {
+    opacity: 0.8;
+}
+
+.header_dktv{
+    position: relative;
+    z-index:    10;
+}
+
+.header_dktv:hover .dktv{
+    display: block;
+}

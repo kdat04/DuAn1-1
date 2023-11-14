@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="./CSS/header.css">
     <link rel="stylesheet" href="./CSS/footer.css">
     <link rel="stylesheet" href="./CSS/home.css">
+    <link rel="stylesheet" href="./CSS/ct_phim.css">
+
+    <link rel="stylesheet" href="./CSS/thongtinuser.css">
 </head>
 
 <body>
@@ -21,7 +24,7 @@
             </div>
             <div class="header_text">
                 <ul>
-                    <li><a href=""><img src="./IMG/btn-ticket.webp" alt=""></a></li>
+                    <li><a href="index.php?action=ct_phim"><img src="./IMG/btn-ticket.webp" alt=""></a></li>
                     <li>Phim <i class="fa-solid fa-angle-right fa-rotate-90"></i>
                         <ul class="sub_menu sub_film">
                             <div class="Movie_showing">
@@ -98,7 +101,7 @@
             <div class="header_seach">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <div class="header_dn">
-                    <a href="">Đăng Nhập</a>
+                    <a href="index.php?action=tt_user">Đăng Nhập</a>
                 </div>
                 <div class="header_dktv">
                     <img src="./IMG/g star.png" alt="">

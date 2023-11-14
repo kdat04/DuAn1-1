@@ -1,0 +1,278 @@
+.tong_ct_phim {
+    width: 100%;
+  }
+  .video {
+    position: relative;
+    opacity: 0, 8;
+    background-color: rgb(17, 0, 0);
+    width: 100%;
+  
+    background-size: 100%;
+    display: flex;
+  
+    justify-content: center;
+    height: 500px;
+  }
+  .video i {
+    position: absolute;
+    top: 200px;
+    font-size: 30px;
+    padding: 30px;
+  
+    border-radius: 100px;
+  }
+  .box {
+    width: 1400px;
+    margin: auto;
+    display: flex;
+    margin-top: 30px;
+    gap: 3%;
+  }
+  .ct_phim_box_left {
+    width: 70%;
+  }
+  
+  .tt_ct_phim_nd {
+    display: flex;
+    gap: 30px;
+  }
+  .tt_ct_phim_nd1 img {
+    height: 500px;
+  }
+  .tt_ct_phim_nd2 {
+    margin-top: 30px;
+  }
+  .time_phim_ct {
+    display: flex;
+  
+    gap: 30px;
+  }
+  .dg_ct_phim {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    height: 50px;
+  }
+  .dg_ct_phim i {
+    font-size: 24px;
+  }
+  .dg_ct_phim h5 {
+    font-size: 20px;
+  }
+  .dg_ct_phim span {
+    color: rgb(177, 175, 175);
+    font-size: 15px;
+  }
+  .like_phim {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 45px;
+  }
+  .like_phim h6 {
+    font-size: 15px;
+    width: 100px;
+  }
+  .like_phim span {
+    padding: 10px 20px 10px 20px;
+    border: 1px solid rgb(179, 177, 177);
+    border-radius: 20px;
+    font-size: 15px;
+  }
+  
+  .mo_ta_phim h3 {
+    margin-left: 10px;
+    font-weight: 500;
+    position: relative;
+  }
+  .mo_ta_phim h3::before {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    content: "";
+    height: 22px;
+    margin-left: -10px;
+    background-color: rgb(61, 27, 182);
+    width: 5px;
+    /* transform: scaleX(0%);
+      transform-origin: center;
+      transition: all 1s ease-in-out; */
+  }
+  .mo_ta_phim p {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 30px;
+    width: 100%;
+  }
+  .mo_ta_phim strong {
+    color: rgb(99, 99, 224);
+    font-weight: 400;
+  }
+  .mo_ta_phim strong span {
+    font-weight: 700;
+  }
+  .mo_ta_phim span {
+    color: rgb(99, 99, 224);
+    font-weight: 400;
+  }
+  .lich_chieu {
+    position: relative;
+  }
+  .khung_chieu {
+    display: flex;
+    justify-content: space-between;
+  }
+  .lich_chieu h3 {
+    margin-left: 10px;
+    font-weight: 500;
+    position: relative;
+  }
+  .lich_chieu h3::before {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    content: "";
+    height: 22px;
+    margin-left: -10px;
+    background-color: rgb(61, 27, 182);
+    width: 5px;
+  }
+  .khung_chieu::after {
+    position: absolute;
+    left: 0px;
+    top: 130px;
+    content: "";
+    height: 2px;
+    background-color: rgb(61, 27, 182);
+    width: 100%;
+  }
+  .khung_chieu_time {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .ngay_thu {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 80px;
+    font-size: 15px;
+    line-height: 30px;
+    height: 70px;
+    border-radius: 10px;
+    background-color: #034ea2;
+    color: white;
+  }
+  .khung_chieu_dress {
+    display: flex;
+    gap: 30px;
+  }
+  .khung_chieu_dress1 {
+    display: flex;
+    align-items: center;
+  }
+  .khung_chieu_dress2 {
+    border: 1px solid black;
+    padding: 15px 10px 15px 10px;
+    border-radius: 10px;
+  }
+  
+  .khung_chieu_dress1 input {
+    width: 160px;
+  
+    border: none;
+  }
+  .khung_chieu_dress1 input::placeholder {
+    font-size: 15px;
+  }
+  .ct_phim_box_right {
+    width: 27%;
+   
+  }
+  .dress_time_chieu{
+    margin-top: 40px;
+  }
+  .dress_time_chieu h3{
+  margin-left: 5px;
+  font-weight: 500;
+  }
+  .dress_time_chieu_tong{
+    display: flex;
+  width: 100%;
+  align-items: center;
+  
+  }
+  .dress_time_chieu_tong .phu_de{
+   width: 20%;
+   font-weight: 300;
+   font-size: 18px;
+  }
+  .dress_time_chieu_tong .time_chieu{
+    width: 80%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .dress_time_chieu_tong .time_chieu p{
+    padding: 15px 30px 15px 30px;
+    border-radius: 10px;
+    border: 1px solid  #d7d7d7;
+  }
+  .dress_time_chieu_tong .time_chieu p:hover{
+    background-color: #034ea2;
+    color: white;
+  }
+  
+  .ct_phim_box_right h3 {
+    margin-left: 10px;
+    font-weight: 400;
+    position: relative;
+  }
+  .ct_phim_box_right h3::before {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    content: "";
+    height: 25px;
+    margin-left: -10px;
+    background-color: rgb(61, 27, 182);
+    width: 5px;
+  }
+  .phim_lq {
+    width: 100%;
+    height: 300px;
+  }
+  .phim_lq_img img {
+    width: 100%;
+  }
+  .phim_lq_img {
+    position: relative;
+    overflow:hidden ;
+  }
+  .phim_lq_img .sub_img {
+    left: 150px;
+    padding: 10px;
+    background-color: rgb(223, 92, 44);
+    position: absolute;
+    color: white;
+    border-radius: 7px;
+    bottom: -1000px;
+    transition: all 0.1s ease-in-out;
+  }
+  .phim_lq_img .sub_img:hover{
+  background-color: orange;
+  }
+  .phim_lq_img .sub_img span i{
+    margin: 5px;
+  }
+  .phim_lq_img:hover .sub_img {
+    bottom: 120px;
+    text-align: center;
+  }
+  
+  .phim_lq h5 {
+    font-size: 15px;
+    margin-top: 10px;
+    font-weight: 300;
+  }
+  

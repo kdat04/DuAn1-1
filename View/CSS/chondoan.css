@@ -1,0 +1,21 @@
+.chondoan-text{
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+.combo-doan{
+    display: flex;
+    justify-content: space-between;
+}
+.combo-doan-left{
+    display: flex;
+    gap: 10px;
+}
+.combo-doan-img{
+    width: 160px;
+    height: 120px;
+}
+.combo-doan-img img{
+    width: 160px;
+    height: 120px;
+    border-radius: 10px;
+}

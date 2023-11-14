@@ -20,7 +20,7 @@
     <header>
         <div class="header_content">
             <div class="header_img">
-                <img src="./IMG/3d Cinema.png" alt="Logo">
+                <a href="index.php?action="><img src="./IMG/3d Cinema.png" alt="Logo"></a>
             </div>
             <div class="header_text">
                 <ul>

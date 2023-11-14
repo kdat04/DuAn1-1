@@ -5,7 +5,11 @@ require_once "./header.php";
 
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {
-        case '':
+        case 'ct_phim':
+            require_once './ct_phim.php';
+            break;
+        case 'ds_phim':
+            require_once './ds_phim.php';
             break;
         default:
             require_once './home.php';

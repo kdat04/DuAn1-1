@@ -1,5 +1,5 @@
 footer {
-    margin-top: 300px;
+    margin-top: 80px;
     background-color: #333333
 }
 
@@ -69,4 +69,30 @@ footer {
 
 .address span {
     font-size: 15px;
+}
+
+/* tin_khuyen_mai */
+.tin_khuyen_mai ul{
+    /* background-color: #333333; */
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+}
+
+.tin_khuyen_mai ul li{
+    width: 310px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* GALAXY CINEMA */
+.GALAXY_CINEMA{
+    width: 1300px;
+    margin: auto;
+    line-height: 1.5;
+    font-size: 15px;
+    color: #727272;
 }

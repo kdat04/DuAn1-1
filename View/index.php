@@ -11,6 +11,9 @@ if (isset($_GET['action'])) {
         case 'ds_phim':
             require_once './ds_phim.php';
             break;
+        case 'tt_user':
+            require_once "thongtinuser.php";
+            break;
         default:
             require_once './home.php';
             break;

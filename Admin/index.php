@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require_once '../Model/loai.php';
+require_once '../Model/pdo.php';
 require_once "./header.php";
 
 if (isset($_GET['action'])) {

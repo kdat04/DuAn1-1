@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./View/CSS/dat_ve.css">
-    <link rel="stylesheet" href="./View/CSS/thanh_toan.css">
+    <link rel="stylesheet" href="CSS/dat_ve.css">
+    <link rel="stylesheet" href=".CSS/thanh_toan.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -78,27 +78,27 @@
                         <ul>
                             <li>
                                 <input type="radio" name="" id="">
-                                <img src="./View/IMG/mb-bank.jpg" alt="">
+                                <img src=".IMG/mb-bank.jpg" alt="">
                                 <p>MB Bank</p>
                             </li>
                             <li>
                                 <input type="radio" name="" id="">
-                                <img src="./View/IMG/momo.jpg" alt="">
+                                <img src=".IMG/momo.jpg" alt="">
                                 <p>Ví MoMo</p>
                             </li>
                             <li>
                                 <input type="radio" name="" id="">
-                                <img src="./View/IMG/zalo-pay.jpg" alt="">
+                                <img src=".IMG/zalo-pay.jpg" alt="">
                                 <p>ZaloPay</p>
                             </li>
                             <li>
                                 <input type="radio" name="" id="">
-                                <img src="./View/IMG/vn-pay.jpg" alt="">
+                                <img src=".IMG/vn-pay.jpg" alt="">
                                 <p>VNPay</p>
                             </li>
                             <li>
                                 <input type="radio" name="" id="">
-                                <img src="./View/IMG/shoppe-pay.jpg" alt="">
+                                <img src=".IMG/shoppe-pay.jpg" alt="">
                                 <p>Ví ShoppePay</p>
                             </li>
                         </ul>
@@ -115,7 +115,7 @@
                 </div>
                 <div class="phantren">
                     <div class="img-ctbill">
-                        <img src="./View/IMG_FILM/the-marvels-3_1699586058577.webp" alt="" width="150px">
+                        <img src=".IMG_FILM/the-marvels-3_1699586058577.webp" alt="" width="150px">
                         <div class="img-ctbill-text">
                             <h2>Biệt Đội Marvels</h2>
                             <p>2D Phụ Đề</p> <br>

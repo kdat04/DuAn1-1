@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./CSS/chondoan.css">
     <link rel="stylesheet" href="./CSS/thongtinuser.css">
     <link rel="stylesheet" href="./CSS/my_user.css">
+    <link rel="stylesheet" href="./CSS/chinhsach_thele.css">
 </head>
 
 <body>

@@ -1,0 +1,104 @@
+.tong_chinh_sach {
+  padding: 20px;
+}
+.menu_chinh_sach {
+  display: flex;
+  justify-content: center;
+  height: 80px;
+  margin-bottom: 50px;
+}
+.menu_chinh_sach h6 {
+  font-size: 16px;
+  margin-right: 20px;
+  width: 100px;
+  line-height: 30px;
+  height: 30px;
+  text-align: center;
+  font-weight: 700;
+}
+.chinh_main {
+  color: #575656;
+  font-size: 15px;
+}
+
+.the_le h5 {
+  font-size: 15px;
+  font-weight: 700;
+}
+.text1_tl {
+  font-size: 15px;
+  font-weight: 100;
+  color: #575656;
+  line-height: 30px;
+}
+.the_le img {
+  width: 90%;
+  margin-left: 50px;
+}
+.text2_tl .nho1_text2_tl p span {
+  color: black;
+  font-weight: 700;
+}
+.text3_tl img {
+  height: 200px;
+}
+.text4_tl h6 {
+  font-size: 15px;
+  font-weight: 700;
+  height: 1px;
+}
+.text4_tl .text4_tl_nho li {
+  line-height: 30px;
+}
+
+/* quyền lợi */
+
+.quyen_loi h5{
+ color: black;
+ font-size: 15px;
+
+}
+.quyen_loi img{
+    width: 80%;
+    margin-left: 80px;
+    height: 400px;
+    margin-bottom: 30px;
+}
+
+.text_quyenloi li{
+    line-height: 30px;
+    text-align: left;
+ 
+}
+
+
+/* hướng dẫn  */
+
+.tong_huong_dan h4{
+ font-size: 18px;
+ font-weight: 700;
+ color: black;
+
+}
+.text1_huong_dan h5{
+font-size: 16px;
+font-weight: 700;
+color: black;
+}
+.text1_huong_dan p {
+    font-size: 15px;
+
+}
+.text1_huong_dan p a{
+    color: rgb(91, 91, 211);
+}
+.tong_huong_dan img{
+    width: 50%;
+    
+    margin: 20px 0px 20px 200px;
+}
+.text1_huong_dan p span{
+    color: black;
+    font-weight: 500;
+
+}

@@ -177,9 +177,9 @@
     border-radius: 10px;
   }
   
-  .khung_chieu_dress1 input {
+  .khung_chieu_dress1 .khung_chieu_dress2  input {
     width: 160px;
-  
+   outline: none;
     border: none;
   }
   .khung_chieu_dress1 input::placeholder {

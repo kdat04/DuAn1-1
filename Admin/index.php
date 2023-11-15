@@ -17,12 +17,17 @@ if (isset($_GET['action'])) {
                 switch ($_GET['act']) {
                     case 'danhmuc':
                         require_once './home.php';
+                        require_once './Danhmuc/view_danhmuc.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'add_dm':
+                        require_once './home.php';
                         require_once './Danhmuc/add_danhmuc.php';
                         require_once './footer-home.php';
                         break;
                     case 'phim':
                         require_once './home.php';
-                        require_once './Phim/add_phim.php';
+                        require_once './Phim/view_phim.php';
                         require_once './footer-home.php';
                         break;
                     case 'taikhoan':

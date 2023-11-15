@@ -15,12 +15,12 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($variable as $key => $value) :?>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Customer Support</td>
-                                        </tr>
-                                        <?php
+                                        <?php foreach ($list_danhmuc as $danhmuc) : ?>
+                                            <tr>
+                                                <td><?= $danhmuc['id']?></td>
+                                                <td><?= $danhmuc['ten_loaiphim']?></td>
+                                            </tr>
+                                        <?php endforeach ?>
                                     </tbody>
                                     <tfoot>
                                         <tr>

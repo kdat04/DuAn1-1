@@ -19,6 +19,7 @@ if (isset($_GET['action'])) {
                 switch ($_GET['act']) {
                     case 'danhmuc':
                         require_once './home.php';
+                        $list_danhmuc = loai_select_all();
                         require_once './Danhmuc/view_danhmuc.php';
                         require_once './footer-home.php';
                         break;
@@ -38,7 +39,7 @@ if (isset($_GET['action'])) {
                         break;
                     case 'phim':
                         require_once './home.php';
-                        
+
                         require_once './Phim/view_phim.php';
                         require_once './footer-home.php';
                         break;

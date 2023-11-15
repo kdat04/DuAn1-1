@@ -23,10 +23,10 @@ function loai_insert($ten_loaiphim){
 //     }
 // }
 
-// function loai_select_all(){
-//     $sql = "SELECT * FROM loai";
-//     return pdo_query($sql);
-// }
+function loai_select_all(){
+    $sql = "SELECT * FROM loai_phim";
+    return pdo_query($sql);
+}
 
 // function loai_select_by_id($ma_loai){
 //     $sql = "SELECT * FROM loai WHERE ma_loai=?";

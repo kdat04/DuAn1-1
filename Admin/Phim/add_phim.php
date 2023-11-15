@@ -2,7 +2,7 @@
     <div class="page-wrapper">
         <div class="card">
             <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
-                <div class="card-body">
+                <div class="card-body" style="width: 1000px;">
                     <h4 class="card-title">Thêm Phim</h4>
                     <div class="form-group row">
                         <label for="fname" class="col-sm-3 text-right control-label col-form-label">Id phim</label>

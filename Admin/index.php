@@ -39,6 +39,11 @@ if (isset($_GET['action'])) {
                         require_once './Phim/view_phim.php';
                         require_once './footer-home.php';
                         break;
+                    case 'add_phim':
+                        require_once './home.php';
+                        require_once './Phim/add_phim.php';
+                        require_once './footer-home.php';
+                        break;
                     case 'taikhoan':
                         require_once './home.php';
                         require_once './Taikhoan/view_tk.php';

@@ -5,30 +5,18 @@
         </div>
         <div class="list-uudai">
             <div class="tt-uudai">
-                <div class="tt-uudai-img">
-                    <img src="IMG/galaxy-mung-ngay-nha-giao-4_1699674047902.webp" alt="">
-                </div>
-                <div class="tt-uudai-text">
-                    <span>20-11= 9, 9000 Phần Quà Mừng Ngày Nhà Giáo</< /span>
-                </div>
+                <img src="IMG/galaxy-mung-ngay-nha-giao-4_1699674047902.webp" alt="">
+                <h3>20-11= 9, 9000 Phần Quà Mừng Ngày Nhà Giáo</< /span>
             </div>
             <!--  -->
             <div class="tt-uudai">
-                <div class="tt-uudai-img">
-                    <img src="IMG/galaxy-mung-ngay-nha-giao-4_1699674047902.webp" alt="">
-                </div>
-                <div class="tt-uudai-text">
-                    <span>20-11= 9, 9000 Phần Quà Mừng Ngày Nhà Giáo</< /span>
-                </div>
+                <img src="IMG/galaxy-mung-ngay-nha-giao-4_1699674047902.webp" alt="">
+                <h3>20-11= 9, 9000 Phần Quà Mừng Ngày Nhà Giáo</< /span>
             </div>
             <!--  -->
             <div class="tt-uudai">
-                <div class="tt-uudai-img">
-                    <img src="IMG/galaxy-mung-ngay-nha-giao-4_1699674047902.webp" alt="">
-                </div>
-                <div class="tt-uudai-text">
-                    <span>20-11= 9, 9000 Phần Quà Mừng Ngày Nhà Giáo</< /span>
-                </div>
+                <img src="IMG/galaxy-mung-ngay-nha-giao-4_1699674047902.webp" alt="">
+                <h3>20-11= 9, 9000 Phần Quà Mừng Ngày Nhà Giáo</< /span>
             </div>
         </div>
     </div>

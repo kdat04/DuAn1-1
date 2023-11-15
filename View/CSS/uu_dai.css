@@ -4,13 +4,30 @@
     display: flex;
     gap: 60px;
 }
-.uudai-left  .list-uudai{
+.uudai-left .list-uudai{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
 }
 .tt-uudai{
     position: relative;
+}
+.tt-uudai h3{
+    position: absolute;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    bottom: -1000px;
+    width: 100%;
+    transition: all 0.1s ease-in-out;
+}
+
+.tt-uudai:hover img{
+    color: rgb(0, 0, 0);
+    opacity: 0.6;
+}
+.tt-uudai:hover h3{
+    bottom: 150px;
+    text-align: center;
 }
 .tt-uudai-img img{
     width: 100%;

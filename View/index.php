@@ -12,7 +12,10 @@ if (isset($_GET['action'])) {
             require_once './ds_phim.php';
             break;
         case 'tt_user':
-            require_once "thongtinuser.php";
+            require_once "./thongtinuser.php";
+            break;
+        case 'dat_ve':
+            require_once "./dat_ve.php";
             break;
         default:
             require_once './home.php';

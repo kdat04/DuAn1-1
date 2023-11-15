@@ -1,0 +1,51 @@
+.chondoan-text{
+    font-size: 20px;
+    padding-bottom: 10px;
+    color: #242424;
+}
+.combo-doan-text h3{
+    font-size: 17px;
+    color: #464646;
+    margin-top: 5px;
+    margin-bottom: 7px;
+}
+.combo-doan-text span{
+    font-size: 13px;
+}
+/* .combo-doan-text strong{
+    margin-top: 7px;
+    color: black;
+} */
+.combo-doan{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.combo-doan-left{
+    display: flex;
+    gap: 10px;
+}
+.combo-doan-img{
+    width: 160px;
+    height: 120px;
+}
+.combo-doan-img img{
+    width: 160px;
+    height: 120px;
+    border-radius: 10px;
+}
+.combo-doan-right {
+    display: flex;
+    align-items: center;
+}
+.combo-doan-right input{
+    padding: 5px;
+    width: 50px;
+    border: 1px solid #fdfdfd;
+    text-align: center;
+}
+.combo-doan-right button{
+    padding: 5px;
+    border: 1px solid hsl(0, 0%, 100%);
+    background-color: white;
+}

@@ -18,10 +18,10 @@
 
         <div class="box_dm_user">
             <a href=""> Lịch Sử Giao Dịch</a>
-            <a href="">Thông Tin Cá Nhân</a>
+            <a href="index.php?action=tt_user&link=my_user">Thông Tin Cá Nhân</a>
             <a href=""> Thông Báo </a>
             <a href="">Quà Tặng</a>
-            <a href="">Chính Sách</a>
+            <a href="index.php?action=tt_user&link=chinh_sach">Chính Sách</a>
         </div><br>
         <hr>
         <div class="lienhe">
@@ -48,26 +48,26 @@
             $link = $_GET['link'];
             switch ($link) {
                 case 'Lich_su':
-                    include "";
+                    require_once "";
                     break;
-                case 'my_tk':
-                    include "../view/thongtin/mytk.php";
+                case 'my_user':
+                    require_once "user_ca_nhan/my_user.php";
                     break;
                 case 'bao_cao':
-                    include "../view/thongtin/mytk.php";
+                    include "";
                     break;
                 case 'qua':
-                    include "../view/thongtin/mytk.php";
+                    include "";
                     break;
                 case 'chinh_sach':
-                    include "../view/thongtin/mytk.php";
+                    require_once "user_ca_nhan/chinh_sach.php";
                     break;
                 default:
-                    include "../view/thongtin/mytk.php";
+                    include "";
                     break;
             }
         } else {
-            include "../view/thongtin/mytk.php";
+            include "user_ca_nhan/my_user.php";
         }
         ?>
     </section>

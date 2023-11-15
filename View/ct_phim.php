@@ -102,7 +102,7 @@
             <div class="time_chieu">
               <?php
               for ($i = 10; $i <= 22; $i += 2) : ?>
-                <p><?= $i ?>:00</p>
+                <a href="index.php?action=dat_ve"><p><?= $i ?>:00</p></a>
               <?php endfor; ?>
 
             </div>

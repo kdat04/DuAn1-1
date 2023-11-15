@@ -15,13 +15,14 @@
     <link rel="stylesheet" href="./CSS/dat_ve.css">
     <link rel="stylesheet" href="./CSS/chondoan.css">
     <link rel="stylesheet" href="./CSS/thongtinuser.css">
+    <link rel="stylesheet" href="./CSS/my_user.css">
 </head>
 
 <body>
     <header>
         <div class="header_content">
             <div class="header_img">
-                <img src="./IMG/3d Cinema.png" alt="Logo">
+                <a href="index.php?action="><img src="./IMG/3d Cinema.png" alt="Logo"></a>
             </div>
             <div class="header_text">
                 <ul>

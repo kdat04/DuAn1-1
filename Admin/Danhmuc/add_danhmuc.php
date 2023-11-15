@@ -1,9 +1,4 @@
 <div>
-<<<<<<< HEAD
-<div class="page-wrapper">
-    11111
-</div>
-=======
     <div class="page-wrapper">
         <div class="card">          
             <form class="form-horizontal" action="" method="post">
@@ -24,11 +19,10 @@
                 </div>
                 <div class="border-top">
                     <div class="card-body">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Gửi dữ liệu</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
->>>>>>> f1435db18ed881198cab6f9d20087f113f4ef57f
 </div>

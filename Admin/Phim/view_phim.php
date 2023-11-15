@@ -10,7 +10,7 @@
                                 <table id="zero_config" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                            <th style="width: 50px;">Id Phim</th>
+                                            <th style="width: 150px;">Id Phim</th>
                                             <th>Tên Phim</th>
                                             <th style="width: 200px;">Ảnh</th>
                                             <th>Giá</th>
@@ -47,6 +47,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="btn_dieuhuong btn btn-success">
+                <a href="./index.php?action=&act=add_phim" style="color: white;">Thêm phim</a>
             </div>
         </div>
     </div>

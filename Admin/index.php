@@ -38,6 +38,7 @@ if (isset($_GET['action'])) {
                         break;
                     case 'phim':
                         require_once './home.php';
+                        
                         require_once './Phim/view_phim.php';
                         require_once './footer-home.php';
                         break;

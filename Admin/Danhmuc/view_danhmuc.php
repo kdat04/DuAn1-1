@@ -15,10 +15,12 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php foreach ($variable as $key => $value) :?>
                                         <tr>
                                             <td>1</td>
                                             <td>Customer Support</td>
                                         </tr>
+                                        <?php
                                     </tbody>
                                     <tfoot>
                                         <tr>

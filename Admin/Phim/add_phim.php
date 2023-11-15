@@ -53,7 +53,7 @@
                 </div>
                 <div class="border-top">
                     <div class="card-body">
-                        <button type="button" class="btn btn-primary">Gửi dữ liệu</button>
+                        <input type="button" class="btn btn-primary" value="Gửi dữ liệu">
                     </div>
                 </div>
             </form>

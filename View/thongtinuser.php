@@ -17,7 +17,7 @@
         <hr>
 
         <div class="box_dm_user">
-            <a href=""> Lịch Sử Giao Dịch</a>
+            <a href="index.php?act=ttcn&link=update-tk"> Lịch Sử Giao Dịch</a>
             <a href="">Thông Tin Cá Nhân</a>
             <a href=""> Thông Báo </a>
             <a href="">Quà Tặng</a>

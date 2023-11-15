@@ -22,6 +22,15 @@ if (isset($_GET['action'])) {
                         break;
                     case 'add_dm':
                         require_once './home.php';
+                        if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                            $ten_loaiphim = $_POST['ten_loaiphim'];
+                            if ($ten_loaiphim == '') {
+                              $message = "Không được để trắng";
+                            }else{
+                            loai_insert($ten_loaiphim);
+                            $message = "Thêm thành công";
+                            }
+                          }
                         require_once './Danhmuc/add_danhmuc.php';
                         require_once './footer-home.php';
                         break;

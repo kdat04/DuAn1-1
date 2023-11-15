@@ -12,11 +12,12 @@ if (isset($_GET['action'])) {
             require_once './signup.php';
             break;
         default:
+            require_once './home.php';
             break;
     }
 } else {
     if (!isset($_SESSION['username'])) {
-        require_once './index.php?action=dn';
+        require_once './login.php';
         exit;
     }
 }

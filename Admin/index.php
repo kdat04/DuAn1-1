@@ -12,14 +12,38 @@ if (isset($_GET['action'])) {
             require_once './Dangnhap/signup.php';
             break;
         default:
-        require_once './home.php';
+
             if (isset($_GET['act'])) {
                 switch ($_GET['act']) {
-                    case 'home':
+                    case 'danhmuc':
                         require_once './home.php';
+                        require_once './Danhmuc/add_danhmuc.php';
+                        require_once './footer-home.php';
                         break;
-                    default:
-                        
+                    case 'phim':
+                        require_once './home.php';
+                        require_once './Phim/add_phim.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'taikhoan':
+                        require_once './home.php';
+                        require_once './Taikhoan/view_tk.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'binhluan':
+                        require_once './home.php';
+                        require_once './Binhluan/view_bl.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'datve':
+                        require_once './home.php';
+                        require_once './Datve/view_datve.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'thongke':
+                        require_once './home.php';
+                        require_once './Thongke/view_thong_ke.php';
+                        require_once './footer-home.php';
                         break;
                 }
             }
@@ -27,7 +51,7 @@ if (isset($_GET['action'])) {
     }
 } else {
     if (!isset($_SESSION['username'])) {
-        require_once './Dangnhap/login.php';
+        require_once './Dangnhap/login.php'; 
         exit;
     }
 }

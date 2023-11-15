@@ -181,12 +181,12 @@
             <!-- Sidebar navigation-->
             <nav class="sidebar-nav">
                 <ul id="sidebarnav" class="p-t-30">
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false"><i class="fa-solid fa-bars"></i><span class="hide-menu">Danh mục</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html" aria-expanded="false"><i class="fa-solid fa-film"></i><span class="hide-menu">Phim</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="widgets.html" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu">Tài khoản</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="tables.html" aria-expanded="false"><i class="fa-solid fa-comment"></i><span class="hide-menu">Bình luận</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="grid.html" aria-expanded="false"><i class="fa-solid fa-ticket"></i><span class="hide-menu">Đặt vé</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="grid.html" aria-expanded="false"><i class="fa-solid fa-percent"></i><span class="hide-menu">Thống kê</span></a></li>
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=danhmuc" aria-expanded="false"><i class="fa-solid fa-bars"></i><span class="hide-menu">Danh mục</span></a></li>
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=phim" aria-expanded="false"><i class="fa-solid fa-film"></i><span class="hide-menu">Phim</span></a></li>
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=taikhoan" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu">Tài khoản</span></a></li>
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=binhluan" aria-expanded="false"><i class="fa-solid fa-comment"></i><span class="hide-menu">Bình luận</span></a></li>
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=datve" aria-expanded="false"><i class="fa-solid fa-ticket"></i><span class="hide-menu">Đặt vé</span></a></li>
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=thongke" aria-expanded="false"><i class="fa-solid fa-percent"></i><span class="hide-menu">Thống kê</span></a></li>
                 </ul>
             </nav>
             <!-- End Sidebar navigation -->
@@ -194,4 +194,3 @@
         <!-- End Sidebar scroll-->
     </aside>
 
-</div>

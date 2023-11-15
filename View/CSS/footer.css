@@ -1,6 +1,7 @@
 footer {
     margin-top: 80px;
-    background-color: #333333
+    background-color: #333333;
+    clear: both;
 }
 
 .footer {

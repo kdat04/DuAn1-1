@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./CSS/home.css">
     <link rel="stylesheet" href="./CSS/ct_phim.css">
     <link rel="stylesheet" href="./CSS/dat_ve.css">
+    <link rel="stylesheet" href="./CSS/chondoan.css">
     <link rel="stylesheet" href="./CSS/thongtinuser.css">
 </head>
 

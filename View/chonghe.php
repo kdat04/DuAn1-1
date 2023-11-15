@@ -234,7 +234,7 @@
                             <li>
                                 <div class="hang-ghe">
                                     <div class="hang-text">
-                                        <span>I</span>
+                                        <span>K</span>
                                     </div>
                                     <div class="hang-input">
                                         <input type="checkbox" name="" id="">
@@ -258,7 +258,7 @@
                                         <input type="checkbox" name="" id="">
                                     </div>
                                     <div class="hang-text">
-                                        <span>I</span>
+                                        <span>K</span>
                                     </div>
                                 </div>
                             </li>

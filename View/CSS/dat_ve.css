@@ -51,7 +51,7 @@
     padding-top: 50px;
 }
 .main-left{
-    width: 809px;
+    width: 949px;
 }
 .suatchieu {
     display: flex;
@@ -99,8 +99,9 @@
 }
 
 .hang-input {
-    margin-left: 80px;
-    margin-right: 80px;
+    margin-left: 60px;
+    margin-right: 60px;
+    width: 600px;
 }
 
 .hang-input input {
@@ -136,7 +137,7 @@
 
 .nut-ck {
     margin: 0 15px;
-    width: 130px;
+    width: 145px;
     display: flex;
     gap: 5px;
     align-items: center;
@@ -148,7 +149,7 @@
 }
 
 .main-right {
-    width: 504px;
+    width: 440px;
     position: relative;
 }
 
@@ -202,6 +203,7 @@
 
 .nut-btn {
     padding-top: 40px;
+    display: flex;
 }
 
 .nut-btn button {
@@ -214,7 +216,10 @@
     background-color: #ff953f;
     color: white;
 }
-
+.nut-btn button a{
+    text-decoration: none;
+    color: white;
+}
 .nut-btn button:hover {
     background-color: #e08438;
 }

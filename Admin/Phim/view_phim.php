@@ -5,7 +5,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Bảng thống kê</h5>
+                            <h5 class="card-title">Bảng quản lý phim</h5>
                             <div class="table-responsive">
                                 <table id="zero_config" class="table table-striped table-bordered">
                                     <thead>
@@ -19,9 +19,17 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>1</td>
+                                            <td >1</td>
                                             <td>Customer Support</td>
-                                            <td></td>
+                                            <td><img src=".././View/IMG_FILM/2396310_1687330098375.webp" alt="" width="50px"></td>
+                                            <td>27</td>
+                                            <td>2011/01/25</td>
+                                        </tr>
+                                        <tr>
+                                            <td >1</td>
+                                            <td>Customer Support</td>
+                                            <td><img src=".././View/IMG_FILM/2396310_1687330098375.webp" alt="" width="50px"></td>
+                                            <td>27</td>
                                             <td>2011/01/25</td>
                                         </tr>
                                     </tbody>
@@ -41,6 +49,5 @@
                 </div>
             </div>
         </div>
-        
     </div>
 </div>

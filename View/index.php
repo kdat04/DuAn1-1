@@ -17,6 +17,9 @@ if (isset($_GET['action'])) {
         case 'dat_ve':
             require_once "./dat_ve.php";
             break;
+        case 'uu_dai':
+            require_once "./uu_dai.php";
+            break;
         default:
             require_once './home.php';
             break;

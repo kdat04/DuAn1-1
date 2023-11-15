@@ -17,11 +17,11 @@
         <hr>
 
         <div class="box_dm_user">
-            <a href="index.php?action=tt_user&link=my_user"> Lịch Sử Giao Dịch</a>
-            <a href="">Thông Tin Cá Nhân</a>
+            <a href=""> Lịch Sử Giao Dịch</a>
+            <a href="index.php?action=tt_user&link=my_user">Thông Tin Cá Nhân</a>
             <a href=""> Thông Báo </a>
             <a href="">Quà Tặng</a>
-            <a href="">Chính Sách</a>
+            <a href="index.php?action=tt_user&link=chinh_sach">Chính Sách</a>
         </div><br>
         <hr>
         <div class="lienhe">
@@ -60,7 +60,7 @@
                     include "";
                     break;
                 case 'chinh_sach':
-                    include "";
+                    require_once "user_ca_nhan/chinh_sach.php";
                     break;
                 default:
                     include "";

@@ -1,0 +1,45 @@
+.tong_tt_cn {
+  display: flex;
+ 
+  width: 96%;
+  padding: 20px;
+  gap: 4%;
+}
+.tt_cn_user1 {
+  width: 48%;
+}
+.khung_my_user {
+  width: 100%;
+}
+.background_my_user {
+  background-color: #dfd9d9;
+  border-radius: 10px;
+  line-height: 50px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+.background_my_user i{
+    margin-right: 10px;
+    font-size: 16px;
+}
+.background_my_user span{
+    font-size: 16px;
+    color: #a8a4a4;
+    
+}
+.background_my_user1 span{
+    font-size: 16px;
+    color: #a8a4a4;
+    margin-right: 50px;
+}
+.khung_my_user1{
+    margin-top: 75px;
+
+}
+.background_my_user input {
+    background-color: #dfd9d9;
+    border: none;
+    padding: 15px;
+    outline: none;
+  }

@@ -1,9 +1,9 @@
 <?php
 require_once 'pdo.php';
 
-function phim_insert($ten_hh, $don_gia, $giam_gia, $hinh, $ma_loai, $dac_biet, $so_luot_xem, $ngay_nhap, $mo_ta){
-    $sql = "INSERT INTO hang_hoa(ten_hh, don_gia, giam_gia, hinh, ma_loai, dac_biet, so_luot_xem, ngay_nhap, mo_ta) VALUES (?,?,?,?,?,?,?,?,?)";
-    pdo_execute($sql, $ten_hh, $don_gia, $giam_gia, $hinh, $ma_loai, $dac_biet==1, $so_luot_xem, $ngay_nhap, $mo_ta);
+function  phim_insert($ten_phim,$gia, $img_phim, $mota,  $nsx, $nph, $id_loaiphim){
+    $sql = "INSERT INTO phim(ten_phim,gia,img_phim,mota,nsx,nph,id_loaiphim) VALUES (?,?,?,?,?,?,?)";
+    pdo_execute($sql,$ten_phim,$gia, $img_phim, $mota, $nsx, $nph,  $id_loaiphim);
 }
 
 function phim_update($ma_hh, $ten_hh, $don_gia, $giam_gia, $hinh, $ma_loai, $dac_biet, $so_luot_xem, $ngay_nhap, $mo_ta){
@@ -65,23 +65,23 @@ function hang_hoa_select_keyword($keyword){
     return pdo_query($sql, '%'.$keyword.'%', '%'.$keyword.'%');
 }
 
-function hang_hoa_select_page(){
-    if(!isset($_SESSION['page_no'])){
-        $_SESSION['page_no'] = 0;
-    }
-    if(!isset($_SESSION['page_count'])){
-        $row_count = pdo_query_value("SELECT count(*) FROM hang_hoa");
-        $_SESSION['page_count'] = ceil($row_count/10.0);
-    }
-    if(exist_param("page_no")){
-        $_SESSION['page_no'] = $_REQUEST['page_no'];
-    }
-    if($_SESSION['page_no'] < 0){
-        $_SESSION['page_no'] = $_SESSION['page_count'] - 1;
-    }
-    if($_SESSION['page_no'] >= $_SESSION['page_count']){
-        $_SESSION['page_no'] = 0;
-    }
-    $sql = "SELECT * FROM hang_hoa ORDER BY ma_hh LIMIT ".$_SESSION['page_no'].", 10";
-    return pdo_query($sql);
-}
+// function hang_hoa_select_page(){
+//     if(!isset($_SESSION['page_no'])){
+//         $_SESSION['page_no'] = 0;
+//     }
+//     if(!isset($_SESSION['page_count'])){
+//         $row_count = pdo_query_value("SELECT count(*) FROM hang_hoa");
+//         $_SESSION['page_count'] = ceil($row_count/10.0);
+//     }
+//     if(exist_param("page_no")){
+//         $_SESSION['page_no'] = $_REQUEST['page_no'];
+//     }
+//     if($_SESSION['page_no'] < 0){
+//         $_SESSION['page_no'] = $_SESSION['page_count'] - 1;
+//     }
+//     if($_SESSION['page_no'] >= $_SESSION['page_count']){
+//         $_SESSION['page_no'] = 0;
+//     }
+//     $sql = "SELECT * FROM hang_hoa ORDER BY ma_hh LIMIT ".$_SESSION['page_no'].", 10";
+//     return pdo_query($sql);
+// }

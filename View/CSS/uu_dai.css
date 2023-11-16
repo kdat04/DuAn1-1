@@ -1,40 +1,195 @@
-.uu_dai{
+.uu_dai {
     width: 1400px;
     margin: auto;
     display: flex;
     gap: 60px;
+    padding-top: 50px;
 }
-.uudai-left .list-uudai{
+
+.uudai-left {}
+
+.uudai-text h1 {
+    position: relative;
+    margin-left: 10px;
+}
+
+.uudai-text h1::before {
+    position: absolute;
+    left: 0px;
+    bottom: 3px;
+    content: "";
+    height: 22px;
+    margin-left: -10px;
+    background-color: rgb(61, 27, 182);
+    width: 5px;
+}
+
+.uudai-left .list-uudai {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
 }
-.tt-uudai{
+
+.tt-uudai {
     position: relative;
+    overflow: hidden;
+    width: 285px;
+    height: 425px;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
-.tt-uudai h3{
+
+.tt-uudai img {
+    width: 100%;
+}
+
+.tt-uudai h3 {
     position: absolute;
     text-align: center;
-    color: rgb(255, 255, 255);
+    color: rgb(255, 0, 0);
     bottom: -1000px;
-    width: 100%;
+    width: 93%;
+    border: none;
+    padding: 10px;
+    background-color: #e68425;
+    color: white;
     transition: all 0.1s ease-in-out;
 }
 
-.tt-uudai:hover img{
-    opacity: 0.6;
+.tt-uudai:hover img {
+    opacity: 0.8;
 }
-.tt-uudai:hover h3{
+
+.tt-uudai:hover h3 {
     bottom: 150px;
     text-align: center;
 }
-.tt-uudai-img img{
+
+.tt-uudai-img img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.uudai-right {
+    padding-top: 40px;
+    width: 430px;
+}
+
+.muavenhanh {
+    border: 1px solid rgb(214, 214, 214);
+    border-radius: 5px;
+    position: relative;
+}
+
+.muavenhanh h3 {
+    background-color: #034ea2;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    position: absolute;
+    top: -20px;
+    width: 389px;
+}
+
+.muavenhanh form {
+    padding-top: 70px;
+}
+
+.muavenhanh form nav ul {
+    list-style: none;
+}
+
+.muavenhanh form nav ul li {
+    padding-bottom: 20px;
+}
+
+.muavenhanh form nav ul li select{
+    margin-left: -12px;
+    padding: 10px;
+    width: 370px;
+    height: 40px;
+    border: 1px solid rgb(194, 194, 194);
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+.ct_phim_box_right-1 {
+    width: 430px;
+}
+
+.ct_phim_box_right-1 h3 {
+    margin-left: 10px;
+    font-weight: 400;
+    position: relative;
+}
+
+.ct_phim_box_right-1 h3::before {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    content: "";
+    height: 25px;
+    margin-left: -10px;
+    background-color: rgb(61, 27, 182);
+    width: 5px;
+}
+
+.phim_lq-1 {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 50px;
+}
+
+.phim_lq_img-1 {
+    position: relative;
+    overflow: hidden;
+}
+.phim_lq_img-1 img {
     width: 100%;
 }
-.tt-uudai-text{
+
+.phim_lq_img-1 .sub_img-1 {
+    left: 150px;
+    padding: 10px;
+    background-color: rgb(223, 92, 44);
+    position: absolute;
+    color: white;
+    border-radius: 7px;
+    bottom: -1000px;
+    transition: all 0.1s ease-in-out;
+}
+
+.phim_lq_img-1 .sub_img-1:hover {
+    background-color: orange;
+}
+
+.phim_lq_img-1 .sub_img-1 span i {
+    margin: 5px;
+}
+
+.phim_lq_img-1:hover .sub_img-1 {
+    bottom: 120px;
     text-align: center;
 }
 
-
-
-
+.phim_lq-1 h5 {
+    font-size: 15px;
+    margin-top: 10px;
+    font-weight: 300;
+}
+.btn-uudai{
+    padding-top: 10px;
+}
+.btn-uudai button{
+    padding: 15px;
+    width: 180px;
+    margin-left: 250px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #ff953f;
+    color: #ff953f;
+}
+.btn-uudai button:hover{
+    background-color: #ff953f;
+    color: white;
+}

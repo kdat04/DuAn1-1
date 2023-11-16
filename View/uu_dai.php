@@ -6,89 +6,129 @@
         <div class="list-uudai">
             <div class="tt-uudai">
                 <img src="IMG/galaxy-mung-ngay-nha-giao-4_1699674047902.webp" alt="">
-                <h3>20-11= 9, 9000 Phần Quà Mừng Ngày Nhà Giáo</< /span>
+                <h3>20-11= 9, 9000 Phần Quà Mừng Ngày Nhà Giáo</< /h3>
             </div>
             <!--  -->
             <div class="tt-uudai">
                 <img src="IMG/galaxy-mung-ngay-nha-giao-4_1699674047902.webp" alt="">
-                <h3>20-11= 9, 9000 Phần Quà Mừng Ngày Nhà Giáo</< /span>
+                <h3>20-11= 9, 9000 Phần Quà Mừng Ngày Nhà Giáo</< /h3>
             </div>
             <!--  -->
             <div class="tt-uudai">
                 <img src="IMG/galaxy-mung-ngay-nha-giao-4_1699674047902.webp" alt="">
-                <h3>20-11= 9, 9000 Phần Quà Mừng Ngày Nhà Giáo</< /span>
+                <h3>20-11= 9, 9000 Phần Quà Mừng Ngày Nhà Giáo</< /h3>
+            </div>
+            <!--  -->
+            <div class="tt-uudai">
+                <img src="IMG/galaxy-mung-ngay-nha-giao-4_1699674047902.webp" alt="">
+                <h3>20-11= 9, 9000 Phần Quà Mừng Ngày Nhà Giáo</< /h3>
+            </div>
+            <!--  -->
+            <div class="tt-uudai">
+                <img src="IMG/galaxy-mung-ngay-nha-giao-4_1699674047902.webp" alt="">
+                <h3>20-11= 9, 9000 Phần Quà Mừng Ngày Nhà Giáo</< /h3>
+            </div>
+            <!--  -->
+            <div class="tt-uudai">
+                <img src="IMG/galaxy-mung-ngay-nha-giao-4_1699674047902.webp" alt="">
+                <h3>20-11= 9, 9000 Phần Quà Mừng Ngày Nhà Giáo</< /h3>
+            </div>
+            <!--  -->
+            <div class="tt-uudai">
+                <img src="IMG/galaxy-mung-ngay-nha-giao-4_1699674047902.webp" alt="">
+                <h3>20-11= 9, 9000 Phần Quà Mừng Ngày Nhà Giáo</< /h3>
+            </div>
+            <!--  -->
+            <div class="tt-uudai">
+                <img src="IMG/galaxy-mung-ngay-nha-giao-4_1699674047902.webp" alt="">
+                <h3>20-11= 9, 9000 Phần Quà Mừng Ngày Nhà Giáo</< /h3>
+            </div>
+            <!--  -->
+            <div class="tt-uudai">
+                <img src="IMG/galaxy-mung-ngay-nha-giao-4_1699674047902.webp" alt="">
+                <h3>20-11= 9, 9000 Phần Quà Mừng Ngày Nhà Giáo</< /h3>
+            </div>
+            <!--  -->
+            <div class="tt-uudai">
+                <img src="IMG/galaxy-mung-ngay-nha-giao-4_1699674047902.webp" alt="">
+                <h3>20-11= 9, 9000 Phần Quà Mừng Ngày Nhà Giáo</< /h3>
+            </div>
+            <!--  -->
+            <div class="tt-uudai">
+                <img src="IMG/galaxy-mung-ngay-nha-giao-4_1699674047902.webp" alt="">
+                <h3>20-11= 9, 9000 Phần Quà Mừng Ngày Nhà Giáo</< /h3>
             </div>
         </div>
     </div>
-    <div class="uudai-fight">
+    <div class="uudai-right">
         <div class="muavenhanh">
             <h3>Mua Vé Nhanh</h3>
             <form action="">
                 <nav>
                     <ul>
                         <li>
-                            <input type="text" name="" id="" placeholder="Chọn phim"><i class="fa-solid fa-angle-right fa-rotate-90"></i>
-                            <ul>
-                                <li>Biệt Đội Mảvels</li>
-                                <li>Người Vợ Cuối Cùng</li>
-                                <li>Yêu Lại Vợ Ngầu</li>
-                                <li>Đất Rừng Phương Nam</li>
-                                <li>Oán Hồn Tử Địa</li>
-                                <li>Danh Họa Van Gogh</li>
-                                <li>Đường Cùng</li>
-                                <li>Đêm Hẹn Hò Đẫm Máu</li>
-                                <li>Đấu Trường Sinh Tử: Khúc Hát Của Chim Ca Và Rắn Độc</li>
-                                <li>Quỷ Lùn Tinh Nghịch: Đồng Tâm Hiệp Nhạc</li>
-                                <li>Chiếm Đoạt</li>
-                                <li>Cậu Bé Dũng Sĩ Yakari</li>
-                                <li>Dear David</li>
-                                <li>Những Kỷ Nguyên Của Taylor Swift</li>
-                                <li>Quỷ Môn Quan: Gọi Hồn</li>
-                                <li>Năm Đêm Kinh Hoàng</li>
-                                <li>Wolfoo Và Hòn Đảo Kỳ Bí</li>
-                                <li>PAW Patrol: Phim Siêu Đẳng</li>
-                            </ul>
+                            <select class="menu-cuon" >
+                                <option>Lựa Chọn</option>
+                                <option value="">Biệt Đội Mảvels</option>
+                                <option value="">Người Vợ Cuối Cùng</option>
+                                <option value="">Yêu Lại Vợ Ngầu</option>
+                                <option value="">Đất Rừng Phương Nam</option>
+                                <option value="">Oán Hồn Tử Địa</option>
+                                <option value="">Danh Họa Van Gogh</option>
+                                <option value="">Đường Cùng</option>
+                                <option value="">Đêm Hẹn Hò Đẫm Máu</option>
+                                <option value="">Đấu Trường Sinh Tử: Khúc Hát Của Chim Ca Và Rắn Độc</option>
+                                <option value="">Quỷ Lùn Tinh Nghịch: Đồng Tâm Hiệp Nhạc</option>
+                                <option value="">Chiếm Đoạt</option>
+                                <option value="">Cậu Bé Dũng Sĩ Yakari</option>
+                                <option value="">Dear David</option>
+                                <option value="">Những Kỷ Nguyên Của Taylor Swift</option>
+                                <option value="">Quỷ Môn Quan: Gọi Hồn</option>
+                                <option value="">Năm Đêm Kinh Hoàng</option>
+                                <option value="">Wolfoo Và Hòn Đảo Kỳ Bí</option>
+                                <option value="">PAW Patrol: Phim Siêu Đẳng</option>
+                            </select>
                         </li>
                         <li>
-                            <input type="text" name="" id="" placeholder="Chọn Rap"><i class="fa-solid fa-angle-right fa-rotate-90"></i>
-                            <ul>
-                                <li>3D CINEMA Hà Đông</li>
-                            </ul>
+                            <select class="menu-cuon" >
+                                <option>Lựa Chọn</option>
+                                <option value="">3D CINEMA Hà Đông</option>
+                            </select>
                         </li>
                         <li>
-                            <input type="text" name="" id="" placeholder="Chọn Ngày"><i class="fa-solid fa-angle-right fa-rotate-90"></i>
-                            <ul>
-                                <li>Thứ tư, 15/11/2023</li>
-                            </ul>
+                        <select class="menu-cuon" >
+                                <option>Lựa Chọn</option>
+                                <option value="">Thứ tư, 15/11/2023</option>
+                            </select>
                         </li>
                     </ul>
                 </nav>
             </form>
         </div>
-        <div class="ct_phim_box_right">
+        <div class="ct_phim_box_right-1">
             <h3>PHIM ĐANG CHIẾU</h3>
-            <div class="phim_lq">
-                <div class="phim_lq_img">
+            <div class="phim_lq-1">
+                <div class="phim_lq_img-1">
                     <img src="IMG/phim_lq1.webp" alt="">
-                    <div class="sub_img">
+                    <div class="sub_img-1">
                         <span><i class="fa-solid fa-tv"></i>Mua Vé</span>
                     </div>
                 </div>
                 <h5>Biệt Đội Marvels</h5>
             </div>
-            <div class="phim_lq">
-                <div class="phim_lq_img">
+            <div class="phim_lq-1">
+                <div class="phim_lq_img-1">
                     <img src="IMG/phim_lq1.webp" alt="">
-                    <div class="sub_img">
+                    <div class="sub_img-1">
                         <span><i class="fa-solid fa-tv"></i>Mua Vé</span>
                     </div>
                 </div>
                 <h5>Biệt Đội Marvels</h5>
             </div>
-            <div class="phim_lq">
-                <div class="phim_lq_img">
+            <div class="phim_lq-1">
+                <div class="phim_lq_img-1">
                     <img src="IMG/phim_lq1.webp" alt="">
-                    <div class="sub_img">
+                    <div class="sub_img-1">
                         <span><i class="fa-solid fa-tv"></i>Mua Vé</span>
                     </div>
                 </div>
@@ -96,7 +136,7 @@
             </div>
         </div>
         <div class="btn-uudai">
-            <button>Xem Thêm</button>
+            <button>Xem Thêm <i class="fa-solid fa-angle-right"></i></i></button>
         </div>
     </div>
 </section>

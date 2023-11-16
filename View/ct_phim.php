@@ -142,7 +142,7 @@
       </div>
       <div class="phim_lq">
         <div class="phim_lq_img">
-          <img src="IMG/phim_lq1.webp" alt="">
+        <img src="IMG/750x500-nvcc_1698985267220.webp" alt="">
           <div class="sub_img">
 
             <span><i class="fa-solid fa-tv"></i>Mua Vé</span>
@@ -151,11 +151,11 @@
         </div>
 
 
-        <h5>Biệt Đội Marvels</h5>
+        <h5>Người Vợ Cuối Cùng</h5>
       </div>
       <div class="phim_lq">
         <div class="phim_lq_img">
-          <img src="IMG/phim_lq1.webp" alt="">
+        <img src="IMG/lr-750_1699256436423.webp" alt="">
           <div class="sub_img">
 
             <span><i class="fa-solid fa-tv"></i>Mua Vé</span>
@@ -164,20 +164,7 @@
         </div>
 
 
-        <h5>Biệt Đội Marvels</h5>
-      </div>
-      <div class="phim_lq">
-        <div class="phim_lq_img">
-          <img src="IMG/phim_lq1.webp" alt="">
-          <div class="sub_img">
-
-            <span><i class="fa-solid fa-tv"></i>Mua Vé</span>
-
-          </div>
-        </div>
-
-
-        <h5>Biệt Đội Marvels</h5>
+        <h5>Yêu Lại Vợ Ngầu</h5>
       </div>
     </div>
   </div>

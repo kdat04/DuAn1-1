@@ -6,7 +6,9 @@
     padding-top: 50px;
 }
 
-.uudai-left {}
+.uudai-left {
+    width: 900px;
+}
 
 .uudai-text h1 {
     position: relative;

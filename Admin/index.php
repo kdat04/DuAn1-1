@@ -14,7 +14,7 @@ if (isset($_GET['action'])) {
             require_once './Dangnhap/signup.php';
             break;
         default:
-
+        
             if (isset($_GET['act'])) {
                 switch ($_GET['act']) {
                     case 'danhmuc':

@@ -68,16 +68,6 @@ var_dump($list_danhmuc);
                         </div>
                     </div>
 
-                    <!-- nháp  để cách  nút gửi dữ liệu không  có tác dụng  -->
-                    <div class="form-group row">
-                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">nháp không có j </label>
-                        <div class="col-sm-9">
-                            <select name="" id=""></select>
-
-                        </div>
-                    </div>
-                      <!-- kết thúc  -->
-
                 </div><br>
 
 

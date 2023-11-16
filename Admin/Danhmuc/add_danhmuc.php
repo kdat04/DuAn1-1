@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="border-top">
-                    <div class="card-body">
+                    <div class="card-body" style="margin-bottom: 50px;">
                         <input type="submit" name="themmoi" class="btn btn-primary" value="Gửi dữ liệu">
                     </div>
                 </div>

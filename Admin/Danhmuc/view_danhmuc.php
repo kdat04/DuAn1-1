@@ -10,15 +10,24 @@
                                 <table id="zero_config" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                            <th style="width: 800px;">Id Danh mục</th>
+                                            <th style="width: 400px;">Id Danh mục</th>
                                             <th>Tên Danh mục</th>
+                                            <th style="width: 100px;"></th>
+                                            <th style="width: 100px;"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php foreach ($list_danhmuc as $danhmuc) : ?>
                                             <tr>
-                                                <td><?= $danhmuc['id']?></td>
-                                                <td><?= $danhmuc['ten_loaiphim']?></td>
+                                                <td><?= $danhmuc['id'] ?></td>
+                                                <td><?= $danhmuc['ten_loaiphim'] ?></td>
+                                                <td><button class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa sản phẩm không ?')">
+                                                        <a style="color: white;" href="index.php?action=&act=xoa_dm&id=<?= $danhmuc['id'] ?>">Xoá</a>
+                                                    </button>
+                                                </td>
+                                                <td><button class="btn btn-info" onclick="return confirm('Bạn có muốn sửa sản phẩm không ?')">
+                                                        <a style="color: white;" href="index.php?action=$act=sua_dm&id=<?= $danhmuc['id'] ?>">Sửa</a>
+                                                    </button></td>
                                             </tr>
                                         <?php endforeach ?>
                                     </tbody>
@@ -26,6 +35,8 @@
                                         <tr>
                                             <th>Id Danh mục</th>
                                             <th>Tên Danh mục</th>
+                                            <th></th>
+                                            <th></th>
                                         </tr>
                                     </tfoot>
                                 </table>

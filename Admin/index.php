@@ -78,6 +78,29 @@ if (isset($_GET['action'])) {
                         break;
                     case 'add_phim':
                         require_once './home.php';
+                        if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                            $ten_phim = $_POST['ten_phim'];
+                            $gia = $_POST['gia'];
+                            $nsx = $_POST['nsx'];
+                            $nph = $_POST['nph'];
+                            $mota = $_POST['mota'];
+                            $id_loaiphim = $_POST['id_loaiphim'];
+
+                            $file = $_FILES['img_phim'];
+
+                            $img_phim = $file['name'];
+                            move_uploaded_file($file['tmp_name'], "./Img_ad/" . $img_phim);
+                            if ($ten_phim == "" || $gia == "" || $nsx == "" || $nph == "" || $mota == "") {
+                                $message = "Thêm không  thành công vì có ô để trống  ";
+                            } else {
+
+                                phim_insert($ten_phim,$gia, $img_phim, $mota,  $nsx, $nph, $id_loaiphim);
+
+                                $message = "Thêm thành công ";
+                            }
+                        }
+                        $list_danhmuc = loai_select_all();
+
                         require_once './Phim/add_phim.php';
                         require_once './footer-home.php';
                         break;

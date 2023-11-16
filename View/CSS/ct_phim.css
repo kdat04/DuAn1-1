@@ -26,10 +26,10 @@
     margin: auto;
     display: flex;
     margin-top: 30px;
-    gap: 3%;
+    gap: 40px;
   }
   .ct_phim_box_left {
-    width: 70%;
+    width: 980px;
   }
   
   .tt_ct_phim_nd {
@@ -186,7 +186,7 @@
     font-size: 15px;
   }
   .ct_phim_box_right {
-    width: 27%;
+    width: 380px;
    
   }
   .dress_time_chieu{

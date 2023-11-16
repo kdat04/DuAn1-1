@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./CSS/thongtinuser.css">
     <link rel="stylesheet" href="./CSS/my_user.css">
     <link rel="stylesheet" href="./CSS/chinhsach_thele.css">
+    <link rel="stylesheet" href="./CSS/uu_dai.css">
 </head>
 
 <body>
@@ -86,7 +87,7 @@
                     </li>
                     <li>Sự kiện <i class="fa-solid fa-angle-right fa-rotate-90"></i>
                         <ul class="sub_menu">
-                            <li><a href="">Ưu đãi</a></li>
+                            <li><a href="index.php?action=uu_dai">Ưu đãi</a></li>
                             <li><a href="">Phim Hay Tháng</a></li>
                         </ul>
                     </li>

@@ -6,32 +6,32 @@ function loai_insert($ten_loaiphim){
     pdo_execute($sql);
 }
 
-// function loai_update($ma_loai, $ten_loai){
-//     $sql = "UPDATE loai SET ten_loai=? WHERE ma_loai=?";
-//     pdo_execute($sql, $ten_loai, $ma_loai);
-// }
+function loai_update($ma_loai, $ten_loaiphim){
+    $sql = "UPDATE loai_phim SET ten_loaiphim=? WHERE id=?";
+    pdo_execute($sql, $ten_loaiphim, $ma_loai);
+}
 
-// function loai_delete($ma_loai){
-//     $sql = "DELETE FROM loai WHERE ma_loai=?";
-//     if(is_array($ma_loai)){
-//         foreach ($ma_loai as $ma) {
-//             pdo_execute($sql, $ma);
-//         }
-//     }
-//     else{
-//         pdo_execute($sql, $ma_loai);
-//     }
-// }
+function loai_delete($ma_loai){
+    $sql = "DELETE FROM `loai_phim` WHERE id=?";
+    if(is_array($ma_loai)){
+        foreach ($ma_loai as $ma) {
+            pdo_execute($sql, $ma);
+        }
+    }
+    else{
+        pdo_execute($sql, $ma_loai);
+    }
+}
 
 function loai_select_all(){
     $sql = "SELECT * FROM loai_phim";
     return pdo_query($sql);
 }
 
-// function loai_select_by_id($ma_loai){
-//     $sql = "SELECT * FROM loai WHERE ma_loai=?";
-//     return pdo_query_one($sql, $ma_loai);
-// }
+function loai_select_by_id($ma_loai){
+    $sql = "SELECT * FROM loai_phim WHERE id=?";
+    return pdo_query_one($sql, $ma_loai);
+}
 
 // function loai_exist($ma_loai){
 //     $sql = "SELECT count(*) FROM loai WHERE ma_loai=?";

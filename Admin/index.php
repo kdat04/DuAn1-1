@@ -28,13 +28,46 @@ if (isset($_GET['action'])) {
                         if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                             $ten_loaiphim = $_POST['ten_loaiphim'];
                             if ($ten_loaiphim == '') {
-                              $message = "Không được để trắng";
-                            }else{
-                            loai_insert($ten_loaiphim);
-                            $message = "Thêm thành công";
+                                $message = "Không được để trắng";
+                            } else {
+                                loai_insert($ten_loaiphim);
+                                $message = "Thêm thành công";
                             }
-                          }
+                        }
                         require_once './Danhmuc/add_danhmuc.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'xoa_dm':
+                        require_once './home.php';
+                        if (isset($_GET['id']) && $_GET['id'] > 0) {
+                            loai_delete($_GET['id']);
+                        }
+                        $list_danhmuc = loai_select_all();
+                        require_once './Danhmuc/view_danhmuc.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'sua_dm':
+                        require_once './home.php';
+                        if (isset($_GET['id']) && $_GET['id'] > 0) {
+                            $dm = loai_select_by_id($_GET['id']);
+                        }
+                        require_once './Danhmuc/sua_danhmuc.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'up_dm':
+                        require_once './home.php';
+                        if (isset($_POST['capnhat']) && ($_POST['capnhat'])) { {
+                                $ma_loai = $_POST['id'];
+                                $ten_loaiphim = $_POST['ten_loaiphim'];
+                                if ($ten_loaiphim == '') {
+                                    $message = "Không được để trắng";
+                                } else {
+                                    loai_update($ma_loai, $ten_loaiphim);
+                                }
+                            }
+                        }
+                        $list_danhmuc = loai_select_all();
+                        require_once './Danhmuc/view_danhmuc.php';
                         require_once './footer-home.php';
                         break;
                     case 'phim':
@@ -74,7 +107,7 @@ if (isset($_GET['action'])) {
     }
 } else {
     if (!isset($_SESSION['username'])) {
-        require_once './Dangnhap/login.php'; 
+        require_once './Dangnhap/login.php';
         exit;
     }
 }

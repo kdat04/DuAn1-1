@@ -10,7 +10,7 @@ var_dump($list_danhmuc);
                     <div class="form-group row">
                         <label for="fname" class="col-sm-3 text-right control-label col-form-label">Id phim</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="fname" placeholder="Id phim" disabled>
+                            <input type="text" name="id" class="form-control" id="fname" placeholder="Id phim" disabled>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -67,16 +67,6 @@ var_dump($list_danhmuc);
                                 ?>
                         </div>
                     </div>
-
-                    <!-- nháp  để cách  nút gửi dữ liệu không  có tác dụng  -->
-                    <div class="form-group row">
-                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">nháp không có j </label>
-                        <div class="col-sm-9">
-                            <select name="" id=""></select>
-
-                        </div>
-                    </div>
-                      <!-- kết thúc  -->
 
                 </div><br>
 

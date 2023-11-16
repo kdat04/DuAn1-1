@@ -1,8 +1,3 @@
-<?php
-    if(is_array($dm)){
-        extract($dm);
-    }
-?>
 <div>
     <div class="page-wrapper">
         <div class="card">

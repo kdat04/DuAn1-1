@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+require_once '../Model/phim.php';
 require_once '../Model/loai.php';
 require_once '../Model/pdo.php';
 require_once "./header.php";
@@ -59,9 +59,8 @@ if (isset($_GET['action'])) {
                         if (isset($_POST['capnhat']) && ($_POST['capnhat'])) { {
                                 $ma_loai = $_POST['id'];
                                 $ten_loaiphim = $_POST['ten_loaiphim'];
-                            
-                                    loai_update($ma_loai, $ten_loaiphim);
 
+                                loai_update($ma_loai, $ten_loaiphim);
                             }
                         }
                         $list_danhmuc = loai_select_all();
@@ -70,7 +69,7 @@ if (isset($_GET['action'])) {
                         break;
                     case 'phim':
                         require_once './home.php';
-                        
+                        $ds_phim = phim_select_all();
                         require_once './Phim/view_phim.php';
                         require_once './footer-home.php';
                         break;
@@ -88,18 +87,60 @@ if (isset($_GET['action'])) {
 
                             $img_phim = $file['name'];
                             move_uploaded_file($file['tmp_name'], "./Img_ad/" . $img_phim);
+
                             if ($ten_phim == "" || $gia == "" || $nsx == "" || $nph == "" || $mota == "") {
                                 $message = "Thêm không  thành công vì có ô để trống  ";
                             } else {
 
-                                phim_insert($ten_phim,$gia, $img_phim, $mota,  $nsx, $nph, $id_loaiphim);
+                                phim_insert($ten_phim, $gia, $img_phim, $mota,  $nsx, $nph, $id_loaiphim);
 
                                 $message = "Thêm thành công ";
                             }
                         }
                         $list_danhmuc = loai_select_all();
-
                         require_once './Phim/add_phim.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'xoa_phim':
+                        require_once './home.php';
+                        if (isset($_GET['id']) && $_GET['id'] > 0) {
+                            phim_delete($_GET['id']);
+                        }
+                        $ds_phim = phim_select_all();
+                        require_once './Phim/view_phim.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'sua_phim':
+                        require_once './home.php';
+                        if (isset($_GET['id']) && $_GET['id'] > 0) {
+                            $phim = phim_select_by_id($_GET['id']);
+                        }
+                        $list_danhmuc = loai_select_all();
+                        require_once './Phim/sua_phim.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'up_phim':
+                        require_once './home.php';
+                        if (isset($_POST['capnhat']) && $_POST['capnhat'] > 0) {
+                            $id = $_POST['id'];
+                            $ten_phim = $_POST['ten_phim'];
+                            $gia = $_POST['gia'];
+                            $nsx = $_POST['nsx'];
+                            $nph = $_POST['nph'];
+                            $mota = $_POST['mota'];
+                            $id_loaiphim = $_POST['id_loaiphim'];
+                            $img_phim = $_POST['img_phim'];
+
+                            $file = $_FILES['img_phim'];
+                            if ($file['size'] > 0) {
+                                $img_phim = $file['name'];
+                                move_uploaded_file($file['tmp_name'], "./Img_ad/" . $img_phim);
+                            }
+
+                            phim_update($id, $ten_phim, $gia, $img_phim, $mota, $nsx, $nph, $id_loaiphim);
+                        }
+                        $ds_phim = phim_select_all();
+                        require_once './Phim/view_phim.php';
                         require_once './footer-home.php';
                         break;
                     case 'taikhoan':

@@ -27,7 +27,8 @@
                                                 </td>
                                                 <td><button class="btn btn-info" onclick="return confirm('Bạn có muốn sửa sản phẩm không ?')">
                                                         <a style="color: white;" href="index.php?action=&act=sua_dm&id=<?= $danhmuc['id'] ?>">Sửa</a>
-                                                    </button></td>
+                                                    </button>
+                                                </td>
                                             </tr>
                                         <?php endforeach ?>
                                     </tbody>

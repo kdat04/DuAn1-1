@@ -4,73 +4,78 @@
 <div>
     <div class="page-wrapper">
         <div class="card">
-            <form class="form-horizontal" action="index.php?action=&act=add_phim" method="post" enctype="multipart/form-data">
+            <form class="form-horizontal" action="index.php?action=&act=up_phim" method="post" enctype="multipart/form-data">
                 <div class="card-body" style="width: 1000px;">
-                    <h4 class="card-title">Thêm Phim</h4>
+                    <h4 class="card-title">Sửa Phim</h4>
                     <div class="form-group row">
                         <label for="fname" class="col-sm-3 text-right control-label col-form-label">Id phim</label>
                         <div class="col-sm-9">
-                            <input type="text" name="id" class="form-control" id="fname" placeholder="Id phim" disabled>
+                            <input type="text" name="id" class="form-control" id="fname" placeholder="Id phim" disabled value="<?= $phim['id'] ?>">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="lname" class="col-sm-3 text-right control-label col-form-label"> Tên phim</label>
                         <div class="col-sm-9">
-                            <input type="text" name="ten_phim" class="form-control" id="lname" placeholder="Tên phim">
+                            <input type="text" name="ten_phim" class="form-control" id="lname" placeholder="Tên phim" value="<?= $phim['ten_phim'] ?>">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="lname" class="col-sm-3 text-right control-label col-form-label">Ảnh phim</label>
                         <div class="col-sm-9">
                             <div class="custom-file">
-                                <input type="file" name="img_phim" class="custom-file-input" id="validatedCustomFile" required>
-                                <label class="custom-file-label" for="validatedCustomFile">Ảnh phim...</label>
+                                <input type="hidden" name="img_phim" value="<?= $phim['img_phim']?>">
+
+                                <input type="file" name="img_phim" class="custom-file-input" id="validatedCustomFile" value="<?= $phim['img_phim'] ?>">
+                                <label class="custom-file-label" for="validatedCustomFile"> <?= $phim['img_phim'] ?></label>
+
+                                <img style="margin: 10px 0;" src="./Img_ad/<?= $phim['img_phim']?>" alt="" width="100px">
                                 <div class="invalid-feedback">Example invalid custom file feedback</div>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row">
+
+                    <div style="margin-top: 80px;" class="form-group row">
                         <label for="email1" class="col-sm-3 text-right control-label col-form-label">Giá phim</label>
                         <div class="col-sm-9">
-                            <input type="text" name="gia" class="form-control" id="email1" placeholder="Giá phim">
+                            <input type="text" name="gia" class="form-control" id="email1" placeholder="Giá phim" value='<?= $phim['gia'] ?>'>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Nhà sản xuất </label>
                         <div class="col-sm-9">
-                            <input type="text" name="nsx" class="form-control" id="cono1" placeholder="Nhà sản xuất">
+                            <input type="text" name="nsx" class="form-control" id="cono1" placeholder="Nhà sản xuất" value='<?= $phim['nsx'] ?>'>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Ngày phát hành </label>
                         <div class="col-sm-9">
-                            <input type="date" name="nph" class="form-control" id="cono1" placeholder="Ngày phát hành">
+                            <input type="date" name="nph" class="form-control" id="cono1" placeholder="Ngày phát hành" value='<?= $phim['nph'] ?>'>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Mô tả phim</label>
                         <div class="col-sm-9">
-                            <textarea name="mota" class="form-control" cols="100" rows="6"></textarea>
+                            <textarea name="mota" class="form-control" cols="100" rows="6"><?= $phim['mota'] ?></textarea>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="cono1"  class="col-sm-3 text-right control-label col-form-label">Thể loại phim</label>
+                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Thể loại phim</label>
                         <div class="col-sm-9">
 
                             <select class="select2 form-control custom-select" name="id_loaiphim" id="">
+                                <option value="0" selected>Tất cả </option>
                                 <?php
-                                foreach ($list_danhmuc as $list) {
-                                    extract($list);
-                                    echo ' <option value="' . $id . '">' . $ten_loaiphim . '</option>';
-                                }
-                                ?>
+                                foreach ($list_danhmuc as $list) : ?>
+                                    <option value="<?= $list['id'] ?>" <?= ($list['id'] == $phim['id_loaiphim']) ? 'selected' : '' ?>><?= $list['ten_loaiphim'] ?></option>
+                                <?php endforeach ?>
                         </div>
                     </div>
                 </div><br>
-                <div class="border-top" >
-                    <div class="card-body" >
-                        <br><input style="margin-top: 20px;" type="submit" name="themmoi" class="btn btn-primary" value="Gửi dữ liệu">
+                <div class="border-top">
+                    <div class="card-body">
+                        <input type="hidden" name="id" value="<?= $phim['id']?>">
+                        <br><input style="margin-top: 20px;" type="submit" name="capnhat" class="btn btn-primary" value="Gửi dữ liệu">
                     </div>
                     <div style="font-weight: 500; font-size: 20px; ; color: black; font-weight: 700;">
                         <?php

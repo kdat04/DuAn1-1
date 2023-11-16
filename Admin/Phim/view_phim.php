@@ -15,23 +15,29 @@
                                             <th style="width: 200px;">Ảnh</th>
                                             <th>Giá</th>
                                             <th>Ngày Phát Hành</th>
+                                            <th style="width: 100px;"></th>
+                                            <th style="width: 100px;"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td >1</td>
-                                            <td>Customer Support</td>
-                                            <td><img src=".././View/IMG_FILM/2396310_1687330098375.webp" alt="" width="50px"></td>
-                                            <td>27</td>
-                                            <td>2011/01/25</td>
-                                        </tr>
-                                        <tr>
-                                            <td >1</td>
-                                            <td>Customer Support</td>
-                                            <td><img src=".././View/IMG_FILM/2396310_1687330098375.webp" alt="" width="50px"></td>
-                                            <td>27</td>
-                                            <td>2011/01/25</td>
-                                        </tr>
+                                        <?php foreach ($ds_phim as $phim) : ?>
+                                            <tr>
+                                                <td><?= $phim['id'] ?></td>
+                                                <td><?= $phim['ten_phim'] ?></td>
+                                                <td><img src=".././View/IMG_FILM/<?= $phim['img_phim'] ?>" alt="" width="50px"></td>
+                                                <td><?= $phim['gia'] ?></td>
+                                                <td><?= $phim['nph'] ?></td>
+                                                <td>
+                                                    <button class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa sản phẩm không ?')">
+                                                        <a style="color: white;" href="index.php?action=&act=xoa_phim&id=<?= $phim['id'] ?>">Xoá</a>
+                                                    </button>
+                                                </td>
+                                                <td><button class="btn btn-info" onclick="return confirm('Bạn có muốn sửa sản phẩm không ?')">
+                                                        <a style="color: white;" href="index.php?action=&act=sua_phim&id=<?= $phim['id'] ?>">Sửa</a>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach ?>
                                     </tbody>
                                     <tfoot>
                                         <tr>
@@ -40,6 +46,8 @@
                                             <th>Ảnh</th>
                                             <th>Giá</th>
                                             <th>Ngày Phát Hành</th>
+                                            <th></th>
+                                            <th></th>
                                         </tr>
                                     </tfoot>
                                 </table>

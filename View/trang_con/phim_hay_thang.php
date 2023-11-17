@@ -171,3 +171,9 @@
         <i class="fa-solid fa-angles-right"></i>
     </div>
 </div>
+<div class="phimhaythang">
+    <h1>3D CINEMA</h1>
+</div>
+<div class="gt-pht">
+    <span>Phim hay tháng là tập hợp những bộ phim chiếu rạp hay nhất, mới nhất, được công chiếu trong tháng. Những bộ phim thuộc đủ các thể loại hành động, lãng mạn, kinh dị, sử thi... chất lượng, được đánh giá cao, hứa hẹn mang đến những giờ phút giải trí tuyệt vời trong rạp chiếu bóng. Phim hay tháng sẽ cung cấp đầy đủ thông tin phim, dễ dàng thuận tiện để các bạn có thể tìm kiếm vùa lựa chọn bộ phim phù hợp nhất để thưởng thức cùng gia đình và bạn bè. </span>
+</div>

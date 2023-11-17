@@ -55,6 +55,10 @@ function phim_select_keyword($key, $category_id)
     return $listkey;
 }
 
+function vovan(){
+    $sql = "DELETE FROM phim WHERE id=?";
+    }
+
 // function phim_exist($ma_hh){
 //     $sql = "SELECT count(*) FROM hang_hoa WHERE ma_hh=?";
 //     return pdo_query_value($sql, $ma_hh) > 0;

@@ -1,21 +1,20 @@
 <?php
 require_once 'pdo.php';
 
-function  phim_insert($ten_phim, $gia, $img_phim, $mota,  $nsx, $nph, $id_loaiphim)
+function   phim_insert($ten_phim, $gia, $img_phim,$img_banner_phim, $mota,  $nsx, $nph,$qg,$dv1,$dv2,$dv3, $id_loaiphim)
 {
-    $sql = "INSERT INTO `phim` (`id`, `ten_phim`, `gia`, `img_phim`, `mota`, `nsx`, `nph`, `id_loaiphim`) VALUES (NULL, ?,?,?,?,?,?,?);";
-    pdo_execute($sql, $ten_phim, $gia, $img_phim, $mota, $nsx, $nph,  $id_loaiphim);
+    $sql = "INSERT INTO `phim` (`id`, `ten_phim`, `gia`, `img_phim`, `img_banner`, `mota`, `nsx`, `nph`,`quocgia`,`dienvien1`,`dienvien2`,`dienvien3`, `id_loaiphim`) VALUES (NULL, ?,?,?,?,?,?,?,?,?,?,?,?)";
+    pdo_execute($sql, $ten_phim, $gia, $img_phim,$img_banner_phim, $mota,  $nsx, $nph,$qg,$dv1,$dv2,$dv3, $id_loaiphim);
 }
 
-function phim_update($id, $ten_phim, $gia, $img_phim, $mota, $nsx, $nph, $id_loaiphim)
-{
-    $sql = "UPDATE phim SET ten_phim=?,gia=?,img_phim=?,mota=?,nsx=?,nph=?,id_loaiphim=? WHERE id=?";
-    pdo_execute($sql, $ten_phim, $gia, $img_phim, $mota, $nsx, $nph, $id_loaiphim, $id);
+function     phim_update($ten_phim, $gia, $img_phim,$img_banner_phim, $mota,  $nsx, $nph,$qg,$dv1,$dv2,$dv3, $id_loaiphim,$id){
+    $sql = "UPDATE phim SET ten_phim=?,gia=?,img_phim=?,img_banner=?,mota=?,nsx=?,nph=?,quocgia=?,dienvien1=?,dienvien2=?,dienvien3=?,id_loaiphim=? WHERE id=?";
+    pdo_execute($sql,$ten_phim, $gia, $img_phim,$img_banner_phim, $mota,  $nsx, $nph,$qg,$dv1,$dv2,$dv3, $id_loaiphim,$id);
 }
 
 function phim_delete($ma_hh)
 {
-    $sql = "DELETE FROM phim WHERE id=?";  
+    $sql = "DELETE FROM phim WHERE id=?";
 
     if (is_array($ma_hh)) {
         foreach ($ma_hh as $ma) {
@@ -29,20 +28,25 @@ function phim_delete($ma_hh)
 
 function phim_select_by_id($ma_hh)
 {
-    $sql = "SELECT phim.id, phim.ten_phim, phim.gia, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view,phim.id_loaiphim loai_phim.ten_loaiphim FROM phim LEFT JOIN loai_phim ON phim.id_loaiphim = loai_phim.id WHERE phim.id = ?";
+    $sql = "SELECT phim.id, phim.ten_phim, phim.gia, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3,phim.id_loaiphim,loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id WHERE phim.id = ?";
     return pdo_query_one($sql, $ma_hh);
 }
 
 
 function phim_select_all()
 {
-    $sql = "SELECT phim.id, phim.ten_phim, phim.gia, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view , loai_phim.ten_loaiphim FROM phim LEFT JOIN loai_phim ON phim.id_loaiphim = loai_phim.id";
+    $sql = "SELECT phim.id, phim.ten_phim, phim.gia, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id";
+    return pdo_query($sql);
+}
+function phim_select_all_tt()
+{
+    $sql = "SELECT phim.id, phim.ten_phim, phim.gia, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id LIMIT 0, 8";
     return pdo_query($sql);
 }
 
 function phim_select_keyword($key, $category_id)
 {
-    $sql = "SELECT phim.id, phim.ten_phim, phim.gia, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view , loai_phim.ten_loaiphim FROM phim LEFT JOIN loai_phim ON phim.id_loaiphim = loai_phim.id Where 1";
+    $sql = "SELECT phim.id, phim.ten_phim, phim.gia, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.view,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim LEFT JOIN loai_phim ON phim.id_loaiphim = loai_phim.id Where 1";
     // return pdo_query($sql);
     if ($key != "") {
         $sql .= " and ten_phim like '%" . $key . "%'";
@@ -54,11 +58,11 @@ function phim_select_keyword($key, $category_id)
     $listkey = pdo_query($sql);
     return $listkey;
 }
-
-function vovan(){
-    $sql = "DELETE FROM phim WHERE id=?";
-    }
-
+function phim_tang_so_luot_xem($id)
+{
+    $sql = "UPDATE phim SET view = view + 1 WHERE id=?";
+    pdo_execute($sql, $id);
+}
 // function phim_exist($ma_hh){
 //     $sql = "SELECT count(*) FROM hang_hoa WHERE ma_hh=?";
 //     return pdo_query_value($sql, $ma_hh) > 0;

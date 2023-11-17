@@ -20,27 +20,24 @@
                 $act = $_GET['link'];
                 switch ($act) {
                     case 'chonghe':
-                        require_once "chonghe.php";
+                        require_once "datve/chonghe.php";
                         break;
                     case 'chondoan':
-                        require_once "chondoan.php";
+                        require_once "datve/chondoan.php";
                         break;
                     case 'thanh_toan':
-                        require_once "thanh_toan.php";
+                        require_once "datve/thanh_toan.php";
                         break;
                     default:
-                        require_once "chonghe.php";
+                        require_once "datve/chonghe.php";
                         break;
                 }
             } else {
-                require_once "chonghe.php";
+                require_once "datve/chonghe.php";
             }
             ?>
         </div>
         <div class="main-right">
-            <div class="main-right-mau">
-                ...
-            </div>
             <div class="phantren">
                 <div class="img-ctbill">
                     <img src="IMG_FILM/the-marvels-3_1699586058577.webp" alt="" width="150px">

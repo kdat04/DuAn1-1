@@ -166,6 +166,7 @@
 .product_flim img {
     width: 310px;
     border-radius: 10px;
+    height: 480px;
 }
 
 .product_flim p {

@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="./CSS/my_user.css">
     <link rel="stylesheet" href="./CSS/chinhsach_thele.css">
     <link rel="stylesheet" href="./CSS/uu_dai.css">
+    <link rel="stylesheet" href="./CSS/phim_hay_thang.css">
+    <link rel="stylesheet" href="./CSS/the_loai_phim.css">
     <link rel="stylesheet" href="./CSS/dn.css">
 </head>
 
@@ -79,17 +81,17 @@
                     </li>
                     <li>Góc Điện Ảnh <i class="fa-solid fa-angle-right fa-rotate-90"></i>
                         <ul class="sub_menu">
-                            <li><a href="">Thể loại phim</a></li>
-                            <li><a href="">Diễn Viên</a></li>
-                            <li><a href="">Đạo diễn</a></li>
+                            <li><a href="index.php?action=uu_dai&link=the_loai_phim">Thể loại phim</a></li>
+                            <li><a href="index.php?action=uu_dai&link=dien_vien">Diễn Viên</a></li>
+                            <li><a href="index.php?action=uu_dai&link=dao_dien">Đạo diễn</a></li>
                             <li><a href="">Bình Luận Phim</a></li>
                             <li><a href="">Blog Điện Ảnh</a></li>
                         </ul>
                     </li>
                     <li>Sự kiện <i class="fa-solid fa-angle-right fa-rotate-90"></i>
                         <ul class="sub_menu">
-                            <li><a href="index.php?action=uu_dai">Ưu đãi</a></li>
-                            <li><a href="">Phim Hay Tháng</a></li>
+                            <li><a href="index.php?action=uu_dai&link=uu_dai">Ưu đãi</a></li>
+                            <li><a href="index.php?action=uu_dai&link=phim_hay_thang">Phim Hay Tháng</a></li>
                         </ul>
                     </li>
                     <li>Rạp/Giá Vé <i class="fa-solid fa-angle-right fa-rotate-90"></i>

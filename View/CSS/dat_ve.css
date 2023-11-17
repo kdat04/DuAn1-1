@@ -55,8 +55,9 @@
 }
 .suatchieu {
     display: flex;
+    
 }
-
+.suatchieu
 .suatchieu h3 {
     text-align: center;
     padding-top: 10px;
@@ -111,20 +112,26 @@
 
 .manhinh {
     text-align: center;
+    height: 50px;
     padding-bottom: 20px;
     color: rgb(204, 204, 204);
+    position: relative;
 }
 
-.dgke {
-    background-color: #ff953f;
-    color: #ff953f;
+.manhinh::before {
+    position: absolute;
+    left: 0px;
+    bottom: 25px;
+    content: "";
     height: 5px;
+    margin-left: 40px;
+    background-color: #ff953f;
+    width: 740px;
 }
-
 .nut-checkbox {
     display: flex;
     justify-content: space-between;
-    padding-top: 50px;
+    padding-top: 20px;
 }
 
 .check-left {
@@ -152,18 +159,18 @@
     width: 440px;
     position: relative;
 }
-
-.main-right-mau {
-    background-color: #ff953f;
-    color: #ff953f;
-    height: 10px;
-    border-radius: 20px;
-    position: absolute;
-    margin-top: -7px;
-    width: 470px;
-    overflow: hidden;
+.phantren{
+    position: relative;
 }
-
+.phantren::before {
+    position: absolute;
+    left: 0px;
+    bottom: 387px;
+    content: "";
+    height: 7px;
+    background-color: #ff953f;
+    width: 460px;
+}
 .img-ctbill {
     display: flex;
     gap: 20px;

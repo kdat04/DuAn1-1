@@ -1,0 +1,39 @@
+.theloaiphim{
+    position: relative;
+    margin-left: 10px;
+    padding-bottom: 20px;
+}
+.theloaiphim h1::before {
+    position: absolute;
+    left: 0px;
+    bottom: 83px;
+    content: "";
+    height: 22px;
+    margin-left: -10px;
+    background-color: rgb(61, 27, 182);
+    width: 4px;
+}
+.form-tlp form{
+    display: flex;
+    gap: 20px;
+}
+.form-tlp form select{
+    margin-left: -10px;
+    width: 200px;
+    padding: 10px;
+}
+.theloaiphim-1{
+    position: relative;
+    margin-left: 10px;
+    padding-bottom: 20px;
+}
+.theloaiphim-1 h1::before {
+    position: absolute;
+    left: 0px;
+    bottom: 43px;
+    content: "";
+    height: 22px;
+    margin-left: -10px;
+    background-color: rgb(61, 27, 182);
+    width: 4px;
+}

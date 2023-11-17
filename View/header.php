@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./CSS/chinhsach_thele.css">
     <link rel="stylesheet" href="./CSS/uu_dai.css">
     <link rel="stylesheet" href="./CSS/phim_hay_thang.css">
+    <link rel="stylesheet" href="./CSS/the_loai_phim.css">
 </head>
 
 <body>
@@ -79,7 +80,7 @@
                     </li>
                     <li>Góc Điện Ảnh <i class="fa-solid fa-angle-right fa-rotate-90"></i>
                         <ul class="sub_menu">
-                            <li><a href="">Thể loại phim</a></li>
+                            <li><a href="index.php?action=uu_dai&link=the_loai_phim">Thể loại phim</a></li>
                             <li><a href="">Diễn Viên</a></li>
                             <li><a href="">Đạo diễn</a></li>
                             <li><a href="">Bình Luận Phim</a></li>

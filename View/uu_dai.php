@@ -10,6 +10,9 @@
                 case 'phim_hay_thang':
                     require_once "trang_con/phim_hay_thang.php";
                     break;
+                case 'the_loai_phim':
+                    require_once "trang_con/the_loai_phim.php";
+                    break;
                 default:
                     require_once "trang_con/uu_dai.php";
                     break;

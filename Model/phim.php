@@ -29,7 +29,7 @@ function phim_delete($ma_hh)
 
 function phim_select_by_id($ma_hh)
 {
-    $sql = "SELECT phim.id, phim.ten_phim, phim.gia, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view,phim.id_loaiphim loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id WHERE phim.id = ?";
+    $sql = "SELECT phim.id, phim.ten_phim, phim.gia, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view,phim.id_loaiphim, loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id WHERE phim.id = ?";
     return pdo_query_one($sql, $ma_hh);
 }
 

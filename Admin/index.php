@@ -73,10 +73,10 @@ if (isset($_GET['action'])) {
                         if (isset($_POST['listseacher']) && ($_POST['listseacher'])) {
                             $key = $_POST['kyw'];
                             $category_id = $_POST['category_id'];
-                          } else {
+                        } else {
                             $key = '';
                             $category_id = 0;
-                          }
+                        }
                         $list_danhmuc = loai_select_all();
                         $ds_phim = phim_select_keyword($key, $category_id);
                         require_once './Phim/view_phim.php';
@@ -108,7 +108,7 @@ if (isset($_GET['action'])) {
                                 $message = "Thêm không  thành công vì có ô để trống  ";
                             } else {
 
-                                phim_insert($ten_phim, $gia, $img_phim,$img_banner_phim, $mota,  $nsx, $nph,$qg,$dv1,$dv2,$dv3, $id_loaiphim);
+                                phim_insert($ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $qg, $dv1, $dv2, $dv3, $id_loaiphim);
 
                                 $message = "Thêm thành công ";
                             }
@@ -163,10 +163,10 @@ if (isset($_GET['action'])) {
                                 $img_banner_phim = $file2['name'];
                                 move_uploaded_file($file2['tmp_name'], "./Img_ad/" . $img_banner_phim);
                             }
-                            phim_update($ten_phim, $gia, $img_phim,$img_banner_phim, $mota,  $nsx, $nph,$qg,$dv1,$dv2,$dv3, $id_loaiphim,$id);
+                            phim_update($ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $qg, $dv1, $dv2, $dv3, $id_loaiphim, $id);
                         }
                         $ds_phim = phim_select_all();
-                    
+
                         require_once './Phim/view_phim.php';
                         require_once './footer-home.php';
                         break;

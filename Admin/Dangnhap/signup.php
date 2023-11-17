@@ -21,33 +21,34 @@
                         <span class="db"><img src="assets/images/logo.png" alt="logo" /></span>
                     </div>
                     <!-- Form -->
-                    <form class="form-horizontal m-t-20" action="index.php?action=dk">
+                        <form class="form-horizontal m-t-20" action="index.php?action=&act=dk" method="post">
                         <div class="row p-b-30">
                             <div class="col-12">
-                                <div class="input-group mb-3">
+                                <font color="red"><?= $thongbao['dangky'] ?? "" ?></font>
+                                <div class="input-group mb-3">                
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-success text-white" id="basic-addon1"><i class="ti-user"></i></span>
                                     </div>
-                                    <input type="text" class="form-control form-control-lg" placeholder="Tên đăng nhập" aria-label="Username" aria-describedby="basic-addon1" required>
+                                    <input type="text" name="tendn" class="form-control form-control-lg" placeholder="Tên đăng nhập" aria-label="Username" aria-describedby="basic-addon1" >
                                 </div>
                                 <!-- email -->
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-danger text-white" id="basic-addon1"><i class="ti-email"></i></span>
                                     </div>
-                                    <input type="text" class="form-control form-control-lg" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" required>
+                                    <input type="text" name="email" class="form-control form-control-lg" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" >
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
                                     </div>
-                                    <input type="text" class="form-control form-control-lg" placeholder="Mật khẩu" aria-label="Password" aria-describedby="basic-addon1" required>
+                                    <input type="password" name="mk" class="form-control form-control-lg" placeholder="Mật khẩu" aria-label="Password" aria-describedby="basic-addon1" >
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-info text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
                                     </div>
-                                    <input type="text" class="form-control form-control-lg" placeholder="Nhập lại mật khẩu" aria-label="Password" aria-describedby="basic-addon1" required>
+                                    <input type="password" name="lmk" class="form-control form-control-lg" placeholder="Nhập lại mật khẩu" aria-label="Password" aria-describedby="basic-addon1" >
                                 </div>
                             </div>
                         </div>
@@ -55,7 +56,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <div class="p-t-20">
-                                        <button class="btn btn-block btn-lg btn-info" type="submit">Đăng ký</button>
+                                        <input name="dangky" class="btn btn-block btn-lg btn-info" type="submit" value="Đăng ký">
                                         <a href="index.php?action=dn" style="text-decoration: none; color: white;"><button style="margin-top: 5px;" class="btn btn-block btn-lg btn-info" type="button">Đăng nhập</button></a>
                                     </div>
                                 </div>

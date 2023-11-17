@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once '../Model/phim.php';
+require_once '../Model/khach-hang.php';
 require_once '../Model/loai.php';
 require_once '../Model/pdo.php';
 require_once "./header.php";
@@ -14,7 +15,7 @@ if (isset($_GET['action'])) {
             require_once './Dangnhap/signup.php';
             break;
         default:
-        
+
             if (isset($_GET['act'])) {
                 switch ($_GET['act']) {
                     case 'danhmuc':
@@ -138,7 +139,6 @@ if (isset($_GET['action'])) {
                             $mota = $_POST['mota'];
                             $id_loaiphim = $_POST['id_loaiphim'];
                             $img_phim = $_POST['img_phim'];
-
                             $file = $_FILES['img_phim'];
                             if ($file['size'] > 0) {
                                 $img_phim = $file['name'];
@@ -150,6 +150,47 @@ if (isset($_GET['action'])) {
                         $ds_phim = phim_select_all();
                         require_once './Phim/view_phim.php';
                         require_once './footer-home.php';
+                        break;
+                    case 'dn':
+                        if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
+                            $ten_dangnhap = $_POST['tendn'];
+                            $matkhau = md5($_POST['mk']);
+                            if ($ten_dangnhap == '' && $_POST['mk'] == '') {
+                                $thongbao['dangnhap'] = " Vui lòng không bỏ trống !";
+                            } else {
+                                $checkuser = check_users($ten_dangnhap, $matkhau);
+                                if ($checkuser) {
+                                    $_SESSION['user'] = $checkuser;
+                                    header('location: index.php?action=&act=danhmuc');
+                                    exit;
+                                } else {
+                                    $thongbao['dangnhap'] = "Tài khoản hoặc mật khẩu không đúng";
+                                }
+                            }
+                        }
+                        require_once './Dangnhap/login.php';
+                        break;
+                    case 'dk':
+                        if (isset($_POST['dangky']) && ($_POST['dangky'])) {
+                            $ten_dangnhap = $_POST['tendn'];
+                            $email = $_POST['email'];
+                            $matkhau = md5($_POST['mk']);
+                            $nhaplaimatkhau = $_POST['lmk'];
+                            if ($ten_dangnhap == '' && $_POST['mk'] == '' && $email == '' && $nhaplaimatkhau == '') {
+                                $thongbao['dangky'] = " Vui lòng không bỏ trống !";
+                            } else {
+                                if ($_POST['mk'] == $nhaplaimatkhau) {
+                                    khach_hang_insert($ten_dangnhap, $matkhau, $email);
+                                    $thongbao['dangky'] = " Đăng ký thành công, vui lòng đăng nhập.";
+                                } else {
+                                    $thongbao['dangky'] = " Mật khẩu không khớp!";
+                                }
+                            }
+                        }
+                        require_once './Dangnhap/signup.php';
+                        break;
+                    case 'dx':
+                        require_once './Dangnhap/log_out.php';
                         break;
                     case 'taikhoan':
                         require_once './home.php';

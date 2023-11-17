@@ -7,37 +7,37 @@
   <div class="box">
     <div class="ct_phim_box_left">
       <div class="tt_ct_phim">
-
+      <?php if ($list['id'] == $id): ?>
         <div class="tt_ct_phim_nd">
           <div class="tt_ct_phim_nd1">
-            <img src="IMG/the marvels.webp" alt="">
+            <img src="../Admin/Img_ad/<?= $list['img_phim'] ?>" alt="">
           </div>
           <div class="tt_ct_phim_nd2">
-            <h2>Biệt Đội Marvels</h2>
+            <h2> <?= $list['ten_phim'] ?></h2>
             <div class="time_phim_ct">
               <span><i class="fa-regular fa-clock" style="color: #e28708;"></i> 104 Phút</span> <span><i class="fa-regular fa-calendar" style="color: #da6b10;"></i> 09/11/2023</span>
 
             </div>
             <div class="dg_ct_phim">
               <i class="fa-solid fa-star" style="color: #e18823;"></i>
-              <h5>7.9</h5> <span>(162 votes)</span>
+              <h5>7.9</h5> <span>(<?= $list['view'] ?> view)</span>
             </div>
             <div class="like_phim">
               <h6>Quốc gia:</h6>
-              <p>Mỹ</p>
+              <p> <?= $list['quocgia'] ?></p>
             </div>
             <div class="like_phim">
               <h6>Nhà sản xuất:</h6>
-              <p>Marvel Studios, Disney</p>
+              <p> <?= $list['nsx'] ?></p>
             </div>
             <div class="like_phim">
-              <h6>Thể loại:</h6> <span>Giả Tưởng</span> <span>Hành Động</span> <span>Phiên Lưu</span>
+              <h6>Thể loại:</h6> <span> <?= $list['ten_loaiphim'] ?></span> 
             </div>
             <div class="like_phim">
-              <h6>Đạo Diễn :</h6> <span>Nia DaCosta</span>
+              <h6>Đạo Diễn :</h6> <span></span>
             </div>
             <div class="like_phim">
-              <h6>Diễn viên:</h6> <span>Brie Larson </span> <span>Samel L.Jack</span> <span>abc</span>
+              <h6>Diễn viên:</h6> <span><?= $list['dienvien1'] ?></span> <span><?= $list['dienvien2'] ?></span> <span><?= $list['dienvien3'] ?></span>
             </div>
           </div>
 
@@ -45,15 +45,10 @@
         <div class="mo_ta_phim">
           <h3>Nội Dung Phim </h3>
           <p>
-            Carol Danvers bị vướng vào sức mạnh của Kamala Khan và Monica Rambeau, buộc họ phải hợp tác với nhau để cứu vũ trụ. <br><br>
-
-            <strong><span>The Marvels</span> (tựa Việt: <span> Biệt đội Marvel</span>)</strong> là dự án cuối cùng của Vũ trụ Điện ảnh Marvel (MCU) trong năm 2023, đóng vai trò quan trọng khi kết nối 3 mini-series ăn khách đã ra mắt là WandaVision, Ms. Marvel và Secret Invasion. Không những đánh dấu màn tái xuất của nhân vật được khán giả yêu thích Captain Marvel Carol Denvers (Brie Larson) trên màn ảnh rộng, bộ phim còn giới thiệu đến khán giả liên minh 3 "chị đại" có vai trò quan trọng đối với tương lai của MCU. <br><br>
-            Câu chuyện lần này xảy ra sau các sự kiện trong Captain Marvel (2019), Dar-Benn (The Accuser) đã mất đi quê nhà và giờ đây, ả đang tìm cách trả thù mọi hành tinh từng được Carol cứu giúp. Bằng cách nào đó, Dar-Benn sở hữu được chiếc vòng có sự liên kết với Ms. Marvel/Kamala Khan (Iman Vellani) và "Spectrum" Monica Rambeau (Teyonah Parris). Từ đây, nữ ác nhân có thể thao túng liên kết ánh sáng giữa các siêu anh hùng khiến họ hoán đổi vị trí cho nhau mỗi khi dùng sức mạnh, gây ra những xáo động khôn lường. <br><br>
-
-            <span>Phim mới </span> Biệt Đội Marvels khởi chiếu 10.11.2023 tại <span> rạp chiếu phim </span> toàn quốc. <br>
-
+            <?= $list['mota'] ?>  <br> 
           </p>
         </div>
+        <?php endif ?>
         <div class="lich_chieu">
           <h3>Lịch chiếu </h3>
           <div class="khung_chieu">

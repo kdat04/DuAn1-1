@@ -31,7 +31,10 @@
   .ct_phim_box_left {
     width: 980px;
   }
-  
+  .tt_ct_phim a {
+    color: black;
+    text-decoration: none;
+  }
   .tt_ct_phim_nd {
     display: flex;
     gap: 30px;

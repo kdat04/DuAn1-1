@@ -23,12 +23,27 @@
                         <label for="lname" class="col-sm-3 text-right control-label col-form-label">Ảnh phim</label>
                         <div class="col-sm-9">
                             <div class="custom-file">
-                                <input type="hidden" name="img_phim" value="<?= $phim['img_phim']?>">
+                                <input type="hidden" name="img_phim" value="<?= $phim['img_phim'] ?>">
 
                                 <input type="file" name="img_phim" class="custom-file-input" id="validatedCustomFile" value="<?= $phim['img_phim'] ?>">
                                 <label class="custom-file-label" for="validatedCustomFile"> <?= $phim['img_phim'] ?></label>
 
-                                <img style="margin: 10px 0;" src="./Img_ad/<?= $phim['img_phim']?>" alt="" width="100px">
+                                <img style="margin: 10px 0;" src="./Img_ad/<?= $phim['img_phim'] ?>" alt="" width="100px">
+                                <div class="invalid-feedback">Example invalid custom file feedback</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Ảnh banner phim</label>
+                        <div class="col-sm-9">
+                            <div class="custom-file">
+                                <input type="hidden" name="img_banner_phim" value="<?= $phim['img_banner'] ?>">
+
+                                <input type="file" name="img_banner_phim" class="custom-file-input" id="validatedCustomFile" value="<?= $phim['img_banner'] ?>">
+                                <label class="custom-file-label" for="validatedCustomFile"> <?= $phim['img_banner'] ?></label>
+
+                                <img style="margin: 10px 0;" src="./Img_ad/<?= $phim['img_banner'] ?>" alt="" width="100px">
                                 <div class="invalid-feedback">Example invalid custom file feedback</div>
                             </div>
                         </div>
@@ -50,6 +65,32 @@
                         <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Ngày phát hành </label>
                         <div class="col-sm-9">
                             <input type="date" name="nph" class="form-control" id="cono1" placeholder="Ngày phát hành" value='<?= $phim['nph'] ?>'>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Diễn viên 1</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="dv1" class="form-control" id="cono1" placeholder="Diễn viên 1" value='<?= $phim['dienvien1'] ?>'>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Diễn viên 2</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="dv2" class="form-control" id="cono1" placeholder="Diễn viên 2" value='<?= $phim['dienvien2'] ?>'>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Diễn viên 3</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="dv3" class="form-control" id="cono1" placeholder="Diễn viên 3" value='<?= $phim['dienvien3'] ?>'>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label"> Quốc Gia</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="qg" class="form-control" id="cono1" placeholder="Nhà sản xuất" value='<?= $phim['quocgia'] ?>'>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -74,7 +115,7 @@
                 </div><br>
                 <div class="border-top">
                     <div class="card-body">
-                        <input type="hidden" name="id" value="<?= $phim['id']?>">
+                        <input type="hidden" name="id" value="<?= $phim['id'] ?>">
                         <br><input style="margin-top: 20px;" type="submit" name="capnhat" class="btn btn-primary" value="Gửi dữ liệu">
                     </div>
                     <div style="font-weight: 500; font-size: 20px; ; color: black; font-weight: 700;">

@@ -19,6 +19,7 @@
                             <input type="text" name="ten_phim" class="form-control" id="lname" placeholder="Tên phim">
                         </div>
                     </div>
+
                     <div class="form-group row">
                         <label for="lname" class="col-sm-3 text-right control-label col-form-label">Ảnh phim</label>
                         <div class="col-sm-9">
@@ -29,6 +30,18 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="form-group row">
+                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Ảnh banner phim</label>
+                        <div class="col-sm-9">
+                            <div class="custom-file">
+                                <input type="file" name="img_banner_phim" class="custom-file-input" id="validatedCustomFile" required>
+                                <label class="custom-file-label" for="validatedCustomFile">Ảnh phim...</label>
+                                <div class="invalid-feedback">Example invalid custom file feedback</div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="form-group row">
                         <label for="email1" class="col-sm-3 text-right control-label col-form-label">Giá phim</label>
                         <div class="col-sm-9">
@@ -39,6 +52,30 @@
                         <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Nhà sản xuất </label>
                         <div class="col-sm-9">
                             <input type="text" name="nsx" class="form-control" id="cono1" placeholder="Nhà sản xuất">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Diễn viên 1</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="dv1" class="form-control" id="cono1" placeholder="Diễn Viên 1">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Diễn viên 2</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="dv2" class="form-control" id="cono1" placeholder="Diễn viên 2">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Diễn viên 3</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="dv3" class="form-control" id="cono1" placeholder="Diễn viên 3">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label"> Quốc Gia</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="qg" class="form-control" id="cono1" placeholder="Quốc Gia">
                         </div>
                     </div>
                     <div class="form-group row">

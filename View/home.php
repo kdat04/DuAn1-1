@@ -61,78 +61,17 @@
             </ul>
         </div>
         <div class="products_flim">
-            <a href="./index.php?action=ct_phim">
+        <?php foreach ($list_phim_tt as $list) : ?>
+            <a href="index.php?action=ct_phim&id=<?= $list['id'] ?>">
                 <div class="product_flim">
-                    <img src="./IMG_FILM/500x750-nvcc_1698985267862.webp" alt="Ảnh phim">
-                    <p>
-                        Người vợ cuối cùng
+                <img src="../Admin/Img_ad/<?= $list['img_phim'] ?>" alt="Ảnh phim">
+                    <p></p>
+                    <?= $list['ten_phim'] ?>
                     </p><button><i class="fa-solid fa-ticket"></i>Mua Vé</button>
                     <button><i class="fa-regular fa-circle-play"></i>Trailer</button>
                 </div>
             </a>
-            <a href="./index.php?action=ct_phim">
-                <div class="product_flim">
-                    <img src="./IMG_FILM/500x750-nvcc_1698985267862.webp" alt="Ảnh phim">
-                    <p>
-                        Người vợ cuối cùng
-                    </p><button><i class="fa-solid fa-ticket"></i>Mua Vé</button>
-                    <button><i class="fa-regular fa-circle-play"></i>Trailer</button>
-                </div>
-            </a>
-            <a href="./index.php?action=ct_phim">
-                <div class="product_flim">
-                    <img src="./IMG_FILM/500x750-nvcc_1698985267862.webp" alt="Ảnh phim">
-                    <p>
-                        Người vợ cuối cùng
-                    </p><button><i class="fa-solid fa-ticket"></i>Mua Vé</button>
-                    <button><i class="fa-regular fa-circle-play"></i>Trailer</button>
-                </div>
-            </a>
-            <a href="./index.php?action=ct_phim">
-                <div class="product_flim">
-                    <img src="./IMG_FILM/500x750-nvcc_1698985267862.webp" alt="Ảnh phim">
-                    <p>
-                        Người vợ cuối cùng
-                    </p><button><i class="fa-solid fa-ticket"></i>Mua Vé</button>
-                    <button><i class="fa-regular fa-circle-play"></i>Trailer</button>
-                </div>
-            </a>
-            <a href="./index.php?action=ct_phim">
-                <div class="product_flim">
-                    <img src="./IMG_FILM/500x750-nvcc_1698985267862.webp" alt="Ảnh phim">
-                    <p>
-                        Người vợ cuối cùng
-                    </p><button><i class="fa-solid fa-ticket"></i>Mua Vé</button>
-                    <button><i class="fa-regular fa-circle-play"></i>Trailer</button>
-                </div>
-            </a>
-            <a href="./index.php?action=ct_phim">
-                <div class="product_flim">
-                    <img src="./IMG_FILM/500x750-nvcc_1698985267862.webp" alt="Ảnh phim">
-                    <p>
-                        Người vợ cuối cùng
-                    </p><button><i class="fa-solid fa-ticket"></i>Mua Vé</button>
-                    <button><i class="fa-regular fa-circle-play"></i>Trailer</button>
-                </div>
-            </a>
-            <a href="./index.php?action=ct_phim">
-                <div class="product_flim">
-                    <img src="./IMG_FILM/500x750-nvcc_1698985267862.webp" alt="Ảnh phim">
-                    <p>
-                        Người vợ cuối cùng
-                    </p><button><i class="fa-solid fa-ticket"></i>Mua Vé</button>
-                    <button><i class="fa-regular fa-circle-play"></i>Trailer</button>
-                </div>
-            </a>
-            <a href="./index.php?action=ct_phim">
-                <div class="product_flim">
-                    <img src="./IMG_FILM/500x750-nvcc_1698985267862.webp" alt="Ảnh phim">
-                    <p>
-                        Người vợ cuối cùng
-                    </p><button><i class="fa-solid fa-ticket"></i>Mua Vé</button>
-                    <button><i class="fa-regular fa-circle-play"></i>Trailer</button>
-                </div>
-            </a>
+            <?php endforeach ?>
         </div>
         <div class="btn_xemthem">
             <a href="index.php?action=ds_phim">Xem thêm <i class="fa-solid fa-angle-up fa-rotate-90"></i></a>

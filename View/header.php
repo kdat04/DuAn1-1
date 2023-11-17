@@ -81,8 +81,8 @@
                     <li>Góc Điện Ảnh <i class="fa-solid fa-angle-right fa-rotate-90"></i>
                         <ul class="sub_menu">
                             <li><a href="index.php?action=uu_dai&link=the_loai_phim">Thể loại phim</a></li>
-                            <li><a href="">Diễn Viên</a></li>
-                            <li><a href="">Đạo diễn</a></li>
+                            <li><a href="index.php?action=uu_dai&link=dien_vien">Diễn Viên</a></li>
+                            <li><a href="index.php?action=uu_dai&link=dao_dien">Đạo diễn</a></li>
                             <li><a href="">Bình Luận Phim</a></li>
                             <li><a href="">Blog Điện Ảnh</a></li>
                         </ul>

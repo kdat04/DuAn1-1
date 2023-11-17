@@ -13,6 +13,12 @@
                 case 'the_loai_phim':
                     require_once "trang_con/the_loai_phim.php";
                     break;
+                case 'dien_vien':
+                    require_once "trang_con/dien_vien.php";
+                    break;
+                case 'dao_dien':
+                    require_once "trang_con/dao_dien.php";
+                    break;
                 default:
                     require_once "trang_con/uu_dai.php";
                     break;

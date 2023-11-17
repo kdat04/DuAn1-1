@@ -69,8 +69,15 @@ if (isset($_GET['action'])) {
                         break;
                     case 'phim':
                         require_once './home.php';
+                        if (isset($_POST['listseacher']) && ($_POST['listseacher'])) {
+                            $key = $_POST['kyw'];
+                            $category_id = $_POST['category_id'];
+                          } else {
+                            $key = '';
+                            $category_id = 0;
+                          }
                         $list_danhmuc = loai_select_all();
-                        $ds_phim = phim_select_all();
+                        $ds_phim = phim_select_keyword($key, $category_id);
                         require_once './Phim/view_phim.php';
                         require_once './footer-home.php';
                         break;

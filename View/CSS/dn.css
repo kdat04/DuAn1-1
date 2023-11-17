@@ -1,0 +1,156 @@
+.general_register {
+    display: block;
+    /* background-color: black; */
+    background-image: url(../Img/banner_phim_dn.png);
+    background-size: 100% 100%;
+    padding: 100px;
+    height: 800px;
+
+}
+
+.general_registers {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    width: 448px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.818);
+    padding: 30px 100px;
+    text-align: center;
+}
+
+.general_register_text {
+    line-height: 2.5;
+}
+
+.general_register_text h4 {
+    font-size: 17px ;
+    font-weight: 400;
+}
+
+.general_register_text p {
+    font-weight: bold;
+    font-size: 25px;
+    color: #0f0f45;
+    padding-bottom: 10px;
+}
+
+.general_register_text span{
+    color: #E68425;
+}
+
+.general_register_input fieldset {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    gap: 25px;
+}
+
+.general_register_input input {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.2s;
+    width: 95%;
+    transform: translateX(-5px);
+}
+
+.general_register_input input[type = number]::-webkit-inner-spin-button,
+.general_register_input input[type = number]::-webkit-outer-spin-button{
+    appearance: none;
+}
+
+.general_register_input input:focus {
+    border: 1px solid black;
+}
+
+.general_register_btn input{
+    background-color: #E68425;
+    color: white;
+    font-size: 18px;
+    width: 95%;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.general_register_btn input:hover{
+    opacity: 0.8;
+}
+
+.or_register_with{
+    border-top: 1px solid #ddd;
+    margin-top: 30px;
+}
+
+.or_register_with_text{
+    width: 170px;
+    margin: auto;
+    transform: translate(0%, -50%);
+}
+
+.or_register_with_app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 10px;
+}
+
+.or_register_with_gg a,
+.or_register_with_fb a{
+    gap: 10px;
+    display: flex;
+    text-decoration: none;
+    color: #a1a1a1;
+    align-items: center;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    padding: 0 0px 0 10px;
+    width: 130px;
+    height:50px;
+}
+
+.or_register_with_gg img{
+    width: 30px;
+    border-radius: 50%;
+}
+
+.or_register_with_fb img{
+    width: 25px;
+    border-radius: 50%;
+}
+
+.Log_in{
+    margin: 50px;
+    font-size: 16px;
+}
+
+.Log_in a{
+    text-decoration: none;
+    color: #ff6600;
+    font-weight: bold;
+}
+
+.remember_account{
+    margin-top: 15px;
+    gap: 5px;
+}
+
+.remember_account a{
+    text-decoration: none;
+    color:#ff6600;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+
+.error{
+    margin-top: -10px;
+    padding-bottom: 10px;
+    text-align: left;
+    font-size: 15px;
+}

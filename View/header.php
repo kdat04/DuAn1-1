@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="./CSS/my_user.css">
     <link rel="stylesheet" href="./CSS/chinhsach_thele.css">
     <link rel="stylesheet" href="./CSS/uu_dai.css">
+    <link rel="stylesheet" href="./CSS/dn.css">
 </head>
 
 <body>
@@ -105,7 +106,12 @@
             <div class="header_seach">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <div class="header_dn">
-                    <a href="index.php?action=tt_user">Đăng Nhập</a>
+                    <?php if (isset($_SESSION['nguoi_dung'])) {
+                        extract([$_SESSION['nguoi_dung']]) ?>
+                           <a href="index.php?action=tt_user"><?= $_SESSION['nguoi_dung']['ten_user'] ?></a> 
+                    <?php } else { ?>
+                        <a href="index.php?action=dn">Đăng Nhập</a>
+                    <?php } ?>
                 </div>
                 <div class="header_dktv">
                     <img src="./IMG/g star.png" alt="">

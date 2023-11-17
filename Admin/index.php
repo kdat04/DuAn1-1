@@ -70,7 +70,7 @@ if (isset($_GET['action'])) {
                     case 'phim':
                         require_once './home.php';
                         $list_danhmuc = loai_select_all();
-                        $ds_phim = phim_select_by_tl();
+                        $ds_phim = phim_select_all();
                         require_once './Phim/view_phim.php';
                         require_once './footer-home.php';
                         break;
@@ -107,7 +107,7 @@ if (isset($_GET['action'])) {
                         if (isset($_GET['id']) && $_GET['id'] > 0) {
                             phim_delete($_GET['id']);
                         }
-                        $ds_phim = phim_select_by_tl();
+                        $ds_phim = phim_select_all();
                         require_once './Phim/view_phim.php';
                         require_once './footer-home.php';
                         break;
@@ -140,7 +140,7 @@ if (isset($_GET['action'])) {
 
                             phim_update($id, $ten_phim, $gia, $img_phim, $mota, $nsx, $nph, $id_loaiphim);
                         }
-                        $ds_phim = phim_select_by_tl();
+                        $ds_phim = phim_select_all();
                         require_once './Phim/view_phim.php';
                         require_once './footer-home.php';
                         break;

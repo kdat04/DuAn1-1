@@ -16,30 +16,26 @@ function phim_update($id, $ten_phim, $gia, $img_phim, $mota, $nsx, $nph, $id_loa
 function phim_delete($ma_hh)
 {
     $sql = "DELETE FROM phim WHERE id=?";
-    pdo_execute($sql, $ma_hh);
-//     if (is_array($ma_hh)) {
-//         foreach ($ma_hh as $ma) {
-//             pdo_execute($sql, $ma);
-//         }
-//     } else {
-        
-//     }
- }
 
-// function phim_select_all()
-// {
-//     $sql = "SELECT * FROM phim";
-//     return pdo_query($sql);
-// }
+    if (is_array($ma_hh)) {
+        foreach ($ma_hh as $ma) {
+            pdo_execute($sql, $ma);
+        }
+    } else {
+        pdo_execute($sql, $ma_hh);
+    }
+}
+
 
 function phim_select_by_id($ma_hh)
 {
-    $sql = "SELECT phim.id, phim.ten_phim, phim.gia, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view , loai_phim.ten_loaiphim FROM phim LEFT JOIN loai_phim ON phim.id_loaiphim = loai_phim.id WHERE phim.id = ?";
+    $sql = "SELECT phim.id, phim.ten_phim, phim.gia, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view , loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id WHERE phim.id = ?";
     return pdo_query_one($sql, $ma_hh);
 }
 
-function phim_select_by_tl(){
-    $sql = "SELECT phim.id, phim.ten_phim, phim.gia, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view , loai_phim.ten_loaiphim FROM phim LEFT JOIN loai_phim ON phim.id_loaiphim = loai_phim.id";
+function phim_select_all()
+{
+    $sql = "SELECT phim.id, phim.ten_phim, phim.gia, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view , loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id";
     return pdo_query($sql);
 }
 

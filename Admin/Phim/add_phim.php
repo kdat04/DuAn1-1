@@ -67,10 +67,6 @@
                                 ?>
                         </div>
                     </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> de23351b2eb9d1bc0acffc5ba16d79bc43297791
                 </div><br>
                 <div class="border-top" >
                     <div class="card-body" >

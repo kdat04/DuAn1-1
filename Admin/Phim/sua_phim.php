@@ -67,7 +67,7 @@
                                 <option value="0" selected>Tất cả </option>
                                 <?php
                                 foreach ($list_danhmuc as $list) : ?>
-                                    <option value="<?= $list['id'] ?>" <?= ($list['id'] == $phim['id_loaiphim']) ? 'selected' : '' ?>><?= $list['ten_loaiphim'] ?></option>
+                                    <option value="<?= $list['id'] ?>" <?= ($list['id'] == $phim['ten_loaiphim']) ? 'selected' : '' ?>><?= $list['ten_loaiphim'] ?></option>
                                 <?php endforeach ?>
                         </div>
                     </div>

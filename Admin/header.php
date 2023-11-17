@@ -13,11 +13,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Admin</title>
     <style>
-        .dataTables_filter{
+        .dataTables_filter {
             float: inline-end;
         }
-        .dataTables_paginate{
+
+        .dataTables_paginate {
             float: inline-end;
+        }
+
+        .search_phim {
+            margin-bottom: 20px;
+        }
+
+        .search_phim input[type = text]{
+            padding: 4px;
+            width: 200px;
+        }
+
+        .search_phim input[type = submit]{
+            padding: 5px 20px;
+        }
+
+        .search_phim select {
+            width: 180px;
+            padding: 5px;
         }
     </style>
     <!-- Custom CSS -->
@@ -32,4 +51,3 @@
 </head>
 
 <body>
-    

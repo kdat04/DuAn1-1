@@ -7,6 +7,16 @@
                         <div class="card-body">
                             <h5 class="card-title">Bảng quản lý phim</h5>
                             <div class="table-responsive">
+                                <form class="search_phim" action="index.php?action=listsp" method="post">
+                                    <input type="text" name="kyw" placeholder="Tra cứu theo Thể loại">
+                                    <select name="category_id">
+                                        <option value="0" selected>Tất cả</option>
+                                        <?php foreach ($list_danhmuc as $danhmuc) : ?>
+                                            <option value="<?= $danhmuc['id'] ?>"><?= $danhmuc['ten_loaiphim'] ?></option>
+                                        <?php endforeach ?>
+                                    </select>
+                                    <input class="btn btn-primary" type="submit" name="listgui" value="Gửi">
+                                </form>
                                 <table id="zero_config" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
@@ -14,6 +24,7 @@
                                             <th>Tên Phim</th>
                                             <th style="width: 200px;">Ảnh</th>
                                             <th>Giá</th>
+                                            <th>Thể loại</th>
                                             <th>Ngày Phát Hành</th>
                                             <th style="width: 100px;"></th>
                                             <th style="width: 100px;"></th>
@@ -24,8 +35,9 @@
                                             <tr>
                                                 <td><?= $phim['id'] ?></td>
                                                 <td><?= $phim['ten_phim'] ?></td>
-                                                <td><img src=".././View/IMG_FILM/<?= $phim['img_phim'] ?>" alt="" width="50px"></td>
-                                                <td><?= $phim['gia'] ?></td>
+                                                <td><img src="./Img_ad/<?= $phim['img_phim'] ?>" alt="" width="50px"></td>
+                                                <td><?= number_format($phim['gia'], 0, ",", ".") ?>VND</td>
+                                                <td><?= $phim['ten_loaiphim'] ?></td>
                                                 <td><?= $phim['nph'] ?></td>
                                                 <td>
                                                     <button class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa sản phẩm không ?')">
@@ -45,6 +57,7 @@
                                             <th>Tên Phim</th>
                                             <th>Ảnh</th>
                                             <th>Giá</th>
+                                            <th>Thể loại</th>
                                             <th>Ngày Phát Hành</th>
                                             <th></th>
                                             <th></th>

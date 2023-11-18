@@ -1,13 +1,14 @@
-<section class="tong_ct_phim">
+<section class="tong_ct_phim"> 
+  <?php if ($list['id'] == $id): ?>
   <div class="video">
-    <img src="IMG/banner_bietdoimarver.webp" alt="">
+  <img src="../Admin/Img_ad/<?= $list['img_banner'] ?>" alt="">
     <i class="fa-solid fa-play" style="color: #e52424;"></i>
   </div>
 
   <div class="box">
     <div class="ct_phim_box_left">
       <div class="tt_ct_phim">
-      <?php if ($list['id'] == $id): ?>
+     
         <div class="tt_ct_phim_nd">
           <div class="tt_ct_phim_nd1">
             <img src="../Admin/Img_ad/<?= $list['img_phim'] ?>" alt="">
@@ -33,9 +34,7 @@
             <div class="like_phim">
               <h6>Thể loại:</h6> <span> <?= $list['ten_loaiphim'] ?></span> 
             </div>
-            <div class="like_phim">
-              <h6>Đạo Diễn :</h6> <span></span>
-            </div>
+       
             <div class="like_phim">
               <h6>Diễn viên:</h6> <span><?= $list['dienvien1'] ?></span> <span><?= $list['dienvien2'] ?></span> <span><?= $list['dienvien3'] ?></span>
             </div>

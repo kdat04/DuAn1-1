@@ -174,14 +174,18 @@ if (isset($_GET['action'])) {
                         if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
                             $ten_dangnhap = $_POST['tendn'];
                             $matkhau = md5($_POST['mk']);
-                            if ($ten_dangnhap == '' && $_POST['mk'] == '') {
+                            if ($ten_dangnhap == '' || $_POST['mk'] == '') {
                                 $thongbao['dangnhap'] = " Vui lòng không bỏ trống !";
                             } else {
                                 $checkuser = check_users($ten_dangnhap, $matkhau);
                                 if ($checkuser) {
-                                    $_SESSION['user'] = $checkuser;
-                                    header('location: index.php?action=&act=danhmuc');
-                                    exit;
+                                    if ($checkuser['role'] != 0) {
+                                        $_SESSION['user'] = $checkuser;
+                                        header('location: index.php?action=&act=danhmuc');
+                                        exit;
+                                    } else {
+                                        $thongbao['dangnhap'] = "Tài khoản hoặc mật khẩu không đúng";
+                                    }
                                 } else {
                                     $thongbao['dangnhap'] = "Tài khoản hoặc mật khẩu không đúng";
                                 }
@@ -195,7 +199,7 @@ if (isset($_GET['action'])) {
                             $email = $_POST['email'];
                             $matkhau = md5($_POST['mk']);
                             $nhaplaimatkhau = $_POST['lmk'];
-                            if ($ten_dangnhap == '' && $_POST['mk'] == '' && $email == '' && $nhaplaimatkhau == '') {
+                            if ($ten_dangnhap == '' || $_POST['mk'] == '' || $email == '' || $nhaplaimatkhau == '') {
                                 $thongbao['dangky'] = " Vui lòng không bỏ trống !";
                             } else {
                                 if ($_POST['mk'] == $nhaplaimatkhau) {

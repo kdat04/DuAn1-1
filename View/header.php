@@ -137,7 +137,7 @@
                             <li class="dk">
                                 <img src="./IMG/bear_glx.webp" alt="">
                                 <span>Đăng Ký Thành Viên G-Star Nhận Ngay Ưu Đãi!</span>
-                                <a href="">Đăng Ký</a>
+                                <a href="../View/index.php?action=dk">Đăng Ký</a>
                             </li>
                         </ul>
                     </div>

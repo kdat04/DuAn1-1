@@ -163,6 +163,18 @@
     color: black;
 }
 
+.product_flim_search{
+    width: 100%;
+}
+
+.product_flim_search input{
+    width: 100%;
+    border: none;
+    font-size: 25px;
+    outline: none;
+}
+
+
 .product_flim img {
     width: 310px;
     border-radius: 10px;

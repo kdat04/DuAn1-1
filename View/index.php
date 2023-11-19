@@ -25,6 +25,13 @@ if (isset($_GET['action'])) {
             $list_phim = phim_select_all();
             require_once './ds_phim.php';
             break;
+        case 'ds_search':
+            if (isset($_POST['kyw']) && ($_POST['kyw'])) {
+                $key = $_POST['kyw'];
+                    $list_phim = phim_search_keyword($key);       
+            }
+            require_once './ds_phim.php';
+            break;
         case 'dn':
             if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
                 $ten_dangnhap = $_POST['tendn'];

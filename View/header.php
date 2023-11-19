@@ -106,11 +106,17 @@
                 </ul>
             </div>
             <div class="header_seach">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <form action="index.php?action=ds_search" method="post">
+                    <div class="seach">
+                        <i onclick="display_search()"class="fa-solid fa-magnifying-glass"></i>
+                        <input class="input_search" type="search" name="kyw" placeholder="Tìm kiếm...." required>
+                    </div>
+                </form>
+
                 <div class="header_dn">
                     <?php if (isset($_SESSION['nguoi_dung'])) {
                         extract([$_SESSION['nguoi_dung']]) ?>
-                           <a href="index.php?action=tt_user"><?= $_SESSION['nguoi_dung']['ten_user'] ?></a> 
+                        <a href="index.php?action=tt_user"><?= $_SESSION['nguoi_dung']['ten_user'] ?></a>
                     <?php } else { ?>
                         <a href="index.php?action=dn">Đăng Nhập</a>
                     <?php } ?>

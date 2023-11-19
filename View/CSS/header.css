@@ -47,8 +47,23 @@ header {
     gap: 10px;
     color: #a1a1a1;
     cursor: pointer;
+    position: relative;
 }
 
+.header_seach .seach {
+    display: flex;
+    flex-direction: column;
+}
+
+.header_seach .seach>input{
+    position: absolute;
+    left: -100px;
+    bottom: -20px;
+    outline: none;
+    padding: 5px 20px;
+    display: none;
+    border: 1px solid #d7d7d7;
+}
 .header_dn a{
     text-decoration: none;
     color: #a1a1a1;

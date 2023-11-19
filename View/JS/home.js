@@ -21,3 +21,15 @@ function BackAnh() {
 setInterval(() => {
   NextAnh();
 }, 5000);
+//nút tìm kiếm
+ var trangthai = false;
+function display_search() {
+  var input_search = document.querySelector(".input_search");
+  if (trangthai == false) {
+    input_search.style.display = "block";
+    trangthai = true;
+  } else {
+    input_search.style.display = "none";
+    trangthai = false;
+  }
+}

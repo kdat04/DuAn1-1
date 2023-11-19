@@ -42,7 +42,7 @@
             </div>
         </div>
 </footer>
-</body>
+<body>
 <script src="./JS/nut-sl.js"></script>
 <script src="./JS/home.js"></script>
 </html>

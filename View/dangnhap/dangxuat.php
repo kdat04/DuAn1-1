@@ -1,5 +1,6 @@
 <?php
-session_start();
 unset($_SESSION['nguoi_dung']);
-header("location: ./index.php?action=dn");
+echo '<meta http-equiv="refresh" content="0; url = ./index.php?action=">';
+require_once './home.php';
+require_once './footer.php';
 exit;

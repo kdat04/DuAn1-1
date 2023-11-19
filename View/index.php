@@ -36,7 +36,10 @@ if (isset($_GET['action'])) {
                     if ($checkuser) {
                         if ($checkuser['role'] == 0) {
                             $_SESSION['nguoi_dung'] = $checkuser;
-                            header("location: index.php?action=");
+                            $list_phim_tt = phim_select_all_tt();
+                            echo '<meta http-equiv="refresh" content="0; url = ./index.php?action=">';
+                            require_once './home.php';
+                            require_once './footer.php';
                             exit;
                         } else {
                             $thongbao['dangnhap'] = "Tài khoản hoặc mật khẩu không đúng";

@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="./CSS/phim_hay_thang.css">
     <link rel="stylesheet" href="./CSS/the_loai_phim.css">
     <link rel="stylesheet" href="./CSS/dn.css">
+    <link rel="stylesheet" href="./CSS/binhluan.css">
 </head>
 
 <body>

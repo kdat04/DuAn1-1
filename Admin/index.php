@@ -4,6 +4,7 @@ require_once '../Model/phim.php';
 require_once '../Model/khach-hang.php';
 require_once '../Model/loai.php';
 require_once '../Model/pdo.php';
+require_once '../Model/binh-luan.php';
 require_once "./header.php";
 
 if (isset($_GET['action'])) {
@@ -270,6 +271,7 @@ if (isset($_GET['action'])) {
                         break;
                     case 'binhluan':
                         require_once './home.php';
+                        $listbl = binhluan_select_all();
                         require_once './Binhluan/view_bl.php';
                         require_once './footer-home.php';
                         break;

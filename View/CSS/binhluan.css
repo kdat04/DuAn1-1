@@ -1,0 +1,124 @@
+
+.binhluan{
+    width: 1400px;
+    margin: auto;
+    padding: 30px;
+    margin-top: 80px;
+    position: relative;
+    border-radius: 30px;
+    background-color:rgb(253, 253, 253) ;
+    
+}
+.binhluan hr 
+{
+color: #3D1BB6;
+}
+.comment{
+    margin-top: 20;
+}
+.comment form{
+    padding: 20px;
+    font-size: 25px;
+}
+.comment form .form-ctphim{
+    display: flex;             
+    gap: 1px;                                    
+    margin-left: 370px;
+}
+.comment form .form-ctphim .bl-text input{
+    width: 500px;
+    height: 51px;
+    outline: none;
+    border-radius: 10px 0 0px 10px;
+    padding-left: 15px;
+    border: 1px solid rgb(184, 184, 184);
+}
+.comment form .form-ctphim .nut-binhluan input{
+    width: 100px;
+    height: 55px;
+    border-radius: 0px 10px 10px 0;
+    background-color: #ff953f;
+    color: white;
+    border: none;
+}
+.comment form .form-ctphim-1 input{
+    width: 500px;
+    height: 51px;
+    outline: none;
+    border-radius: 10px 0 0px 10px;
+    padding-left: 15px;
+    border: 1px solid rgb(184, 184, 184);
+    margin-bottom: 20px;
+}
+.t-bl{
+    margin-top: 40px;
+    display: flex;
+    gap: 30px;
+    position: relative;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 50px;
+}
+.img-ten{
+    border: 1px solid rgb(228, 228, 228);
+    padding: 20px;
+    line-height: 10px;
+    border-radius: 50px;
+}
+.binhluan-star{
+    display: flex;
+    align-items: center;
+}
+.star{
+    position: absolute;
+    top: 30px;
+    left: 1250px;
+    color: rgb(255, 196, 4);
+}
+
+.img-ten image{
+    align-items: center;
+}
+/* .nut-binhluan {
+    margin-bottom: 15px;
+    margin-top: 10px;
+    padding: 5px;
+    width: 200px;
+    background-color: #1790cf;
+    color: white;
+}
+
+.binhluan {
+    padding: 20px;
+    background-color: rgb(236, 236, 236);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    margin-top: 100px;
+}
+form{
+    background-color: white;
+    padding: 20px;
+}
+form h3{
+    font-size: 20px;
+}
+
+
+
+.t-bl {
+    display: flex;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    gap: 10px;
+}
+
+.img-ten {
+    width: 170px;
+    text-align: center;
+} */
+
+.img-ten img {
+    width: 50px;
+    height: 50px;
+}

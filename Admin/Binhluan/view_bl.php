@@ -19,14 +19,17 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Customer Support</td>
-                                            <td></td>
-                                            <td>27</td>
-                                            <td>2011/01/25</td>
-                                            <td></td>
-                                        </tr>
+                                        <?php foreach ($listbl as $bl) : ?>
+                                            <tr>
+                                                <th><input type="checkbox" name="" id="" /></th>
+                                                <th><?= $bl['id'] ?></th>
+                                                <th><?= $bl['noidung'] ?></th>
+                                                <th><?= $bl['ten_user'] ?></th>
+                                                <th><?= $bl['id_phim'] ?></th>
+                                                <th><?= $bl['timebl'] ?></th>
+
+                                            </tr>
+                                        <?php endforeach ?>
                                     </tbody>
                                     <tfoot>
                                         <tr>

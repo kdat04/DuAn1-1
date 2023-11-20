@@ -1,45 +1,50 @@
 <?php
 require_once 'pdo.php';
 
-function khach_hang_insert($ten_dangnhap, $mat_khau, $email)
+function khach_hang_insert($ten_user, $mat_khau, $email)
 {
     $sql = "INSERT INTO `users` (`id`, `ten_user`, `matkhau`, `email`) VALUES (NULL, ?,?,?)";
-    pdo_execute($sql,$ten_dangnhap, $mat_khau, $email);
+    pdo_execute($sql, $ten_user, $mat_khau, $email);
 }
-
+function khach_hang_insert2($ten_user, $matkhau, $email, $diachi, $nam_sinh, $role, $sdt)
+{
+    $sql = "INSERT INTO `users` (`id`, `ten_user`, `matkhau`, `email`, `diachi`, `nam_sinh`, `role`, `sdt`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
+    pdo_execute($sql, $ten_user, $matkhau, $email, $diachi, $nam_sinh, $role, $sdt);
+}
 function check_users($ten_dangnhap, $matkhau)
 {
     $sql = "SELECT * FROM users WHERE ten_user ='" . $ten_dangnhap . "'AND matkhau ='" . $matkhau . "'";
     $user = pdo_query_one($sql);
     return $user;
 }
+function khach_hang_update($id, $ten_user, $matkhau, $email, $diachi, $nam_sinh, $role, $sdt)
+{
+    $sql = "UPDATE users SET ten_user='$ten_user', matkhau='$matkhau', email='$email', diachi='$diachi', nam_sinh='$nam_sinh', role ='$role', sdt='$sdt' WHERE id='$id'";
+    pdo_execute($sql);
+}
+function khach_hang_update2($id, $role)
+{
+    $sql = "UPDATE users SET  role ='$role' WHERE id='$id'";
+    pdo_execute($sql);
+}
 
-// function khach_hang_update($ma_kh, $mat_khau, $ho_ten, $email, $hinh, $kich_hoat, $vai_tro){
-//     $sql = "UPDATE khach_hang SET mat_khau=?,ho_ten=?,email=?,hinh=?,kich_hoat=?,vai_tro=? WHERE ma_kh=?";
-//     pdo_execute($sql, $mat_khau, $ho_ten, $email, $hinh, $kich_hoat==1, $vai_tro==1, $ma_kh);
-// }
+function user_delete($id)
+{
+    $sql = "DELETE FROM users WHERE id=$id";
+    pdo_execute($sql);
+}
 
-// function khach_hang_delete($ma_kh){
-//     $sql = "DELETE FROM khach_hang  WHERE ma_kh=?";
-//     if(is_array($ma_kh)){
-//         foreach ($ma_kh as $ma) {
-//             pdo_execute($sql, $ma);
-//         }
-//     }
-//     else{
-//         pdo_execute($sql, $ma_kh);
-//     }
-// }
+function users_select_all()
+{
+    $sql = "SELECT * FROM users";
+    return pdo_query($sql);
+}
 
-// function khach_hang_select_all(){
-//     $sql = "SELECT * FROM khach_hang";
-//     return pdo_query($sql);
-// }
-
-// function khach_hang_select_by_id($ma_kh){
-//     $sql = "SELECT * FROM khach_hang WHERE ma_kh=?";
-//     return pdo_query_one($sql, $ma_kh);
-// }
+function khach_hang_select_by_id($id)
+{
+    $sql = "SELECT * FROM users WHERE id=?";
+    return pdo_query_one($sql, $id);
+}
 
 // function khach_hang_exist($ma_kh){
 //     $sql = "SELECT count(*) FROM khach_hang WHERE $ma_kh=?";

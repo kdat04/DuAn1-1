@@ -156,10 +156,8 @@ if (isset($_GET['action'])) {
                             $qg = $_POST['qg'];
                             $tt = $_POST['tt'];
                             $id_loaiphim = $_POST['id_loaiphim'];
-
                             $img_phim = $_POST['img_phim'];
                             $file = $_FILES['img_phim'];
-
                             $img_banner_phim = $_POST['img_banner_phim'];
                             $file2 = $_FILES['img_banner_phim'];
                             if ($file['size'] > 0) {
@@ -224,6 +222,56 @@ if (isset($_GET['action'])) {
                         break;
                     case 'taikhoan':
                         require_once './home.php';
+                        $list_users  = users_select_all();
+                        require_once './Taikhoan/view_tk.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'add_user':
+                        require_once './home.php';
+                        if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                            $ten_user = $_POST['ten_user'];
+                            $matkhau = $_POST['matkhau'];
+                            $email = $_POST['email'];
+                            $diachi = $_POST['diachi'];
+                            $nam_sinh = $_POST['nam_sinh'];
+                            $role = $_POST['role'];
+                            $sdt = $_POST['sdt'];
+                            if ($ten_user == "" || $matkhau == "" || $email == "" || $diachi == "" || $nam_sinh == "" || $role == "" || $sdt == "") {
+                                $message = "Thêm không  thành công vì có ô để trống  ";
+                            } else {
+                                khach_hang_insert2($ten_user, $matkhau, $email, $diachi, $nam_sinh, $role, $sdt);
+                                $message = "Thêm thành công ";
+                            }
+                        }
+                        require_once './Taikhoan/add_user.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'sua_user':
+                        require_once './home.php';
+                        if (isset($_GET['id']) && $_GET['id'] > 0) {
+                            $user = khach_hang_select_by_id($_GET['id']);
+                        }
+                        require_once './Taikhoan/sua_user.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'up_user':
+                        require_once './home.php';
+                        if (isset($_POST['capnhat']) && $_POST['capnhat'] > 0) {
+                            $id = $_POST['id'];
+                            $role = $_POST['role'];
+                            
+                            khach_hang_update2($id, $role);
+                        }
+                        $list_users  = users_select_all();
+                        require_once './Taikhoan/view_tk.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'xoa_user':
+                        require_once './home.php';
+                        if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                            user_delete($_GET['id']);
+                        }
+                        $list_users  = users_select_all();
                         require_once './Taikhoan/view_tk.php';
                         require_once './footer-home.php';
                         break;

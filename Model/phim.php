@@ -1,16 +1,16 @@
 <?php
 require_once 'pdo.php';
 
-function   phim_insert($ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $qg, $dv1, $dv2, $dv3, $id_loaiphim)
+function      phim_insert($ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph,$thoi_luong_phim,$cs_danh_gia, $qg, $dv1, $dv2, $dv3,$tt, $id_loaiphim)
 {
-    $sql = "INSERT INTO `phim` (`id`, `ten_phim`, `gia`, `img_phim`, `img_banner`, `mota`, `nsx`, `nph`,`quocgia`,`dienvien1`,`dienvien2`,`dienvien3`, `id_loaiphim`) VALUES (NULL, ?,?,?,?,?,?,?,?,?,?,?,?)";
-    pdo_execute($sql, $ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $qg, $dv1, $dv2, $dv3, $id_loaiphim);
+    $sql = "INSERT INTO `phim` (`id`, `ten_phim`,  `gia`, `img_phim`, `img_banner`, `mota`, `nsx`, `nph`,`thoi_luong_phim`  , `cs_danh_gia`,`quocgia`,`dienvien1`,`dienvien2`,`dienvien3`,`tt`, `id_loaiphim`) VALUES (NULL, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    pdo_execute($sql,$ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph,$thoi_luong_phim,$cs_danh_gia, $qg, $dv1, $dv2, $dv3,$tt, $id_loaiphim);
 }
 
-function     phim_update($ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $qg, $dv1, $dv2, $dv3, $id_loaiphim, $id)
+function       phim_update($ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph,$thoi_luong_phim,$cs_danh_gia, $qg, $dv1, $dv2, $dv3,$tt, $id_loaiphim, $id)
 {
-    $sql = "UPDATE phim SET ten_phim=?,gia=?,img_phim=?,img_banner=?,mota=?,nsx=?,nph=?,quocgia=?,dienvien1=?,dienvien2=?,dienvien3=?,id_loaiphim=? WHERE id=?";
-    pdo_execute($sql, $ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $qg, $dv1, $dv2, $dv3, $id_loaiphim, $id);
+    $sql = "UPDATE phim SET ten_phim=?,gia=?,img_phim=?,img_banner=?,mota=?,nsx=?,nph=?,thoi_luong_phim=? ,cs_danh_gia=?, quocgia=?,dienvien1=?,dienvien2=?,dienvien3=?,tt=?,id_loaiphim=? WHERE id=?";
+    pdo_execute($sql, $ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph,$thoi_luong_phim,$cs_danh_gia, $qg, $dv1, $dv2, $dv3,$tt, $id_loaiphim, $id);
 }
 
 function phim_delete($ma_hh)
@@ -29,7 +29,7 @@ function phim_delete($ma_hh)
 
 function phim_select_by_id($ma_hh)
 {
-    $sql = "SELECT phim.id, phim.ten_phim, phim.gia,phim.img_banner, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3,phim.id_loaiphim,loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id WHERE phim.id = ?";
+    $sql = "SELECT phim.id, phim.ten_phim, phim.gia,phim.img_banner, phim.img_phim, phim.mota, phim.nsx, phim.nph,phim.thoi_luong_phim ,phim.cs_danh_gia,phim.view,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3,phim.tt,phim.id_loaiphim,loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id WHERE phim.id = ?";
     return pdo_query_one($sql, $ma_hh);
 }
 

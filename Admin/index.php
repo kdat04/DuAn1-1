@@ -90,10 +90,13 @@ if (isset($_GET['action'])) {
                             $nsx = $_POST['nsx'];
                             $nph = $_POST['nph'];
                             $mota = $_POST['mota'];
+                            $thoi_luong_phim = $_POST['thoi_luong_phim'];
+                            $cs_danh_gia = $_POST['cs_danh_gia'];
                             $dv1 = $_POST['dv1'];
                             $dv2 = $_POST['dv2'];
                             $dv3 = $_POST['dv3'];
                             $qg = $_POST['qg'];
+                            $tt = $_POST['tt'];
                             $id_loaiphim = $_POST['id_loaiphim'];
 
                             $file = $_FILES['img_phim'];
@@ -108,9 +111,9 @@ if (isset($_GET['action'])) {
                                 $message = "Thêm không  thành công vì có ô để trống  ";
                             } else {
 
-                                phim_insert($ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $qg, $dv1, $dv2, $dv3, $id_loaiphim);
+                                phim_insert($ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph,$thoi_luong_phim,$cs_danh_gia, $qg, $dv1, $dv2, $dv3,$tt, $id_loaiphim);
 
-                                $message = "Thêm thành công ";
+                                $message = "Thêm thành công "; 
                             }
                         }
                         $list_danhmuc = loai_select_all();
@@ -132,6 +135,7 @@ if (isset($_GET['action'])) {
                             $phim = phim_select_by_id($_GET['id']);
                         }
                         $list_danhmuc = loai_select_all();
+                        // $ds_phim = phim_select_keyword($key, $category_id);
                         require_once './Phim/sua_phim.php';
                         require_once './footer-home.php';
                         break;
@@ -144,10 +148,13 @@ if (isset($_GET['action'])) {
                             $nsx = $_POST['nsx'];
                             $nph = $_POST['nph'];
                             $mota = $_POST['mota'];
+                            $thoi_luong_phim = $_POST['thoi_luong_phim'];
+                            $cs_danh_gia = $_POST['cs_danh_gia'];
                             $dv1 = $_POST['dv1'];
                             $dv2 = $_POST['dv2'];
                             $dv3 = $_POST['dv3'];
                             $qg = $_POST['qg'];
+                            $tt = $_POST['tt'];
                             $id_loaiphim = $_POST['id_loaiphim'];
 
                             $img_phim = $_POST['img_phim'];
@@ -163,10 +170,10 @@ if (isset($_GET['action'])) {
                                 $img_banner_phim = $file2['name'];
                                 move_uploaded_file($file2['tmp_name'], "./Img_ad/" . $img_banner_phim);
                             }
-                            phim_update($ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $qg, $dv1, $dv2, $dv3, $id_loaiphim, $id);
+                            phim_update($ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph,$thoi_luong_phim,$cs_danh_gia, $qg, $dv1, $dv2, $dv3,$tt, $id_loaiphim, $id);
                         }
                         $ds_phim = phim_select_all();
-
+                        $list_danhmuc = loai_select_all();
                         require_once './Phim/view_phim.php';
                         require_once './footer-home.php';
                         break;

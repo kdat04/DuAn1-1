@@ -19,6 +19,27 @@
                             <input type="text" name="ten_phim" class="form-control" id="lname" placeholder="Tên phim" value="<?= $phim['ten_phim'] ?>">
                         </div>
                     </div>
+
+                    <div class="form-group row">
+                        <label for="lname" class="col-sm-3 text-right control-label col-form-label"> Thường lượng Phim</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="thoi_luong_phim" class="form-control" id="lname" placeholder="Thời lượng phim " value="<?= $phim['thoi_luong_phim'] ?>" >
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="lname" class="col-sm-3 text-right control-label col-form-label"> Chỉ số đánh giá </label>
+                        <div class="col-sm-9">
+                            <input type="text" name="cs_danh_gia" class="form-control" id="lname" placeholder="Chỉ số đánh giá" value="<?= $phim['cs_danh_gia'] ?>">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="lname" class="col-sm-3 text-right control-label col-form-label"> Trạng thái phim </label>
+                        <div class="col-sm-9">
+                            <input type="text" name="tt" class="form-control" id="lname" placeholder="Trạng thái phim" value="<?= $phim['tt'] ?>">
+                        </div>
+                    </div>
+
                     <div class="form-group row">
                         <label for="lname" class="col-sm-3 text-right control-label col-form-label">Ảnh phim</label>
                         <div class="col-sm-9">
@@ -90,7 +111,7 @@
                     <div class="form-group row">
                         <label for="cono1" class="col-sm-3 text-right control-label col-form-label"> Quốc Gia</label>
                         <div class="col-sm-9">
-                            <input type="text" name="qg" class="form-control" id="cono1" placeholder="Nhà sản xuất" value='<?= $phim['quocgia'] ?>'>
+                            <input type="text" name="qg" class="form-control" id="cono1" placeholder="Quốc gia" value='<?= $phim['quocgia'] ?>'>
                         </div>
                     </div>
                     <div class="form-group row">

@@ -21,15 +21,15 @@
             </div>
             <div class="dg_ct_phim">
               <i class="fa-solid fa-star" style="color: #e18823;"></i>
-              <h5>7.9</h5> <span>(<?= $list['view'] ?> view)</span>
+              <h5>7.9</h5>( <span><?= $list['view'] ?> view )</span>
             </div>
             <div class="like_phim">
               <h6>Quốc gia:</h6>
-              <p> <?= $list['quocgia'] ?></p>
+              <span> <?= $list['quocgia'] ?></span>
             </div>
             <div class="like_phim">
               <h6>Nhà sản xuất:</h6>
-              <p> <?= $list['nsx'] ?></p>
+              <span> <?= $list['nsx'] ?></span>
             </div>
             <div class="like_phim">
               <h6>Thể loại:</h6> <span> <?= $list['ten_loaiphim'] ?></span> 
@@ -70,7 +70,7 @@
               </div>
               <i class="fa-solid fa-chevron-up fa-rotate-90"></i>
             </div>
-            <div class="khung_chieu_dress">
+            <!-- <div class="khung_chieu_dress">
               <div class="khung_chieu_dress1">
                 <div class="khung_chieu_dress2">
                   <input type="text" placeholder="Toàn Quốc" name="" id="">
@@ -84,7 +84,7 @@
                   <i class="fa-solid fa-chevron-up fa-rotate-180"></i>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="dress_time_chieu">

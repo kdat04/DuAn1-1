@@ -12,6 +12,7 @@
             <div class="tt_ct_phim_nd1">
               <img src="../Admin/Img_ad/<?= $list['img_phim'] ?>" alt="">
             </div>
+<<<<<<< HEAD
             <div class="tt_ct_phim_nd2">
               <h2> <?= $list['ten_phim'] ?></h2>
               <div class="time_phim_ct">
@@ -35,6 +36,26 @@
               <div class="like_phim">
                 <h6>Diễn viên:</h6> <span><?= $list['dienvien1'] ?></span> <span><?= $list['dienvien2'] ?></span> <span><?= $list['dienvien3'] ?></span>
               </div>
+=======
+            <div class="dg_ct_phim">
+              <i class="fa-solid fa-star" style="color: #e18823;"></i>
+              <h5>7.9</h5>( <span><?= $list['view'] ?> view )</span>
+            </div>
+            <div class="like_phim">
+              <h6>Quốc gia:</h6>
+              <span> <?= $list['quocgia'] ?></span>
+            </div>
+            <div class="like_phim">
+              <h6>Nhà sản xuất:</h6>
+              <span> <?= $list['nsx'] ?></span>
+            </div>
+            <div class="like_phim">
+              <h6>Thể loại:</h6> <span> <?= $list['ten_loaiphim'] ?></span> 
+            </div>
+       
+            <div class="like_phim">
+              <h6>Diễn viên:</h6> <span><?= $list['dienvien1'] ?></span> <span><?= $list['dienvien2'] ?></span> <span><?= $list['dienvien3'] ?></span>
+>>>>>>> c94decee08dc59f30e2e9b5947bcd902fa0c9f80
             </div>
           </div>
           <div class="mo_ta_phim">
@@ -66,7 +87,7 @@
               </div>
               <i class="fa-solid fa-chevron-up fa-rotate-90"></i>
             </div>
-            <div class="khung_chieu_dress">
+            <!-- <div class="khung_chieu_dress">
               <div class="khung_chieu_dress1">
                 <div class="khung_chieu_dress2">
                   <input type="text" placeholder="Toàn Quốc" name="" id="">
@@ -79,7 +100,7 @@
                   <i class="fa-solid fa-chevron-up fa-rotate-180"></i>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="dress_time_chieu">

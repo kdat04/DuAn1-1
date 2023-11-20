@@ -21,6 +21,27 @@
                     </div>
 
                     <div class="form-group row">
+                        <label for="lname" class="col-sm-3 text-right control-label col-form-label"> Thường lượng Phim</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="thoi_luong_phim" class="form-control" id="lname" placeholder="Thời lượng phim ">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="lname" class="col-sm-3 text-right control-label col-form-label"> Chỉ số đánh giá </label>
+                        <div class="col-sm-9">
+                            <input type="text" name="cs_danh_gia" class="form-control" id="lname" placeholder="Chỉ số đánh giá">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="lname" class="col-sm-3 text-right control-label col-form-label"> Trạng thái phim</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="tt" class="form-control" id="lname" placeholder="Trạng thái phim">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
                         <label for="lname" class="col-sm-3 text-right control-label col-form-label">Ảnh phim</label>
                         <div class="col-sm-9">
                             <div class="custom-file">

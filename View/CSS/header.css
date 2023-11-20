@@ -113,10 +113,16 @@ li:hover .sub_menu {
     height: 290px;
 }
 
+.Movie_tong>a{
+    text-decoration: none;
+    color: black;
+}
+
 .Movie_showing img,
 .Movie_coming_soon img {
     width: 160px;
     border-radius: 5px;
+    height: 250px;
 }
 
 .Movie_showing h3,

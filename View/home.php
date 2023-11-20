@@ -65,8 +65,7 @@
             <a href="index.php?action=ct_phim&id=<?= $list['id'] ?>">
                 <div class="product_flim">
                 <img src="../Admin/Img_ad/<?= $list['img_phim'] ?>" alt="Ảnh phim">
-                    <p></p>
-                    <?= $list['ten_phim'] ?>
+                    <p><?= $list['ten_phim'] ?></p>             
                     </p><button><i class="fa-solid fa-ticket"></i>Mua Vé</button>
                     <button><i class="fa-regular fa-circle-play"></i>Trailer</button>
                 </div>

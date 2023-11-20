@@ -4,6 +4,8 @@ require_once '../Model/phim.php';
 require_once '../Model/khach-hang.php';
 require_once '../Model/loai.php';
 require_once '../Model/pdo.php';
+
+$list_phim_search = phim_select_search();
 require_once "./header.php";
 
 if (isset($_GET['action'])) {
@@ -11,7 +13,6 @@ if (isset($_GET['action'])) {
         case 'ct_phim':
             if ((isset($_GET['id'])) && ($_GET['id'])) {
                 $id = $_GET['id'];
-
                 $list = phim_select_by_id($id);
                 phim_tang_so_luot_xem($id);
 

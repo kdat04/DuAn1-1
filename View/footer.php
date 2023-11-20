@@ -44,6 +44,7 @@
 </footer>
 <script src="./JS/nut-sl.js"></script>
 <script src="./JS/home.js"></script>
+
 <body>
 
-</html>
+    </html>

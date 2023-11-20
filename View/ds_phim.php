@@ -1,6 +1,6 @@
 <section>
     <div class="film">
-        <?php if (count($list_phim) === (array)0) { ?>
+        <?php if (count($list_phim) === 0) { ?>
             <div class="product_flim_search">
                 <form action="index.php?action=ds_search" method="post">
                     <input class="input_search" value="<?= $key ?>" type="search" name="kyw" placeholder="Tìm kiếm...." required>

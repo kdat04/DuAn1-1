@@ -1,3 +1,14 @@
+<?php
+
+$ghes = [
+    'A' => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    'B' => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    'C' => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    'D' => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    'E' => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+];
+
+?>
 <div class="suatchieu">
     <h3>Đổi suất chiếu</h3>
     <nav>
@@ -14,254 +25,24 @@
 <div class="listghe">
     <nav>
         <ul>
-            <li>
-                <div class="hang-ghe">
-                    <div class="hang-text">
-                        <span>A</span>
+            <?php foreach ($ghes as $key => $value) : ?>
+                <li>
+                    <div class="hang-ghe">
+                        <div class="hang-text">
+                            <span><?= $key ?></span>
+                        </div>
+                        <div class="hang-input">
+                            <?php foreach ($value as $item) : ?>
+                                <input type="checkbox" name="a" id="" placeholder="<?= $item ?> " value="<?= $key.$item ?>'.">
+                            <?php endforeach  ?>
+
+                        </div>
+                        <div class="hang-text">
+                            <span><?= $key ?></span>
+                        </div>
                     </div>
-                    <div class="hang-input">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                    </div>
-                    <div class="hang-text">
-                        <span>A</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="hang-ghe">
-                    <div class="hang-text">
-                        <span>B</span>
-                    </div>
-                    <div class="hang-input">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                    </div>
-                    <div class="hang-text">
-                        <span>B</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="hang-ghe">
-                    <div class="hang-text">
-                        <span>C</span>
-                    </div>
-                    <div class="hang-input">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                    </div>
-                    <div class="hang-text">
-                        <span>C</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="hang-ghe">
-                    <div class="hang-text">
-                        <span>D</span>
-                    </div>
-                    <div class="hang-input">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                    </div>
-                    <div class="hang-text">
-                        <span>D</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="hang-ghe">
-                    <div class="hang-text">
-                        <span>E</span>
-                    </div>
-                    <div class="hang-input">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                    </div>
-                    <div class="hang-text">
-                        <span>E</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="hang-ghe">
-                    <div class="hang-text">
-                        <span>G</span>
-                    </div>
-                    <div class="hang-input">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                    </div>
-                    <div class="hang-text">
-                        <span>G</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="hang-ghe">
-                    <div class="hang-text">
-                        <span>H</span>
-                    </div>
-                    <div class="hang-input">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                    </div>
-                    <div class="hang-text">
-                        <span>H</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="hang-ghe">
-                    <div class="hang-text">
-                        <span>K</span>
-                    </div>
-                    <div class="hang-input">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                        <input type="checkbox" name="" id="">
-                    </div>
-                    <div class="hang-text">
-                        <span>K</span>
-                    </div>
-                </div>
-            </li>
+                </li>
+            <?php endforeach  ?>
         </ul>
     </nav>
 </div>

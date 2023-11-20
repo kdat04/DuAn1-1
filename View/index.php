@@ -4,6 +4,8 @@ require_once '../Model/phim.php';
 require_once '../Model/khach-hang.php';
 require_once '../Model/loai.php';
 require_once '../Model/pdo.php';
+
+$list_phim_search = phim_select_search();
 require_once "./header.php";
 
 if (isset($_GET['action'])) {
@@ -11,7 +13,6 @@ if (isset($_GET['action'])) {
         case 'ct_phim':
             if ((isset($_GET['id'])) && ($_GET['id'])) {
                 $id = $_GET['id'];
-
                 $list = phim_select_by_id($id);
                 phim_tang_so_luot_xem($id);
 
@@ -25,6 +26,13 @@ if (isset($_GET['action'])) {
             $list_phim = phim_select_all();
             require_once './ds_phim.php';
             break;
+        case 'ds_search':
+            if (isset($_POST['kyw']) && ($_POST['kyw'])) {
+                $key = $_POST['kyw'];
+                    $list_phim = phim_search_keyword($key);       
+            }
+            require_once './ds_phim.php';
+            break;
         case 'dn':
             if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
                 $ten_dangnhap = $_POST['tendn'];
@@ -36,7 +44,10 @@ if (isset($_GET['action'])) {
                     if ($checkuser) {
                         if ($checkuser['role'] == 0) {
                             $_SESSION['nguoi_dung'] = $checkuser;
-                            header("location: index.php?action=");
+                            $list_phim_tt = phim_select_all_tt();
+                            echo '<meta http-equiv="refresh" content="0; url = ./index.php?action=">';
+                            require_once './home.php';
+                            require_once './footer.php';
                             exit;
                         } else {
                             $thongbao['dangnhap'] = "Tài khoản hoặc mật khẩu không đúng";

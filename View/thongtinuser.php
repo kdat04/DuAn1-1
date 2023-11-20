@@ -22,6 +22,7 @@
             <a href=""> Thông Báo </a>
             <a href="">Quà Tặng</a>
             <a href="index.php?action=tt_user&link=chinh_sach">Chính Sách</a>
+            <a href="index.php?action=dx">Đăng Xuất</a>
         </div><br>
         <hr>
         <div class="lienhe">

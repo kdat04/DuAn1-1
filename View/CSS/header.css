@@ -47,8 +47,23 @@ header {
     gap: 10px;
     color: #a1a1a1;
     cursor: pointer;
+    position: relative;
 }
 
+.header_seach .seach {
+    display: flex;
+    flex-direction: column;
+}
+
+.header_seach .seach>input{
+    position: absolute;
+    left: -100px;
+    bottom: -20px;
+    outline: none;
+    padding: 5px 20px;
+    display: none;
+    border: 1px solid #d7d7d7;
+}
 .header_dn a{
     text-decoration: none;
     color: #a1a1a1;
@@ -98,10 +113,16 @@ li:hover .sub_menu {
     height: 290px;
 }
 
+.Movie_tong>a{
+    text-decoration: none;
+    color: black;
+}
+
 .Movie_showing img,
 .Movie_coming_soon img {
     width: 160px;
     border-radius: 5px;
+    height: 250px;
 }
 
 .Movie_showing h3,

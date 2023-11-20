@@ -31,49 +31,34 @@
             </div>
             <div class="header_text">
                 <ul>
-                    <li><a href="index.php?action=ct_phim"><img src="./IMG/btn-ticket.webp" alt=""></a></li>
+                    <li><a href="index.php?action=ds_phim"><img src="./IMG/btn-ticket.webp" alt=""></a></li>
                     <li>Phim <i class="fa-solid fa-angle-right fa-rotate-90"></i>
                         <ul class="sub_menu sub_film">
                             <div class="Movie_showing">
                                 <h3>PHIM ĐANG CHIẾU</h3>
                                 <div class="Movie_tong">
-                                    <div class="Movie">
-                                        <img src="./IMG_FILM/500x750-nvcc_1698985267862.webp" alt="Ảnh phim">
-                                        <span>Người Vợ Cuối Cùng</span>
-                                        <button><i class="fa-solid fa-ticket"></i>Mua Vé</button>
-                                    </div>
-                                    <div class="Movie">
-                                        <img src="./IMG_FILM/datrungpn-3_1697433762119.webp" alt="Ảnh phim">
-                                        <span>Đất Rừng Phương Nam</span><button><i class="fa-solid fa-ticket"></i>Mua Vé</button>
-                                    </div>
-                                    <div class="Movie">
-                                        <img src="./IMG_FILM/qmq-500_1698382366825.webp" alt="Ảnh phim">
-                                        <span>Quỷ Môn Quan: Gọi Hồn</span><button><i class="fa-solid fa-ticket"></i>Mua Vé</button>
-                                    </div>
-                                    <div class="Movie">
-                                        <img src="./IMG_FILM/taylor-500_1698380431175.webp" alt="Ảnh phim">
-                                        <span>Những Kỷ Nguyên Của Taylor Swift</span><button><i class="fa-solid fa-ticket"></i>Mua Vé</button>
-                                    </div>
+                                    <?php foreach ($list_phim_search as $list) : ?>
+                                        <a href="./index.php?action=ct_phim&id=<?= $list['id'] ?>">
+                                            <div class="Movie">
+                                                <img src="../Admin/Img_ad/<?= $list['img_phim'] ?>" alt="Ảnh phim">
+                                                <span><?= $list['ten_phim'] ?></span>
+                                                <button><i class="fa-solid fa-ticket"></i>Mua Vé</button>
+                                            </div>
+                                        </a>
+                                    <?php endforeach ?>
                                 </div>
                                 <div class="Movie_coming_soon">
                                     <h3>PHIM SẮP CHIẾU</h3>
                                     <div class="Movie_tong">
-                                        <div class="Movie">
-                                            <img src="./IMG_FILM/the-marv-500_1698983006535.webp" alt="Ảnh phim">
-                                            <span>Biệt Đội Marvels</span><button><i class="fa-solid fa-ticket"></i>Mua Vé</button>
-                                        </div>
-                                        <div class="Movie">
-                                            <img src="./IMG_FILM/lr-500_1699256438199.webp" alt="Ảnh phim">
-                                            <span>Yêu Lại Vợ Ngầu</span><button><i class="fa-solid fa-ticket"></i>Mua Vé</button>
-                                        </div>
-                                        <div class="Movie">
-                                            <img src="./IMG_FILM/ohtd-500_1699254376784.webp" alt="Ảnh phim">
-                                            <span>Oán Hồn Tử Địa</span><button><i class="fa-solid fa-ticket"></i>Mua Vé</button>
-                                        </div>
-                                        <div class="Movie">
-                                            <img src="./IMG_FILM/k-an-500_1699073662957.webp" alt="Ảnh phim">
-                                            <span>Kỳ Án Trên Đồi Tuyết</span><button><i class="fa-solid fa-ticket"></i>Mua Vé</button>
-                                        </div>
+                                        <?php foreach ($list_phim_search as $list) : ?>
+                                            <a href="./index.php?action=ct_phim&id=<?= $list['id'] ?>">
+                                                <div class="Movie">
+                                                    <img src="../Admin/Img_ad/<?= $list['img_phim'] ?>" alt="Ảnh phim">
+                                                    <span><?= $list['ten_phim'] ?></span>
+                                                    <button><i class="fa-solid fa-ticket"></i>Mua Vé</button>
+                                                </div>
+                                            </a>
+                                        <?php endforeach ?>
                                     </div>
                                 </div>
                             </div>
@@ -106,11 +91,17 @@
                 </ul>
             </div>
             <div class="header_seach">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <form action="index.php?action=ds_search" method="post">
+                    <div class="seach">
+                        <i onclick="display_search()" class="fa-solid fa-magnifying-glass"></i>
+                        <input class="input_search" type="search" name="kyw" placeholder="Tìm kiếm...." required>
+                    </div>
+                </form>
+
                 <div class="header_dn">
                     <?php if (isset($_SESSION['nguoi_dung'])) {
                         extract([$_SESSION['nguoi_dung']]) ?>
-                           <a href="index.php?action=tt_user"><?= $_SESSION['nguoi_dung']['ten_user'] ?></a> 
+                        <a href="index.php?action=tt_user"><?= $_SESSION['nguoi_dung']['ten_user'] ?></a>
                     <?php } else { ?>
                         <a href="index.php?action=dn">Đăng Nhập</a>
                     <?php } ?>
@@ -137,7 +128,7 @@
                             <li class="dk">
                                 <img src="./IMG/bear_glx.webp" alt="">
                                 <span>Đăng Ký Thành Viên G-Star Nhận Ngay Ưu Đãi!</span>
-                                <a href="">Đăng Ký</a>
+                                <a href="../View/index.php?action=dk">Đăng Ký</a>
                             </li>
                         </ul>
                     </div>

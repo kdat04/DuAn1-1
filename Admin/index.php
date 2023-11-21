@@ -281,8 +281,7 @@ if (isset($_GET['action'])) {
                         break;
                     case 'binhluan':
                         require_once './home.php';
-                        $listbl = binhluan_select_all();
-                        $listbl = binh_luan_select_all_name();
+                        $listbl = binhluan_select_all(); 
                         require_once './Binhluan/view_bl.php';
                         require_once './footer-home.php';
                         break;
@@ -292,7 +291,6 @@ if (isset($_GET['action'])) {
                             delete_bl($_GET['id']);
                         }
                         $listbl = binhluan_select_all();
-                        $listbl = binh_luan_select_all_name();
                         require_once './Binhluan/view_bl.php';
                         require_once './footer-home.php';
                         break;

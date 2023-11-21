@@ -15,7 +15,6 @@ if (isset($_POST['guibinhluan']) && ($_POST['guibinhluan'])) {
     header("location:" . $_SERVER['HTTP_REFERER']);
 }
 $listbl = binh_luan_select_all($id_phim);
-$listbl = binh_luan_select_all_name();
 ?>
 
 <!DOCTYPE html>

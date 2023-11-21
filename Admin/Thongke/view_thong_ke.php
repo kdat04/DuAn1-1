@@ -24,9 +24,9 @@
                                                 <td><?= $list['id'] ?></td>
                                                 <td><?= $list['ten_loaiphim'] ?></td>
                                                 <td><?= $list['countphim'] ?></td>
-                                                <td><?= $list['mingia'] ?></td>
-                                                <td><?= $list['maxgia'] ?></td>
-                                                <td><?= $list['avggia'] ?></td>
+                                                <td><?= number_format($list['mingia'], 0, ",", ".") ?>VND</td>
+                                                <td><?= number_format($list['maxgia'], 0, ",", ".") ?>VND</td>
+                                                <td><?= number_format($list['avggia'], 0, ",", ".") ?>VND</td>
                                             </tr>
                                         <?php endforeach ?>
                                     </tbody>

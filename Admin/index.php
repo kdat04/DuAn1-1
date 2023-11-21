@@ -305,6 +305,16 @@ if (isset($_GET['action'])) {
                         require_once './xuatchieu/add_xuatchieu.php';
                         require_once './footer-home.php';
                         break;
+                    case 'sua_xuatchieu':
+                        require_once './home.php';
+                        if (isset($_GET['id']) && $_GET['id'] > 0) {
+                            $list = xuatchieu_select_by_id($_GET['id']);
+                        }
+                        $phims = phim_select_all();
+                        $phong_chieu = phong_select();
+                        require_once './xuatchieu/sua_xuatchieu.php';
+                        require_once './footer-home.php';
+                        break;
                     case 'khunggio':
                         require_once './home.php';
                         $list_khunggio = khunggiochieu_select_all();

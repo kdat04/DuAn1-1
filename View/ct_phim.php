@@ -12,15 +12,14 @@
             <div class="tt_ct_phim_nd1">
               <img src="../Admin/Img_ad/<?= $list['img_phim'] ?>" alt="">
             </div>
-<<<<<<< HEAD
             <div class="tt_ct_phim_nd2">
               <h2> <?= $list['ten_phim'] ?></h2>
               <div class="time_phim_ct">
-                <span><i class="fa-regular fa-clock" style="color: #e28708;"></i> 104 Phút</span> <span><i class="fa-regular fa-calendar" style="color: #da6b10;"></i> 09/11/2023</span>
+                <span><i class="fa-regular fa-clock" style="color: #e28708;"></i><?= $list['thoi_luong_phim'] ?> phút </span> <span><i class="fa-regular fa-calendar" style="color: #da6b10;"></i> <?= $list['nph'] ?></span>
               </div>
               <div class="dg_ct_phim">
                 <i class="fa-solid fa-star" style="color: #e18823;"></i>
-                <h5>7.9</h5> <span>(<?= $list['view'] ?> view)</span>
+                <h5><?= $list['cs_danh_gia'] ?></h5> <span>(<?= $list['view'] ?> view)</span>
               </div>
               <div class="like_phim">
                 <h6>Quốc gia:</h6>
@@ -36,26 +35,6 @@
               <div class="like_phim">
                 <h6>Diễn viên:</h6> <span><?= $list['dienvien1'] ?></span> <span><?= $list['dienvien2'] ?></span> <span><?= $list['dienvien3'] ?></span>
               </div>
-=======
-            <div class="dg_ct_phim">
-              <i class="fa-solid fa-star" style="color: #e18823;"></i>
-              <h5>7.9</h5>( <span><?= $list['view'] ?> view )</span>
-            </div>
-            <div class="like_phim">
-              <h6>Quốc gia:</h6>
-              <span> <?= $list['quocgia'] ?></span>
-            </div>
-            <div class="like_phim">
-              <h6>Nhà sản xuất:</h6>
-              <span> <?= $list['nsx'] ?></span>
-            </div>
-            <div class="like_phim">
-              <h6>Thể loại:</h6> <span> <?= $list['ten_loaiphim'] ?></span> 
-            </div>
-       
-            <div class="like_phim">
-              <h6>Diễn viên:</h6> <span><?= $list['dienvien1'] ?></span> <span><?= $list['dienvien2'] ?></span> <span><?= $list['dienvien3'] ?></span>
->>>>>>> c94decee08dc59f30e2e9b5947bcd902fa0c9f80
             </div>
           </div>
           <div class="mo_ta_phim">
@@ -137,6 +116,7 @@
       </div>
       <div class="ct_phim_box_right">
         <h3>PHIM ĐANG CHIẾU</h3>
+        
         <div class="phim_lq">
           <div class="phim_lq_img">
             <img src="IMG/phim_lq1.webp" alt="">
@@ -146,24 +126,7 @@
           </div>
           <h5>Biệt Đội Marvels</h5>
         </div>
-        <div class="phim_lq">
-          <div class="phim_lq_img">
-            <img src="IMG/750x500-nvcc_1698985267220.webp" alt="">
-            <div class="sub_img">
-              <span><i class="fa-solid fa-tv"></i>Mua Vé</span>
-            </div>
-          </div>
-          <h5>Người Vợ Cuối Cùng</h5>
-        </div>
-        <div class="phim_lq">
-          <div class="phim_lq_img">
-            <img src="IMG/lr-750_1699256436423.webp" alt="">
-            <div class="sub_img">
-              <span><i class="fa-solid fa-tv"></i>Mua Vé</span>
-            </div>
-          </div>
-          <h5>Yêu Lại Vợ Ngầu</h5>
-        </div>
+
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

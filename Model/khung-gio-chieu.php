@@ -5,6 +5,11 @@ function khunggiochieu_select_all()
     return pdo_query($sql);
 }
 
+function khunggiochieu_select_by_idxc($id_xc)
+{
+    $sql = "SELECT khung_gio_chieu.id, khung_gio_chieu.id_xuat_chieu,khung_gio_chieu.gio_chieu, xuat_chieu.ngay_chieu FROM khung_gio_chieu INNER JOIN xuat_chieu ON xuat_chieu.id = khung_gio_chieu.id_xuat_chieu WHERE xuat_chieu.id ='$id_xc'";
+    return pdo_query($sql);
+}
 function khunggiochieu_select_by_id($id)
 {
     $sql = "SELECT * FROM khung_gio_chieu WHERE id = '$id'";

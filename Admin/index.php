@@ -7,6 +7,7 @@ require_once '../Model/loai.php';
 require_once '../Model/pdo.php';
 require_once '../Model/binh-luan.php';
 require_once '../Model/xuatchieu.php';
+require_once '../Model/khung-gio-chieu.php';
 require_once "./header.php";
 
 if (isset($_GET['action'])) {
@@ -292,7 +293,7 @@ if (isset($_GET['action'])) {
                         break;
                     case 'add_xuatchieu':
                         require_once './home.php';
-                        if(isset($_POST['themmoi'])&&($_POST['themmoi'])){
+                        if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                             $ngay_xc = $_POST['ngay_xc'];
                             $ten_phim = $_POST['phim'];
                             $ten_phong = $_POST['phong_chieu'];
@@ -306,8 +307,20 @@ if (isset($_GET['action'])) {
                         break;
                     case 'khunggio':
                         require_once './home.php';
-
+                        $list_khunggio = khunggiochieu_select_all();
                         require_once './khunggio/view_khunggio.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'add_khunggio':
+                        require_once './home.php';
+                        if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                            $khung_gio = $_POST['khung_gio'];
+                            $xuat_chieu = $_POST['xuat_chieu'];
+                            khunggio_insert($khung_gio, $xuat_chieu);
+                            $message = "Thêm thành công ";
+                        }
+                        $xuat_chieu = xuatchieu_select_all();
+                        require_once './khunggio/add_khunggio.php';
                         require_once './footer-home.php';
                         break;
                     case 'datve':

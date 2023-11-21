@@ -51,7 +51,11 @@ function binh_luan_insert($noidung, $id_user, $id_phim, $timebl)
 function binh_luan_select_all($id_phim)
 {
     // $sql = "SELECT binhluan.noidung, binhluan.timebl ,phim.id  FROM binhluan INNER JOIN phim ON phim.id = binhluan.id_phim where phim.id = '$id_phim'";
+<<<<<<< HEAD
+    $sql = "SELECT binhluan.noidung, binhluan.timebl ,phim.id,  users.ten_user FROM binhluan INNER JOIN phim ON phim.id = binhluan.id_phim INNER JOIN users ON users.id = binhluan.id_user WHERE binhluan.id_phim = '$id_phim'";
+=======
     $sql = "SELECT binhluan.noidung, binhluan.timebl ,phim.id, users.ten_user FROM binhluan INNER JOIN phim ON phim.id = binhluan.id_phim INNER JOIN users ON users.id = binhluan.id_user WHERE binhluan.id_phim = '$id_phim'";
+>>>>>>> 031835c64cee5e4bb3714ffceb9d792ab11d3256
     return pdo_query($sql);
 }
 function binhluan_select_all()

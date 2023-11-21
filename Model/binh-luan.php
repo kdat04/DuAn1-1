@@ -54,7 +54,7 @@ function binh_luan_select_all_name()
 }
 function binh_luan_select_all($id_phim)
 {
-    $sql = "SELECT binhluan.noidung, binhluan.timebl ,phim.id  FROM binhluan INNER JOIN phim ON phim.id = binhluan.id_phim where phim.id = '$id_phim'";
+    $sql = "SELECT binhluan.noidung, binhluan.timebl ,phim.id  FROM binhluan INNER JOIN phim ON phim.id = binhluan.id_phim where binhluan.id_phim = '$id_phim'";
     return pdo_query($sql);
 }
 

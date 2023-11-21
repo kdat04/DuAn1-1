@@ -24,7 +24,7 @@
                                     
                                     <option value="" hidden>Phim</option>
                                     
-                                    <option value="<?= $phim['id'] ?> <?= ($phim['id'] == $list['id_phim']) ? 'selected' : '' ?>"><?= $phim['ten_phim'] ?></option>
+                                    <option value="<?= $phim['id'] ?>" <?= ($phim['id'] == $list['id_phim']) ? 'selected' : '' ?>><?= $phim['ten_phim'] ?></option>
 
                                     <?php endforeach ?>
                         
@@ -37,7 +37,7 @@
                             <select class="form-control" name="phong_chieu" id="lname">
                                 <?php foreach ($phong_chieu as $phong) : ?>
                                     <option value="" hidden>Phòng chiếu</option>
-                                    <option value="<?= $phong['id'] ?> <?= ($phong['id'] == $list['id_phongchieu']) ? 'selected' : '' ?>"><?= $phong['ten_phongchieu'] ?></option>
+                                    <option value="<?= $phong['id'] ?>" <?= ($phong['id'] == $list['id_phongchieu']) ? 'selected' : '' ?>><?= $phong['ten_phongchieu'] ?></option>
                                 <?php endforeach ?>
                             </select>
                         </div>

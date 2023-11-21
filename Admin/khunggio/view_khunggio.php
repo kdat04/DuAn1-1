@@ -28,11 +28,11 @@
                                                 <td><?= $khunggio['ten_phim'] ?></td>
                                                 <td><?= $khunggio['ten_phongchieu'] ?></td>
                                                 <td><button class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa khung giờ chiếu không ?')">
-                                                        <a style="color: white;" href="index.php?action=&act=xoa_user&id=<?= $khunggio['id']  ?>">Xoá</a>
+                                                        <a style="color: white;" href="index.php?action=&act=xoa_khunggio&id=<?= $khunggio['id']  ?>">Xoá</a>
                                                     </button>
                                                 </td>
                                                 <td><button class="btn btn-info" onclick="return confirm('Bạn có muốn sửa khung giờ chiếu không ?')">
-                                                        <a style="color: white;" href="index.php?action=&act=sua_user&id=<?= $khunggio['id'] ?>">Sửa</a>
+                                                        <a style="color: white;" href="index.php?action=&act=sua_khunggio&id=<?= $khunggio['id'] ?>">Sửa</a>
                                                     </button>
                                                 </td>
                                             </tr>

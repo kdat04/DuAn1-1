@@ -1,6 +1,6 @@
 <section class="tong_ct_phim">
   <?php if ($list['id'] == $id) : ?>
-  
+
     <div class="video">
       <img src="../Admin/Img_ad/<?= $list['img_banner'] ?>" alt="">
       <i class="fa-solid fa-play" style="color: #e52424;"></i>
@@ -66,7 +66,7 @@
               </div>
               <i class="fa-solid fa-chevron-up fa-rotate-90"></i>
             </div>
-            <!-- <div class="khung_chieu_dress">
+            <div class="khung_chieu_dress">
               <div class="khung_chieu_dress1">
                 <div class="khung_chieu_dress2">
                   <input type="text" placeholder="Toàn Quốc" name="" id="">
@@ -79,7 +79,7 @@
                   <i class="fa-solid fa-chevron-up fa-rotate-180"></i>
                 </div>
               </div>
-            </div> -->
+            </div>
           </div>
         </div>
         <div class="dress_time_chieu">
@@ -150,7 +150,7 @@
       $(document).ready(function() {
         $("#binhluannew").load("binhluan.php", {
           id_phim: <?= $list['id'] ?>
-          
+
         });
       });
     </script>

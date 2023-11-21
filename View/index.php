@@ -3,6 +3,8 @@ session_start();
 require_once '../Model/phim.php';
 require_once '../Model/khach-hang.php';
 require_once '../Model/loai.php';
+require_once '../Model/khung-gio-chieu.php';
+require_once '../Model/xuatchieu.php';
 require_once '../Model/pdo.php';
 
 $list_phim_search = phim_select_search();
@@ -11,16 +13,18 @@ require_once "./header.php";
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {
         case 'ct_phim':
+            $khunggio = array();
             if ((isset($_GET['id'])) && ($_GET['id'])) {
                 $id = $_GET['id'];
+                if ((isset($_GET['id_xc'])) && ($_GET['id_xc'])) {
+                    $id_xc = $_GET['id_xc'];
+                    $khunggio = khunggiochieu_select_by_idxc($id_xc);
+                }
                 $list = phim_select_by_id($id);
+                $xuat_chieu = xuatchieu_select_by_id_phim($id);
                 phim_tang_so_luot_xem($id);
-
-                require_once './ct_phim.php';
-            } else {
-                require_once './home.php';
             }
-
+            require_once './ct_phim.php';
             break;
         case 'ds_phim':
             $list_phim = phim_select_all();
@@ -29,7 +33,7 @@ if (isset($_GET['action'])) {
         case 'ds_search':
             if (isset($_POST['kyw']) && ($_POST['kyw'])) {
                 $key = $_POST['kyw'];
-                    $list_phim = phim_search_keyword($key);       
+                $list_phim = phim_search_keyword($key);
             }
             require_once './ds_phim.php';
             break;
@@ -85,6 +89,10 @@ if (isset($_GET['action'])) {
             require_once "./thongtinuser.php";
             break;
         case 'dat_ve':
+            $id_phim = $_GET['id'];
+            $id_xuatchieu = $_GET['id_xc'];
+            $id_khunggio = $_GET['id_kgc'];
+            $_SESSION['phim'] = [$id_phim, $id_xuatchieu, $id_khunggio];
             require_once "./dat_ve.php";
             break;
         case 'uu_dai':

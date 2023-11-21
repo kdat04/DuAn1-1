@@ -7,6 +7,7 @@ require_once '../Model/loai.php';
 require_once '../Model/pdo.php';
 require_once '../Model/binh-luan.php';
 require_once '../Model/xuatchieu.php';
+require_once '../Model/khung-gio-chieu.php';
 require_once "./header.php";
 
 if (isset($_GET['action'])) {
@@ -280,6 +281,15 @@ if (isset($_GET['action'])) {
                         break;
                     case 'binhluan':
                         require_once './home.php';
+                        $listbl = binhluan_select_all(); 
+                        require_once './Binhluan/view_bl.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'xoa_binhluan':
+                        require_once './home.php';
+                        if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                            delete_bl($_GET['id']);
+                        }
                         $listbl = binhluan_select_all();
                         require_once './Binhluan/view_bl.php';
                         require_once './footer-home.php';
@@ -340,8 +350,51 @@ if (isset($_GET['action'])) {
                         break;
                     case 'khunggio':
                         require_once './home.php';
-
+                        $list_khunggio = khunggiochieu_select_all();
                         require_once './khunggio/view_khunggio.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'add_khunggio':
+                        require_once './home.php';
+                        if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+                            $khung_gio = $_POST['khung_gio'];
+                            $xuat_chieu = $_POST['xuat_chieu'];
+                            khunggio_insert($khung_gio, $xuat_chieu);
+                            $message = "Thêm thành công ";
+                        }
+                        $xuat_chieu = xuatchieu_select_all();
+                        require_once './khunggio/add_khunggio.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'sua_khunggio':
+                        require_once './home.php';
+                        if (isset($_GET['id']) && $_GET['id'] > 0) {
+                            $list = khunggiochieu_select_by_id($_GET['id']);
+                        }
+                        $xuat_chieu = xuatchieu_select_all();
+                        require_once './khunggio/sua_khunggio.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'up_khunggio':
+                        require_once './home.php';
+                        if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                            $id = $_POST['id'];
+                            $khung_gio = $_POST['khung_gio'];
+                            $xuat_chieu = $_POST['xuat_chieu'];
+                            khunggio_update($id, $khung_gio, $xuat_chieu);
+                        }
+                        $list_khunggio = khunggiochieu_select_all();
+                        $xuat_chieu = xuatchieu_select_all();
+                        require_once './khunggio/view_khunggio.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'xoa_khunggio':
+                        require_once './home.php';
+                        if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                            khunggio_delete($_GET['id']);
+                        }
+                        $list_khunggio = khunggiochieu_select_all();
+                        require_once './khunggio/view_khunggio.php';;
                         require_once './footer-home.php';
                         break;
                     case 'datve':
@@ -350,7 +403,6 @@ if (isset($_GET['action'])) {
                         require_once './footer-home.php';
                         break;
                     case 'thongke':
-
                         require_once './home.php';
                         $listtk_phim = loadall_thongke();
                         require_once './Thongke/view_thong_ke.php';

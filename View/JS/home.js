@@ -22,7 +22,7 @@ setInterval(() => {
   NextAnh();
 }, 5000);
 //nút tìm kiếm
- var trangthai = false;
+var trangthai = false;
 function display_search() {
   var input_search = document.querySelector(".input_search");
   if (trangthai == false) {
@@ -33,3 +33,21 @@ function display_search() {
     trangthai = false;
   }
 }
+
+// hienthingay
+const day = document.querySelector(".day");
+const listDay = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
+
+setInterval(() => {
+  const Day = new Date();
+  const getDay = listDay[Day.getDay()]; //lấy thứ
+  day.innerText = getDay;//lấy thứ
+}, 500);

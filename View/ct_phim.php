@@ -1,6 +1,6 @@
 <section class="tong_ct_phim">
   <?php if ($list['id'] == $id) : ?>
-  
+
     <div class="video">
       <img src="../Admin/Img_ad/<?= $list['img_banner'] ?>" alt="">
       <i class="fa-solid fa-play" style="color: #e52424;"></i>
@@ -48,25 +48,17 @@
           <h3>Lịch chiếu </h3>
           <div class="khung_chieu">
             <div class="khung_chieu_time">
-              <i class="fa-solid fa-chevron-up fa-rotate-270"></i>
-              <div class="ngay_thu">
-                Hôm Nay 14/11
-              </div>
-              <div class="ngay_thu">
-                Thứ Tư 15/11
-              </div>
-              <div class="ngay_thu">
-                Thứ Năm 16/11
-              </div>
-              <div class="ngay_thu">
-                Thứ Sáu 17/11
-              </div>
-              <div class="ngay_thu">
-                Thứ Bảy 18/11
-              </div>
+              <i class="fa-solid fa-chevron-up fa-rotate-270"></i>       
+               <?php foreach ($xuat_chieu as $xc) : ?>
+                <a href="./index.php?action=ct_phim&id=<?= $list['id'] ?>&id_xc=<?= $xc['id'] ?>">
+                  <div class="ngay_thu">
+                    <?= $xc['ngay_chieu'] ?>
+                  </div>
+                </a>
+              <?php endforeach ?>
               <i class="fa-solid fa-chevron-up fa-rotate-90"></i>
             </div>
-            <!-- <div class="khung_chieu_dress">
+            <div class="khung_chieu_dress">
               <div class="khung_chieu_dress1">
                 <div class="khung_chieu_dress2">
                   <input type="text" placeholder="Toàn Quốc" name="" id="">
@@ -79,7 +71,7 @@
                   <i class="fa-solid fa-chevron-up fa-rotate-180"></i>
                 </div>
               </div>
-            </div> -->
+            </div>
           </div>
         </div>
         <div class="dress_time_chieu">
@@ -89,12 +81,11 @@
               <span>2D Phụ Đề</span>
             </div>
             <div class="time_chieu">
-              <?php
-              for ($i = 10; $i <= 22; $i += 2) : ?>
-                <a href="index.php?action=dat_ve">
-                  <p><?= $i ?>:00</p>
-                </a>
-              <?php endfor; ?>
+                <?php foreach ($khunggio as $kg) : ?>
+                  <a href="index.php?action=dat_ve&id=<?= $list['id'] ?>&id_xc=<?= $kg['id_xuat_chieu'] ?>&id_kgc=<?= $kg['id'] ?>">
+                    <p><?= $kg['gio_chieu'] ?></p>
+                  </a>
+                <?php endforeach; ?>
             </div>
           </div>
         </div>
@@ -134,7 +125,7 @@
       $(document).ready(function() {
         $("#binhluannew").load("binhluan.php", {
           id_phim: <?= $list['id'] ?>
-          
+
         });
       });
     </script>

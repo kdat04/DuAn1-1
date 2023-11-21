@@ -112,9 +112,9 @@ if (isset($_GET['action'])) {
                                 $message = "Thêm không  thành công vì có ô để trống  ";
                             } else {
 
-                                phim_insert($ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph,$thoi_luong_phim,$cs_danh_gia, $qg, $dv1, $dv2, $dv3,$tt, $id_loaiphim);
+                                phim_insert($ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $thoi_luong_phim, $cs_danh_gia, $qg, $dv1, $dv2, $dv3, $tt, $id_loaiphim);
 
-                                $message = "Thêm thành công "; 
+                                $message = "Thêm thành công ";
                             }
                         }
                         $list_danhmuc = loai_select_all();
@@ -169,7 +169,7 @@ if (isset($_GET['action'])) {
                                 $img_banner_phim = $file2['name'];
                                 move_uploaded_file($file2['tmp_name'], "./Img_ad/" . $img_banner_phim);
                             }
-                            phim_update($ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph,$thoi_luong_phim,$cs_danh_gia, $qg, $dv1, $dv2, $dv3,$tt, $id_loaiphim, $id);
+                            phim_update($ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $thoi_luong_phim, $cs_danh_gia, $qg, $dv1, $dv2, $dv3, $tt, $id_loaiphim, $id);
                         }
                         $ds_phim = phim_select_all();
                         $list_danhmuc = loai_select_all();
@@ -260,7 +260,7 @@ if (isset($_GET['action'])) {
                         if (isset($_POST['capnhat']) && $_POST['capnhat'] > 0) {
                             $id = $_POST['id'];
                             $role = $_POST['role'];
-                            
+
                             khach_hang_update2($id, $role);
                         }
                         $list_users  = users_select_all();
@@ -279,6 +279,17 @@ if (isset($_GET['action'])) {
                     case 'binhluan':
                         require_once './home.php';
                         $listbl = binhluan_select_all();
+                        $listbl = binh_luan_select_all_name();
+                        require_once './Binhluan/view_bl.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'xoa_binhluan':
+                        require_once './home.php';
+                        if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                            delete_bl($_GET['id']);
+                        }
+                        $listbl = binhluan_select_all();
+                        $listbl = binh_luan_select_all_name();
                         require_once './Binhluan/view_bl.php';
                         require_once './footer-home.php';
                         break;

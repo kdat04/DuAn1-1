@@ -31,11 +31,11 @@
                                                 <td><?= $user['diachi'] ?></td>
                                                 <td><?= $user['nam_sinh'] ?></td>
                                                 <td><?= $user['role'] ?></td>
-                                                <td><button class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa sản phẩm không ?')">
+                                                <td><button class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa User không ?')">
                                                         <a style="color: white;" href="index.php?action=&act=xoa_user&id=<?= $user['id'] ?>">Xoá</a>
                                                     </button>
                                                 </td>
-                                                <td><button class="btn btn-info" onclick="return confirm('Bạn có muốn sửa sản phẩm không ?')">
+                                                <td><button class="btn btn-info" onclick="return confirm('Bạn có muốn sửa User không ?')">
                                                         <a style="color: white;" href="index.php?action=&act=sua_user&id=<?= $user['id'] ?>">Sửa</a>
                                                     </button>
                                                 </td>

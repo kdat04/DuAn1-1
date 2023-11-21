@@ -54,14 +54,21 @@ function binh_luan_select_all_name()
 }
 function binh_luan_select_all($id_phim)
 {
-    $sql = "SELECT binhluan.noidung, binhluan.timebl ,phim.id  FROM binhluan INNER JOIN phim ON phim.id = binhluan.id_phim where phim.id = '$id_phim'";
+    // $sql = "SELECT binhluan.noidung, binhluan.timebl ,phim.id  FROM binhluan INNER JOIN phim ON phim.id = binhluan.id_phim where phim.id = '$id_phim'";
+    $sql = "SELECT binhluan.noidung, binhluan.timebl ,phim.id FROM binhluan INNER JOIN phim ON phim.id = binhluan.id_phim where binhluan.id_phim = '$id_phim'";
     return pdo_query($sql);
 }
-
 function binhluan_select_all()
 {
     $sql = "SELECT * FROM binhluan";
     $listbl = pdo_query($sql);
     return $listbl;
 }
+function delete_bl($id)
+{
+    $sql = "DELETE FROM binhluan WHERE id=$id";
+    pdo_execute($sql);
+}
+
+
 ?>

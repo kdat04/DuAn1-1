@@ -28,11 +28,11 @@
                                                 <td><img src="./Img_ad/<?= $xuatchieu['img_phim'] ?>" alt="" width="100px"></td>
                                                 <td><?= $xuatchieu['ten_phongchieu'] ?></td>
                                                 <td><button class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa xuất chiếu không ?')">
-                                                        <a style="color: white;" href="index.php?action=&act=xoa_user&id=<?= $xuatchieu['id']  ?>">Xoá</a>
+                                                        <a style="color: white;" href="index.php?action=&act=xoa_xuatchieu&id=<?= $xuatchieu['id']  ?>">Xoá</a>
                                                     </button>
                                                 </td>
                                                 <td><button class="btn btn-info" onclick="return confirm('Bạn có muốn sửa xuất chiếu không ?')">
-                                                        <a style="color: white;" href="index.php?action=&act=sua_user&id=<?= $xuatchieu['id'] ?>">Sửa</a>
+                                                        <a style="color: white;" href="index.php?action=&act=sua_xuatchieu&id=<?= $xuatchieu['id'] ?>">Sửa</a>
                                                     </button>
                                                 </td>
                                             </tr>

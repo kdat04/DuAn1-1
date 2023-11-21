@@ -292,7 +292,7 @@ if (isset($_GET['action'])) {
                         break;
                     case 'add_xuatchieu':
                         require_once './home.php';
-                        if(isset($_POST['themmoi'])&&($_POST['themmoi'])){
+                        if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                             $ngay_xc = $_POST['ngay_xc'];
                             $ten_phim = $_POST['phim'];
                             $ten_phong = $_POST['phong_chieu'];
@@ -302,6 +302,16 @@ if (isset($_GET['action'])) {
                         $phims = phim_select_all();
                         $phong_chieu = phong_select();
                         require_once './xuatchieu/add_xuatchieu.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'sua_xuatchieu':
+                        require_once './home.php';
+                        if (isset($_GET['id']) && $_GET['id'] > 0) {
+                            $list = xuatchieu_select_by_id($_GET['id']);
+                        }
+                        $phims = phim_select_all();
+                        $phong_chieu = phong_select();
+                        require_once './xuatchieu/sua_xuatchieu.php';
                         require_once './footer-home.php';
                         break;
                     case 'khunggio':

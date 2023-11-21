@@ -1,7 +1,7 @@
 <div>
     <div class="page-wrapper">
         <div class="card">
-            <form class="form-horizontal" action="index.php?action=&act=add_user" method="post">
+            <form class="form-horizontal" action="index.php?action=&act=add_xuatchieu" method="post">
                 <div class="card-body" style="width: 1000px;">
                     <h4 class="card-title">Sửa Xuất chiếu</h4>
                     <div class="form-group row">
@@ -11,66 +11,34 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="lname" class="col-sm-3 text-right control-label col-form-label"> Tên Xuất chiếu</label>
+                        <label for="lname" class="col-sm-3 text-right control-label col-form-label"> Ngày Xuất chiếu</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="ten_xc" id="lname" placeholder="Xuất chiếu">
+                            <input type="date" class="form-control" name="ngay_xc" id="lname" placeholder="Xuất chiếu" value="<?= $list['ngay_chieu'] ?>">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="lname" class="col-sm-3 text-right control-label col-form-label"> Tên phim </label>
+                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Tên Phim</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="sdt" id="lname" placeholder="Tên phim">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Ảnh phim</label>
-                        <div class="col-sm-9">
-                            <div class="custom-file">
-                                <input type="file" name="img_phim" class="custom-file-input" id="validatedCustomFile" required>
-                                <label class="custom-file-label" for="validatedCustomFile">Ảnh phim...</label>
-                                <div class="invalid-feedback">Example invalid custom file feedback</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Phòng Chiếu</label>
-                        <div class="col-sm-9">
-                            <input type="password" class="form-control" name="matkhau" id="lname" placeholder="Phòng Chiếu">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">7:00 PM</label>
-                        <div class="col-sm-9">
-                            <select class="form-control" name="role" id="lname">
-                                <option value="0">Không có khung giờ chiếu</option>
-                                <option value="1">Có khung giờ chiếu</option>
+                            <select class="form-control" name="phim" id="lname">
+                                <?php foreach ($phims as $phim) : ?>
+                                    
+                                    <option value="" hidden>Phim</option>
+                                    
+                                    <option value="<?= $phim['id'] ?> <?= ($phim['id'] == $list['id_phim']) ? 'selected' : '' ?>"><?= $phim['ten_phim'] ?></option>
+
+                                    <?php endforeach ?>
+                        
                             </select>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">8:00 PM</label>
+                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Phòng chiếu</label>
                         <div class="col-sm-9">
-                            <select class="form-control" name="role" id="lname">
-                                <option value="0">Không có khung giờ chiếu</option>
-                                <option value="1">Có khung giờ chiếu</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">9:00 PM</label>
-                        <div class="col-sm-9">
-                            <select class="form-control" name="role" id="lname">
-                                <option value="0">Không có khung giờ chiếu</option>
-                                <option value="1">Có khung giờ chiếu</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">10:00 PM</label>
-                        <div class="col-sm-9">
-                            <select class="form-control" name="role" id="lname">
-                                <option value="0">Không có khung giờ chiếu</option>
-                                <option value="1">Có khung giờ chiếu</option>
+                            <select class="form-control" name="phong_chieu" id="lname">
+                                <?php foreach ($phong_chieu as $phong) : ?>
+                                    <option value="" hidden>Phòng chiếu</option>
+                                    <option value="<?= $phong['id'] ?> <?= ($phong['id'] == $list['id_phongchieu']) ? 'selected' : '' ?>"><?= $phong['ten_phongchieu'] ?></option>
+                                <?php endforeach ?>
                             </select>
                         </div>
                     </div>

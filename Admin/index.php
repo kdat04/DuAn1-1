@@ -315,6 +315,30 @@ if (isset($_GET['action'])) {
                         require_once './xuatchieu/sua_xuatchieu.php';
                         require_once './footer-home.php';
                         break;
+                    case 'up_xuat_chieu':
+                        require_once './home.php';
+                        if (isset($_POST['themmoi']) && $_POST['themmoi'] > 0) {
+                            $id = $_POST['id'];
+                            $ngay_chieu = $_POST['ngay_chieu'];
+                            $id_phim = $_POST['id_phim'];
+                            $id_phongchieu = $_POST['id_phongchieu'];
+
+                            xuat_chieu_update($ngay_chieu, $id_phim, $id_phongchieu, $id);
+                        }
+                        $list_xuatchieu = xuatchieu_select_all();
+                        require_once './xuatchieu/view_xuatchieu.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'xoa_xuatchieu':
+                        require_once './home.php';
+                        if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                            xuat_chieu_delete($_GET['id']);
+                        }
+
+                        $list_xuatchieu = xuatchieu_select_all();
+                        require_once './xuatchieu/view_xuatchieu.php';
+                        require_once './footer-home.php';
+                        break;
                     case 'khunggio':
                         require_once './home.php';
                         $list_khunggio = khunggiochieu_select_all();

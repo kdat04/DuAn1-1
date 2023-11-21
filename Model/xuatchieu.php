@@ -21,3 +21,12 @@ function xuatchieu_select_by_id($id)
     $sql = "SELECT * FROM xuat_chieu WHERE id=?";
     return pdo_query_one($sql, $id);
 }
+function xuat_chieu_update($ngay_chieu, $id_phim, $id_phongchieu, $id)
+{
+    $sql = "UPDATE xuat_chieu SET ngay_chieu=?,id_phim=?,id_phongchieu=? WHERE id=?";
+    pdo_execute($sql,$ngay_chieu, $id_phim, $id_phongchieu, $id);
+}
+function xuat_chieu_delete($id ){
+    $sql = "DELETE FROM xuat_chieu WHERE id = ?";
+    pdo_execute($sql, $id);
+}

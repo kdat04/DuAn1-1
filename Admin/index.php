@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once '../Model/phim.php';
+require_once '../Model/thong-ke.php';
 require_once '../Model/khach-hang.php';
 require_once '../Model/loai.php';
 require_once '../Model/pdo.php';
@@ -288,7 +289,9 @@ if (isset($_GET['action'])) {
                         require_once './footer-home.php';
                         break;
                     case 'thongke':
+
                         require_once './home.php';
+                        $listtk_phim = loadall_thongke();
                         require_once './Thongke/view_thong_ke.php';
                         require_once './footer-home.php';
                         break;

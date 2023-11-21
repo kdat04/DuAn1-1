@@ -24,3 +24,11 @@ function thong_ke_binh_luan(){
             . " HAVING so_luong > 0";
     return pdo_query($sql);
 }
+function loadall_thongke()
+{
+    $sql = "SELECT loai_phim.id as id, loai_phim.ten_loaiphim as 	ten_loaiphim, count(phim.id) as countphim, min(phim.gia) as mingia, max(phim.gia) as maxgia, avg(phim.gia) as avggia ";
+    $sql .= " from phim left join loai_phim ON loai_phim.id = phim.id_loaiphim";
+    $sql .= "  group by loai_phim.id order by loai_phim.id desc";
+    $listtk = pdo_query($sql);
+    return $listtk;
+}

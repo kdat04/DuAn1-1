@@ -10,11 +10,10 @@
                                 <table id="zero_config" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                            <th></th>
                                             <th style="width: 150px;">Id bình luận</th>
                                             <th style="width: 200px;">Nội dung bình luận</th>
                                             <th style="width: 200px;">Tên User</th>
-                                            <th style="width: 200px;">Id Phim</th>
+                                            <th style="width: 200px;">Tên Phim</th>
                                             <th style="width: 200px;">Ngày bình luận</th>
                                             <th style="width: 100px;"></th>
                                         </tr>
@@ -22,11 +21,10 @@
                                     <tbody>
                                         <?php foreach ($listbl as $bl) : ?>
                                             <tr>
-                                                <td><input type="checkbox" name="" id="" /></td>
-                                                <td ><?= $bl['id'] ?></td>
+                                                <td><?= $bl['id'] ?></td>
                                                 <td><?= $bl['noidung'] ?></td>
                                                 <td><?= $bl['ten_user'] ?></td>
-                                                <td><?= $bl['id_phim'] ?></td>
+                                                <td><?= $bl['ten_phim'] ?></td>
                                                 <td><?= $bl['timebl'] ?></td>
                                                 <td>
                                                     <center style="margin-top: 7px;">
@@ -40,11 +38,10 @@
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th></th>
                                             <th style="width: 150px;">Id bình luận</th>
                                             <th style="width: 200px;">Nội dung bình luận</th>
                                             <th style="width: 200px;">Tên User</th>
-                                            <th style="width: 200px;">Id Phim</th>
+                                            <th style="width: 200px;">Tên Phim</th>
                                             <th style="width: 200px;">Ngày bình luận</th>
                                             <th></th>
                                         </tr>

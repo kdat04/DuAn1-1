@@ -1,80 +1,51 @@
 <?php
 
 $ghes = [
-    'A' => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    'B' => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    'C' => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    'D' => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    'E' => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    'A' => [[1, 100], [2, 100], [3, 100], [4, 100], [5, 100], [6, 100], [7, 100], [8, 100], [9, 100], [10, 100]],
+    'B' => [[1, 100], [2, 100], [3, 150], [4, 150], [5, 150], [6, 150], [7, 150], [8, 150], [9, 100], [10, 100]],
+    'C' => [[1, 100], [2, 100], [3, 150], [4, 200], [5, 200], [6, 200], [7, 200], [8, 150], [9, 100], [10, 100]],
+    'D' => [[1, 100], [2, 100], [3, 150], [4, 200], [5, 200], [6, 200], [7, 200], [8, 150], [9, 100], [10, 100]],
+    'E' => [[1, 100], [2, 100], [3, 150],  [4, 200], [5, 200], [6, 200], [7, 200], [8, 150], [9, 100], [10, 100]],
 ];
 
 ?>
-<div class="suatchieu">
-    <h3>Đổi suất chiếu</h3>
-    <nav>
-        <ul>
-            <li><a href="#">12:30</a></li>
-            <li><a href="#">14:30</a></li>
-            <li><a href="#">16:30</a></li>
-            <li><a href="#">18:30</a></li>
-            <li><a href="#">20:30</a></li>
-            <li><a href="#">22:30</a></li>
-        </ul>
-    </nav>
-</div>
-<div class="listghe">
-    <nav>
-        <ul>
-            <?php foreach ($ghes as $key => $value) : ?>
-                <li>
-                    <div class="hang-ghe">
-                        <div class="hang-text">
-                            <span><?= $key ?></span>
-                        </div>
-                        <div class="hang-input">
-                            <?php foreach ($value as $item) : ?>
-                                <input type="checkbox" name="a" id="" placeholder="<?= $item ?> " value="<?= $key.$item ?>'.">
-                            <?php endforeach  ?>
+<form action="" method="post">
+    <div class="listghe">
+        <nav>
+            <ul>
+                <?php foreach ($ghes as $key => $value) : ?>
+                    <li>
+                        <div class="hang-ghe">
+                            <div class="hang-text">
+                                <span><?= $key ?></span>
+                            </div>
+                            <div class="hang-input">
+                                <?php foreach ($value as $item) : ?>
+                                    <div class="check_ghe">
+                                        <input type="hidden" name="gia_ghe" value="<?= $item[1] ?>">
+                                        <input type="hidden" name="ghe" value="<?= $key . $item[0] ?>">
+                                        <span><?= $key . $item[0] ?></span>
+                                    </div>
 
-                        </div>
-                        <div class="hang-text">
-                            <span><?= $key ?></span>
-                        </div>
-                    </div>
-                </li>
-            <?php endforeach  ?>
-        </ul>
-    </nav>
-</div>
-<div>
-    <div class="manhinh">
-        <span>Màn hình</span>
-    </div>
 
-    <div class="nut-checkbox">
-        <div class="check-left">
-            <div class="nut-ck">
-                <input type="checkbox" name="" id="">
-                <span>Ghế đã bán</span>
-            </div>
-            <div class="nut-ck">
-                <input type="checkbox" name="" id="">
-                <span>Ghế đang chọn</span>
-            </div>
-        </div>
-        <div class="check-right">
-            <div class="nut-ck">
-                <input type="checkbox" name="" id="">
-                <span>Ghế đã VIP</span>
-            </div>
-            <div class="nut-ck">
-                <input type="checkbox" name="" id="">
-                <span>Ghế đơn</span>
-            </div>
-            <div class="nut-ck">
-                <input type="checkbox" name="" id="">
-                <span>Ghế đôi</span>
-            </div>
-        </div>
+                                <?php endforeach  ?>
+                            </div>
+                            <div class="hang-text">
+                                <span><?= $key ?></span>
+                            </div>
+                        </div>
+                    </li>
+                <?php endforeach  ?>
+
+
+            </ul>
+        </nav>
     </div>
-</div>
+    <div>
+        <div class="manhinh">
+            <span>Màn hình</span>
+        </div>
+
+
+    </div>
+</form>

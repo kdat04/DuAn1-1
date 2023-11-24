@@ -93,25 +93,29 @@
 
 .listghe nav ul li {
     line-height: 40px;
+    margin-bottom: 20px;
 }
 
 .hang-ghe {
     display: flex;
+    align-items: center;
 }
 
 .hang-input {
     margin-left: 60px;
     margin-right: 60px;
     width: 600px;
-  
+  display: flex;
+}
+.check_ghe{
+    border: 1px solid #d7d7d7;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin-right: 10px;
 }
 
-.hang-input input {
-    width: 35px;
-    height: 35px;
-    padding: 50px;
-    margin-right: 16px;
-}
 
 .manhinh {
     text-align: center;

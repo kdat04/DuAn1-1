@@ -87,6 +87,11 @@ function phim_tang_so_luot_xem($id)
     $sql = "UPDATE phim SET view = view + 1 WHERE id=?";
     pdo_execute($sql, $id);
 }
+
+function load_ve_phim($id, $id_xuatchieu, $id_khunggio){
+    $sql = "SELECT phim.img_phim, phim.ten_phim, xuat_chieu.ngay_chieu,khung_gio_chieu.gio_chieu  FROM phim INNER JOIN xuat_chieu ON phim.id = xuat_chieu.id_phim INNER JOIN khung_gio_chieu ON xuat_chieu.id = khung_gio_chieu.id_xuat_chieu WHERE phim.id = '$id' AND xuat_chieu.id='$id_xuatchieu' AND khung_gio_chieu.id = '$id_khunggio'";
+    return pdo_query_one($sql);
+}
 // function phim_exist($ma_hh){
 //     $sql = "SELECT count(*) FROM hang_hoa WHERE ma_hh=?";
 //     return pdo_query_value($sql, $ma_hh) > 0;

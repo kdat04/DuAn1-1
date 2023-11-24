@@ -14,7 +14,7 @@
                                             <th style="width: 200px;">Khung giờ chiếu</th>
                                             <th style="width: 200px;">Xuất chiếu</th>
                                             <th style="width: 300px;">Tên phim</th>
-                                            <th style="width: 300px;">Phòng chiếu</th>
+                                            <!-- <th style="width: 300px;">Phòng chiếu</th> -->
                                             <th></th>
                                             <th></th>
                                         </tr>
@@ -26,7 +26,7 @@
                                                 <td><?= $khunggio['gio_chieu'] ?></td>
                                                 <td><?= $khunggio['ngay_chieu'] ?></td>
                                                 <td><?= $khunggio['ten_phim'] ?></td>
-                                                <td><?= $khunggio['ten_phongchieu'] ?></td>
+                                               
                                                 <td><button class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa khung giờ chiếu không ?')">
                                                         <a style="color: white;" href="index.php?action=&act=xoa_khunggio&id=<?= $khunggio['id']  ?>">Xoá</a>
                                                     </button>
@@ -44,7 +44,7 @@
                                             <th style="width: 100px;">Khung giờ chiếu</th>
                                             <th style="width: 100px;">Xuất chiếu</th>
                                             <th style="width: 300px;">Tên phim</th>
-                                            <th style="width: 300px;">Phòng chiếu</th>
+                                           
                                             <th></th>
                                             <th></th>
                                         </tr>

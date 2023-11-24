@@ -14,7 +14,8 @@
                                             <th style="width: 100px;">Xuất chiếu</th>
                                             <th style="width: 300px;">Tên phim</th>
                                             <th style="width: 300px;">Ảnh phim</th>
-                                            <th style="width: 300px;">Phòng chiếu</th>
+                                            <th></th>
+                                            <!-- <th style="width: 300px;">Phòng chiếu</th> -->
                                             <th></th>
                                             <th></th>
                                         </tr>
@@ -26,7 +27,12 @@
                                                 <td><?= $xuatchieu['ngay_chieu'] ?></td>
                                                 <td><?= $xuatchieu['ten_phim'] ?></td>
                                                 <td><img src="./Img_ad/<?= $xuatchieu['img_phim'] ?>" alt="" width="100px"></td>
-                                                <td><?= $xuatchieu['ten_phongchieu'] ?></td>
+                                                
+                                                <td>
+                                                    <button class="btn btn-success" >
+                                                        <a style="width:; color: white;" href="index.php?action=&act=add_khunggio&id_xc=<?=$xuatchieu['id'] ?>">Thêm xuất khung giờ chiếu </a>
+                                                    </button>
+                                                </td>
                                                 <td><button class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa xuất chiếu không ?')">
                                                         <a style="color: white;" href="index.php?action=&act=xoa_xuatchieu&id=<?= $xuatchieu['id']?>">Xoá</a>
                                                     </button>
@@ -44,7 +50,7 @@
                                             <th style="width: 200px;">Xuất chiếu</th>
                                             <th style="width: 300px;">Tên phim</th>
                                             <th style="width: 300px;">Ảnh phim</th>
-                                            <th style="width: 100px;">Phòng Chiếu</th>
+                                            <!-- <th style="width: 100px;">Phòng Chiếu</th> -->
                                             <th></th>
                                             <th></th>
                                         </tr>

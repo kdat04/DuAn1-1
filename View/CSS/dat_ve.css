@@ -1,6 +1,7 @@
 .datve {
     width: 1400px;
     margin: auto;
+    height: 600px;
 }
 
 .box-text {
@@ -47,44 +48,12 @@
 }
 .main {
     display: flex;
-    gap: 70px;
+    /* gap: 70px; */
     padding-top: 50px;
+    position: relative;
 }
 .main-left{
     width: 949px;
-}
-.suatchieu {
-    display: flex;
-    
-}
-.suatchieu
-.suatchieu h3 {
-    text-align: center;
-    padding-top: 10px;
-}
-
-.suatchieu nav ul {
-    list-style: none;
-    display: flex;
-}
-
-.suatchieu nav ul li {
-    margin-left: 20px;
-    border: 1px solid rgb(224, 224, 224);
-    width: 80px;
-    height: 30px;
-    padding-top: 15px;
-    text-align: center;
-}
-
-.suatchieu nav ul li a {
-    text-decoration: none;
-    color: #333333;
-}
-
-.suatchieu p:hover {
-    background-color: #034ea2;
-    color: white;
 }
 
 .listghe nav ul {
@@ -93,25 +62,29 @@
 
 .listghe nav ul li {
     line-height: 40px;
+    margin-bottom: 20px;
 }
 
 .hang-ghe {
     display: flex;
+    align-items: center;
 }
 
 .hang-input {
     margin-left: 60px;
     margin-right: 60px;
     width: 600px;
-  
+  display: flex;
+}
+.check_ghe{
+    border: 1px solid #d7d7d7;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin-right: 10px;
 }
 
-.hang-input input {
-    width: 35px;
-    height: 35px;
-    padding: 50px;
-    margin-right: 16px;
-}
 
 .manhinh {
     text-align: center;
@@ -192,8 +165,7 @@
 
 .tgchieu {
     margin-top: 20px;
-    line-height: 35px;
-    font-size: 20px;
+    line-height: 35px;font-size: 20px;
 }
 
 .tgchieu .ke {
@@ -233,3 +205,15 @@
 .nut-btn button:hover {
     background-color: #e08438;
 }
+.sits{
+    position: relative;
+}
+
+.sits__right{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+

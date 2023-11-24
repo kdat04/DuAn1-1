@@ -21,14 +21,11 @@
                         <div class="col-sm-9">
                             <select class="form-control" name="id_phim" id="lname">
                                 <?php foreach ($phims as $phim) : ?>
-                                    
+
                                     <option value="" hidden>Phim</option>
-                                    
+
                                     <option value="<?= $phim['id'] ?>" <?= ($phim['id'] == $list['id_phim']) ? 'selected' : '' ?>><?= $phim['ten_phim'] ?></option>
 
-                                    <option value="" hidden>Phim</option>
-
-                                    <option value="<?= $phim['id'] ?> " <?= ($phim['id'] == $list['id_phim']) ? 'selected' : '' ?>><?= $phim['ten_phim'] ?></option>
 
                                 <?php endforeach ?>
 

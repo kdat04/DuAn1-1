@@ -5,6 +5,7 @@
 
   background-color: aqua;
 }
+
 .tong_tt_user_left {
   float: left;
   margin-bottom: 100px;
@@ -14,6 +15,7 @@
 
   padding: 20px;
 }
+
 .tong_tt_user_left .user_new {
   display: flex;
   justify-content: center;
@@ -21,9 +23,11 @@
   width: 100%;
   gap: 30px;
 }
+
 .user_new {
   margin-bottom: 20px;
 }
+
 .user_new .avartar i {
   font-size: 25px;
   padding: 25px;
@@ -31,6 +35,7 @@
   background-color: rgb(219, 211, 211);
   border-radius: 40px;
 }
+
 .name_user .name_user_like {
   display: flex;
   align-items: center;
@@ -38,12 +43,15 @@
   height: 30px;
   margin-bottom: 5px;
 }
+
 .name_user .name_user_like i {
   font-size: 20px;
 }
+
 .name_user .name_user_like h5 {
   font-size: 20px;
 }
+
 .name_user .name_user_like span {
   font-size: 15px;
 }
@@ -58,6 +66,7 @@
   border-radius: 10px;
   padding: 10px;
 }
+
 .box_dm_user a {
   color: #706f6f;
   font-weight: 300;
@@ -68,9 +77,11 @@
   position: relative;
   text-decoration: none;
 }
+
 .box_dm_user a:last-child {
   padding: 0px 0px 0px 10px;
 }
+
 .box_dm_user a::after {
   position: absolute;
   left: 0px;
@@ -92,14 +103,17 @@
   background-color: rgba(61, 27, 182, 0);
   width: 100%;
 }
+
 .lienhe .lienhe1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .lienhe .lienhe1 span {
   color: rgb(72, 72, 230);
 }
+
 .tong_tt_user_right {
   width: 900px;
   margin-bottom: 100px;

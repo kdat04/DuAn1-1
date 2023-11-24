@@ -281,7 +281,7 @@ if (isset($_GET['action'])) {
                         break;
                     case 'binhluan':
                         require_once './home.php';
-                        $listbl = binhluan_select_all(); 
+                        $listbl = binhluan_select_all();
                         require_once './Binhluan/view_bl.php';
                         require_once './footer-home.php';
                         break;
@@ -304,14 +304,21 @@ if (isset($_GET['action'])) {
                         require_once './home.php';
                         if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                             $ngay_xc = $_POST['ngay_xc'];
-                            $ten_phim = $_POST['phim'];
-                            $ten_phong = $_POST['phong_chieu'];
-                            xuatchieu_insert($ngay_xc, $ten_phim, $ten_phong);
+
+                            $ten_phim = $_POST['id'];
+                            xuatchieu_insert($ngay_xc, $ten_phim);
                             $message = "Thêm thành công ";
+
+                            $phim_id = phim_select_by_id($ten_phim);
+                            $list_xuatchieu = xuatchieu_select_all();
+                            $phims = phim_select_all();
+                            require_once './xuatchieu/view_xuatchieu.php';
+                        } else {
+                            $phim_id = phim_select_by_id($_GET['id']);
+                            $list_xuatchieu = xuatchieu_select_all();
+                            // $phims = phim_select_all(); 
+                            require_once './xuatchieu/add_xuatchieu.php';
                         }
-                        $phims = phim_select_all();
-                        $phong_chieu = phong_select();
-                        require_once './xuatchieu/add_xuatchieu.php';
                         require_once './footer-home.php';
                         break;
                     case 'sua_xuatchieu':
@@ -319,8 +326,8 @@ if (isset($_GET['action'])) {
                         if (isset($_GET['id']) && $_GET['id'] > 0) {
                             $list = xuatchieu_select_by_id($_GET['id']);
                         }
+
                         $phims = phim_select_all();
-                        $phong_chieu = phong_select();
                         require_once './xuatchieu/sua_xuatchieu.php';
                         require_once './footer-home.php';
                         break;
@@ -332,7 +339,7 @@ if (isset($_GET['action'])) {
                             $id_phim = $_POST['id_phim'];
                             $id_phongchieu = $_POST['id_phongchieu'];
 
-                            xuat_chieu_update($ngay_chieu, $id_phim, $id_phongchieu, $id);
+                            xuat_chieu_update($ngay_chieu, $id_phim, $id);
                         }
                         $list_xuatchieu = xuatchieu_select_all();
                         require_once './xuatchieu/view_xuatchieu.php';
@@ -358,13 +365,17 @@ if (isset($_GET['action'])) {
                         require_once './home.php';
                         if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                             $khung_gio = $_POST['khung_gio'];
-                            $xuat_chieu = $_POST['xuat_chieu'];
-                            khunggio_insert($khung_gio, $xuat_chieu);
-                            $message = "Thêm thành công ";
+                            $xuat_chieu = $_POST['id_xc'];
+                            // $phim_id = phim_select_by_id($_GET['id']);
+                            $list_khunggio = khunggiochieu_select_all();
+                            require_once './khunggio/view_khunggio.php';
+                        } else {
+                            $xc_id = khunggio_select_by_idxc($_GET['id_xc']);
+                            require_once './khunggio/add_khunggio.php';
+                            require_once './footer-home.php';
                         }
-                        $xuat_chieu = xuatchieu_select_all();
-                        require_once './khunggio/add_khunggio.php';
-                        require_once './footer-home.php';
+
+
                         break;
                     case 'sua_khunggio':
                         require_once './home.php';

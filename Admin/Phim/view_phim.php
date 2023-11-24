@@ -28,6 +28,7 @@
                                             <th>Ngày Phát Hành</th>
                                             <th style="width: 100px;"></th>
                                             <th style="width: 100px;"></th>
+                                            <th style="width: 100px;"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -39,6 +40,11 @@
                                                 <td><?= number_format($phim['gia'], 0, ",", ".") ?>VND</td>
                                                 <td><?= $phim['ten_loaiphim'] ?></td>
                                                 <td><?= $phim['nph'] ?></td>
+                                                <td>
+                                                    <button class="btn btn-success" >
+                                                        <a style="color: white;" href="index.php?action=&act=add_xuatchieu&id=<?= $phim['id'] ?>">Thêm xuất chiếu</a>
+                                                    </button>
+                                                </td>
                                                 <td>
                                                     <button class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa sản phẩm không ?')">
                                                         <a style="color: white;" href="index.php?action=&act=xoa_phim&id=<?= $phim['id'] ?>">Xoá</a>
@@ -59,6 +65,7 @@
                                             <th>Giá</th>
                                             <th>Thể loại</th>
                                             <th>Ngày Phát Hành</th>
+                                            <th></th>
                                             <th></th>
                                             <th></th>
                                         </tr>

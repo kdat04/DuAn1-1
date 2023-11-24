@@ -29,36 +29,41 @@
                         require_once "datve/thanh_toan.php";
                         break;
                     default:
-                        require_once "datve/chonghe.php";
+                        require_once "datve/ghe.php";
                         break;
                 }
             } else {
-                require_once "datve/chonghe.php";
+                require_once "datve/ghe.php";
             }
             ?>
         </div>
         <div class="main-right">
             <div class="phantren">
                 <div class="img-ctbill">
-                    <img src="IMG_FILM/the-marvels-3_1699586058577.webp" alt="" width="150px">
+                    <img src="../Admin/Img_ad/<?= $list_ve['img_phim'] ?>" alt="" width="150px">
                     <div class="img-ctbill-text">
-                        <h2>Biệt Đội Marvels</h2>
+                        <h2><?= $list_ve['ten_phim'] ?></h2>
                         <p>2D Phụ Đề</p> <br>
-                        <span>T13</span>
+                        <div class="checked-place">
+
+                        </div>
+                        <!-- <span>T13</span> -->
                     </div>
                 </div>
                 <div class="tgchieu">
-                    <span>Galaxy Trung Chánh - RAP 1</span> <br>
-                    <span>Suất: 09:45 - Thứ Ba, 14/11/2023</span> <br>
+                    <span>Galaxy Hà Nội</span> <br>
+                    <span>Suất: <?= $list_ve['gio_chieu'] ?> -<?= $list_ve['ngay_chieu'] ?></span> <br>
                     <span class="ke">------------------------------------------------------------------</span>
                 </div>
                 <div class="tongtien">
                     <span>Tổng cộng</span>
-                    <span class="mau">0 đ</span>
+                    <div class="checked-result">
+                        $0
+                    </div>
                 </div>
             </div>
             <div class="nut-btn">
-                <button>Quay lại </button>
+                <button><a href="">Quay lại</a></button>
                 <button><a href="index.php?action=dat_ve&link=chondoan">Tiếp tục</a></button>
             </div>
         </div>

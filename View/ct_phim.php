@@ -89,7 +89,7 @@
             </div>
           </div>
         </div>
-        <div class="dress_time_chieu">
+        <!-- <div class="dress_time_chieu">
           <h3>Galaxy Sài Gòn </h3>
           <div class="dress_time_chieu_tong">
             <div class="phu_de">
@@ -102,7 +102,7 @@
               <?php endfor; ?>
             </div>
           </div>
-        </div>
+        </div> -->
         </div>
       </div>
       <div class="ct_phim_box_right">

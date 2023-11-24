@@ -42,9 +42,21 @@
             </div>
         </div>
 </footer>
+<!-- jQuery 1.9.1-->
+
 <script src="./JS/nut-sl.js"></script>
 <script src="./JS/home.js"></script>
 
+<script>window.jQuery || document.write('<script src="jst/external/jquery-1.10.1.min.js"><\/script>')</script>
+
+<!-- Custom -->
+<script src="jst/custom.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        init_BookingTwo();
+    });
+</script>
 <body>
 
     </html>

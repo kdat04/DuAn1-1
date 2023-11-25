@@ -89,12 +89,16 @@ if (isset($_GET['action'])) {
             require_once "./thongtinuser.php";
             break;
         case 'dat_ve':
-            $id_phim = $_GET['id'];
-            $id_xuatchieu = $_GET['id_xc'];
-            $id_khunggio = $_GET['id_kgc'];
-            // $_SESSION['phim'] = [$id_phim, $id_xuatchieu, $id_khunggio];
-            // $spadd = [$id_phim, $id_xuatchieu,$id_khunggio];
-            $list_ve = load_ve_phim($id_phim, $id_xuatchieu, $id_khunggio);
+            if (!isset($_SESSION['phim'])) {
+                $id_phim = $_GET['id'];
+                $id_xuatchieu = $_GET['id_xc'];
+                $id_khunggio = $_GET['id_kgc'];
+                $_SESSION['phim'] = [$id_phim, $id_xuatchieu, $id_khunggio];
+                $list_ve = load_ve_phim($id_phim, $id_xuatchieu,$id_khunggio);
+            }else{
+                $list_ve = load_ve_phim($_SESSION['phim'][0], $_SESSION['phim'][1], $_SESSION['phim'][2]);
+            }
+            // var_dump($_SESSION['phim']);
             $_SESSION['ve'] = $list_ve;
             require_once "./dat_ve.php";
             break;

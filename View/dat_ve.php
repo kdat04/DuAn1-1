@@ -24,11 +24,16 @@
                         break;
                     case 'chondoan':
                         if (isset($_POST['tiep_tuc']) && ($_POST['tiep_tuc'])) {
-                            $gia_ghe = $_POST['gia_ghe'];
-                            $ten_ghe = $_POST['ten_ghe'];
-                            $spadd = [$gia_ghe,$ten_ghe];
-                            array_push($_SESSION['ve'], $spadd);
-                            }
+                            $ten_ghe =  array();
+                            foreach ($_POST as $key => $value) {
+                                if ($key == "ten_ghe") {
+                                  $ten_ghe[] = $value;
+                                }
+                              }
+                            $gia_ghe = $_POST['giaghe'];
+
+                            array_push($_SESSION['ve'], $gia_ghe, $ten_ghe);
+                        }
                         require_once "datve/chondoan.php";
                         break;
                     case 'thanh_toan':
@@ -41,7 +46,7 @@
             } else {
                 require_once "datve/ghe.php";
             }
-            ?>
+            ?><?= var_dump($_SESSION['ve'])?>
         </div>
         <form action="./index.php?action=dat_ve&link=chondoan" method="post">
             <div class="main-right">
@@ -52,26 +57,35 @@
                             <h2><?= $_SESSION['ve']['ten_phim'] ?></h2>
                             <p>2D Phụ Đề</p> <br>
                             <div class="checked-place">
-
+                                
+                                <?php if (isset($_SESSION['ve'][1])) {
+                                    echo '<span class="choosen-place">'.$_SESSION['ve'][1].'</span>';
+                                } else {
+                                } ?>
+                                
                             </div>
                             <!-- <span>T13</span> -->
                         </div>
                     </div>
                     <div class="tgchieu">
                         <span>Galaxy Hà Nội</span> <br>
-                        <span>Suất: <?= $_SESSION['ve']['gio_chieu'] ?> -<?= $_SESSION['ve']['ngay_chieu'] ?></span> <br>
+                        <span>Suất: <?= $_SESSION['ve']['gio_chieu'] ?> - <?= $_SESSION['ve']['ngay_chieu'] ?></span> <br>
                         <span class="ke">------------------------------------------------------------------</span>
                     </div>
                     <div class="tongtien">
                         <span>Tổng cộng</span>
                         <div class="checked-result">
-                            <input disabled name="gia_ghe" style=" width: 80px; font-size: 20px; border: none;" type="text" id="gia_ghe" value="0"> VND
+                            <input name="giaghe" style=" width: 80px; font-size: 20px; border: none;" type="text" id="gia_ghe" value="<?php if (!isset($_SESSION['ve'][0])) {
+                                                                                                                                            0;
+                                                                                                                                        } else {
+                                                                                                                                        echo $_SESSION['ve'][0];
+                                                                                                                                        } ?>"> VND
                         </div>
                     </div>
                 </div>
                 <div class="nut-btn">
                     <button><a href="">Quay lại</a></button>
-                    <input type="submit" name="tiep_tuc"  value="Tiếp Tục">
+                    <input type="submit" name="tiep_tuc" value="Tiếp Tục">
                 </div>
             </div>
         </form>

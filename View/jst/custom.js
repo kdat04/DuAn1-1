@@ -615,24 +615,30 @@ function init_BookingTwo () {
                             $(this).addClass('sits-state--your');
 
                             $('.checked-place').prepend('<span class="choosen-place '+place+'">'+ place +'</span>');
-
+                            $('.checked-place').prepend('<input type="hidden" name="ten_ghe" value="'+place+'">');
                             switch(ticketPrice)
                                 {
                                 case '10':
-                                  sum += 10;
+                                  sum += 100000;
                                   cheap += 1;
                                   break;
                                 case '20':
-                                  sum += 20;
+                                  sum += 200000;
                                   middle += 1;
                                   break;
                                 case '30':
-                                  sum += 30;
+                                  sum += 300000;
                                   expansive += 1;
                                   break;
                             }
 
-                            $('.checked-result').text('$'+sum);
+                            // $('.checked-result').text('$'+sum);
+                            // var gia_ghe = document.getElementById("gia_ghe");
+                            // gia_ghe.value = '$'+sum;
+
+                            const gia_ghe = sum;
+
+document.getElementById("gia_ghe").setAttribute('value',gia_ghe)
                         }
                     }
 
@@ -644,20 +650,22 @@ function init_BookingTwo () {
                         switch(ticketPrice)
                                 {
                                 case '10':
-                                  sum -= 10;
+                                  sum -= 100000;
                                   cheap -= 1;
                                   break;
                                 case '20':
-                                  sum -= 20;
+                                  sum -= 200000;
                                   middle -= 1;
                                   break;
                                 case '30':
-                                  sum -= 30;
+                                  sum -= 300000;
                                   expansive -= 1;
                                   break;
                             }
 
-                        $('.checked-result').text('$'+sum)
+                            const gia_ghe = sum;
+
+                            document.getElementById("gia_ghe").setAttribute('value',gia_ghe)
                     }
 
                     //data element init

@@ -202,8 +202,19 @@
     text-decoration: none;
     color: white;
 }
+.nut-btn input {
+    background-color: #ff953f;
+    width: 200px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+}
+.nut-btn input:hover{
+    background-color: #e08438;
+}
 .nut-btn button:hover {
     background-color: #e08438;
+   
 }
 .sits{
     position: relative;

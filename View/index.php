@@ -93,8 +93,9 @@ if (isset($_GET['action'])) {
             $id_xuatchieu = $_GET['id_xc'];
             $id_khunggio = $_GET['id_kgc'];
             // $_SESSION['phim'] = [$id_phim, $id_xuatchieu, $id_khunggio];
-
+            // $spadd = [$id_phim, $id_xuatchieu,$id_khunggio];
             $list_ve = load_ve_phim($id_phim, $id_xuatchieu, $id_khunggio);
+            $_SESSION['ve'] = $list_ve;
             require_once "./dat_ve.php";
             break;
         case 'uu_dai':

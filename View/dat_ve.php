@@ -23,13 +23,14 @@
                         require_once "datve/ghe.php";
                         break;
                     case 'chondoan':
+
                         if (isset($_POST['tiep_tuc']) && ($_POST['tiep_tuc'])) {
-                            $ten_ghe =  array();
+                            $ten_ghe = array();
                             foreach ($_POST as $key => $value) {
                                 if ($key == "ten_ghe") {
-                                  $ten_ghe[] = $value;
+                                    $ten_ghe['ghe'] = $value;
                                 }
-                              }
+                            }
                             $gia_ghe = $_POST['giaghe'];
 
                             array_push($_SESSION['ve'], $gia_ghe, $ten_ghe);
@@ -46,7 +47,7 @@
             } else {
                 require_once "datve/ghe.php";
             }
-            ?><?= var_dump($_SESSION['ve'])?>
+            ?>
         </div>
         <form action="./index.php?action=dat_ve&link=chondoan" method="post">
             <div class="main-right">
@@ -57,12 +58,12 @@
                             <h2><?= $_SESSION['ve']['ten_phim'] ?></h2>
                             <p>2D Phụ Đề</p> <br>
                             <div class="checked-place">
-                                
-                                <?php if (isset($_SESSION['ve'][1])) {
-                                    echo '<span class="choosen-place">'.$_SESSION['ve'][1].'</span>';
+                                <?php if (isset($ten_ghe['ghe'])) {
+                                    foreach ($ten_ghe['ghe']as $key => $ghe) {
+                                        echo  '<span class="choosen-place">'.$ghe.'</span>';
+                                    }
                                 } else {
                                 } ?>
-                                
                             </div>
                             <!-- <span>T13</span> -->
                         </div>
@@ -78,7 +79,7 @@
                             <input name="giaghe" style=" width: 80px; font-size: 20px; border: none;" type="text" id="gia_ghe" value="<?php if (!isset($_SESSION['ve'][0])) {
                                                                                                                                             0;
                                                                                                                                         } else {
-                                                                                                                                        echo $_SESSION['ve'][0];
+                                                                                                                                            echo $_SESSION['ve'][0];
                                                                                                                                         } ?>"> VND
                         </div>
                     </div>

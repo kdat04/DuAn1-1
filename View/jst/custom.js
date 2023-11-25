@@ -621,7 +621,7 @@ function init_BookingTwo() {
           '<span class="choosen-place ' + place + '">' + place + "</span>"
         );
         $(".checked-place").prepend(
-          '<input type="hidden" name="ten_ghe" value="' + place + '">'
+          '<input type="hidden" name="ten_ghe[]" value="' + place + '">'
         );
         switch (ticketPrice) {
           case "10":

@@ -48,8 +48,8 @@
           <h3>Lịch chiếu </h3>
           <div class="khung_chieu">
             <div class="khung_chieu_time">
-              <i class="fa-solid fa-chevron-up fa-rotate-270"></i>       
-               <?php foreach ($xuat_chieu as $xc) : ?>
+              <i class="fa-solid fa-chevron-up fa-rotate-270"></i>
+              <?php foreach ($xuat_chieu as $xc) : ?>
                 <a href="./index.php?action=ct_phim&id=<?= $list['id'] ?>&id_xc=<?= $xc['id'] ?>">
                   <div class="ngay_thu">
                     <?= $xc['ngay_chieu'] ?>
@@ -81,11 +81,11 @@
               <span>2D Phụ Đề</span>
             </div>
             <div class="time_chieu">
-                <?php foreach ($khunggio as $kg) : ?>
+              <?php foreach ($khunggio as $kg) : ?>
                   <a href="index.php?action=dat_ve&id=<?= $list['id'] ?>&id_xc=<?= $kg['id_xuat_chieu'] ?>&id_kgc=<?= $kg['id'] ?>">
                     <p><?= $kg['gio_chieu'] ?></p>
                   </a>
-                <?php endforeach; ?>
+              <?php endforeach; ?>
             </div>
           </div>
         </div>
@@ -107,7 +107,7 @@
       </div>
       <div class="ct_phim_box_right">
         <h3>PHIM ĐANG CHIẾU</h3>
-        
+
         <div class="phim_lq">
           <div class="phim_lq_img">
             <img src="IMG/phim_lq1.webp" alt="">

@@ -7,10 +7,10 @@ function      phim_insert($ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  
     pdo_execute($sql, $ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $thoi_luong_phim, $cs_danh_gia, $qg, $dv1, $dv2, $dv3, $tt, $id_loaiphim);
 }
 
-function       phim_update($ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $thoi_luong_phim, $cs_danh_gia, $qg, $dv1, $dv2, $dv3, $tt, $id_loaiphim, $id)
+function       phim_update($ten_phim, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $thoi_luong_phim, $cs_danh_gia, $qg, $dv1, $dv2, $dv3, $tt, $id_loaiphim, $id)
 {
-    $sql = "UPDATE phim SET ten_phim=?,gia=?,img_phim=?,img_banner=?,mota=?,nsx=?,nph=?,thoi_luong_phim=? ,cs_danh_gia=?, quocgia=?,dienvien1=?,dienvien2=?,dienvien3=?,tt=?,id_loaiphim=? WHERE id=?";
-    pdo_execute($sql, $ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $thoi_luong_phim, $cs_danh_gia, $qg, $dv1, $dv2, $dv3, $tt, $id_loaiphim, $id);
+    $sql = "UPDATE phim SET ten_phim=?,img_phim=?,img_banner=?,mota=?,nsx=?,nph=?,thoi_luong_phim=? ,cs_danh_gia=?, quocgia=?,dienvien1=?,dienvien2=?,dienvien3=?,tt=?,id_loaiphim=? WHERE id=?";
+    pdo_execute($sql, $ten_phim, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $thoi_luong_phim, $cs_danh_gia, $qg, $dv1, $dv2, $dv3, $tt, $id_loaiphim, $id);
 }
 
 function phim_delete($ma_hh)
@@ -29,36 +29,36 @@ function phim_delete($ma_hh)
 
 function phim_select_by_id($ma_hh)
 {
-    $sql = "SELECT phim.id, phim.ten_phim, phim.gia,phim.img_banner, phim.img_phim, phim.mota, phim.nsx, phim.nph,phim.thoi_luong_phim ,phim.cs_danh_gia,phim.view,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3,phim.tt,phim.id_loaiphim,loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id  WHERE phim.id = ?";
+    $sql = "SELECT phim.id, phim.ten_phim,phim.img_banner, phim.img_phim, phim.mota, phim.nsx, phim.nph,phim.thoi_luong_phim ,phim.cs_danh_gia,phim.view,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3,phim.tt,phim.id_loaiphim,loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id  WHERE phim.id = ?";
     return pdo_query_one($sql, $ma_hh);
 }
 
 
 function phim_select_all()
 {
-    $sql = "SELECT phim.id, phim.ten_phim, phim.gia, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id";
+    $sql = "SELECT phim.id, phim.ten_phim, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id";
     return pdo_query($sql);
 }
 function phim_select_all_tt()
 {
-    $sql = "SELECT phim.id, phim.ten_phim, phim.gia, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id LIMIT 0, 8";
+    $sql = "SELECT phim.id, phim.ten_phim, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id LIMIT 0, 8";
     return pdo_query($sql);
 }
 
 function phim_select_search()
 {
-    $sql = "SELECT phim.id, phim.ten_phim, phim.gia, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id LIMIT 0, 4";
+    $sql = "SELECT phim.id, phim.ten_phim, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id LIMIT 0, 4";
     return pdo_query($sql);
 }
 function phim_select_dgchieu()
 {
-    $sql = "SELECT phim.id, phim.ten_phim, phim.gia, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id LIMIT 0, 3";
+    $sql = "SELECT phim.id, phim.ten_phim, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id LIMIT 0, 3";
     return pdo_query($sql);
 }
 
 function phim_select_keyword($key, $category_id)
 {
-    $sql = "SELECT phim.id, phim.ten_phim, phim.gia, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.view,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim LEFT JOIN loai_phim ON phim.id_loaiphim = loai_phim.id Where 1";
+    $sql = "SELECT phim.id, phim.ten_phim, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.view,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim LEFT JOIN loai_phim ON phim.id_loaiphim = loai_phim.id Where 1";
     // return pdo_query($sql);
     if ($key != "") {
         $sql .= " and ten_phim like '%" . $key . "%'";
@@ -73,7 +73,7 @@ function phim_select_keyword($key, $category_id)
 
 function phim_search_keyword($key)
 {
-    $sql = "SELECT phim.id, phim.ten_phim, phim.gia, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.view,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim LEFT JOIN loai_phim ON phim.id_loaiphim = loai_phim.id Where 1";
+    $sql = "SELECT phim.id, phim.ten_phim, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.view,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim LEFT JOIN loai_phim ON phim.id_loaiphim = loai_phim.id Where 1";
     // return pdo_query($sql);
     if ($key != "") {
         $sql .= " and ten_phim like '%" . $key . "%' or ten_loaiphim like '%" . $key . "%'";

@@ -64,12 +64,6 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="email1" class="col-sm-3 text-right control-label col-form-label">Giá phim</label>
-                        <div class="col-sm-9">
-                            <input type="text" name="gia" class="form-control" id="email1" placeholder="Giá phim">
-                        </div>
-                    </div>
-                    <div class="form-group row">
                         <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Nhà sản xuất </label>
                         <div class="col-sm-9">
                             <input type="text" name="nsx" class="form-control" id="cono1" placeholder="Nhà sản xuất">

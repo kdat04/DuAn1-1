@@ -607,6 +607,7 @@ function init_BookingTwo() {
   var cheap = 0;
   var middle = 0;
   var expansive = 0;
+  var dem = 0;
 
   $(".sits__place").click(function (e) {
     e.preventDefault();
@@ -614,63 +615,62 @@ function init_BookingTwo() {
     var ticketPrice = $(this).attr("data-price");
 
     if (!$(e.target).hasClass("sits-state--your")) {
-      if (!$(this).hasClass("sits-state--not")) {
-        $(this).addClass("sits-state--your");
+      if(dem < 4){
+        if (!$(this).hasClass("sits-state--not")) {
+          $(this).addClass("sits-state--your");
+          dem += 1;
+          $(".checked-place").prepend(
+            '<span class="choosen-place ' + place + '">' + place + "</span>"
+          );
+          $(".checked-place").prepend(
+            '<input class="' +
+              place +
+              '" type="hidden" name="ten_ghe[]" value="' +
+              place +
+              '">'
+          );
+          switch (ticketPrice) {
+            case "10":
+              sum += 100000;
+              cheap += 1;
+              break;
+            case "20":
+              sum += 200000;
+              middle += 1;
+              break;
+            case "30":
+              sum += 300000;
+              expansive += 1;
+              break;
+          }
+          const gia_ghe = sum;
+          document.getElementById("gia_ghe").setAttribute("value", gia_ghe);
+        
+      }
+    } }else {
+        $(this).removeClass("sits-state--your");
 
-        $(".checked-place").prepend(
-          '<span class="choosen-place ' + place + '">' + place + "</span>"
-        );
-        $(".checked-place").prepend(
-          '<input type="hidden" name="ten_ghe[]" value="' + place + '">'
-        );
+        $("." + place + "").remove();
+        dem -= 1;
         switch (ticketPrice) {
           case "10":
-            sum += 100000;
-            cheap += 1;
+            sum -= 100000;
+            cheap -= 1;
             break;
           case "20":
-            sum += 200000;
-            middle += 1;
+            sum -= 200000;
+            middle -= 1;
             break;
           case "30":
-            sum += 300000;
-            expansive += 1;
+            sum -= 300000;
+            expansive -= 1;
             break;
         }
-
-        // $('.checked-result').text('$'+sum);
-        // var gia_ghe = document.getElementById("gia_ghe");
-        // gia_ghe.value = '$'+sum;
-
         const gia_ghe = sum;
-
         document.getElementById("gia_ghe").setAttribute("value", gia_ghe);
       }
-    } else {
-      $(this).removeClass("sits-state--your");
 
-      $("." + place + "").remove();
-
-      switch (ticketPrice) {
-        case "10":
-          sum -= 100000;
-          cheap -= 1;
-          break;
-        case "20":
-          sum -= 200000;
-          middle -= 1;
-          break;
-        case "30":
-          sum -= 300000;
-          expansive -= 1;
-          break;
-      }
-
-      const gia_ghe = sum;
-
-      document.getElementById("gia_ghe").setAttribute("value", gia_ghe);
-    }
-
+    console.log(dem)
     //data element init
     var number = $(".checked-place").children().length;
 
@@ -689,6 +689,72 @@ function init_BookingTwo() {
 
     //data element set
     sits.val(chooseSits.substr(2));
+  });
+
+  // tinh tien do an
+  var tong_tda = document.querySelector("#gia_ghe").value;
+  var tong = parseInt(tong_tda);
+  $(".check_do_an").click(function (e) {
+    e.preventDefault();
+    var tenCombo = $(this).attr("check-place");
+    var doanPrice = $(this).attr("check-price");
+
+    if (!$(e.target).hasClass("trangThai")) {
+      if (!$(this).hasClass("sits-state--not")) {
+        $(this).addClass("trangThai");
+
+        $(".check-doan").prepend(
+          '<span class="choosen-place ' + tenCombo + '">' + tenCombo + "</span>"
+        );
+        $(".check-doan").prepend(
+          '<input class="' +
+            tenCombo +
+            '" type="hidden" name="ten_do_an[]" value="' +
+            tenCombo +
+            '">'
+        );
+        switch (doanPrice) {
+          case "1":
+            tong += 219000;
+            cheap += 1;
+            break;
+          case "2":
+            tong += 269000;
+            middle += 1;
+            break;
+          case "3":
+            tong += 249000;
+            expansive += 1;
+            break;
+        }
+        const gia_ghe = tong;
+
+        document.getElementById("gia_ghe").setAttribute("value", gia_ghe);
+      }
+    } else {
+      $(this).removeClass("trangThai");
+
+      $("." + tenCombo + "").remove();
+
+      switch (doanPrice) {
+        case "1":
+          tong -= 219000;
+          cheap -= 1;
+          break;
+        case "2":
+          tong -= 269000;
+          middle -= 1;
+          break;
+        case "3":
+          tong -= 249000;
+          expansive -= 1;
+          break;
+      }
+
+      const gia_ghe = tong;
+
+      document.getElementById("gia_ghe").setAttribute("value", gia_ghe);
+    }
   });
 
   //--- Step for data  ---//

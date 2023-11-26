@@ -19,11 +19,7 @@
             if ((isset($_GET['link'])) && ($_GET['link'] != "")) {
                 $act = $_GET['link'];
                 switch ($act) {
-                    case 'chonghe':
-                        require_once "datve/ghe.php";
-                        break;
                     case 'chondoan':
-
                         if (isset($_POST['tiep_tuc']) && ($_POST['tiep_tuc'])) {
                             $ten_ghe = array();
                             foreach ($_POST as $key => $value) {
@@ -32,12 +28,33 @@
                                 }
                             }
                             $gia_ghe = $_POST['giaghe'];
-
                             array_push($_SESSION['ve'], $gia_ghe, $ten_ghe);
                         }
+                        $step = 1;
+                        var_dump($_SESSION['ve']);
+
                         require_once "datve/chondoan.php";
                         break;
                     case 'thanh_toan':
+                        if (isset($_POST['tiep_tuc']) && ($_POST['tiep_tuc'])) {
+                            $ten_ghe = array();
+                            foreach ($_POST as $key => $value) {
+                                if ($key == "ten_ghe") {
+                                    $ten_ghe['ghe'] = $value;
+                                }
+                            }
+                            $ten_doan = array();
+                            foreach ($_POST as $key => $value) {
+                                if ($key == "ten_do_an") {
+                                    $ten_doan['doan'] = $value;
+                                }
+                            }
+                            $gia_ghe = $_POST['giaghe'];
+                            array_push($_SESSION['ve'], $gia_ghe, $ten_ghe, $ten_doan);
+                            var_dump($_SESSION['ve']);
+                        }
+                        $step = 2;
+
                         require_once "datve/thanh_toan.php";
                         break;
                     default:
@@ -45,11 +62,12 @@
                         break;
                 }
             } else {
+                $step = 0;
                 require_once "datve/ghe.php";
             }
             ?>
         </div>
-        <form action="./index.php?action=dat_ve&link=chondoan" method="post">
+        <form action="./index.php?action=dat_ve&link=<?php if ($step == 0) { ?>chondoan<?php } else { ?>thanh_toan<?php } ?>" method="post">
             <div class="main-right">
                 <div class="phantren">
                     <div class="img-ctbill">
@@ -59,8 +77,18 @@
                             <p>2D Phụ Đề</p> <br>
                             <div class="checked-place">
                                 <?php if (isset($ten_ghe['ghe'])) {
-                                    foreach ($ten_ghe['ghe']as $key => $ghe) {
-                                        echo  '<span class="choosen-place">'.$ghe.'</span>';
+                                    foreach ($ten_ghe['ghe'] as $ghe) {
+                                        echo  '<span class="choosen-place">' . $ghe . '</span>';
+                                        echo  '<input type="hidden" name="ten_ghe[]" value="' . $ghe . '">';
+                                    }
+                                } else {
+                                } ?>
+                            </div>
+                            <div style="margin-top: 20px; display: flex;" class="check-doan">
+                                <?php if (isset($ten_doan['doan'])) {
+                                    foreach ($ten_doan['doan'] as $doan) {
+                                        echo  '<span class="choosen-place">' . $doan . '</span>';
+                                        echo  '<input type="hidden" name="ten_ghe[]" value="' . $doan . '">';
                                     }
                                 } else {
                                 } ?>
@@ -85,8 +113,8 @@
                     </div>
                 </div>
                 <div class="nut-btn">
-                    <button><a href="">Quay lại</a></button>
-                    <input type="submit" name="tiep_tuc" value="Tiếp Tục">
+                    <a <?php if ($step == 0) { ?> style=" display: none;" <?php } else { ?> style=" display: block;" <?php } ?> href="./index.php?action=<?php if ($step == 1) { ?>dat_ve<?php } else if ($step == 2) { ?>dat_ve&link=chondoan<?php } ?>">Quay lại</a>
+                    <input type="submit" name="tiep_tuc" value="<?php if ($step == 2) { ?> Xác nhận <?php } else { ?>Tiếp Tục<?php } ?>">
                 </div>
             </div>
         </form>

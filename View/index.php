@@ -38,6 +38,7 @@ if (isset($_GET['action'])) {
             require_once './ds_phim.php';
             break;
         case 'dn':
+
             if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
                 $ten_dangnhap = $_POST['tendn'];
                 $matkhau = md5($_POST['mk']);
@@ -49,10 +50,17 @@ if (isset($_GET['action'])) {
                         if ($checkuser['role'] == 0) {
                             $_SESSION['nguoi_dung'] = $checkuser;
                             $list_phim_tt = phim_select_all_tt();
+                            if ($tt_dv == 0) {
+                                echo '<meta http-equiv="refresh" content="0; url = ./index.php?action=dat_ve">';
+                                require_once './dat_ve.php';
+                                require_once './footer.php';
+                                exit;
+                            } else {
                             echo '<meta http-equiv="refresh" content="0; url = ./index.php?action=">';
                             require_once './home.php';
                             require_once './footer.php';
                             exit;
+                        }
                         } else {
                             $thongbao['dangnhap'] = "Tài khoản hoặc mật khẩu không đúng";
                         }
@@ -94,13 +102,20 @@ if (isset($_GET['action'])) {
                 $id_xuatchieu = $_GET['id_xc'];
                 $id_khunggio = $_GET['id_kgc'];
                 $_SESSION['phim'] = [$id_phim, $id_xuatchieu, $id_khunggio];
-                $list_ve = load_ve_phim($id_phim, $id_xuatchieu,$id_khunggio);
-            }else{
+                $list_ve = load_ve_phim($id_phim, $id_xuatchieu, $id_khunggio);
+            } else {
                 $list_ve = load_ve_phim($_SESSION['phim'][0], $_SESSION['phim'][1], $_SESSION['phim'][2]);
             }
-            // var_dump($_SESSION['phim']);
             $_SESSION['ve'] = $list_ve;
-            require_once "./dat_ve.php";
+            // var_dump($_SESSION['ve']);
+            if (isset($_SESSION['nguoi_dung']) && ($_SESSION['nguoi_dung'])) {
+                require_once "./dat_ve.php";
+            } else {
+                $tt_dv = 0;
+                $thongbao['dangnhap'] = 'Vui lòng đăng nhập để tiếp tục đặt vé!';
+                require_once './dangnhap/dangnhap.php';
+                require_once './footer.php';
+            }
             break;
         case 'uu_dai':
             require_once "./uu_dai.php";

@@ -43,16 +43,19 @@
     transform: scaleX(0%);
     transition: all 0.3s ease-in-out;
 }
+
 .box-text nav ul li a:hover::after {
     transform: scaleX(100%);
 }
+
 .main {
     display: flex;
     /* gap: 70px; */
-    padding-top: 50px;
+    /* padding-top: 50px; */
     position: relative;
 }
-.main-left{
+
+.main-left {
     width: 949px;
 }
 
@@ -74,9 +77,10 @@
     margin-left: 60px;
     margin-right: 60px;
     width: 600px;
-  display: flex;
+    display: flex;
 }
-.check_ghe{
+
+.check_ghe {
     border: 1px solid #d7d7d7;
     width: 50px;
     height: 50px;
@@ -104,6 +108,7 @@
     background-color: #ff953f;
     width: 740px;
 }
+
 .nut-checkbox {
     display: flex;
     justify-content: space-between;
@@ -135,9 +140,11 @@
     width: 440px;
     position: relative;
 }
-.phantren{
+
+.phantren {
     position: relative;
 }
+
 .phantren::before {
     position: absolute;
     left: 0px;
@@ -147,6 +154,7 @@
     background-color: #ff953f;
     width: 460px;
 }
+
 .img-ctbill {
     display: flex;
     gap: 20px;
@@ -165,7 +173,8 @@
 
 .tgchieu {
     margin-top: 20px;
-    line-height: 35px;font-size: 20px;
+    line-height: 35px;
+    font-size: 20px;
 }
 
 .tgchieu .ke {
@@ -184,13 +193,17 @@
 }
 
 .nut-btn {
+    position: relative;
     padding-top: 40px;
     display: flex;
+    
 }
 
-.nut-btn button {
-    padding: 15px;
-    width: 200px;
+.nut-btn a {
+    text-decoration: none;
+    text-align: center;
+    padding: 13px;
+    width: 170px;
     margin-left: 25px;
     margin-right: 25px;
     border-radius: 10px;
@@ -198,29 +211,32 @@
     background-color: #ff953f;
     color: white;
 }
-.nut-btn button a{
-    text-decoration: none;
-    color: white;
-}
+
 .nut-btn input {
+    position: absolute;
+    right: 0;
     background-color: #ff953f;
     width: 200px;
     border-radius: 10px;
     border: none;
     color: white;
+    padding: 15px;
 }
-.nut-btn input:hover{
+
+.nut-btn input:hover {
     background-color: #e08438;
 }
+
 .nut-btn button:hover {
     background-color: #e08438;
-   
+
 }
-.sits{
+
+.sits {
     position: relative;
 }
 
-.sits__right{
+.sits__right {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -228,3 +244,22 @@
     right: 0;
 }
 
+.chon-pttt ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.chon-pttt ul li img {
+    width: 50px;
+}
+
+.chon-pttt ul li p {
+    text-align: center;
+}
+
+.trangThai {
+    background-color: #FF953F;
+    border-radius: 5px;
+}

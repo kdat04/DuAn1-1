@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="combo-doan-right">
-        <input type="checkbox" name="" id="">
+        <i class="fa-regular fa-square check_do_an " check-price='1' check-place = 'Combo-1'></i>
     </div>
 </div>
 <!-- 2  -->
@@ -30,7 +30,7 @@
         </div>
     </div>
     <div class="combo-doan-right">
-        <input type="checkbox" name="" id="">
+        <i class="fa-regular fa-square check_do_an " check-price='2' check-place = 'Combo-2'></i>
     </div>
 </div>
 <!-- 3  -->
@@ -46,7 +46,7 @@
         </div>
     </div>
     <div class="combo-doan-right">
-        <input type="checkbox" name="" id="">
+        <i class="fa-regular fa-square check_do_an " check-price='3' check-place = 'Combo-3'></i>
     </div>
 </div>
 

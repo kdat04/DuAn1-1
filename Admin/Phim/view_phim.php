@@ -23,7 +23,7 @@
                                             <th style="width: 150px;">Id Phim</th>
                                             <th>Tên Phim</th>
                                             <th style="width: 200px;">Ảnh</th>
-                                            <th>Giá</th>
+                                            
                                             <th>Thể loại</th>
                                             <th>Ngày Phát Hành</th>
                                             <th style="width: 100px;"></th>
@@ -37,7 +37,7 @@
                                                 <td><?= $phim['id'] ?></td>
                                                 <td><?= $phim['ten_phim'] ?></td>
                                                 <td><img src="./Img_ad/<?= $phim['img_phim'] ?>" alt="" width="50px"></td>
-                                                <td><?= number_format($phim['gia'], 0, ",", ".") ?>VND</td>
+                                                
                                                 <td><?= $phim['ten_loaiphim'] ?></td>
                                                 <td><?= $phim['nph'] ?></td>
                                                 <td>
@@ -62,7 +62,7 @@
                                             <th>Id Phim</th>
                                             <th>Tên Phim</th>
                                             <th>Ảnh</th>
-                                            <th>Giá</th>
+                                            
                                             <th>Thể loại</th>
                                             <th>Ngày Phát Hành</th>
                                             <th></th>

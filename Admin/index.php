@@ -90,7 +90,6 @@ if (isset($_GET['action'])) {
                         require_once './home.php';
                         if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                             $ten_phim = $_POST['ten_phim'];
-                            $gia = $_POST['gia'];
                             $nsx = $_POST['nsx'];
                             $nph = $_POST['nph'];
                             $mota = $_POST['mota'];
@@ -111,11 +110,11 @@ if (isset($_GET['action'])) {
                             move_uploaded_file($file['tmp_name'], "./Img_ad/" . $img_phim);
                             move_uploaded_file($file2['tmp_name'], "./Img_ad/" . $img_banner_phim);
 
-                            if ($ten_phim == "" || $gia == "" || $nsx == "" || $nph == "" || $mota == "") {
+                            if ($ten_phim == "" || $nsx == "" || $nph == "" || $mota == "") {
                                 $message = "Thêm không  thành công vì có ô để trống  ";
                             } else {
 
-                                phim_insert($ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $thoi_luong_phim, $cs_danh_gia, $qg, $dv1, $dv2, $dv3, $tt, $id_loaiphim);
+                                phim_insert($ten_phim, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $thoi_luong_phim, $cs_danh_gia, $qg, $dv1, $dv2, $dv3, $tt, $id_loaiphim);
 
                                 $message = "Thêm thành công ";
                             }
@@ -148,7 +147,6 @@ if (isset($_GET['action'])) {
                         if (isset($_POST['capnhat']) && $_POST['capnhat'] > 0) {
                             $id = $_POST['id'];
                             $ten_phim = $_POST['ten_phim'];
-                            $gia = $_POST['gia'];
                             $nsx = $_POST['nsx'];
                             $nph = $_POST['nph'];
                             $mota = $_POST['mota'];
@@ -172,7 +170,7 @@ if (isset($_GET['action'])) {
                                 $img_banner_phim = $file2['name'];
                                 move_uploaded_file($file2['tmp_name'], "./Img_ad/" . $img_banner_phim);
                             }
-                            phim_update($ten_phim, $gia, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $thoi_luong_phim, $cs_danh_gia, $qg, $dv1, $dv2, $dv3, $tt, $id_loaiphim, $id);
+                            phim_update($ten_phim, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $thoi_luong_phim, $cs_danh_gia, $qg, $dv1, $dv2, $dv3, $tt, $id_loaiphim, $id);
                         }
                         $ds_phim = phim_select_all();
                         $list_danhmuc = loai_select_all();

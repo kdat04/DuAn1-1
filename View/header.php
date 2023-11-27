@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="./CSS/dn.css">
     <link rel="stylesheet" href="./CSS/binhluan.css">
     <link rel="stylesheet" href="./CSS/style3860.css">
+    <link rel="stylesheet" href="./CSS/xacnhan.css">
     <!-- <script src="./JS/modernizr.custom.js"></script> -->
 </head>
 

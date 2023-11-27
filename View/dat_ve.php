@@ -19,6 +19,12 @@
             if ((isset($_GET['link'])) && ($_GET['link'] != "")) {
                 $act = $_GET['link'];
                 switch ($act) {
+                    case 'do_an2':
+                        $_SESSION['ve'];
+                        var_dump($_SESSION['ve']);
+                        require_once "datve/ghe.php";
+
+                        break;
                     case 'chondoan':
                         if (isset($_POST['tiep_tuc']) && ($_POST['tiep_tuc'])) {
                             $ten_ghe = array();
@@ -67,6 +73,7 @@
             }
             ?>
         </div>
+
         <form action="./index.php?action=dat_ve&link=<?php if ($step == 0) { ?>chondoan<?php } else { ?>thanh_toan<?php } ?>" method="post">
             <div class="main-right">
                 <div class="phantren">
@@ -113,10 +120,12 @@
                     </div>
                 </div>
                 <div class="nut-btn">
-                    <a <?php if ($step == 0) { ?> style=" display: none;" <?php } else { ?> style=" display: block;" <?php } ?> href="./index.php?action=<?php if ($step == 1) { ?>dat_ve<?php } else if ($step == 2) { ?>dat_ve&link=chondoan<?php } ?>">Quay lại</a>
+                    <a <?php if ($step == 0) { ?> style=" display: none;" <?php
+                                                                        } else { ?> style=" display: block;" <?php } ?> href="./index.php?action=<?php if ($step == 1) { ?>dat_ve&do_an2<?php } else if ($step == 2) { ?>dat_ve&link=chondoan<?php } ?>">Quay lại</a>
                     <input type="submit" name="tiep_tuc" value="<?php if ($step == 2) { ?> Xác nhận <?php } else { ?>Tiếp Tục<?php } ?>">
                 </div>
             </div>
         </form>
+
     </div>
 </section>

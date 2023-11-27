@@ -1,0 +1,80 @@
+.tong_xac_nhan {
+    display: flex;
+    justify-content: center;
+    margin-top: 300px;
+    margin-bottom: 300px;
+}
+
+.xacnhan {
+    width: 850px;
+    box-shadow: gray 0 0 5px 0px;
+    height: auto;
+}
+
+.xacnhan-tt {
+    font-size: 30px;
+    color: red;
+    font-weight: 500;
+    text-align: center;
+}
+
+.xacnhan-tt-text {
+    font-size: 30px;
+    color: red;
+    font-weight: 500;
+}
+
+.xacnhan-tt-icon {
+    font-size: 40px;
+    color: red;
+}
+
+.xacnhan-tt-icon i {
+    border: 1px solid red;
+    width: 73px;
+    height: 70px;
+    border-radius: 50px;
+    line-height: 70px;
+}
+
+.xacnhan-tt-bill nav ul li {
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    
+    justify-content: space-between;
+}
+
+.xacnhan-tt-bill {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.xacnhan-tt-bill nav ul {
+    list-style: none;
+    margin-left: -30px;
+}
+.ke-xacnhan{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.nut-xn{
+    display: flex;
+    justify-content: center;   
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.nut-xn input{
+    padding: 20px;
+    margin-bottom: 40px;
+    background-color: red;
+    color: white;
+    border: none;
+}
+.nut-xn input:hover{
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+}

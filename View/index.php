@@ -50,17 +50,10 @@ if (isset($_GET['action'])) {
                         if ($checkuser['role'] == 0) {
                             $_SESSION['nguoi_dung'] = $checkuser;
                             $list_phim_tt = phim_select_all_tt();
-                            if ($tt_dv == 0) {
-                                echo '<meta http-equiv="refresh" content="0; url = ./index.php?action=dat_ve">';
-                                require_once './dat_ve.php';
-                                require_once './footer.php';
-                                exit;
-                            } else {
                             echo '<meta http-equiv="refresh" content="0; url = ./index.php?action=">';
                             require_once './home.php';
                             require_once './footer.php';
                             exit;
-                        }
                         } else {
                             $thongbao['dangnhap'] = "Tài khoản hoặc mật khẩu không đúng";
                         }
@@ -111,7 +104,6 @@ if (isset($_GET['action'])) {
             if (isset($_SESSION['nguoi_dung']) && ($_SESSION['nguoi_dung'])) {
                 require_once "./dat_ve.php";
             } else {
-                $tt_dv = 0;
                 $thongbao['dangnhap'] = 'Vui lòng đăng nhập để tiếp tục đặt vé!';
                 require_once './dangnhap/dangnhap.php';
                 require_once './footer.php';

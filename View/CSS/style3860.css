@@ -130,7 +130,7 @@
   line-height: 30px;
   font-size: 10px;
   color: #690f0f;
-  z-index: 13;
+  z-index: 5;
   text-indent: -9999px;
 }
 
@@ -153,13 +153,16 @@
   background-color: #4c4145;
 }
 
+.sits-state--not{
+  background-color: #FF953F;
+}
 .sits .sits__row .sits-state--not:hover {
   text-indent: -9999px;
   cursor: auto;
 }
 
 .sits .sits__row .sits-state--not:hover:before {
-  background-color: #dbdee1;
+  background-color: #000000;
 }
 
 .sits .sits__row .sits-state--your {

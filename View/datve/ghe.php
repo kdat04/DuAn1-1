@@ -16,10 +16,10 @@
                             </aside>
 
                             <div class="sits__row">
-                                <span class="sits__place sits-price--cheap" data-place='A1' data-price='10'>A1</span>
+                                <span class="sits__place sits-price--cheap " data-place='A1' data-price='10'>A1</span>
                                 <span class="sits__place sits-price--cheap" data-place='A2' data-price='10'>A2</span>
                                 <span class="sits__place sits-price--cheap" data-place='A3' data-price='20'>A3</span>
-                                <span class="sits__place sits-price--cheap" data-place='A4' data-price='20'>A4</span>
+                                <span class="sits__place sits-price--cheap sits-state--not" data-place='A4' data-price='20'>A4</span>
                                 <span class="sits__place sits-price--cheap" data-place='A5' data-price='20'>A5</span>
                                 <span class="sits__place sits-price--cheap" data-place='A6' data-price='10'>A6</span>
                                 <span class="sits__place sits-price--cheap" data-place='A7' data-price='10'>A7</span>

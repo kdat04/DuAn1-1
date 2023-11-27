@@ -111,11 +111,8 @@
                     <div class="tongtien">
                         <span>Tổng cộng</span>
                         <div class="checked-result">
-                            <input name="giaghe" style=" width: 80px; font-size: 20px; border: none;" type="text" id="gia_ghe" value="<?php if (!isset($_SESSION['ve'][0])) {
-                                                                                                                                            0;
-                                                                                                                                        } else {
-                                                                                                                                            echo $_SESSION['ve'][0];
-                                                                                                                                        } ?>"> VND
+                            <input name="giaghe" style=" width: 80px; font-size: 20px; border: none;" type="text" id="gia_ghe"
+                             value="<?php if (!isset($_SESSION['ve'][0])) {0;} else {echo $_SESSION['ve'][0];} ?>"> VND
                         </div>
                     </div>
                 </div>

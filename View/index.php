@@ -112,6 +112,21 @@ if (isset($_GET['action'])) {
         case 'uu_dai':
             require_once "./uu_dai.php";
             break;
+        case 'xac_nhan':
+            if (isset($_GET['message']) && ($_GET['message'] == 'Successful.')) {
+                require_once "./xacnhan-tt.php";
+                break;
+            } else {
+                $khunggio = array();
+                if ((isset($_SESSION['ve']['id'])) && ($_SESSION['ve']['id'])) {
+                    $id = $_SESSION['ve']['id'];
+                    $list = phim_select_by_id($id);
+                    $xuat_chieu = xuatchieu_select_by_id_phim($id);
+                    phim_tang_so_luot_xem($id);
+                }
+                require_once './ct_phim.php';
+                break;
+            }
 
         default:
             $list_phim_tt = phim_select_all_tt();

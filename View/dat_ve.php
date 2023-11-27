@@ -31,7 +31,7 @@
                             array_push($_SESSION['ve'], $gia_ghe, $ten_ghe);
                         }
                         $step = 1;
-                        var_dump($_SESSION['ve']);
+                        // var_dump($_SESSION['ve']);
 
                         require_once "datve/chondoan.php";
                         break;
@@ -51,7 +51,7 @@
                             }
                             $gia_ghe = $_POST['giaghe'];
                             array_push($_SESSION['ve'], $gia_ghe, $ten_ghe, $ten_doan);
-                            var_dump($_SESSION['ve']);
+                            // var_dump($_SESSION['ve']);
                         }
                         $step = 2;
 

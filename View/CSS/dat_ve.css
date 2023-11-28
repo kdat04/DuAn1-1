@@ -244,21 +244,6 @@
     right: 0;
 }
 
-.chon-pttt ul {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.chon-pttt ul li img {
-    width: 50px;
-}
-
-.chon-pttt ul li p {
-    text-align: center;
-}
-
 .trangThai {
     background-color: #FF953F;
     border-radius: 5px;

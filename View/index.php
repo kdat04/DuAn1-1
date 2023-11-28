@@ -5,6 +5,8 @@ require_once '../Model/khach-hang.php';
 require_once '../Model/loai.php';
 require_once '../Model/khung-gio-chieu.php';
 require_once '../Model/xuatchieu.php';
+require_once '../Model/bill.php';
+date_default_timezone_set("Asia/Ho_Chi_Minh");
 require_once '../Model/pdo.php';
 
 $list_phim_search = phim_select_search();
@@ -114,17 +116,19 @@ if (isset($_GET['action'])) {
             break;
         case 'xac_nhan':
             if (isset($_GET['message']) && ($_GET['message'] == 'Successful.')) {
+                bill_update($_SESSION['id_bill']);
+                ve_update($_SESSION['id_bill']);
+                dv_update($_SESSION['id_ve']);
+
+                $_SESSION['id_bill'] = [];
+                $_SESSION['id_ve'] = [];
+                $_SESSION['phim'] = [];
+                $_SESSION['ve'] = [];
                 require_once "./xacnhan-tt.php";
                 break;
             } else {
-                $khunggio = array();
-                if ((isset($_SESSION['ve']['id'])) && ($_SESSION['ve']['id'])) {
-                    $id = $_SESSION['ve']['id'];
-                    $list = phim_select_by_id($id);
-                    $xuat_chieu = xuatchieu_select_by_id_phim($id);
-                    phim_tang_so_luot_xem($id);
-                }
-                require_once './ct_phim.php';
+                $list_phim_tt = phim_select_all_tt();
+                require_once './home.php';
                 break;
             }
 

@@ -19,12 +19,6 @@
             if ((isset($_GET['link'])) && ($_GET['link'] != "")) {
                 $act = $_GET['link'];
                 switch ($act) {
-                    case 'do_an2':
-                        $_SESSION['ve'];
-                        var_dump($_SESSION['ve']);
-                        require_once "datve/ghe.php";
-
-                        break;
                     case 'chondoan':
                         if (isset($_POST['tiep_tuc']) && ($_POST['tiep_tuc'])) {
                             $ten_ghe = array();
@@ -35,10 +29,18 @@
                             }
                             $gia_ghe = $_POST['giaghe'];
                             array_push($_SESSION['ve'], $gia_ghe, $ten_ghe);
+                            $ghe = implode(', ', $ten_ghe['ghe']);
+                            $ngay_tt = date('Y-m-d H:i:s');
+                            $id_user = $_SESSION['nguoi_dung']['id'];
+                            $id_kgc = $_SESSION['ve']['id'];
+                            $id_bill = bill_insert($ngay_tt, $gia_ghe);
+                            $_SESSION['id_bill'] = $id_bill;
+                            $id_ve = ve_insert($gia_ghe, $ngay_tt, $ghe, $id_user, $id_kgc, $id_bill);
+                            $_SESSION['id_ve'] = $id_ve;
                         }
                         $step = 1;
                         // var_dump($_SESSION['ve']);
-
+                        // var_dump($_SESSION['nguoi_dung']);
                         require_once "datve/chondoan.php";
                         break;
                     case 'thanh_toan':
@@ -57,7 +59,14 @@
                             }
                             $gia_ghe = $_POST['giaghe'];
                             array_push($_SESSION['ve'], $gia_ghe, $ten_ghe, $ten_doan);
+                            if (isset($ten_doan['doan']) && ($ten_doan['doan'])) {
+                                $combo = implode(', ', $ten_doan['doan']);
+                                dich_vu_insert($_SESSION['id_ve'], $combo);
+                            }
+
+
                             // var_dump($_SESSION['ve']);
+
                         }
                         $step = 2;
 
@@ -111,8 +120,11 @@
                     <div class="tongtien">
                         <span>Tổng cộng</span>
                         <div class="checked-result">
-                            <input name="giaghe" style=" width: 80px; font-size: 20px; border: none;" type="text" id="gia_ghe"
-                             value="<?php if (!isset($_SESSION['ve'][0])) {0;} else {echo $_SESSION['ve'][0];} ?>"> VND
+                            <input name="giaghe" style=" width: 80px; font-size: 20px; border: none;" type="text" id="gia_ghe" value="<?php if (!isset($_SESSION['ve'][0])) {
+                                                                                                                                            0;
+                                                                                                                                        } else {
+                                                                                                                                            echo $_SESSION['ve'][0];
+                                                                                                                                        } ?>"> VND
                         </div>
                     </div>
                 </div>

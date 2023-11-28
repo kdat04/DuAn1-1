@@ -89,7 +89,7 @@ function phim_tang_so_luot_xem($id)
 }
 
 function load_ve_phim($id, $id_xuatchieu, $id_khunggio){
-    $sql = "SELECT phim.id, phim.img_phim, phim.ten_phim, xuat_chieu.ngay_chieu,khung_gio_chieu.gio_chieu  FROM phim INNER JOIN xuat_chieu ON phim.id = xuat_chieu.id_phim INNER JOIN khung_gio_chieu ON xuat_chieu.id = khung_gio_chieu.id_xuat_chieu WHERE phim.id = '$id' AND xuat_chieu.id='$id_xuatchieu' AND khung_gio_chieu.id = '$id_khunggio'";
+    $sql = "SELECT phim.id, phim.img_phim, phim.ten_phim, xuat_chieu.ngay_chieu, khung_gio_chieu.id,khung_gio_chieu.gio_chieu  FROM phim INNER JOIN xuat_chieu ON phim.id = xuat_chieu.id_phim INNER JOIN khung_gio_chieu ON xuat_chieu.id = khung_gio_chieu.id_xuat_chieu WHERE phim.id = '$id' AND xuat_chieu.id='$id_xuatchieu' AND khung_gio_chieu.id = '$id_khunggio'";
     return pdo_query_one($sql);
 }
 // function phim_exist($ma_hh){

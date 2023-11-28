@@ -62,6 +62,7 @@
                             if (isset($ten_doan['doan']) && ($ten_doan['doan'])) {
                                 $combo = implode(', ', $ten_doan['doan']);
                                 dich_vu_insert($_SESSION['id_ve'], $combo);
+                                bill_updat_gia($_SESSION['id_bill'], $gia_ghe);
                             }
 
 
@@ -78,6 +79,14 @@
                 }
             } else {
                 $step = 0;
+                $id_user = $_SESSION['nguoi_dung']['id'];
+                $id_kgc = $_SESSION['ve']['id'];
+                $id_xc = $_GET['id_xc'];
+                $id_phim = $_GET['id'];
+                $lock_ghe = lock_ghe($id_user, $id_kgc, $id_xc, $id_phim);
+                $mang_ghe = explode(",", $lock_ghe);
+                var_dump($mang_ghe);
+                var_dump($_SESSION['ve']);
                 require_once "datve/ghe.php";
             }
             ?>

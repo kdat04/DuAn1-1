@@ -6,6 +6,7 @@ require_once '../Model/loai.php';
 require_once '../Model/khung-gio-chieu.php';
 require_once '../Model/xuatchieu.php';
 require_once '../Model/bill.php';
+require_once '../Model/ve.php';
 date_default_timezone_set("Asia/Ho_Chi_Minh");
 require_once '../Model/pdo.php';
 
@@ -120,9 +121,11 @@ if (isset($_GET['action'])) {
                 ve_update($_SESSION['id_bill']);
                 dv_update($_SESSION['id_ve']);
 
+                // $list_xc =  list_xc($_SESSION['id_bill']);
+                // var_dump($list_xc);
                 $_SESSION['id_bill'] = [];
                 $_SESSION['id_ve'] = [];
-                $_SESSION['phim'] = [];
+                unset($_SESSION['phim']);
                 $_SESSION['ve'] = [];
                 require_once "./xacnhan-tt.php";
                 break;

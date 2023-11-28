@@ -27,7 +27,8 @@ $ghes = [
                     <?php foreach ($ghes as $key => $value) : ?>
                         <div class="sits__row">
                             <?php foreach ($value as $item) : ?>
-                                <span class="sits__place sits-price--cheap <??> " data-place='<?= $key . $item[0] ?>' data-price='<?= $item[1] ?>'><?= $key . $item[0] ?></span>
+                                <span class="sits__place sits-price--cheap " data-place='<?= $key . $item[0] ?>' data-price='<?= $item[1] ?>'><?= $key . $item[0] ?></span>
+
                             <?php endforeach ?>
                         </div>
                     <?php endforeach ?>

@@ -1,0 +1,83 @@
+.tong_ls{
+   
+background-color: white;
+box-shadow: 0 0 5px 0 rgb(121, 121, 121);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 20px 20px;
+
+    border-radius: 10px;
+    
+}
+.tong_ls_left .text_3d{
+    display: flex;
+    position: relative;
+}
+.tong_ls_left .text_3d i {
+    font-size: 34px;
+    color: rgb(243, 177, 53);
+}
+.tong_ls_left .text_3d span{
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    font-weight: 700;
+    color: white;
+}
+.ma_ve{
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+.ma_ve span{
+font-weight: 300;
+margin-left: 5px;
+color: rgb(87, 87, 87);
+}
+.name_web{
+    font-weight: 700;
+    font-size: 30px;
+    color: rgb(112, 112, 112);
+    
+}
+.date_chieu{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.date_chieu h4{
+    margin-right: 20px  ;
+}
+.date_chieu h4 span{
+    
+
+    color: rgb(87, 87, 87);
+    margin-left: 5px;
+   
+}
+.date_chieu h4 span::after{
+position: absolute;
+    content: "";
+    width: 1px;
+    height: 20px;
+    right: 10px;
+    background-color: black;
+}
+.vi_tri_ghe{
+    height: 10px;
+    display: flex;
+    align-items: center;
+}
+.thanh_tien{
+    margin-top: 45px;
+}
+.thanh_tien h4{
+ font-weight: 100;
+ margin-right: 30px;
+
+}
+.thanh_tien span{
+    font-weight: 700;
+    margin-right: 30px;
+    float: right;
+}

@@ -32,7 +32,8 @@
             $link = $_GET['link'];
             switch ($link) {
                 case 'Lich_su':
-                    require_once "user_ca_nhan/lich_su_dv.php.php";
+                    $list_lich_su = lichsu_select_all($_SESSION['nguoi_dung']['id']);
+                    require_once "user_ca_nhan/lich_su_dv.php";
                     break;
                 case 'my_user':
                     require_once "user_ca_nhan/my_user.php";

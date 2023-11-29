@@ -13,4 +13,9 @@ function lock_ghe($id_kgc, $id_xc, $id_phim)
     return pdo_query($sql);
 }
 
-
+function ve_select_all()
+{
+    $sql = "SELECT ve.id, ve.gia_ve, ve.ngay_dat, ve.ghe, ve.id_user, ve.id_kgc, ve.id_bill, ve.tt_ve, users.ten_user, khung_gio_chieu.gio_chieu FROM ve INNER JOIN users ON users.id = ve.id_user INNER JOIN khung_gio_chieu ON khung_gio_chieu.id = ve.id_kgc";
+    $listve = pdo_query($sql);
+    return $listve;
+}

@@ -117,6 +117,7 @@
                                     echo ' <option value="' . $id . '">' . $ten_loaiphim . '</option>';
                                 }
                                 ?>
+                            </select>
                         </div>
                     </div>
                 </div><br>

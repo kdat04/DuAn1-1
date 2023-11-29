@@ -8,6 +8,7 @@ require_once '../Model/pdo.php';
 require_once '../Model/binh-luan.php';
 require_once '../Model/xuatchieu.php';
 require_once '../Model/khung-gio-chieu.php';
+require_once '../Model/ve.php';
 require_once "./header.php";
 
 if (isset($_GET['action'])) {
@@ -82,7 +83,7 @@ if (isset($_GET['action'])) {
                             $category_id = 0;
                         }
                         $list_danhmuc = loai_select_all();
-                        $ds_phim = phim_select_keyword($key, $category_id);
+                        $ds_phim = phim_search_keyword_view($key, $category_id);
                         require_once './Phim/view_phim.php';
                         require_once './footer-home.php';
                         break;
@@ -405,9 +406,10 @@ if (isset($_GET['action'])) {
                         require_once './khunggio/view_khunggio.php';;
                         require_once './footer-home.php';
                         break;
-                    case 'datve':
+                    case 've':
                         require_once './home.php';
-                        require_once './Datve/view_datve.php';
+                        $listve = ve_select_all();
+                        require_once './Datve/view_ve.php';
                         require_once './footer-home.php';
                         break;
                     case 'thongke':

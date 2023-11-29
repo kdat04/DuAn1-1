@@ -55,9 +55,6 @@
                     </div>
                 </div>
             </div>
-            <div class="btn_dieuhuong btn btn-success">
-                <a href="./index.php?action=&act=add_khunggio" style="color: white;">Thêm Khung giờ chiếu</a>
-            </div>
             <?php
             if (isset($message) && ($message != ""))
                 echo $message;

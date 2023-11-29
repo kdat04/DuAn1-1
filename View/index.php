@@ -12,6 +12,7 @@ date_default_timezone_set("Asia/Ho_Chi_Minh");
 require_once '../Model/pdo.php';
 
 $list_phim_search = phim_select_search();
+$list_danhmuc = loai_select_all();
 require_once "./header.php";
 
 if (isset($_GET['action'])) {
@@ -39,8 +40,15 @@ if (isset($_GET['action'])) {
         case 'ds_search':
             if (isset($_POST['kyw']) && ($_POST['kyw'])) {
                 $key = $_POST['kyw'];
-                $list_phim = phim_search_keyword($key);
+            }else {
+                $key = "";
             }
+            if (isset($_GET['id_loaiphim']) && ($_GET['id_loaiphim'] > 0)) {
+                $id_loaiphim = $_GET['id_loaiphim'];
+            } else {
+                $id_loaiphim = 0;
+            }
+            $list_phim = phim_search_keyword_view($key,$id_loaiphim);
             require_once './ds_phim.php';
             break;
         case 'dn':

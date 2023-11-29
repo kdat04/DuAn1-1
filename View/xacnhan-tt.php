@@ -14,36 +14,34 @@
         <div class="xacnhan-tt-bill">
             <nav>
                 <ul>
+                   
                     <li>
                         <h4>Mã đặt vé:</h4>
-                        <span>291276</span>
+                        <span><?= $list_xc['id'] ?></span>
                     </li>
                     <li>
                         <h4>Tên khách hàng:</h4>
-                        <span>Được</span>
+                        <span><?= $list_xc['ten_user'] ?></span>
                     </li>
                     <li>
                         <h4>Tên phim:</h4>
-                        <span>Onepice</span>
+                        <span><?= $list_xc['ten_phim'] ?></span>
                     </li>
                     <li>
                         <h4>Suất chiếu:</h4>
-                        <span>Chủ nhật: 3/12/2023 - 20:30</span>
-                    </li>
-                    <li>
-                        <h4>Dịch vụ:</h4>
-                        <span>x1 nước cocola size L + x1 bỏng ngô</span>
+                        <span><?= $list_xc['ngay_chieu'] ?>,<?= $list_xc['gio_chieu']?></span>
                     </li>
                     <li>
                         <h4>Thành tiền:</h4>
-                        <span>600.00 VNĐ</span>
+                        <span> <?= $list_xc['thanh_tien'] ?> VNĐ</span>
                     </li>
+                   
                 </ul>
             </nav>
         </div>
         <div class="ke-xacnhan">--------------------------------------------------------------------------------------------------------------------------</div>
         <div class="nut-xn">
-            <input type="button" name="" id="" value="TIẾP TỤC ĐẶT VÉ">
+            <a href="./index.php?action=">Tiếp tục đặt vé</a>
         </div>
     </section>
 </section>

@@ -27,21 +27,12 @@ $ghes = [
                     <?php foreach ($ghes as $key => $value) : ?>
                         <div class="sits__row">
                             <?php foreach ($value as $item) : ?>
-                                <span class="sits__place sits-price--cheap " data-place='<?= $key . $item[0] ?>' data-price='<?= $item[1] ?>'><?= $key . $item[0] ?></span>
+                                <span class="sits__place sits-price--cheap <?php if( in_array( $key . $item[0] ,$lock_ghe)){echo 'sits-state--not';}else{}?>" data-place='<?= $key . $item[0] ?>' data-price='<?= $item[1] ?>'><?= $key . $item[0] ?></span>
 
                             <?php endforeach ?>
                         </div>
                     <?php endforeach ?>
 
-                    
-                    <!-- <aside class="sits__checked">
-                                <div class="checked-place">
-
-                                </div>
-                                <div class="checked-result">
-                                    $0
-                                </div>
-                            </aside> -->
                     <aside class="sits__right">
                         <span class="sits__indecator">A</span>
                         <span class="sits__indecator">B</span>

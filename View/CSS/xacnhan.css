@@ -65,15 +65,18 @@
     justify-content: center;   
     margin-top: 40px;
     margin-bottom: 40px;
+    
 }
-.nut-xn input{
+.nut-xn a{
     padding: 20px;
     margin-bottom: 40px;
     background-color: red;
     color: white;
     border: none;
+    text-decoration: none;
+    transition: all 0.3s;
 }
-.nut-xn input:hover{
+.nut-xn a:hover{
     background-color: white;
     color: red;
     border: 1px solid red;

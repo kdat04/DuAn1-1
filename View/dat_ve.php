@@ -29,7 +29,7 @@
                             }
                             $gia_ghe = $_POST['giaghe'];
                             array_push($_SESSION['ve'], $gia_ghe, $ten_ghe);
-                            $ghe = implode(', ', $ten_ghe['ghe']);
+                            $ghe = implode(',', $ten_ghe['ghe']);
                             $ngay_tt = date('Y-m-d H:i:s');
                             $id_user = $_SESSION['nguoi_dung']['id'];
                             $id_kgc = $_SESSION['ve']['id'];
@@ -79,6 +79,7 @@
                 }
             } else {
                 $step = 0;
+<<<<<<< HEAD
                 // $id_user = $_SESSION['nguoi_dung']['id'];
                 // $id_kgc = $_SESSION['ve']['id'];
                 // $id_xc = $_GET['id_xc'];
@@ -87,6 +88,20 @@
                 // $mang_ghe = explode(",", $lock_ghe);
                 // var_dump($mang_ghe);
                 // var_dump($_SESSION['ve']);
+=======
+                $id_user = $_SESSION['nguoi_dung']['id'];
+                $id_kgc = $_SESSION['ve']['id_kgc'];
+                $id_xc = $_SESSION['ve']['id_xc'];
+                $id_phim = $_SESSION['ve']['id_phim'];
+                $lock_ghe= lock_ghe($id_user, $id_kgc, $id_xc, $id_phim);
+                
+                var_dump($lock_ghe);
+                $lock_ghe = array_merge($lock_ghe[0], $lock_ghe[1]);
+            
+                // $mang_ghe = explode(',', $lock_ghe['ghe'][0][0]);
+                // var_dump($_SESSION['ve']);
+
+>>>>>>> f34bec5bd54e224cabc80a0dcc1d24252bf19d5b
                 require_once "datve/ghe.php";
             }
             ?>
@@ -101,6 +116,7 @@
                             <h2><?= $_SESSION['ve']['ten_phim'] ?></h2>
                             <p>2D Phụ Đề</p> <br>
                             <div class="checked-place">
+
                                 <?php if (isset($ten_ghe['ghe'])) {
                                     foreach ($ten_ghe['ghe'] as $ghe) {
                                         echo  '<span class="choosen-place">' . $ghe . '</span>';
@@ -108,8 +124,10 @@
                                     }
                                 } else {
                                 } ?>
+
                             </div>
                             <div style="margin-top: 20px; display: flex;" class="check-doan">
+
                                 <?php if (isset($ten_doan['doan'])) {
                                     foreach ($ten_doan['doan'] as $doan) {
                                         echo  '<span class="choosen-place">' . $doan . '</span>';
@@ -117,6 +135,7 @@
                                     }
                                 } else {
                                 } ?>
+
                             </div>
                             <!-- <span>T13</span> -->
                         </div>

@@ -56,32 +56,20 @@ function phim_select_dgchieu()
     return pdo_query($sql);
 }
 
-function phim_select_keyword($key, $category_id)
+function phim_search_keyword_view($key, $id_loaiphim)
 {
     $sql = "SELECT phim.id, phim.ten_phim, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.view,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim LEFT JOIN loai_phim ON phim.id_loaiphim = loai_phim.id Where 1";
-    // return pdo_query($sql);
     if ($key != "") {
-        $sql .= " and ten_phim like '%" . $key . "%'";
+        $sql .= " and ten_phim like '%" . $key . "%' or ten_loaiphim like '%" . $key . "%'";
     }
-    if ($category_id > 0) {
-        $sql .= " and id_loaiphim  like '" . $category_id . "'";
+    if ($id_loaiphim > 0) {
+        $sql .= " and id_loaiphim  = '" . $id_loaiphim . "'";
     }
     $sql .= " order by id desc";
     $listkey = pdo_query($sql);
     return $listkey;
 }
 
-function phim_search_keyword($key)
-{
-    $sql = "SELECT phim.id, phim.ten_phim, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.view,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim LEFT JOIN loai_phim ON phim.id_loaiphim = loai_phim.id Where 1";
-    // return pdo_query($sql);
-    if ($key != "") {
-        $sql .= " and ten_phim like '%" . $key . "%' or ten_loaiphim like '%" . $key . "%'";
-    }
-    $sql .= " order by id desc";
-    $listkey = pdo_query($sql);
-    return $listkey;
-}
 function phim_tang_so_luot_xem($id)
 {
     $sql = "UPDATE phim SET view = view + 1 WHERE id=?";

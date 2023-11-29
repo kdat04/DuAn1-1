@@ -12,33 +12,16 @@
                 </div>
                 <div class="name_user_like"><i class="fa-solid fa-gift"></i><span>0 Stars</span></div>
             </div>
-
         </div>
-        <hr>
-
         <div class="box_dm_user">
-            <a href=""> Lịch Sử Giao Dịch</a>
+            <a href=""> Lịch Sử Đặt Vé</a>
             <a href="index.php?action=tt_user&link=my_user">Thông Tin Cá Nhân</a>
-            <a href=""> Thông Báo </a>
-            <a href="">Quà Tặng</a>
             <a href="index.php?action=tt_user&link=chinh_sach">Chính Sách</a>
             <a href="index.php?action=dx">Đăng Xuất</a>
+            <a href="#">HOTLINE hỗ trợ: <span>19002224 (9:00 - 22:00)</span></a>
+            <a  href="#">Email: <span>hotro@3dstudio.vn</span></a>
+            
         </div><br>
-        <hr>
-        <div class="lienhe">
-            <div class="lienhe1">
-                <p>HOTLINE hỗ trợ: <span>19002224 (9:00 - 22:00)</span></p> <i class="fa-solid fa-angle-up fa-rotate-90"></i>
-            </div>
-            <hr>
-            <div class="lienhe1">
-                <p>Email: <span>hotro@galaxystudio.vn</span></p> <i class="fa-solid fa-angle-up fa-rotate-90"></i>
-            </div>
-            <hr>
-            <div class="lienhe1">
-                <p>Câu hỏi thường gặp: </p> <i class="fa-solid fa-angle-up fa-rotate-90"></i>
-            </div>
-        </div>
-
     </section>
     <section class="tong_tt_user_right">
         <?php

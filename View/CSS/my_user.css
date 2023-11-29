@@ -10,6 +10,19 @@
 }
 .khung_my_user {
   width: 100%;
+  margin-bottom: 50px;
+}
+.khung_my_user h6{
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: -10px;
+  margin-bottom: 10px;
+
+}
+.khung_my_user1 h6{
+  font-weight: 400;
+  font-size: 18px;
+  
 }
 .background_my_user {
   background-color: #dfd9d9;
@@ -34,7 +47,7 @@
     margin-right: 50px;
 }
 .khung_my_user1{
-    margin-top: 75px;
+    margin-top: 30px;
 
 }
 .background_my_user input {

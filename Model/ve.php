@@ -9,5 +9,5 @@ require_once 'pdo.php';
 
 function lock_ghe($id_user, $id_kgc, $id_xc, $id_phim){
     $sql = "SELECT ghe FROM ve JOIN khung_gio_chieu ON ve.id_kgc = khung_gio_chieu.id JOIN xuat_chieu ON xuat_chieu.id = khung_gio_chieu.id_xuat_chieu  WHERE tt_ve = 1 AND id_user='$id_user' AND id_kgc = '$id_kgc' AND xuat_chieu.id = '$id_xc' AND xuat_chieu.id_phim = '$id_phim' ";
-    return pdo_query_one($sql);
+    return pdo_query($sql);
 }

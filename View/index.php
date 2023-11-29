@@ -1,5 +1,6 @@
 <?php
 session_start();
+// unset($_SESSION['phim']);
 require_once '../Model/phim.php';
 require_once '../Model/khach-hang.php';
 require_once '../Model/loai.php';
@@ -19,6 +20,7 @@ if (isset($_GET['action'])) {
             $khunggio = array();
             if ((isset($_GET['id'])) && ($_GET['id'])) {
                 $id = $_GET['id'];
+                $now = date('Y-m-d H:i:s');
                 if ((isset($_GET['id_xc'])) && ($_GET['id_xc'])) {
                     $id_xc = $_GET['id_xc'];
                     $khunggio = khunggiochieu_select_by_idxc($id_xc);
@@ -121,12 +123,9 @@ if (isset($_GET['action'])) {
                 ve_update($_SESSION['id_bill']);
                 dv_update($_SESSION['id_ve']);
 
-                // $list_xc =  list_xc($_SESSION['id_bill']);
+                $list_xc = list_xc($_SESSION['id_bill']);
                 // var_dump($list_xc);
-                $_SESSION['id_bill'] = [];
-                $_SESSION['id_ve'] = [];
-                unset($_SESSION['phim']);
-                $_SESSION['ve'] = [];
+                // var_dump($_SESSION['id_bill']);
                 require_once "./xacnhan-tt.php";
                 break;
             } else {
@@ -137,11 +136,20 @@ if (isset($_GET['action'])) {
 
         default:
             $list_phim_tt = phim_select_all_tt();
+            $_SESSION['id_bill'] = [];
+            $_SESSION['id_ve'] = [];
+            unset($_SESSION['phim']);
+            $_SESSION['ve'] = [];
             require_once './home.php';
             break;
     }
 } else {
     $list_phim_tt = phim_select_all_tt();
+    
+    $_SESSION['id_bill'] = [];
+    $_SESSION['id_ve'] = [];
+    unset($_SESSION['phim']);
+    $_SESSION['ve'] = [];
     require_once './home.php';
 }
 

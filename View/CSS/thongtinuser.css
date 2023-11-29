@@ -16,13 +16,15 @@
 
 .tong_tt_user_left .user_new {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  gap: 30px;
+  /* width: 100%; */
+  gap: 10px;
 }
 
 .user_new {
+  width: 470px;
   margin-bottom: 20px;
   margin-left: -60px;
 }
@@ -41,6 +43,7 @@
   gap: 20px;
   height: 30px;
   margin-bottom: 5px;
+  margin-left: -20px;
 }
 
 .name_user .name_user_like i {
@@ -102,4 +105,85 @@
   border-radius: 10px;
   float: right;
   padding: 20px;
+}
+
+.edit_information{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit_information p{
+  color: #FF953F;
+}
+
+.edit_information span{
+  color: #979797;
+}
+
+.edit_information{
+  border-bottom: 1px solid #d7d7d7;
+  padding:15px 25px;
+}
+
+.edit_information a{
+  text-decoration: none;
+  color: white;
+  background-color: #FF953F;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.edit_information_content_pass{
+  padding: 0 20px ;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.edit_information_content_pass font{
+  margin-top: 10px;
+}
+
+.current_password p{
+  padding: 10px 0;
+}
+
+.current_password input{
+  width: 500px;
+  margin-top: 10px;
+  padding: 12px;
+  outline: none;
+  background-color: white;
+  box-shadow: 0 0 5px 0px rgb(85, 85, 85);
+  border-radius: 10px;
+  border: none;
+}
+
+.btn_current_password input{
+  padding: 10px;
+  width: 100px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+
+.btn_current_password input[type = button]{
+  color: #FF953F;
+  transition: all 0.3s;
+}
+
+.btn_current_password input[type = button]:hover{
+  background-color: #FF953F;
+  color: white;
+}
+
+.btn_current_password input[type = submit]{
+  background-color: #FF953F;
+  color: white;
+  transition: all 0.3s;
+}
+
+.btn_current_password input[type = submit]:hover{
+  background-color: #FF953F;
 }

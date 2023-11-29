@@ -1,0 +1,55 @@
+.model {
+    margin: 0;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 115vh;
+    transition: all 0.3s;
+    z-index: 20;
+    overflow-y: hidden;
+}
+
+.model_inner {
+    width: 330px;
+    position: relative;
+    top: 30%;
+    left: 42%;
+    background-color: white;
+    display: block;
+    border-radius: 5px;
+}
+
+.model_inner_header {
+    background-color: #FF953F;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px 5px 0 0;
+}
+
+.model_inner_body {
+    padding: 10px 30px;
+    font-weight: bold;
+}
+
+.model_inner_footer {
+    padding: 10px;
+    transform: translateX(70%);
+}
+
+.model_inner_footer button{
+    background-color: #FF953F;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    transition: all 0.3s;
+    border-radius: 5px;
+}
+
+.model_inner_footer button:hover{
+    background-color: #292A86;
+    cursor: pointer;
+}

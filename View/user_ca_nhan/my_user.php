@@ -1,49 +1,57 @@
 <section class="tong_tt_cn">
-  <section class="tt_cn_user1">
-    <!-- 1 -->
-    <div class="khung_my_user">
-      <h6>Họ và tên</h6>
-      <div class="background_my_user">
-        <i class="fa-solid fa-user" style="color: #595f69;"></i> <span>Vũ Việt </span>
+    <section class="tt_cn_user1">
+      <!-- 1 -->
+      <div class="khung_my_user">
+        <h6>Họ và tên</h6>
+        <div class="background_my_user">
+          <i class="fa-solid fa-user" style="color: #595f69;"></i> <span><?= $khachhang['ten_user'] ?></span>
+        </div>
       </div>
-    </div>
-    <!-- 2 -->
-    <div class="khung_my_user">
-      <h6>Email</h6>
-      <div class="background_my_user">
-        <i class="fa-solid fa-envelope" style="color: #595f69;"></i> <span>vuviet071104@gmail.com</span>
+      <!-- 2 -->
+      <div class="khung_my_user">
+        <h6>Email</h6>
+        <div class="background_my_user">
+          <i class="fa-solid fa-envelope" style="color: #595f69;"></i> <span><?= $khachhang['email'] ?></span>
+        </div>
       </div>
-    </div>
-    <!-- 3 -->
-    <div class="khung_my_user1">
-      <h6>Giới Tính </h6>
-      <div class="background_my_user1">
-        <span><input type="radio" name="gt" id=""> Nam</span>
-        <span><input type="radio" name="gt" id=""> Nữ</span>
+      <!-- 3 -->
+      <div class="khung_my_user">
+        <h6>Địa chỉ</h6>
+        <div class="background_my_user">
+          <i class="fa-solid fa-envelope" style="color: #595f69;"></i> <span><?php if ($khachhang['diachi'] == '') {
+                                                                                echo 'Chưa có thông tin';
+                                                                              } else {
+                                                                                echo $khachhang['diachi'];
+                                                                              } ?></span>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="tt_cn_user1">
-    <!-- 1 -->
-    <div class="khung_my_user">
-      <h6>Ngày Sinh </h6>
-      <div class="background_my_user">
-        <i class="fa-solid fa-cake-candles" style="color: #595f69;"></i><span>07/11/2004 </span>
+    </section>
+    <section class="tt_cn_user1">
+      <!-- 1 -->
+      <div class="khung_my_user">
+        <h6>Ngày Sinh </h6>
+        <div class="background_my_user">
+          <i class="fa-solid fa-cake-candles" style="color: #595f69;"></i><span><?php if ($khachhang['nam_sinh'] != '') {
+                                                                                  echo $khachhang['nam_sinh'];
+                                                                                } else {
+                                                                                  echo 'Chưa có thông tin';
+                                                                                } ?> </span>
+        </div>
       </div>
-    </div>
-    <!-- 1 -->
-    <div class="khung_my_user">
-      <h6>Số điện thoại</h6>
-      <div class="background_my_user">
-        <i class="fa-solid fa-phone" style="color: #595f69;"></i> <span>0969462281 </span>
+      <!-- 1 -->
+      <div class="khung_my_user">
+        <h6>Số điện thoại</h6>
+        <div class="background_my_user">
+          <i class="fa-solid fa-phone" style="color: #595f69;"></i> <span><?php if ($khachhang['sdt'] == '') {
+                                                                            echo '0' . $khachhang['sdt'];
+                                                                          } else {
+                                                                            echo 'Chưa có thông tin';
+                                                                          } ?> </span>
+        </div>
       </div>
-    </div>
-    <!-- 1 -->
-    <div class="khung_my_user">
-      <h6>Mât khẩu</h6>
-      <div class="background_my_user">
-        <i class="fa-solid fa-lock" style="color: #595f69;"></i> <input type="password" value="vuviet071104" name="" id="">
+      <div class="btn_capnhat">
+        <a href="./index.php?action=tt_user&link=cap_nhat">Cập nhật thông tin</a>
       </div>
-    </div>
-  </section>
+      
+    </section>
 </section>

@@ -22,6 +22,12 @@ function khach_hang_update($id, $ten_user, $matkhau, $email, $diachi, $nam_sinh,
     $sql = "UPDATE users SET ten_user='$ten_user', matkhau='$matkhau', email='$email', diachi='$diachi', nam_sinh='$nam_sinh', role ='$role', sdt='$sdt' WHERE id='$id'";
     pdo_execute($sql);
 }
+
+function upd_pass($idkh,$pass_new)
+{
+    $sql = "UPDATE users SET matkhau = '$pass_new' WHERE id=$idkh";
+    pdo_execute($sql);
+}
 function khach_hang_update2($id, $role)
 {
     $sql = "UPDATE users SET  role ='$role' WHERE id='$id'";

@@ -101,6 +101,7 @@ if (isset($_GET['action'])) {
             require_once "../View/dangnhap/dangxuat.php";
             break;
         case 'tt_user':
+            $khachhang = khach_hang_select_by_id($_SESSION['nguoi_dung']['id']);
             require_once "./thongtinuser.php";
             break;
         case 'dat_ve':

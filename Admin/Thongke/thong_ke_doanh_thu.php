@@ -7,10 +7,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Bảng thống kê</h5>
                             <div class="btn_dieuhuong btn btn-success">
-                <a href="./index.php?action=&act=thongke_doanh_thu" style="color: white;">Doanh Thu</a>
-            </div>
-            <div class="btn_dieuhuong btn btn-success">
-                <a href="./index.php?action=&act=thongke_bl" style="color: white;">Bình luận </a>
+                <a href="./index.php?action=&act=thong_ke" style="color: white;">Thống kế </a>
             </div>
                             
                             <div class="table-responsive">
@@ -21,28 +18,30 @@
                                         <tr>
                                             <th style="width: 50px;">Id Phim </th>
                                             <th>Tên Phim</th>
-
-                                            <th>Quan Tâm </th>
                                             <th>Thể Loại </th>
+                                            <th>Số Lượng Vé Đặt</th>
+                                            <th>Doanh Thu</th>
 
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach ($listtk_phim as $list) : ?>
+                                        <?php foreach ($listtk_doanh_thu as $list) : ?>
                                             <tr>
                                                 <td><?= $list['id'] ?></td>
                                                 <td><?= $list['ten_phim'] ?></td>
-                                                <td><?= $list['view'] ?></td>
                                                 <td><?= $list['ten_loaiphim'] ?></td>
+                                                <td><?= $list['so_luong_ve_dat'] ?></td>
+                                                <td><?= $list['sum_thanhtien'] ?></td>
                                             </tr>
                                         <?php endforeach ?>
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th style="width: 50px;">Id Phim </th>
+                                        <th style="width: 50px;">Id Phim </th>
                                             <th>Tên Phim</th>
-                                            <th>Quan Tâm </th>
                                             <th>Thể Loại </th>
+                                            <th>Số Lượng Vé Đặt</th>
+                                            <th>Doanh Thu</th>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -67,15 +66,15 @@
                                             ['Danh mục', 'Số lượng sản phẩm'],
                                             <?php
 
-                                            $tongphim = count($listtk_phim);
+                                            $tongdoanhthu = count($listtk_doanh_thu);
                                             $dem = 0;
-                                            foreach ($listtk_phim as $list) {
-                                                if ($dem == $tongphim) {
+                                            foreach ($listtk_doanh_thu as $list) {
+                                                if ($dem == $tongdoanhthu) {
                                                     $dau = '';
                                                 } else {
                                                     $dau = ',';
                                                 }
-                                                echo "['" . $list['ten_phim'] . "'," . $list['view'] . "]" . $dau . "";
+                                                echo "['" . $list['ten_phim'] . "'," . $list['so_luong_ve_dat'] . "]" . $dau . "";
                                             }
                                             ?>
                                         ]);

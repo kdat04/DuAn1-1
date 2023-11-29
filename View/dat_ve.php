@@ -79,14 +79,14 @@
                 }
             } else {
                 $step = 0;
-                $id_user = $_SESSION['nguoi_dung']['id'];
-                $id_kgc = $_SESSION['ve']['id_kgc'];
-                $id_xc = $_SESSION['ve']['id_xc'];
-                $id_phim = $_SESSION['ve']['id_phim'];
-                $lock_ghe= lock_ghe($id_user, $id_kgc, $id_xc, $id_phim);
-                
-                var_dump($lock_ghe);
-                $lock_ghe = array_merge($lock_ghe[0], $lock_ghe[1]);
+                    // $id_user = $_SESSION['nguoi_dung']['id'];
+                    // $id_kgc = $_SESSION['ve']['id_kgc'];
+                    // $id_xc = $_SESSION['ve']['id_xc'];
+                    // $id_phim = $_SESSION['ve']['id_phim'];
+                    // $lock_ghe= lock_ghe($id_user, $id_kgc, $id_xc, $id_phim);
+                    
+                    // // var_dump($lock_ghe);
+                    // // $lock_ghe = array_merge($lock_ghe[0], $lock_ghe[1]);
             
                 // $mang_ghe = explode(',', $lock_ghe['ghe'][0][0]);
                 // var_dump($_SESSION['ve']);

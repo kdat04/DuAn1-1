@@ -21,7 +21,8 @@ if (isset($_GET['action'])) {
         default:
 
             if (isset($_GET['act'])) {
-                switch ($_GET['act']) {
+                switch ($_GET['act']) { 
+                       
                     case 'danhmuc':
                         require_once './home.php';
                         $list_danhmuc = loai_select_all();
@@ -83,6 +84,7 @@ if (isset($_GET['action'])) {
                         }
                         $list_danhmuc = loai_select_all();
                         $ds_phim = phim_select_keyword($key, $category_id);
+                    $_SESSION['like_id'] = $ds_phim;
                         require_once './Phim/view_phim.php';
                         require_once './footer-home.php';
                         break;
@@ -417,6 +419,19 @@ if (isset($_GET['action'])) {
                         require_once './Thongke/view_thong_ke.php';
                         require_once './footer-home.php';
                         break;
+                    case 'thongke_doanh_thu':
+                        require_once './home.php';
+                        $listtk_doanh_thu = load_thongke_doanhthu();
+
+                        require_once './Thongke/thong_ke_doanh_thu.php';
+                        require_once './footer-home.php';
+                        break;
+                        case 'thongke_bl':
+                            require_once './home.php';
+                            $listtk_phim = binh_luan_thongke();
+                            require_once './Thongke/tk_bl.php';
+                            require_once './footer-home.php';
+                            break;
                 }
             }
             break;

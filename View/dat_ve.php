@@ -107,7 +107,7 @@
                 var_dump($_SESSION['ve']);
                 // var_dump($lock_ghe);
                 if (isset($lock_ghe) && $lock_ghe != array()) {
-                    $lock_ghe1 = array_merge($lock_ghe[0], $lock_ghe[1], $lock_ghe[2]);
+                    $lock_ghe1 = array_merge($lock_ghe[0]);
                     // $lock_ghe1 = explode(',', $lock_ghe['']);
                     // var_dump(lock_ghe($id_kgc, $id_xc, $id_phim));
                     $lock_ghe_tong1 = implode(',', $lock_ghe1);

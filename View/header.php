@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="./CSS/xacnhan.css">
     <link rel="stylesheet" href="./CSS/thanh_toan.css">
     <link rel="stylesheet" href="./CSS/inner.css">
+    <link rel="stylesheet" href="./CSS/lichsuve.css">
     <!-- <script src="./JS/modernizr.custom.js"></script> -->
 </head>
 

@@ -19,11 +19,11 @@
                                    
                                     <thead> 
                                         <tr>
-                                            <th style="width: 50px;">Id Phim </th>
-                                            <th>Tên Phim</th>
+                                            <th style="width: 50px;">Id user </th>
+                                            <th>Tên User</th>
 
-                                            <th>Quan Tâm </th>
-                                            <th>Thể Loại </th>
+                                            <th>Số Lượng bình luận </th>
+                                            <th>Time bình luận</th>
 
                                         </tr>
                                     </thead>
@@ -31,18 +31,19 @@
                                         <?php foreach ($listtk_phim as $list) : ?>
                                             <tr>
                                                 <td><?= $list['id'] ?></td>
-                                                <td><?= $list['ten_phim'] ?></td>
-                                                <td><?= $list['view'] ?></td>
-                                                <td><?= $list['ten_loaiphim'] ?></td>
+                                                <td><?= $list['user'] ?></td>
+                                                <td><?= $list['countuser'] ?></td>
+                                                <td><?= $list['timebl'] ?></td>
                                             </tr>
                                         <?php endforeach ?>
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th style="width: 50px;">Id Phim </th>
-                                            <th>Tên Phim</th>
-                                            <th>Quan Tâm </th>
-                                            <th>Thể Loại </th>
+                                        <th style="width: 50px;">Id user </th>
+                                            <th>Tên User</th>
+
+                                            <th>Số Lượng bình luận </th>
+                                            <th>Time bình luận</th>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -75,7 +76,7 @@
                                                 } else {
                                                     $dau = ',';
                                                 }
-                                                echo "['" . $list['ten_phim'] . "'," . $list['view'] . "]" . $dau . "";
+                                                echo "['" . $list['user'] . "'," . $list['countuser'] . "]" . $dau . "";
                                             }
                                             ?>
                                         ]);

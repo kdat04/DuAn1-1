@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="box_dm_user">
-            <a href=""> Lịch Sử Đặt Vé</a>
+            <a href="index.php?action=tt_user&link=Lich_su"> Lịch Sử Đặt Vé</a>
             <a href="index.php?action=tt_user&link=my_user">Thông Tin Cá Nhân</a>
             <a href="index.php?action=tt_user&link=dmk">Đổi Mật Khẩu</a>
             <a href="index.php?action=tt_user&link=chinh_sach">Chính Sách</a>
@@ -32,7 +32,8 @@
             $link = $_GET['link'];
             switch ($link) {
                 case 'Lich_su':
-                    require_once "";
+                    $list_lich_su = lichsu_select_all($_SESSION['nguoi_dung']['id']);
+                    require_once "user_ca_nhan/lich_su_dv.php";
                     break;
                 case 'cap_nhat':
                     require_once "./user_ca_nhan/capnhattt.php";

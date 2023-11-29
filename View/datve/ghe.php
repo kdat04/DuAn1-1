@@ -27,11 +27,7 @@ $ghes = [
                     <?php foreach ($ghes as $key => $value) : ?>
                         <div class="sits__row">
                             <?php foreach ($value as $item) : ?>
-<<<<<<< HEAD
-                                <span class="sits__place sits-price--cheap " data-place='<?= $key . $item[0] ?>' data-price='<?= $item[1] ?>'><?= $key . $item[0] ?></span>
-=======
                                 <span class="sits__place sits-price--cheap <?php if( in_array( $key . $item[0] ,$lock_ghe_tong)){echo 'sits-state--not';}else{}?>" data-place='<?= $key . $item[0] ?>' data-price='<?= $item[1] ?>'><?= $key . $item[0] ?></span>
->>>>>>> 7b71a00fc318ceb156ae486d824ec77590dd09eb
 
                             <?php endforeach ?>
                         </div>

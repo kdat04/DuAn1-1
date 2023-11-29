@@ -99,20 +99,6 @@
                 }
             } else {
                 $step = 0;
-<<<<<<< HEAD
-                    // $id_user = $_SESSION['nguoi_dung']['id'];
-                    // $id_kgc = $_SESSION['ve']['id_kgc'];
-                    // $id_xc = $_SESSION['ve']['id_xc'];
-                    // $id_phim = $_SESSION['ve']['id_phim'];
-                    // $lock_ghe= lock_ghe($id_user, $id_kgc, $id_xc, $id_phim);
-                    
-                    // // var_dump($lock_ghe);
-                    // // $lock_ghe = array_merge($lock_ghe[0], $lock_ghe[1]);
-            
-                // $mang_ghe = explode(',', $lock_ghe['ghe'][0][0]);
-                // var_dump($_SESSION['ve']);
-
-=======
                 $id_user = $_SESSION['nguoi_dung']['id'];
                 $id_kgc = $_SESSION['ve']['id_kgc'];
                 $id_xc = $_SESSION['ve']['id_xc'];
@@ -121,7 +107,7 @@
                 var_dump($_SESSION['ve']);
                 // var_dump($lock_ghe);
                 if (isset($lock_ghe) && $lock_ghe != array()) {
-                    $lock_ghe1 = array_merge($lock_ghe[0], $lock_ghe[1], $lock_ghe[2]);
+                    $lock_ghe1 = array_merge($lock_ghe[0]);
                     // $lock_ghe1 = explode(',', $lock_ghe['']);
                     // var_dump(lock_ghe($id_kgc, $id_xc, $id_phim));
                     $lock_ghe_tong1 = implode(',', $lock_ghe1);
@@ -130,7 +116,6 @@
                 } else {
                     $lock_ghe_tong = array();
                 }
->>>>>>> 7b71a00fc318ceb156ae486d824ec77590dd09eb
                 require_once "datve/ghe.php";
             }
             ?>

@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="box_dm_user">
-            <a href=""> Lịch Sử Đặt Vé</a>
+            <a href="index.php?action=tt_user&link=Lich_su"> Lịch Sử Đặt Vé</a>
             <a href="index.php?action=tt_user&link=my_user">Thông Tin Cá Nhân</a>
             <a href="index.php?action=tt_user&link=chinh_sach">Chính Sách</a>
             <a href="index.php?action=dx">Đăng Xuất</a>
@@ -32,7 +32,7 @@
             $link = $_GET['link'];
             switch ($link) {
                 case 'Lich_su':
-                    require_once "";
+                    require_once "user_ca_nhan/lich_su_dv.php.php";
                     break;
                 case 'my_user':
                     require_once "user_ca_nhan/my_user.php";

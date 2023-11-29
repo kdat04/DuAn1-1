@@ -61,7 +61,7 @@
               <i class="fa-solid fa-chevron-up fa-rotate-90"></i>
             </div>
             <div class="khung_chieu_dress">
-              <div class="khung_chieu_dress1">
+              <!-- <div class="khung_chieu_dress1">
                 <div class="khung_chieu_dress2">
                   <input type="text" placeholder="Toàn Quốc" name="" id="">
                   <i class="fa-solid fa-chevron-up fa-rotate-180"></i>
@@ -72,7 +72,7 @@
                   <input type="text" placeholder="Tất cả rạp" name="" id="">
                   <i class="fa-solid fa-chevron-up fa-rotate-180"></i>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

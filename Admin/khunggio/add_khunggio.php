@@ -14,7 +14,7 @@
                     <div class="form-group row">
                         <label for="lname" class="col-sm-3 text-right control-label col-form-label"> Khung giờ</label>
                         <div class="col-sm-9">
-                            <input type="time" oninput="updateValue()" class="form-control" name="khung_gio" id="lname" placeholder="Xuất chiếu">
+                            <input type="time"  class="form-control" name="khung_gio" id="lname" placeholder="Xuất chiếu">
                         </div>
                     </div>
                 </div>

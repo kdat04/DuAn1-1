@@ -1,64 +1,4 @@
 
-.thanhtoan-text h5{
-    font-size: 20px;
-    color: #242424;
-}
-.makhuyenmai .mkm-ban form h5{
-    font-size: 16px;
-    margin-bottom: 7px;
-}
-.makhuyenmai .mkm-ban form input{
-    width: 300px;
-    height: 40px;
-    border: 1px solid rgb(221, 221, 221);
-}
-.makhuyenmai .mkm-ban form button{
-    width: 130px;
-    height: 44px;
-    border: 1px solid rgb(221, 221, 221);
-    border-radius: 10px;
-    background-color: #ff953f;
-    color: white;
-}
-.makhuyenmai .mkm-ban form p{
-    margin-top: 8px;
-    font-size: 14px;
-    color: #929292;
-}
-.makhuyenmai .makhuyenmai-text h5{
-    font-size: 16px;
-
-}
-.makhuyenmai .apdungdiem form .form-nut-nhapdiem input{
-    width: 300px;
-    height: 40px;
-    border: 1px solid rgb(221, 221, 221);
-}
-.makhuyenmai .apdungdiem form .form-nut-nhapdiem button{
-    width: 130px;
-    height: 44px;
-    border: 1px solid rgb(221, 221, 221);
-    border-radius: 10px;
-    background-color: #ff953f;
-    color: white;
-}
-.makhuyenmai .apdungdiem form .form-nut-nhapdiem p{
-    margin-top: 8px;
-    font-size: 14px;
-    color: #929292;
-}
-.makhuyenmai .apdungdiem form .form-nd-nhapdiem{
-    color: #444444;
-}
-.makhuyenmai .apdungdiem form .form-nd-nhapdiem h5{
-    color: #444444;
-    margin-bottom: 0px;
-
-}
-.makhuyenmai .apdungdiem form .form-nd-nhapdiem ul{ 
-    list-style: none;
-    line-height: 25px;
-}
 .phuongthuc-tt{
     padding-top: 20px;
 }
@@ -66,18 +6,32 @@
     font-size: 20px;
     color: #242424;
 }
-.chon-pttt ul{
-    list-style: none;
-    
+.chon-pttt{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.chon-pttt ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 .chon-pttt ul li{
     display: flex;
     gap: 10px;
     padding-bottom: 10px;
 }
-.chon-pttt ul li img{
-    width: 44px;
-    height: 44px;
+
+.chon-pttt ul li form img {
+    width: 50px;
+    margin-bottom: 15px;
+}
+.chon-pttt ul li form input{
+    background-color: white;
+    border: none;
+}
+.chon-pttt ul li p {
+    text-align: center;
 }
 .tt-ghichu strong{
     color: #ff5f20;

@@ -2,35 +2,38 @@
        <div class="main">
            <div class="main-left">
                <div class="phuongthuc-tt">
-                   <h5>Phương thức thanh toán</h5>
+                   <h3>Phương thức thanh toán</h3>
                    <div class="chon-pttt">
                        <ul>
                            <li>
-                               <input type="radio" name="1" id="">
-                               <img src="./IMG/mb-bank.jpg" alt="">
-                               <p>MB Bank</p>
+                               <form action="">
+                                   <img src="./IMG/mb-bank.jpg" alt="">
+                                   <input type="submit" name="momo" value="MB-BANK">
+                               </form>
                            </li>
                            <li>
                                <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="./thanhtoan/xuly_momo_qr.php">
                                    <img src="./IMG/momo.jpg" alt="">
-                                   <input type="submit" name="momo" value="QR-Momo">
+                                   <input type="submit" name="momo" value="QR-MOMO">
                                </form>
                            </li>
                            <li>
-                           <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="./thanhtoan/xuly_momo_atm.php">
+                               <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="./thanhtoan/xuly_momo_atm.php">
                                    <img src="./IMG/momo.jpg" alt="">
-                                   <input type="submit" name="momo" value="Atm-Momo">
+                                   <input type="submit" name="momo" value="ATM-MOMO">
                                </form>
                            </li>
                            <li>
-                               <input type="radio" name="1" id="">
-                               <img src="./IMG/vn-pay.jpg" alt="">
-                               <p>VNPay</p>
+                               <form action="">
+                                   <img src="./IMG/vn-pay.jpg" alt="">
+                                   <input type="submit" name="momo" value="VN-PAY">
+                               </form>
                            </li>
                            <li>
-                               <input type="radio" name="1" id="">
-                               <img src="./IMG/shoppe-pay.jpg" alt="">
-                               <p>Ví ShoppePay</p>
+                               <form action="">
+                                   <img src="./IMG/shoppe-pay.jpg" alt="">
+                                   <input type="submit" name="momo" value="Ví ShoppePay">
+                               </form>
                            </li>
                        </ul>
                    </div>

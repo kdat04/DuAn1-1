@@ -2,17 +2,15 @@
   max-width: 1400px;
   margin: auto;
   margin-bottom: 100px;
-
-  background-color: aqua;
 }
 
 .tong_tt_user_left {
   float: left;
   margin-bottom: 100px;
-  background-color: rgb(235, 240, 241);
+  box-shadow: rgb(207, 180, 180) 0 0 5px 0px;
+  background-color: white;
   border-radius: 10px;
   width: 350px;
-
   padding: 20px;
 }
 
@@ -26,6 +24,7 @@
 
 .user_new {
   margin-bottom: 20px;
+  margin-left: -60px;
 }
 
 .user_new .avartar i {
@@ -61,8 +60,8 @@
   width: 95%;
   display: flex;
   flex-direction: column;
-
-  background-color: rgb(255, 255, 255);
+  margin-bottom: -0px;
+  background-color: white;
   border-radius: 10px;
   padding: 10px;
 }
@@ -71,54 +70,35 @@
   color: #706f6f;
   font-weight: 300;
   width: 100%;
-  font-size: 18px;
+  font-size: 15px;
   padding: 10px;
   line-height: 40px;
   position: relative;
   text-decoration: none;
 }
 
-.box_dm_user a:last-child {
-  padding: 0px 0px 0px 10px;
-}
 
 .box_dm_user a::after {
   position: absolute;
   left: 0px;
-  bottom: 0px;
+  bottom: 60px;
   content: "";
-  height: 2px;
+  height: 1px;
   margin-left: -10px;
-  background-color: #d7d7d7;
-  width: 100%;
+  background-color: #e4e4e4;
+  width: 97%;
 }
 
-.box_dm_user a:last-child::after {
-  position: absolute;
-  left: 0px;
-  bottom: 0px;
-  content: "";
-  height: 2px;
-  margin-left: -10px;
-  background-color: rgba(61, 27, 182, 0);
-  width: 100%;
-}
-
-.lienhe .lienhe1 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.lienhe .lienhe1 span {
+.box_dm_user a span {
   color: rgb(72, 72, 230);
 }
 
 .tong_tt_user_right {
   width: 900px;
+  box-shadow: rgb(207, 180, 180) 0 0 5px 0px;
   margin-bottom: 100px;
 
-  background-color: rgb(235, 240, 241);
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
   float: right;
   padding: 20px;

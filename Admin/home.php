@@ -128,7 +128,7 @@
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=binhluan" aria-expanded="false"><i class="fa-solid fa-comment"></i><span class="hide-menu">Bình luận</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=xuatchieu" aria-expanded="false"><i class="fa-solid fa-calendar"></i><span class="hide-menu">Xuất chiếu</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=khunggio" aria-expanded="false"><i class="fa-solid fa-clock"></i></i><span class="hide-menu">Khung giờ chiếu</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=datve" aria-expanded="false"><i class="fa-solid fa-ticket"></i><span class="hide-menu">Đặt vé</span></a></li>
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=ve" aria-expanded="false"><i class="fa-solid fa-ticket"></i><span class="hide-menu">Vé</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=thongke" aria-expanded="false"><i class="fa-solid fa-percent"></i><span class="hide-menu">Thống kê</span></a></li>
                 </ul>
             </nav>

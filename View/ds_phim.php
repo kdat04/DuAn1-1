@@ -34,11 +34,11 @@
             <div class="film">
                 <div class="film_text">
                     <ul>
-                        <li>GALAXY CINEMA</li>
+                        <li>3D CINEMA</li>
                     </ul>
                 </div>
                 <div class="GALAXY_CINEMA">
-                    ​​​​​​Không khi lạnh bắt đầu ùa về cũng là lúc nỗi cô đơn của rất nhiều người ngày càng lớn lên, thay vì hít cái lạnh một mình ngoài đường, sao không thử vào rạp chiếu phim để hít cái lạnh nhưng vẫn có thể thưởng thức được những tác phẩm hấp dẫn tại Galaxy Cinema trong mùa đông lạnh lẽo. <br><br>
+                    ​​​​​​Không khi lạnh bắt đầu ùa về cũng là lúc nỗi cô đơn của rất nhiều người ngày càng lớn lên, thay vì hít cái lạnh một mình ngoài đường, sao không thử vào rạp chiếu phim để hít cái lạnh nhưng vẫn có thể thưởng thức được những tác phẩm hấp dẫn tại 3D Cinema trong mùa đông lạnh lẽo. <br><br>
                     Các stars sẽ được chiêu đãi những bộ phim mới đầy thú vị như sự trở lại của đạo diễn Victor Vũ với Người Vợ Cuối Cùng, cặp đôi mẹ bắt chia tay Karik và Miu Lê cùng Chiếm Đoạt. Chưa kể đến là chị đại Captain Marvels cũng sẽ tái xuất. Cùng tìm hiểu nhe.
                     <br><br>
                     1. Người Vợ Cuối Cùng – Tâm lí – 03.11.2023<br><br>

@@ -615,7 +615,7 @@ function init_BookingTwo() {
     var ticketPrice = $(this).attr("data-price");
 
     if (!$(e.target).hasClass("sits-state--your")) {
-      if(dem < 4){
+      if (dem < 4) {
         if (!$(this).hasClass("sits-state--not")) {
           $(this).addClass("sits-state--your");
           dem += 1;
@@ -645,32 +645,32 @@ function init_BookingTwo() {
           }
           const gia_ghe = sum;
           document.getElementById("gia_ghe").setAttribute("value", gia_ghe);
-        
-      }
-    } }else {
-        $(this).removeClass("sits-state--your");
-
-        $("." + place + "").remove();
-        dem -= 1;
-        switch (ticketPrice) {
-          case "10":
-            sum -= 100000;
-            cheap -= 1;
-            break;
-          case "20":
-            sum -= 200000;
-            middle -= 1;
-            break;
-          case "30":
-            sum -= 300000;
-            expansive -= 1;
-            break;
         }
-        const gia_ghe = sum;
-        document.getElementById("gia_ghe").setAttribute("value", gia_ghe);
       }
+    } else {
+      $(this).removeClass("sits-state--your");
 
-    console.log(dem)
+      $("." + place + "").remove();
+      dem -= 1;
+      switch (ticketPrice) {
+        case "10":
+          sum -= 100000;
+          cheap -= 1;
+          break;
+        case "20":
+          sum -= 200000;
+          middle -= 1;
+          break;
+        case "30":
+          sum -= 300000;
+          expansive -= 1;
+          break;
+      }
+      const gia_ghe = sum;
+      document.getElementById("gia_ghe").setAttribute("value", gia_ghe);
+    }
+
+    console.log(dem);
     //data element init
     var number = $(".checked-place").children().length;
 

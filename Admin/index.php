@@ -365,6 +365,7 @@ if (isset($_GET['action'])) {
                             $khung_gio = $_POST['khung_gio'];
                             $xuat_chieu = $_POST['id_xc'];
                             // $phim_id = phim_select_by_id($_GET['id']);
+                            khunggio_insert($khung_gio, $xuat_chieu);
                             $list_khunggio = khunggiochieu_select_all();
                             require_once './khunggio/view_khunggio.php';
                         } else {
@@ -372,8 +373,6 @@ if (isset($_GET['action'])) {
                             require_once './khunggio/add_khunggio.php';
                             require_once './footer-home.php';
                         }
-
-
                         break;
                     case 'sua_khunggio':
                         require_once './home.php';

@@ -2,14 +2,11 @@
     <div class="box-text">
         <nav>
             <ul>
-                <li><a href="#">
-                        <span>Chọn phim / Rạp / Suất</span>
-                        <span>Chọn ghế</span>
-                    </a>
+                <li>
+                    Chọn ghế
                 </li>
-                <li><a href="#">Chọn thức ăn</a></li>
-                <li><a href="#">Thanh toán</a></li>
-                <li><a href="#">Xác nhận</a></li>
+                <li>Chọn dịch vụ</li>
+                <li>Thanh toán</li>
             </ul>
         </nav>
     </div>
@@ -29,17 +26,40 @@
                             }
                             $gia_ghe = $_POST['giaghe'];
                             array_push($_SESSION['ve'], $gia_ghe, $ten_ghe);
-                            $ghe = implode(',', $ten_ghe['ghe']);
-                            $ngay_tt = date('Y-m-d H:i:s');
-                            $id_user = $_SESSION['nguoi_dung']['id'];
-                            $id_kgc = $_SESSION['ve']['id'];
-                            $id_bill = bill_insert($ngay_tt, $gia_ghe);
-                            $_SESSION['id_bill'] = $id_bill;
-                            $id_ve = ve_insert($gia_ghe, $ngay_tt, $ghe, $id_user, $id_kgc, $id_bill);
-                            $_SESSION['id_ve'] = $id_ve;
+
+                            if (isset($ten_ghe['ghe']) && ($ten_ghe['ghe'])) {
+                                $ghe = implode(',', $ten_ghe['ghe']);
+                                $ngay_tt = date('Y-m-d H:i:s');
+                                $id_user = $_SESSION['nguoi_dung']['id'];
+                                $id_kgc = $_SESSION['ve']['id_kgc'];
+                                $id_bill = bill_insert($ngay_tt, $gia_ghe);
+                                $_SESSION['id_bill'] = $id_bill;
+                                $id_ve = ve_insert($gia_ghe, $ngay_tt, $ghe, $id_user, $id_kgc, $id_bill);
+                                $_SESSION['id_ve'] = $id_ve;
+                            } else {
+                                $step = 0;
+                                $id_user = $_SESSION['nguoi_dung']['id'];
+                                $id_kgc = $_SESSION['ve']['id_kgc'];
+                                $id_xc = $_SESSION['ve']['id_xc'];
+                                $id_phim = $_SESSION['ve']['id_phim'];
+                                $lock_ghe = lock_ghe($id_kgc, $id_xc, $id_phim);
+                                var_dump($lock_ghe);
+                                if (isset($lock_ghe) && $lock_ghe != array()) {
+                                    $lock_ghe1 = array_merge($lock_ghe[0], $lock_ghe[1], $lock_ghe[2]);
+                                    // $lock_ghe1 = explode(',', $lock_ghe['']);
+                                    var_dump(lock_ghe($id_kgc, $id_xc, $id_phim));
+                                    $lock_ghe_tong1 = implode(',', $lock_ghe1);
+                                    $lock_ghe_tong = explode(',', $lock_ghe_tong1);
+                                    var_dump($lock_ghe_tong);
+                                } else {
+                                    $lock_ghe_tong = array();
+                                }
+                                require_once "datve/ghe.php";
+                                break;
+                            }
                         }
                         $step = 1;
-                        // var_dump($_SESSION['ve']);
+                        var_dump($_SESSION['ve']);
                         // var_dump($_SESSION['nguoi_dung']);
                         require_once "datve/chondoan.php";
                         break;
@@ -66,14 +86,14 @@
                             }
 
 
-                            // var_dump($_SESSION['ve']);
-
+                            var_dump($_SESSION['ve']);
                         }
                         $step = 2;
 
                         require_once "datve/thanh_toan.php";
                         break;
                     default:
+                        $step = 0;
                         require_once "datve/ghe.php";
                         break;
                 }
@@ -83,14 +103,19 @@
                 $id_kgc = $_SESSION['ve']['id_kgc'];
                 $id_xc = $_SESSION['ve']['id_xc'];
                 $id_phim = $_SESSION['ve']['id_phim'];
-                $lock_ghe= lock_ghe($id_user, $id_kgc, $id_xc, $id_phim);
-                
-                var_dump($lock_ghe);
-                $lock_ghe = array_merge($lock_ghe[0], $lock_ghe[1]);
-            
-                // $mang_ghe = explode(',', $lock_ghe['ghe'][0][0]);
-                // var_dump($_SESSION['ve']);
-
+                $lock_ghe = lock_ghe($id_kgc, $id_xc, $id_phim);
+                var_dump($_SESSION['ve']);
+                // var_dump($lock_ghe);
+                if (isset($lock_ghe) && $lock_ghe != array()) {
+                    $lock_ghe1 = array_merge($lock_ghe[0], $lock_ghe[1], $lock_ghe[2]);
+                    // $lock_ghe1 = explode(',', $lock_ghe['']);
+                    // var_dump(lock_ghe($id_kgc, $id_xc, $id_phim));
+                    $lock_ghe_tong1 = implode(',', $lock_ghe1);
+                    $lock_ghe_tong = explode(',', $lock_ghe_tong1);
+                    // var_dump($lock_ghe_tong);
+                } else {
+                    $lock_ghe_tong = array();
+                }
                 require_once "datve/ghe.php";
             }
             ?>
@@ -146,12 +171,32 @@
                     </div>
                 </div>
                 <div class="nut-btn">
-                    <a <?php if ($step == 0) { ?> style=" display: none;" <?php
-                                                                        } else { ?> style=" display: block;" <?php } ?> href="./index.php?action=<?php if ($step == 1) { ?>dat_ve&do_an2<?php } else if ($step == 2) { ?>dat_ve&link=chondoan<?php } ?>">Quay lại</a>
+                    <a href="./index.php?action=<?php if ($step == 0) { ?>ct_phim&id=<?= $_SESSION['ve']['id_phim'] ?><?php } else if ($step == 1) { ?>dat_ve&link=<?php } else if ($step == 2) { ?>dat_ve&link=chondoan<?php } ?>">Quay lại</a>
                     <input type="submit" name="tiep_tuc" value="<?php if ($step == 2) { ?> Xác nhận <?php } else { ?>Tiếp Tục<?php } ?>">
                 </div>
             </div>
         </form>
 
     </div>
+    <style>
+        <?php
+        if ($step == 0) {
+            echo '.box-text nav ul li:nth-child(1){
+            border-bottom: 1px solid #333333;
+        }';
+        } elseif ($step == 1) {
+            echo '.box-text nav ul li:nth-child(2){
+            border-bottom: 1px solid #333333;
+        }';
+        } elseif ($step == 2) {
+            echo '.box-text nav ul li:nth-child(3){
+            border-bottom: 1px solid #333333;
+        }';
+        } else {
+            echo '.box-text nav ul li:nth-child(0){
+            border-bottom: 1px solid #333333;
+        }';
+        }
+        ?>
+    </style>
 </section>

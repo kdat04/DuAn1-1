@@ -24,12 +24,21 @@ $listbl = binh_luan_select_all($id_phim);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .comment form .form-ctphim-1 span a {
+            text-decoration: none;
+            background-color: #ff953f;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 
 <body>
 
     <section class="binhluan">
-        <center>   <hr>
+        <center>
+            <hr>
             <div class="comment">
                 <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
                     <?php
@@ -59,9 +68,9 @@ $listbl = binh_luan_select_all($id_phim);
             <div class="t-bl">
                 <div class="img-ten">
                     <center>
-                    <img src="../View/IMG/user.jpg" alt="">
-                    <h4><?= $bl['ten_user'] ?></h4>
-                    <p><?= $bl['timebl'] ?></p>
+                        <img src="../View/IMG/user.jpg" alt="">
+                        <h4><?= $bl['ten_user'] ?></h4>
+                        <p><?= $bl['timebl'] ?></p>
                     </center>
                 </div>
                 <div class="binhluan-star">

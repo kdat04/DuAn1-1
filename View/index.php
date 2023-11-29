@@ -29,6 +29,7 @@ if (isset($_GET['action'])) {
                 $xuat_chieu = xuatchieu_select_by_id_phim($id);
                 phim_tang_so_luot_xem($id);
             }
+            unset($_SESSION['phim']);
             require_once './ct_phim.php';
             break;
         case 'ds_phim':
@@ -95,6 +96,7 @@ if (isset($_GET['action'])) {
             require_once "./thongtinuser.php";
             break;
         case 'dat_ve':
+            
             if (!isset($_SESSION['phim'])) {
                 $id_phim = $_GET['id'];
                 $id_xuatchieu = $_GET['id_xc'];
@@ -136,20 +138,21 @@ if (isset($_GET['action'])) {
 
         default:
             $list_phim_tt = phim_select_all_tt();
-            $_SESSION['id_bill'] = [];
-            $_SESSION['id_ve'] = [];
+            // var_dump($_SESSION['phim']);
+            unset($_SESSION['id_bill']);
+            unset($_SESSION['id_ve']);
             unset($_SESSION['phim']);
-            $_SESSION['ve'] = [];
+            unset($_SESSION['ve']);
             require_once './home.php';
             break;
     }
 } else {
     $list_phim_tt = phim_select_all_tt();
-    
-    $_SESSION['id_bill'] = [];
-    $_SESSION['id_ve'] = [];
+
+    unset($_SESSION['id_bill']);
+    unset($_SESSION['id_ve']);
     unset($_SESSION['phim']);
-    $_SESSION['ve'] = [];
+    unset($_SESSION['ve']);
     require_once './home.php';
 }
 

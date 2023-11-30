@@ -12,8 +12,8 @@
             <div class="film_text">
                 <ul>
                     <li>Phim</li>
-                    <li><button>Đang chiếu</button></li>
-                    <li><button>Sắp chiếu</button></li>
+                    <li><a href="./index.php?action=ds_phim&tt=dang_chieu">Đang chiếu</a></li>
+                    <li><a href="./index.php?action=ds_phim&tt=sap_chieu">Sắp chiếu</a></li>
                 </ul>
             </div>
             <div class="products_flim">

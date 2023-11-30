@@ -12,6 +12,7 @@ date_default_timezone_set("Asia/Ho_Chi_Minh");
 require_once '../Model/pdo.php';
 
 $list_phim_search = phim_select_search();
+$list_phim_search_sapchieu = phim_select_search_sapchieu();
 $list_danhmuc = loai_select_all();
 require_once "./header.php";
 
@@ -34,13 +35,27 @@ if (isset($_GET['action'])) {
             require_once './ct_phim.php';
             break;
         case 'ds_phim':
-            $list_phim = phim_select_all();
-            require_once './ds_phim.php';
+            if (isset($_GET['tt'])) {
+                switch ($_GET['tt']) {
+                    case 'dang_chieu':
+                        $list_phim = phim_select_all_dangchieu1();
+                        require_once './ds_phim.php';
+                        break;
+                    case 'sap_chieu':
+                        $list_phim = phim_select_all_sapchieu1();
+                        require_once './ds_phim.php';
+                        break;
+                }
+            } else {
+                $list_phim = phim_select_all();
+                require_once './ds_phim.php';
+            }
+
             break;
         case 'ds_search':
             if (isset($_POST['kyw']) && ($_POST['kyw'])) {
                 $key = $_POST['kyw'];
-            }else {
+            } else {
                 $key = "";
             }
             if (isset($_GET['id_loaiphim']) && ($_GET['id_loaiphim'] > 0)) {
@@ -48,7 +63,7 @@ if (isset($_GET['action'])) {
             } else {
                 $id_loaiphim = 0;
             }
-            $list_phim = phim_search_keyword_view($key,$id_loaiphim);
+            $list_phim = phim_search_keyword_view($key, $id_loaiphim);
             require_once './ds_phim.php';
             break;
         case 'dn':
@@ -105,7 +120,7 @@ if (isset($_GET['action'])) {
             require_once "./thongtinuser.php";
             break;
         case 'dat_ve':
-            
+
             if (!isset($_SESSION['phim'])) {
                 $id_phim = $_GET['id'];
                 $id_xuatchieu = $_GET['id_xc'];
@@ -146,23 +161,49 @@ if (isset($_GET['action'])) {
             }
 
         default:
-            $list_phim_tt = phim_select_all_tt();
+            if (isset($_GET['tt'])) {
+                switch ($_GET['tt']) {
+                    case 'dang_chieu':
+                        $list_phim_tt = phim_select_all_dangchieu();
+                        require_once './home.php';
+                        break;
+                    case 'sap_chieu':
+                        $list_phim_tt = phim_select_all_sapchieu();
+                        require_once './home.php';
+                        break;
+                }
+            } else {
+                $list_phim_tt = phim_select_all_tt();
+                require_once './home.php';
+            }
             // var_dump($_SESSION['phim']);
             unset($_SESSION['id_bill']);
             unset($_SESSION['id_ve']);
             unset($_SESSION['phim']);
             unset($_SESSION['ve']);
-            require_once './home.php';
+
             break;
     }
 } else {
-    $list_phim_tt = phim_select_all_tt();
-
+    if (isset($_GET['tt'])) {
+        switch ($_GET['tt']) {
+            case 'dang_chieu':
+                $list_phim_tt = phim_select_all_dangchieu();
+                require_once './home.php';
+                break;
+            case 'sap_chieu':
+                $list_phim_tt = phim_select_all_sapchieu();
+                require_once './home.php';
+                break;
+        }
+    } else {
+        $list_phim_tt = phim_select_all_tt();
+        require_once './home.php';
+    }
     unset($_SESSION['id_bill']);
     unset($_SESSION['id_ve']);
     unset($_SESSION['phim']);
     unset($_SESSION['ve']);
-    require_once './home.php';
 }
 
 require_once "./footer.php";

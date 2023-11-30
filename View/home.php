@@ -14,8 +14,8 @@
             <img src="./IMG/vnpay-102023-4_1697533170464.webp" alt="banner7">
         </div>
     </div>
-    <a href=""></a>
-    <div class="seach_film">
+    <!-- <a href=""></a> -->
+    <!-- <div class="seach_film">
         <span>1</span>
         <select name="" id="">
             <option value="" hidden>Chọn phim</option>
@@ -42,13 +42,13 @@
             <option value="">22:00</option>
         </select>
         <input type="button" value="Mua vé nhanh">
-    </div>
+    </div> -->
     <div class="film">
         <div class="film_text">
             <ul>
                 <li>Phim</li>
-                <li><button>Đang chiếu</button></li>
-                <li><button>Sắp chiếu</button></li>
+                <li><a href="./index.php?action=&tt=dang_chieu">Đang chiếu</a></li>
+                <li><a href="./index.php?action=&tt=sap_chieu">Sắp chiếu</a></li>
             </ul>
         </div>
         <div class="products_flim">
@@ -71,8 +71,8 @@
         <div class="film_text">
             <ul>
                 <li>GÓC ĐIỆN ẢNH</li>
-                <li><button>Bình luận phim</button></li>
-                <li><button>Blog điện ảnh</button></li>
+                <li><a>Bình luận phim</a></li>
+                <li><a>Blog điện ảnh</a></li>
             </ul>
         </div>
         <div class="cinema_corner">

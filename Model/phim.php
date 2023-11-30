@@ -45,9 +45,39 @@ function phim_select_all_tt()
     return pdo_query($sql);
 }
 
+function phim_select_all_dangchieu()
+{
+    $sql = "SELECT phim.id, phim.ten_phim, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id WHERE phim.tt = 0 LIMIT 0, 8 ";
+    return pdo_query($sql);
+}
+
+function phim_select_all_sapchieu()
+{
+    $sql = "SELECT phim.id, phim.ten_phim, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id WHERE phim.tt = 1 LIMIT 0, 8 ";
+    return pdo_query($sql);
+}
+
+function phim_select_all_dangchieu1()
+{
+    $sql = "SELECT phim.id, phim.ten_phim, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id WHERE phim.tt = 0";
+    return pdo_query($sql);
+}
+
+function phim_select_all_sapchieu1()
+{
+    $sql = "SELECT phim.id, phim.ten_phim, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id WHERE phim.tt = 1 ";
+    return pdo_query($sql);
+}
+
 function phim_select_search()
 {
     $sql = "SELECT phim.id, phim.ten_phim, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id LIMIT 0, 4";
+    return pdo_query($sql);
+}
+
+function phim_select_search_sapchieu()
+{
+    $sql = "SELECT phim.id, phim.ten_phim, phim.img_phim, phim.mota, phim.nsx, phim.nph, phim.view ,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id WHERE phim.tt = 1 LIMIT 0, 4";
     return pdo_query($sql);
 }
 function phim_select_dgchieu()

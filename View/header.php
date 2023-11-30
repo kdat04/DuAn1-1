@@ -57,7 +57,7 @@
                                 <div class="Movie_coming_soon">
                                     <h3>PHIM SẮP CHIẾU</h3>
                                     <div class="Movie_tong">
-                                        <?php foreach ($list_phim_search as $list) : ?>
+                                        <?php foreach ($list_phim_search_sapchieu as $list) : ?>
                                             <a href="./index.php?action=ct_phim&id=<?= $list['id'] ?>">
                                                 <div class="Movie">
                                                     <img src="../Admin/Img_ad/<?= $list['img_phim'] ?>" alt="Ảnh phim">

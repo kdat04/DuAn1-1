@@ -25,15 +25,6 @@
             <option value="">Quỷ Môn Quan: Gọi Hồn</option>
             <option value="">Những Kỷ Nguyên Của Taylor Swift</option>
         </select>
-        <span>2</span>
-        <select name="" id="">
-            <option value="" hidden>Chọn rạp</option>
-            <option value="">Cinema Nguyễn Du</option>
-            <option value="">Cinema Tân Bình</option>
-            <option value="">Cinema Kinh Vương</option>
-            <option value="">Cinema Quang Trung</option>
-            <option value="">Cinema Long Biên</option>
-        </select>
         <span>3</span>
         <select name="" id="">
             <option value="" hidden>Chọn ngày</option>

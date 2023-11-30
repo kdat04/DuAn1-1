@@ -1,6 +1,6 @@
-.tong_tt_cn {
+.tong_tt_cn,
+.tong_tt_cn form {
   display: flex;
-
   width: 96%;
   padding: 20px;
   gap: 4%;
@@ -16,16 +16,14 @@
 }
 
 .khung_my_user h6 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   margin-top: -10px;
   margin-bottom: 10px;
 }
 
-.khung_my_user1 h6 {
-  font-weight: 400;
-  font-size: 18px;
-
+.khung_my_user input{
+  font-size:16px;
 }
 
 .background_my_user {
@@ -54,10 +52,16 @@
   border: none;
   padding: 15px;
   outline: none;
+  width: 300px;
 }
 
 .btn_capnhat {
   transform: translate(-108%, 600%);
+}
+
+
+.btn_current_capnhat{
+  transform: translate(-110%, 300%);
 }
 
 .btn_capnhat a{
@@ -71,6 +75,21 @@
 }
 
 .btn_capnhat a:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.btn_capnhat input{
+  padding: 15px 50px;
+  border: none;
+  background-color: #FF953F;
+  color: white;
+  border-radius: 5px;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.btn_capnhat input:hover{
   cursor: pointer;
   opacity: 0.8;
 }

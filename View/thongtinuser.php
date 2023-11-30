@@ -36,6 +36,24 @@
                     require_once "user_ca_nhan/lich_su_dv.php";
                     break;
                 case 'cap_nhat':
+                    if (isset($_POST['capnhat']) && $_POST['capnhat']) {
+                        $id = $_POST['id'];
+                        $email = $_POST['email'];
+                        $diachi = $_POST['diachi'];
+                        $ngaysinh = $_POST['namsinh'];
+                        $sdt = (int)($_POST['sdt']);
+
+                        if ( $diachi == "" || $sdt == "" || $email == "" || $ngaysinh == "") {
+                            $thongbao = " Phải  điền đủ thông tin để cập nhật ";
+                        } else {
+
+                            khach_hang_update_thongtin($id, $diachi, $sdt, $email, $ngaysinh);
+                            $_SESSION['nguoi_dung'] = khach_hang_select_by_id($id);
+                            // header('location: ttcn.php?link=update-tk');
+                            $thongbao = "Thành công cập nhật";
+                        }
+                    }
+                    $khachhang = khach_hang_select_by_id($_SESSION['nguoi_dung']['id']);
                     require_once "./user_ca_nhan/capnhattt.php";
                     break;
                 case 'dmk':

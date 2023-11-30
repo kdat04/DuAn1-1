@@ -3,7 +3,7 @@ require_once 'pdo.php';
 
 function khach_hang_insert($ten_user, $mat_khau, $email)
 {
-    $sql = "INSERT INTO `users` (`id`, `ten_user`, `matkhau`, `email`) VALUES (NULL, ?,?,?)";
+    $sql = "INSERT INTO `users` (`id`, `ten_user`, `matkhau`, `email`, `role`) VALUES (NULL, ?,?,?,1)";
     pdo_execute($sql, $ten_user, $mat_khau, $email);
 }
 function khach_hang_insert2($ten_user, $matkhau, $email, $diachi, $nam_sinh, $role, $sdt)
@@ -23,7 +23,7 @@ function khach_hang_update($id, $ten_user, $matkhau, $email, $diachi, $nam_sinh,
     pdo_execute($sql);
 }
 
-function upd_pass($idkh,$pass_new)
+function upd_pass($idkh, $pass_new)
 {
     $sql = "UPDATE users SET matkhau = '$pass_new' WHERE id=$idkh";
     pdo_execute($sql);
@@ -52,6 +52,11 @@ function khach_hang_select_by_id($id)
     return pdo_query_one($sql, $id);
 }
 
+function khach_hang_update_thongtin($id, $diachi, $sdt, $email, $ngaysinh)
+{
+    $sql = "UPDATE users SET email='$email', diachi='$diachi', nam_sinh='$ngaysinh', sdt='$sdt' WHERE id='$id'";
+    pdo_execute($sql);
+}
 // function khach_hang_exist($ma_kh){
 //     $sql = "SELECT count(*) FROM khach_hang WHERE $ma_kh=?";
 //     return pdo_query_value($sql, $ma_kh) > 0;

@@ -69,6 +69,7 @@ position: absolute;
     align-items: center;
 }
 .thanh_tien{
+    
     margin-top: 45px;
 }
 .thanh_tien h4{
@@ -79,5 +80,6 @@ position: absolute;
 .thanh_tien span{
     font-weight: 700;
     margin-right: 30px;
+    margin-left: 20px;
     float: right;
 }

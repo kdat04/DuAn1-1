@@ -17,6 +17,18 @@
                             <input type="time"  class="form-control" name="khung_gio" id="lname" placeholder="Xuất chiếu">
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label for="lname" class="col-sm-3 text-right control-label col-form-label"> Phòng chiếu</label>
+                        <div class="col-sm-9">
+                            <select name="phong_chieu" class="form-control" required> 
+                                <option value="" hidden>Phòng chiếu</option>
+                                <option value="Phòng1" >Phòng 1</option>
+                                <option value="Phòng2" >Phòng 2</option>
+                                <option value="Phòng3" >Phòng 3</option>
+                                <option value="Phòng4" >Phòng 4</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="border-top">
                     <div class="card-body" style="margin-bottom: 50px;">

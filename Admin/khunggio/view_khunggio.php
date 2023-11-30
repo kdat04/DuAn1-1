@@ -11,6 +11,7 @@
                                     <thead>
                                         <tr>
                                             <th style="width: 150px;">Id Khung giờ chiếu</th>
+                                            <th style="width: 300px;">Tên phòng</th>
                                             <th style="width: 200px;">Khung giờ chiếu</th>
                                             <th style="width: 200px;">Xuất chiếu</th>
                                             <th style="width: 300px;">Tên phim</th>
@@ -23,6 +24,7 @@
                                         <?php foreach ($list_khunggio as $khunggio) : ?>
                                             <tr>
                                                 <td><?= $khunggio['id'] ?></td>
+                                                <td><?= $khunggio['phong_phim'] ?></td>
                                                 <td><?= $khunggio['gio_chieu'] ?></td>
                                                 <td><?= $khunggio['ngay_chieu'] ?></td>
                                                 <td><?= $khunggio['ten_phim'] ?></td>
@@ -41,6 +43,7 @@
                                     <tfoot>
                                         <tr>
                                             <th style="width: 150px;">Id Khung giờ chiếu</th>
+                                            <th style="width: 300px;">Tên phòng</th>
                                             <th style="width: 100px;">Khung giờ chiếu</th>
                                             <th style="width: 100px;">Xuất chiếu</th>
                                             <th style="width: 300px;">Tên phim</th>

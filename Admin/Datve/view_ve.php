@@ -11,38 +11,42 @@
                                     <thead>
                                         <tr>
                                             <th style="width: 150px;">Id Vé</th>
-                                            <th style="width: 200px;">Giá Vé</th>
-                                            <th style="width: 200px;">Ngày Đặt</th>
-                                            <th style="width: 200px;">Ghế</th>
                                             <th style="width: 200px;">Tến Khách Hàng</th>
+                                            <th style="width: 200px;">Phim</th>
+                                            <th style="width: 200px;">Giá Vé</th>
+                                            <th style="width: 200px;">Ghế</th>
+                                            <th style="width: 200px;">Xuất Chiếu</th>
                                             <th style="width: 200px;">Khung Giờ Chiếu</th>
-                                            <th style="width: 200px;">ID Bill</th>
+                                            <th style="width: 200px;">Ngày Đặt</th>
                                             <th style="width: 200px;">Trạng Thái Vé</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                            <?php foreach ($listve as $ve) : ?>
-                                                <tr>
-                                                    <td><?= $ve['id'] ?></td>
-                                                    <td><?= $ve['gia_ve'] ?></td>
-                                                    <td><?= $ve['ngay_dat'] ?></td>
-                                                    <td><?= $ve['ghe'] ?></td>
-                                                    <td><?= $ve['ten_user'] ?></td>
-                                                    <td><?= $ve['gio_chieu'] ?></td>
-                                                    <td><?= $ve['id_bill'] ?></td>
-                                                    <td><?= $ve['tt_ve'] ?></td>
-                                                </tr>
-                                            <?php endforeach ?>
+                                        <?php foreach ($listve as $ve) : ?>
+                                            <tr>
+                                                <td><?= $ve['id'] ?></td>
+                                                <td><?= $ve['ten_user'] ?></td>
+                                                <td><?= $ve['ten_phim'] ?></td>
+                                                <td><?= $ve['gia_ve'] ?></td>
+                                                <td><?= $ve['ghe'] ?></td> 
+                                                <td><?= $ve['gio_chieu'] ?></td>   
+                                                <td><?= $ve['gio_chieu'] ?></td>
+                                                <td><?= $ve['ngay_dat'] ?></td>
+                                                <td><?php if ($ve['tt_ve'] == 0) echo 'Chưa thanh toán';
+                                                    else  echo 'Đã thanh toán'; ?></td>
+                                            </tr>
+                                        <?php endforeach ?>
                                     </tbody>
                                     <tfoot>
                                         <tr>
                                             <th style="width: 150px;">Id Vé</th>
-                                            <th style="width: 200px;">Giá Vé</th>
-                                            <th style="width: 200px;">Ngày Đặt</th>
-                                            <th style="width: 200px;">Ghế</th>
                                             <th style="width: 200px;">Tến Khách Hàng</th>
+                                            <th style="width: 200px;">Phim</th>
+                                            <th style="width: 200px;">Giá Vé</th>
+                                            <th style="width: 200px;">Ghế</th>
+                                            <th style="width: 200px;">Xuất Chiếu</th>
                                             <th style="width: 200px;">Khung Giờ Chiếu</th>
-                                            <th style="width: 200px;">ID Bill</th>
+                                            <th style="width: 200px;">Ngày Đặt</th>
                                             <th style="width: 200px;">Trạng Thái Vé</th>
                                         </tr>
                                     </tfoot>

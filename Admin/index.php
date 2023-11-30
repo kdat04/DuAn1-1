@@ -22,8 +22,8 @@ if (isset($_GET['action'])) {
         default:
 
             if (isset($_GET['act'])) {
-                switch ($_GET['act']) { 
-                       
+                switch ($_GET['act']) {
+
                     case 'danhmuc':
                         require_once './home.php';
                         $list_danhmuc = loai_select_all();
@@ -366,8 +366,9 @@ if (isset($_GET['action'])) {
                         if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                             $khung_gio = $_POST['khung_gio'];
                             $xuat_chieu = $_POST['id_xc'];
+                            $phong_chieu = $_POST['phong_chieu'];
                             // $phim_id = phim_select_by_id($_GET['id']);
-                            khunggio_insert($khung_gio, $xuat_chieu);
+                            khunggio_insert($khung_gio, $xuat_chieu, $phong_chieu);
                             $list_khunggio = khunggiochieu_select_all();
                             require_once './khunggio/view_khunggio.php';
                         } else {
@@ -426,12 +427,12 @@ if (isset($_GET['action'])) {
                         require_once './Thongke/thong_ke_doanh_thu.php';
                         require_once './footer-home.php';
                         break;
-                        case 'thongke_bl':
-                            require_once './home.php';
-                            $listtk_phim = binh_luan_thongke();
-                            require_once './Thongke/tk_bl.php';
-                            require_once './footer-home.php';
-                            break;
+                    case 'thongke_bl':
+                        require_once './home.php';
+                        $listtk_phim = binh_luan_thongke();
+                        require_once './Thongke/tk_bl.php';
+                        require_once './footer-home.php';
+                        break;
                 }
             }
             break;

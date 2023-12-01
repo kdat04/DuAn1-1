@@ -126,13 +126,12 @@ if (isset($_GET['action'])) {
             require_once "../View/dangnhap/dangxuat.php";
             break;
         case 'doimk':
+            $email = '';
             if (isset($_GET['id'])) {
                 $_SESSION['luu_email'] = $_GET['id'];
+                $email = $_SESSION['luu_email'];
                 // var_dump($_SESSION['luu_email']);
-            } else {
-                $_SESSION['luu_email'];
-                // var_dump($_SESSION['luu_email']);
-            }
+            } 
             if (isset($_POST['doimk']) && ($_POST['doimk'])) {
                 $pass_new = md5($_POST['pass']);
                 $pass_now = $_POST['pass_now'];
@@ -140,7 +139,7 @@ if (isset($_GET['action'])) {
                     $thongbao['pass'] = " Vui lòng không bỏ trống !";
                 } else {
                     if ($_POST['pass'] == $pass_now) {
-                        upd_pass_qmk($_SESSION['luu_email'], $pass_new);
+                        upd_pass_qmk($email, $pass_new);
                         session_unset();
                         $thongbao['dangnhap'] = 'Đổi mật khẩu thành công, vui lòng đăng nhập.';
                         require_once '../View/dangnhap/dangnhap.php';

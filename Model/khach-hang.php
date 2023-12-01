@@ -38,7 +38,13 @@ function khach_hang_update($id, $ten_user, $matkhau, $email, $diachi, $nam_sinh,
 
 function upd_pass($idkh, $pass_new)
 {
-    $sql = "UPDATE users SET matkhau = '$pass_new' WHERE id=$idkh";
+    $sql = "UPDATE users SET matkhau = '$pass_new' WHERE id='$idkh' ";
+    pdo_execute($sql);
+}
+
+function upd_pass_qmk($email, $pass_new)
+{
+    $sql = "UPDATE users SET matkhau = '$pass_new' WHERE email like '$email'";
     pdo_execute($sql);
 }
 function khach_hang_update2($id, $role)
@@ -49,7 +55,7 @@ function khach_hang_update2($id, $role)
 
 function user_delete($id)
 {
-    $sql = "DELETE FROM users WHERE id=$id";
+    $sql = "DELETE FROM users WHERE id='$id'";
     pdo_execute($sql);
 }
 

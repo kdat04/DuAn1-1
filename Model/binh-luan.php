@@ -62,6 +62,6 @@ function binhluan_select_all()
 }
 function delete_bl($id)
 {
-    $sql = "DELETE FROM binhluan WHERE id=$id";
+    $sql = "DELETE FROM binhluan WHERE id='$id'";
     pdo_execute($sql);
 }

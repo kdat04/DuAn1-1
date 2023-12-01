@@ -24,19 +24,19 @@
             <div class="remember_account">
                 <a href="./index.php?action=quenmk">Quên mật khẩu?</a>
             </div>
-            <div class="or_register_with">
+            <!-- <div class="or_register_with">
                 <div class="or_register_with_text">
                     Hoặc đăng nhập bằng
                 </div>
-            </div>
-            <div class="or_register_with_app">
+            </div> -->
+            <!-- <div class="or_register_with_app">
                 <div class="or_register_with_gg">
                     <a href=""><img src="./IMG/gg.jpg" alt="">Google</a>
                 </div>
                 <div class="or_register_with_fb">
                     <a href=""><img src="./Img/facebook.jpg" alt="">Facebook</a>
                 </div>
-            </div>
+            </div> -->
             <div class="Log_in">
                 Bạn chưa có tài khoản? <a href="./index.php?action=dk">Đăng ký ngay!</a>
             </div>

@@ -16,33 +16,6 @@
                             <input type="date" class="form-control" name="ngay_chieu" id="lname" placeholder="Xuất chiếu" value="<?= $list['ngay_chieu'] ?>">
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Tên Phim</label>
-                        <div class="col-sm-9">
-                            <select class="form-control" name="id_phim" id="lname">
-                                <?php foreach ($phims as $phim) : ?>
-
-                                    <option value="" hidden>Phim</option>
-
-                                    <option value="<?= $phim['id'] ?>" <?= ($phim['id'] == $list['id_phim']) ? 'selected' : '' ?>><?= $phim['ten_phim'] ?></option>
-
-
-                                <?php endforeach ?>
-
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Phòng chiếu</label>
-                        <div class="col-sm-9">
-                            <select class="form-control" name="id_phongchieu" id="lname">
-                                <?php foreach ($phong_chieu as $phong) : ?>
-                                    <option value="" hidden>Phòng chiếu</option>
-                                    <option value="<?= $phong['id'] ?>" <?= ($phong['id'] == $list['id_phongchieu']) ? 'selected' : '' ?>><?= $phong['ten_phongchieu'] ?></option>
-                                <?php endforeach ?>
-                            </select>
-                        </div>
-                    </div>
                 </div>
                 <div class="border-top">
                     <div class="card-body" style="margin-bottom: 50px;">

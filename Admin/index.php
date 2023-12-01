@@ -336,10 +336,8 @@ if (isset($_GET['action'])) {
                         if (isset($_POST['themmoi']) && $_POST['themmoi'] > 0) {
                             $id = $_POST['id'];
                             $ngay_chieu = $_POST['ngay_chieu'];
-                            $id_phim = $_POST['id_phim'];
-                            $id_phongchieu = $_POST['id_phongchieu'];
-
-                            xuat_chieu_update($ngay_chieu, $id_phim, $id);
+                        
+                            xuat_chieu_update($ngay_chieu, $id);
                         }
                         $list_xuatchieu = xuatchieu_select_all();
                         require_once './xuatchieu/view_xuatchieu.php';
@@ -391,8 +389,8 @@ if (isset($_GET['action'])) {
                         if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
                             $id = $_POST['id'];
                             $khung_gio = $_POST['khung_gio'];
-                            $xuat_chieu = $_POST['xuat_chieu'];
-                            khunggio_update($id, $khung_gio, $xuat_chieu);
+                            $phong_chieu = $_POST['phong_chieu'];
+                            khunggio_update($id, $khung_gio, $phong_chieu);
                         }
                         $list_khunggio = khunggiochieu_select_all();
                         $xuat_chieu = xuatchieu_select_all();

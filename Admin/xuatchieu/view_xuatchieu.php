@@ -61,9 +61,9 @@
                     </div>
                 </div>
             </div>
-            <div class="btn_dieuhuong btn btn-success">
+            <!-- <div class="btn_dieuhuong btn btn-success">
                 <a href="./index.php?action=&act=add_xuatchieu" style="color: white;">Thêm Xuất chiếu</a>
-            </div>
+            </div> -->
             <?php
             if (isset($message) && ($message != ""))
                 echo $message;

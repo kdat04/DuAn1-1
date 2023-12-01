@@ -17,6 +17,7 @@
                                             <th style="width: 200px;">Ghế</th>
                                             <th style="width: 200px;">Xuất Chiếu</th>
                                             <th style="width: 200px;">Khung Giờ Chiếu</th>
+                                            <th style="width: 200px;">Phòng Chiếu</th>
                                             <th style="width: 200px;">Ngày Đặt</th>
                                             <th style="width: 200px;">Trạng Thái Vé</th>
                                         </tr>
@@ -29,8 +30,9 @@
                                                 <td><?= $ve['ten_phim'] ?></td>
                                                 <td><?= $ve['gia_ve'] ?></td>
                                                 <td><?= $ve['ghe'] ?></td> 
-                                                <td><?= $ve['gio_chieu'] ?></td>   
+                                                <td><?= $ve['ngay_chieu'] ?></td>   
                                                 <td><?= $ve['gio_chieu'] ?></td>
+                                                <td><?= $ve['phong_phim'] ?></td>
                                                 <td><?= $ve['ngay_dat'] ?></td>
                                                 <td><?php if ($ve['tt_ve'] == 0) echo 'Chưa thanh toán';
                                                     else  echo 'Đã thanh toán'; ?></td>
@@ -46,6 +48,7 @@
                                             <th style="width: 200px;">Ghế</th>
                                             <th style="width: 200px;">Xuất Chiếu</th>
                                             <th style="width: 200px;">Khung Giờ Chiếu</th>
+                                            <th style="width: 200px;">Phòng Chiếu</th>
                                             <th style="width: 200px;">Ngày Đặt</th>
                                             <th style="width: 200px;">Trạng Thái Vé</th>
                                         </tr>

@@ -27,19 +27,19 @@
                     <input type="submit" name="dangky" value="Đăng ký">
                 </div>
             </form>
-            <div class="or_register_with">
+            <!-- <div class="or_register_with">
                 <div class="or_register_with_text">
                     Hoặc đăng ký bằng
                 </div>
-            </div>
-            <div class="or_register_with_app">
+            </div> -->
+            <!-- <div class="or_register_with_app">
                 <div class="or_register_with_gg">
                     <a href=""><img src="./Img/gg.jpg" alt="">Google</a>
                 </div>
                 <div class="or_register_with_fb">
                     <a href=""><img src="./Img/facebook.jpg" alt="">Facebook</a>
                 </div>
-            </div>
+            </div> -->
             <div class="Log_in">
                 Bạn đã có tài khoản? <a href="./index.php?action=dn">Đăng nhập ngay!</a>
             </div>

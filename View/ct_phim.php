@@ -48,7 +48,7 @@
           <h3>Lịch chiếu </h3>
           <div class="khung_chieu">
             <div class="khung_chieu_time">
-              <i class="fa-solid fa-chevron-up fa-rotate-270"></i>
+              <!-- <i class="fa-solid fa-chevron-up fa-rotate-270"></i> -->
               <?php foreach ($xuat_chieu as $xc) : ?>
                 <?php if($xc['ngay_chieu'] > $now) :?>
                 <a href="./index.php?action=ct_phim&id=<?= $list['id'] ?>&id_xc=<?= $xc['id'] ?>">
@@ -58,7 +58,7 @@
                 </a>
                 <?php endif ?>
               <?php endforeach ?>
-              <i class="fa-solid fa-chevron-up fa-rotate-90"></i>
+              <!-- <i class="fa-solid fa-chevron-up fa-rotate-90"></i> -->
             </div>
             <div class="khung_chieu_dress">
               <!-- <div class="khung_chieu_dress1">

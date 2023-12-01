@@ -10,12 +10,12 @@
                                 <table id="zero_config" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                            <th style="width: 150px;">Id User</th>
-                                            <th style="width: 300px;">Họ tên user</th>
-                                            <th style="width: 250px;">Số điện thoại</th>
+                                            <th style="width: 50px;">Id User</th>
+                                            <th style="width: 200px;">Họ tên user</th>
+                                            <th style="width: 100px;">Số điện thoại</th>
                                             <th style="width: 300px;">Email</th>
-                                            <th style="width: 100px;">Địa chỉ</th>
-                                            <th style="width: 100px;">Năm Sinh</th>
+                                            <th style="width: 300px;">Địa chỉ</th>
+                                            <th style="width: 150px;">Năm Sinh</th>
                                             <th style="width: 100px;">Vai trò</th>
                                             <th></th>
                                             <th></th>
@@ -26,7 +26,7 @@
                                             <tr>
                                                 <td><?= $user['id'] ?></td>
                                                 <td><?= $user['ten_user'] ?></td>
-                                                <td><?= $user['sdt'] ?></td>
+                                                <td>0<?= $user['sdt'] ?></td>
                                                 <td><?= $user['email'] ?></td>
                                                 <td><?= $user['diachi'] ?></td>
                                                 <td><?= $user['nam_sinh'] ?></td>
@@ -44,13 +44,13 @@
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th style="width: 150px;">Id User</th>
-                                            <th style="width: 300px;">Họ tên user</th>
-                                            <th style="width: 250px;">Số điện thoại</th>
-                                            <th style="width: 300px;">Email</th>
-                                            <th style="width: 100px;">Địa chỉ</th>
-                                            <th style="width: 100px;">Năm Sinh</th>
-                                            <th style="width: 100px;">Vai trò</th>
+                                            <th style="width: 0px;">Id User</th>
+                                            <th style="width: 0px;">Họ tên user</th>
+                                            <th style="width: 0px;">Số điện thoại</th>
+                                            <th style="width: 0px;">Email</th>
+                                            <th style="width: 0px;">Địa chỉ</th>
+                                            <th style="width: 0px;">Năm Sinh</th>
+                                            <th style="width: 0px;">Vai trò</th>
                                             <th></th>
                                             <th></th>
                                         </tr>

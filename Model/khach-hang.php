@@ -6,14 +6,27 @@ function khach_hang_insert($ten_user, $mat_khau, $email)
     $sql = "INSERT INTO `users` (`id`, `ten_user`, `matkhau`, `email`, `role`) VALUES (NULL, ?,?,?,1)";
     pdo_execute($sql, $ten_user, $mat_khau, $email);
 }
+
+function khach_hang_insert_nd($ten_user, $mat_khau, $email)
+{
+    $sql = "INSERT INTO `users` (`id`, `ten_user`, `matkhau`, `email`, `role`) VALUES (NULL, ?,?,?,0)";
+    pdo_execute($sql, $ten_user, $mat_khau, $email);
+}
 function khach_hang_insert2($ten_user, $matkhau, $email, $diachi, $nam_sinh, $role, $sdt)
 {
     $sql = "INSERT INTO `users` (`id`, `ten_user`, `matkhau`, `email`, `diachi`, `nam_sinh`, `role`, `sdt`) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
     pdo_execute($sql, $ten_user, $matkhau, $email, $diachi, $nam_sinh, $role, $sdt);
 }
-function check_users($ten_dangnhap, $matkhau)
+function check_users($email, $matkhau)
 {
-    $sql = "SELECT * FROM users WHERE ten_user ='" . $ten_dangnhap . "'AND matkhau ='" . $matkhau . "'";
+    $sql = "SELECT * FROM users WHERE email ='" . $email . "'AND matkhau ='" . $matkhau . "'";
+    $user = pdo_query_one($sql);
+    return $user;
+}
+
+function check_email($email)
+{
+    $sql = "SELECT email FROM users WHERE email ='" . $email . "'";
     $user = pdo_query_one($sql);
     return $user;
 }

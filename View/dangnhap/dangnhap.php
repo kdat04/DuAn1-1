@@ -11,7 +11,7 @@
             <form action="../View/index.php?action=dn" method="post">
                 <div class="general_register_input">
                     <fieldset>
-                        <input type="text" name="tendn" placeholder="Tên Đăng Nhập">
+                        <input type="email" name="email" placeholder="Email">
                     </fieldset>
                     <fieldset>
                         <input type="password" name="mk" placeholder="Mật khẩu">

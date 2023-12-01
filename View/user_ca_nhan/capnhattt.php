@@ -14,7 +14,7 @@
             <div class="khung_my_user">
                 <h6>Email</h6>
                 <div class="background_my_user">
-                    <i class="fa-solid fa-envelope" style="color: #595f69;"></i> <input type="text" name="email" value="<?= $khachhang['email'] ?>">
+                    <i class="fa-solid fa-envelope" style="color: #595f69;"></i> <input type="text"  disabled name="email" value="<?= $khachhang['email'] ?>">
                 </div>
             </div>
             <!-- 3 -->

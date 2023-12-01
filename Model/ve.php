@@ -9,7 +9,7 @@ require_once 'pdo.php';
 
 function lock_ghe($id_kgc)
 {
-    $sql = "SELECT ghe FROM ve WHERE tt_ve = 1  AND id_kgc = '$id_kgc' ";
+    $sql = "SELECT ghe_ngoi FROM ve WHERE tt_ve = 1  AND id_kgc = '$id_kgc' AND ghe_ngoi IS NOT NULL ";
     return pdo_query($sql);
 }
 

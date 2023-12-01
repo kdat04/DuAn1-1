@@ -11,7 +11,7 @@
             <form action="index.php?action=dk" method="post">
                 <div class="general_register_input">
                     <fieldset>
-                        <input type="text" name="tendn" placeholder="Tên đăng nhập">
+                        <input type="text" name="tendn" placeholder="Họ và tên">
                     </fieldset>
                     <fieldset>
                         <input type="email" name="email" placeholder="Địa chỉ email">

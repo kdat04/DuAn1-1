@@ -181,12 +181,12 @@ if (isset($_GET['action'])) {
                         break;
                     case 'dn':
                         if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
-                            $ten_dangnhap = $_POST['tendn'];
+                            $email = $_POST['email'];
                             $matkhau = md5($_POST['mk']);
-                            if ($ten_dangnhap == '' || $_POST['mk'] == '') {
+                            if ($email == '' || $_POST['mk'] == '') {
                                 $thongbao['dangnhap'] = " Vui lòng không bỏ trống !";
                             } else {
-                                $checkuser = check_users($ten_dangnhap, $matkhau);
+                                $checkuser = check_users($email, $matkhau);
                                 if ($checkuser) {
                                     if ($checkuser['role'] != 0) {
                                         $_SESSION['user'] = $checkuser;
@@ -208,8 +208,15 @@ if (isset($_GET['action'])) {
                             $email = $_POST['email'];
                             $matkhau = md5($_POST['mk']);
                             $nhaplaimatkhau = $_POST['lmk'];
+                            if (check_email($email) != '') {
+                                $email_check = check_email($email);
+                            }else{
+                                $email_check['email'] = '';
+                            }
                             if ($ten_dangnhap == '' || $_POST['mk'] == '' || $email == '' || $nhaplaimatkhau == '') {
                                 $thongbao['dangky'] = " Vui lòng không bỏ trống !";
+                            } else if ($email == $email_check['email']) {
+                                $thongbao['dangky'] = " Email đã tồn tại !";
                             } else {
                                 if ($_POST['mk'] == $nhaplaimatkhau) {
                                     khach_hang_insert($ten_dangnhap, $matkhau, $email);
@@ -234,7 +241,7 @@ if (isset($_GET['action'])) {
                         require_once './home.php';
                         if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                             $ten_user = $_POST['ten_user'];
-                            $matkhau = $_POST['matkhau'];
+                            $matkhau = md5($_POST['matkhau']);
                             $email = $_POST['email'];
                             $diachi = $_POST['diachi'];
                             $nam_sinh = $_POST['nam_sinh'];
@@ -336,7 +343,7 @@ if (isset($_GET['action'])) {
                         if (isset($_POST['themmoi']) && $_POST['themmoi'] > 0) {
                             $id = $_POST['id'];
                             $ngay_chieu = $_POST['ngay_chieu'];
-                        
+
                             xuat_chieu_update($ngay_chieu, $id);
                         }
                         $list_xuatchieu = xuatchieu_select_all();

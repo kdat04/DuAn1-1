@@ -67,14 +67,13 @@ if (isset($_GET['action'])) {
             require_once './ds_phim.php';
             break;
         case 'dn':
-
             if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
-                $ten_dangnhap = $_POST['tendn'];
+                $email = $_POST['email'];
                 $matkhau = md5($_POST['mk']);
-                if ($ten_dangnhap == '' || $_POST['mk'] == '') {
+                if ($email == '' || $_POST['mk'] == '') {
                     $thongbao['dangnhap'] = " Vui lòng không bỏ trống !";
                 } else {
-                    $checkuser = check_users($ten_dangnhap, $matkhau);
+                    $checkuser = check_users($email, $matkhau);
                     if ($checkuser) {
                         if ($checkuser['role'] == 0) {
                             $_SESSION['nguoi_dung'] = $checkuser;
@@ -99,11 +98,18 @@ if (isset($_GET['action'])) {
                 $email = $_POST['email'];
                 $matkhau = md5($_POST['mk']);
                 $nhaplaimatkhau = $_POST['lmk'];
+                if (check_email($email) != '') {
+                    $email_check = check_email($email);
+                }else{
+                    $email_check['email'] = '';
+                }
                 if ($ten_dangnhap == '' || $_POST['mk'] == '' || $email == '' || $nhaplaimatkhau == '') {
                     $thongbao['dangky'] = " Vui lòng không bỏ trống !";
-                } else {
+                }else if($email == $email_check['email']){
+                    $thongbao['dangky'] = " Email đã tồn tại !";
+                }else {
                     if ($_POST['mk'] == $nhaplaimatkhau) {
-                        khach_hang_insert($ten_dangnhap, $matkhau, $email);
+                        khach_hang_insert_nd($ten_dangnhap, $matkhau, $email);
                         $thongbao['dangky'] = " Đăng ký thành công, vui lòng đăng nhập.";
                     } else {
                         $thongbao['dangky'] = " Mật khẩu không khớp!";

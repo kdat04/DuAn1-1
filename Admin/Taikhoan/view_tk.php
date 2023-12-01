@@ -16,7 +16,7 @@
                                             <th style="width: 300px;">Email</th>
                                             <th style="width: 300px;">Địa chỉ</th>
                                             <th style="width: 150px;">Năm Sinh</th>
-                                            <th style="width: 100px;">Vai trò</th>
+                                            <th style="width: 150px;">Vai trò</th>
                                             <th></th>
                                             <th></th>
                                         </tr>
@@ -30,7 +30,7 @@
                                                 <td><?= $user['email'] ?></td>
                                                 <td><?= $user['diachi'] ?></td>
                                                 <td><?= $user['nam_sinh'] ?></td>
-                                                <td><?= $user['role'] ?></td>
+                                                <td><?php if($user['role'] == 0) echo 'Khách hàng'; elseif($user['role'] == 1) echo 'Admin'; else echo'Nhân viên'; ?></td>
                                                 <td><button class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa User không ?')">
                                                         <a style="color: white;" href="index.php?action=&act=xoa_user&id=<?= $user['id'] ?>">Xoá</a>
                                                     </button>

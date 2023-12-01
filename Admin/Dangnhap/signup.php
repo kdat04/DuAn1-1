@@ -29,7 +29,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-success text-white" id="basic-addon1"><i class="ti-user"></i></span>
                                     </div>
-                                    <input type="text" name="tendn" class="form-control form-control-lg" placeholder="Tên đăng nhập" aria-label="Username" aria-describedby="basic-addon1" >
+                                    <input type="text" name="tendn" class="form-control form-control-lg" placeholder="Họ và tên" aria-label="Username" aria-describedby="basic-addon1" >
                                 </div>
                                 <!-- email -->
                                 <div class="input-group mb-3">

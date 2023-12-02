@@ -38,6 +38,10 @@
             width: 180px;
             padding: 5px;
         }
+
+        #zero_config_filter{
+            display: none;
+        }
     </style>
     <!-- Custom CSS -->
     <link href="./dist/css/style.min.css" rel="stylesheet">

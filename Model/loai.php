@@ -11,6 +11,12 @@ function loai_update($ma_loai, $ten_loaiphim){
     pdo_execute($sql, $ten_loaiphim, $ma_loai);
 }
 
+function check_theloai($ten_loaiphim)
+{
+    $sql = "SELECT ten_loaiphim FROM loai_phim WHERE ten_loaiphim = '$ten_loaiphim'";
+    return pdo_query_one($sql);
+}
+
 function loai_delete($ma_loai){
     $sql = "DELETE FROM `loai_phim` WHERE id=?";
     if(is_array($ma_loai)){

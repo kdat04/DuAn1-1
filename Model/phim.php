@@ -26,7 +26,11 @@ function phim_delete($ma_hh)
     }
 }
 
-
+function check_phim($ten_phim)
+{
+    $sql = "SELECT ten_phim FROM phim WHERE ten_phim = '$ten_phim'";
+    return pdo_query_one($sql);
+}
 function phim_select_by_id($ma_hh)
 {
     $sql = "SELECT phim.id, phim.ten_phim,phim.img_banner, phim.img_phim, phim.mota, phim.nsx, phim.nph,phim.thoi_luong_phim ,phim.cs_danh_gia,phim.view,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3,phim.tt,phim.id_loaiphim,loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id  WHERE phim.id = ?";
@@ -82,7 +86,7 @@ function phim_select_search_sapchieu()
 }
 function phim_select_dgchieu($id)
 {
-    $sql = "SELECT phim.id, phim.ten_phim, phim.img_phim,phim.img_banner ,phim.mota, phim.nsx, phim.nph, phim.view ,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id WHERE phim.tt = 0 and phim.id <> '".$id."' LIMIT 0, 3";
+    $sql = "SELECT phim.id, phim.ten_phim, phim.img_phim,phim.img_banner ,phim.mota, phim.nsx, phim.nph, phim.view ,phim.quocgia,phim.dienvien1,phim.dienvien2,phim.dienvien3, loai_phim.ten_loaiphim FROM phim JOIN loai_phim ON phim.id_loaiphim = loai_phim.id WHERE phim.tt = 0 and phim.id <> '" . $id . "' LIMIT 0, 3";
     return pdo_query($sql);
 }
 

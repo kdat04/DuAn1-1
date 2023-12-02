@@ -23,7 +23,6 @@ if (isset($_GET['action'])) {
 
             if (isset($_GET['act'])) {
                 switch ($_GET['act']) {
-
                     case 'danhmuc':
                         require_once './home.php';
                         $list_danhmuc = loai_select_all();
@@ -34,8 +33,15 @@ if (isset($_GET['action'])) {
                         require_once './home.php';
                         if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                             $ten_loaiphim = $_POST['ten_loaiphim'];
+                            if (check_theloai($ten_loaiphim) != '') {
+                                $check_tl = check_theloai($ten_loaiphim);
+                            } else {
+                                $check_tl['ten_loaiphim'] = '';
+                            }
                             if ($ten_loaiphim == '') {
                                 $message = "Không được để trắng";
+                            } else if ($ten_loaiphim ==  $check_tl['ten_loaiphim']) {
+                                $message = "Thể loai đã tồn tại !";
                             } else {
                                 loai_insert($ten_loaiphim);
                                 $message = "Thêm thành công";
@@ -112,8 +118,15 @@ if (isset($_GET['action'])) {
                             move_uploaded_file($file['tmp_name'], "./Img_ad/" . $img_phim);
                             move_uploaded_file($file2['tmp_name'], "./Img_ad/" . $img_banner_phim);
 
+                            if (check_phim($ten_phim) != '') {
+                                $check_phim = check_phim($ten_phim);
+                            } else {
+                                $check_phim['ten_phim'] = '';
+                            }
                             if ($ten_phim == "" || $nsx == "" || $nph == "" || $mota == "") {
                                 $message = "Thêm không  thành công vì có ô để trống  ";
+                            } else if ($ten_phim == $check_phim['ten_phim']) {
+                                $message = "Phim đã tồn tại !";
                             } else {
 
                                 phim_insert($ten_phim, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $thoi_luong_phim, $cs_danh_gia, $qg, $dv1, $dv2, $dv3, $tt, $id_loaiphim);
@@ -210,7 +223,7 @@ if (isset($_GET['action'])) {
                             $nhaplaimatkhau = $_POST['lmk'];
                             if (check_email($email) != '') {
                                 $email_check = check_email($email);
-                            }else{
+                            } else {
                                 $email_check['email'] = '';
                             }
                             if ($ten_dangnhap == '' || $_POST['mk'] == '' || $email == '' || $nhaplaimatkhau == '') {
@@ -247,8 +260,16 @@ if (isset($_GET['action'])) {
                             $nam_sinh = $_POST['nam_sinh'];
                             $role = $_POST['role'];
                             $sdt = $_POST['sdt'];
+
+                            if (check_email($email) != '') {
+                                $check_user = check_email($email);
+                            } else {
+                                $check_user['email'] = '';
+                            }
                             if ($ten_user == "" || $matkhau == "" || $email == "" || $diachi == "" || $nam_sinh == "" || $role == "" || $sdt == "") {
                                 $message = "Thêm không  thành công vì có ô để trống  ";
+                            } else if ($email ==  $check_user['email']) {
+                                $message = "Emai đã tồn tại !";
                             } else {
                                 khach_hang_insert2($ten_user, $matkhau, $email, $diachi, $nam_sinh, $role, $sdt);
                                 $message = "Thêm thành công ";

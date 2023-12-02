@@ -7,24 +7,19 @@
                         <div class="card-body">
                             <h5 class="card-title">Bảng thống kê</h5>
                             <div class="btn_dieuhuong btn btn-success">
-                <a href="./index.php?action=&act=thongke_doanh_thu" style="color: white;">Doanh Thu</a>
-            </div>
-            <div class="btn_dieuhuong btn btn-success">
-                <a href="./index.php?action=&act=thongke_bl" style="color: white;">Bình luận </a>
-            </div>
-                            
+                                <a href="./index.php?action=&act=thongke_doanh_thu" style="color: white;">Doanh Thu</a>
+                            </div>
+                            <div class="btn_dieuhuong btn btn-success">
+                                <a href="./index.php?action=&act=thongke_bl" style="color: white;">Bình luận </a>
+                            </div>
                             <div class="table-responsive">
-                                
                                 <table id="zero_config" class="table table-striped table-bordered">
-                                   
-                                    <thead> 
+                                    <thead>
                                         <tr>
                                             <th style="width: 50px;">Id Phim </th>
                                             <th>Tên Phim</th>
-
                                             <th>Quan Tâm </th>
                                             <th>Thể Loại </th>
-
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -47,8 +42,6 @@
                                     </tfoot>
                                 </table>
                             </div>
-
-
                             <div class="table-responsive">
                                 <div id="myChart" style="width:100%; max-width:600px; height:500px;">
                                 </div>
@@ -82,7 +75,7 @@
 
                                         // Set Options
                                         const options = {
-                                            title: 'Biểu đồ thống kê sản phẩm'
+                                            title: 'Biểu đồ thống kê'
                                         };
 
                                         // Draw

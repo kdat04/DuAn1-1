@@ -39,6 +39,13 @@ function loai_select_by_id($ma_loai){
     return pdo_query_one($sql, $ma_loai);
 }
 
+function loai_search_keyword($key){
+    $sql = 'SELECT * FROM loai_phim WHERE 1';
+    if ($key != "") {
+        $sql .= " and ten_loaiphim like '%" . $key . "%'";
+    }
+    return pdo_query($sql);
+}
 // function loai_exist($ma_loai){
 //     $sql = "SELECT count(*) FROM loai WHERE ma_loai=?";
 //     return pdo_query_value($sql, $ma_loai) > 0;

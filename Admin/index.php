@@ -20,12 +20,16 @@ if (isset($_GET['action'])) {
             require_once './Dangnhap/signup.php';
             break;
         default:
-
             if (isset($_GET['act'])) {
                 switch ($_GET['act']) {
                     case 'danhmuc':
                         require_once './home.php';
-                        $list_danhmuc = loai_select_all();
+                        if (isset($_POST['listseacher']) && ($_POST['listseacher'])) {
+                            $key = $_POST['kyw'];
+                        } else {
+                            $key = '';
+                        }
+                        $list_danhmuc = loai_search_keyword($key);
                         require_once './Danhmuc/view_danhmuc.php';
                         require_once './footer-home.php';
                         break;
@@ -246,7 +250,12 @@ if (isset($_GET['action'])) {
                         break;
                     case 'taikhoan':
                         require_once './home.php';
-                        $list_users  = users_select_all();
+                        if (isset($_POST['listseacher']) && ($_POST['listseacher'])) {
+                            $key = $_POST['kyw'];
+                        } else {
+                            $key = '';
+                        }
+                        $list_users  = tk_search_keyword($key);
                         require_once './Taikhoan/view_tk.php';
                         require_once './footer-home.php';
                         break;
@@ -309,16 +318,22 @@ if (isset($_GET['action'])) {
                         break;
                     case 'binhluan':
                         require_once './home.php';
-                        $listbl = binhluan_select_all();
+                        if (isset($_POST['listseacher']) && ($_POST['listseacher'])) {
+                            $key = $_POST['kyw'];
+                        } else {
+                            $key = '';
+                        }
+                        $listbl = binhluan_select_all($key);
                         require_once './Binhluan/view_bl.php';
                         require_once './footer-home.php';
                         break;
                     case 'xoa_binhluan':
                         require_once './home.php';
+                        $key = '';
                         if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                             delete_bl($_GET['id']);
                         }
-                        $listbl = binhluan_select_all();
+                        $listbl = binhluan_select_all($key);
                         require_once './Binhluan/view_bl.php';
                         require_once './footer-home.php';
                         break;
@@ -457,6 +472,11 @@ if (isset($_GET['action'])) {
                         require_once './home.php';
                         $listtk_phim = binh_luan_thongke();
                         require_once './Thongke/tk_bl.php';
+                        require_once './footer-home.php';
+                        break;
+                    default:
+                        require_once './home.php';
+                        require_once './trangchu.php';
                         require_once './footer-home.php';
                         break;
                 }

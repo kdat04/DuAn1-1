@@ -6,6 +6,10 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Bảng quản Khung giờ chiếu phim</h5>
+                            <?php
+                            if (isset($message) && ($message != ""))
+                                echo $message;
+                            ?>
                             <div class="table-responsive">
                                 <table id="zero_config" class="table table-striped table-bordered">
                                     <thead>
@@ -28,7 +32,7 @@
                                                 <td><?= $khunggio['gio_chieu'] ?></td>
                                                 <td><?= $khunggio['ngay_chieu'] ?></td>
                                                 <td><?= $khunggio['ten_phim'] ?></td>
-                                               
+
                                                 <td><button class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa khung giờ chiếu không ?')">
                                                         <a style="color: white;" href="index.php?action=&act=xoa_khunggio&id=<?= $khunggio['id']  ?>">Xoá</a>
                                                     </button>
@@ -47,7 +51,7 @@
                                             <th style="width: 100px;">Khung giờ chiếu</th>
                                             <th style="width: 100px;">Xuất chiếu</th>
                                             <th style="width: 300px;">Tên phim</th>
-                                           
+
                                             <th></th>
                                             <th></th>
                                         </tr>
@@ -58,10 +62,6 @@
                     </div>
                 </div>
             </div>
-            <?php
-            if (isset($message) && ($message != ""))
-                echo $message;
-            ?>
         </div>
     </div>
 </div>

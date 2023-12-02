@@ -9,6 +9,12 @@ if (is_array($user)) {
             <form class="form-horizontal" action="index.php?action=&act=up_user" method="post">
                 <div class="card-body" style="width: 1000px;">
                     <h4 class="card-title">Sửa tài khoản</h4>
+                    <div style="font-weight: 400; font-size: 20px; ; color: black;">
+                        <?php
+                        if (isset($message) && ($message != ""))
+                            echo $message;
+                        ?>
+                    </div><br>
                     <div class="form-group row">
                         <label for="lname" class="col-sm-3 text-right control-label col-form-label"> Tên User</label>
                         <div class="col-sm-9">
@@ -48,16 +54,10 @@ if (is_array($user)) {
                 </div>
                 <div class="border-top">
                     <div class="card-body" style="margin-bottom: 50px;">
-                    <input type="hidden" name="id" id="" value="<?= $user ['id'] ?>">
+                        <input type="hidden" name="id" id="" value="<?= $user['id'] ?>">
                         <input type="submit" name="capnhat" class="btn btn-primary" value="Gửi dữ liệu">
                     </div>
                 </div>
-                <div style="font-weight: 500; font-size: 20px; ; color: black;">
-                    <?php
-                    if (isset($message) && ($message != ""))
-                        echo $message;
-                    ?>
-                </div><br>
             </form>
         </div>
     </div>

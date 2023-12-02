@@ -7,6 +7,12 @@
             <form class="form-horizontal" action="index.php?action=&act=up_phim" method="post" enctype="multipart/form-data">
                 <div class="card-body" style="width: 1000px;">
                     <h4 class="card-title">Sửa Phim</h4>
+                    <div style="font-weight: 400; font-size: 20px; ; color: black; font-weight: 700;">
+                        <?php
+                        if (isset($message) && ($message != ""))
+                            echo $message;
+                        ?>
+                    </div><br>
                     <div class="form-group row">
                         <label for="fname" class="col-sm-3 text-right control-label col-form-label">Id phim</label>
                         <div class="col-sm-9">
@@ -23,7 +29,7 @@
                     <div class="form-group row">
                         <label for="lname" class="col-sm-3 text-right control-label col-form-label"> Thường lượng Phim</label>
                         <div class="col-sm-9">
-                            <input type="text" name="thoi_luong_phim" class="form-control" id="lname" placeholder="Thời lượng phim " value="<?= $phim['thoi_luong_phim'] ?>" >
+                            <input type="text" name="thoi_luong_phim" class="form-control" id="lname" placeholder="Thời lượng phim " value="<?= $phim['thoi_luong_phim'] ?>">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -133,12 +139,6 @@
                         <input type="hidden" name="id" value="<?= $phim['id'] ?>">
                         <br><input style="margin-top: 20px;" type="submit" name="capnhat" class="btn btn-primary" value="Gửi dữ liệu">
                     </div>
-                    <div style="font-weight: 500; font-size: 20px; ; color: black; font-weight: 700;">
-                        <?php
-                        if (isset($message) && ($message != ""))
-                            echo $message;
-                        ?>
-                    </div><br>
                 </div>
             </form>
         </div>

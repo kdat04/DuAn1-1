@@ -36,7 +36,7 @@ function loadall_thongke()
 }
 function load_thongke_doanhthu()
 {
-  $sql = "SELECT phim.id as id, phim.ten_phim as ten_phim, loai_phim.ten_loaiphim as ten_loaiphim,ve.tt_ve = 1 as so_luong_ve_dat, sum(bill.thanh_tien) as sum_thanhtien
+    $sql = "SELECT phim.id as id, phim.ten_phim as ten_phim, loai_phim.ten_loaiphim as ten_loaiphim,count(ve.tt_ve = 1) as so_luong_ve_dat, sum(bill.thanh_tien) as sum_thanhtien
   from phim
   left join loai_phim ON loai_phim.id = phim.id_loaiphim
   left join xuat_chieu ON phim.id = xuat_chieu.id_phim
@@ -46,9 +46,9 @@ function load_thongke_doanhthu()
   group by phim.id
   order by phim.id desc";
 
-  $listtk = pdo_query($sql);
+    $listtk = pdo_query($sql);
 
-  return $listtk;
+    return $listtk;
 }
 
 

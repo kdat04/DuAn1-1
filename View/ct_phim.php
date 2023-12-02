@@ -48,7 +48,7 @@
           <h3>Lịch chiếu </h3>
           <div class="khung_chieu">
             <div class="khung_chieu_time">
-              <i class="fa-solid fa-chevron-up fa-rotate-270"></i>
+              <!-- <i class="fa-solid fa-chevron-up fa-rotate-270"></i> -->
               <?php foreach ($xuat_chieu as $xc) : ?>
                 <?php if($xc['ngay_chieu'] > $now) :?>
                 <a href="./index.php?action=ct_phim&id=<?= $list['id'] ?>&id_xc=<?= $xc['id'] ?>">
@@ -58,7 +58,7 @@
                 </a>
                 <?php endif ?>
               <?php endforeach ?>
-              <i class="fa-solid fa-chevron-up fa-rotate-90"></i>
+              <!-- <i class="fa-solid fa-chevron-up fa-rotate-90"></i> -->
             </div>
             <div class="khung_chieu_dress">
               <!-- <div class="khung_chieu_dress1">
@@ -109,16 +109,17 @@
       </div>
       <div class="ct_phim_box_right">
         <h3>PHIM ĐANG CHIẾU</h3>
-
+        <?php foreach ($list_phim_dgchieu as $phim) :?>
         <div class="phim_lq">
           <div class="phim_lq_img">
-            <img src="IMG/phim_lq1.webp" alt="">
+            <img src="../Admin/Img_ad/<?= $phim['img_banner']?>" alt="">
             <div class="sub_img">
-              <span><i class="fa-solid fa-tv"></i>Mua Vé</span>
+              <a href="index.php?action=ct_phim&id=<?= $phim['id']?>"><i class="fa-solid fa-tv"></i>Mua Vé</a>
             </div>
           </div>
-          <h5>Biệt Đội Marvels</h5>
+          <h5 style="font-weight: 600;"><?= $phim['ten_phim']?></h5>
         </div>
+        <?php endforeach ?>
 
       </div>
     </div>

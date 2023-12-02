@@ -22,9 +22,9 @@ function khunggio_insert($khung_gio, $xuat_chieu, $phong_chieu)
     pdo_execute($sql);
 }
 
-function khunggio_update($id, $khung_gio, $xuat_chieu)
+function khunggio_update($id, $khung_gio, $phong_chieu)
 {
-    $sql = "UPDATE khung_gio_chieu SET id_xuat_chieu='$xuat_chieu' , gio_chieu = '$khung_gio' WHERE id='$id'";
+    $sql = "UPDATE khung_gio_chieu SET phong_phim='$phong_chieu' , gio_chieu = '$khung_gio' WHERE id='$id'";
     pdo_execute($sql);
 }
 

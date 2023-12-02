@@ -31,7 +31,7 @@
                                                 <td><?= $list['ten_phim'] ?></td>
                                                 <td><?= $list['ten_loaiphim'] ?></td>
                                                 <td><?= $list['so_luong_ve_dat'] ?></td>
-                                                <td><?= $list['sum_thanhtien'] ?></td>
+                                                <td><?= number_format($list['sum_thanhtien'], 0, ",", ".") ?> VND</td>
                                             </tr>
                                         <?php endforeach ?>
                                     </tbody>

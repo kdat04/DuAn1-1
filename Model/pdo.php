@@ -69,6 +69,7 @@ function pdo_query($sql)
         unset($conn);
     }
 }
+
 /**
  * Thực thi câu lệnh sql truy vấn một bản ghi
  * @param string $sql câu lệnh sql

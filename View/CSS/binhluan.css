@@ -57,6 +57,19 @@
     margin-bottom: 20px;
 }
 
+.comment span a{
+    text-decoration: none;
+    background-color: #ff953f;
+    padding: 10px 20px;
+    border-radius: 10px; 
+    color: white;
+    transition: all 0.3s;
+}
+
+.comment span a:hover{
+    opacity: 0.8;
+}
+
 .t-bl {
     margin-top: 40px;
     display: flex;

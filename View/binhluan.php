@@ -43,7 +43,7 @@ $listbl = binh_luan_select_all($id_phim);
                 <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
                     <?php
                     if (isset($_SESSION['nguoi_dung']) && ($_SESSION['nguoi_dung']  != "")) { ?>
-                        <h3>Đáng giá</h3>
+                        <h3>Đánh giá phim</h3>
                         <div class="form-ctphim">
                             <div class="bl-text">
                                 <input type="hidden" name="id_phim" id="" value="<?= $id_phim ?>">

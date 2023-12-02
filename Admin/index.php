@@ -207,7 +207,7 @@ if (isset($_GET['action'])) {
                                 if ($checkuser) {
                                     if ($checkuser['role'] != 0) {
                                         $_SESSION['user'] = $checkuser;
-                                        header('location: index.php?action=&act=danhmuc');
+                                        header('location: index.php?action=&act=');
                                         exit;
                                     } else {
                                         $thongbao['dangnhap'] = "Tài khoản hoặc mật khẩu không đúng";

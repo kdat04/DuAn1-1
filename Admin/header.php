@@ -25,12 +25,12 @@
             margin-bottom: 20px;
         }
 
-        .search_phim input[type = text]{
+        .search_phim input[type=text] {
             padding: 4px;
             width: 200px;
         }
 
-        .search_phim input[type = submit]{
+        .search_phim input[type=submit] {
             padding: 5px 20px;
         }
 
@@ -39,7 +39,7 @@
             padding: 5px;
         }
 
-        #zero_config_filter{
+        #zero_config_filter {
             display: none;
         }
     </style>

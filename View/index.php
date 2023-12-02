@@ -31,6 +31,7 @@ if (isset($_GET['action'])) {
                     $id_xc = $_GET['id_xc'];
                     $khunggio = khunggiochieu_select_by_idxc($id_xc);
                 }
+                $list_phim_dgchieu = phim_select_dgchieu($id);
                 $list = phim_select_by_id($id);
                 $xuat_chieu = xuatchieu_select_by_id_phim($id);
                 phim_tang_so_luot_xem($id);
@@ -128,10 +129,9 @@ if (isset($_GET['action'])) {
         case 'doimk':
             $email = '';
             if (isset($_GET['id'])) {
-                $_SESSION['luu_email'] = $_GET['id'];
-                $email = $_SESSION['luu_email'];
-                // var_dump($_SESSION['luu_email']);
-            } 
+                $email = $_GET['id'];
+            }
+            // var_dump($_SESSION['luu_email']);
             if (isset($_POST['doimk']) && ($_POST['doimk'])) {
                 $pass_new = md5($_POST['pass']);
                 $pass_now = $_POST['pass_now'];
@@ -143,7 +143,7 @@ if (isset($_GET['action'])) {
                         session_unset();
                         $thongbao['dangnhap'] = 'Đổi mật khẩu thành công, vui lòng đăng nhập.';
                         require_once '../View/dangnhap/dangnhap.php';
-                        require_once '../View/footer.php';   
+                        require_once '../View/footer.php';
                         break;
                     } else {
                         $thongbao['pass'] = " Nhập lại mật khẩu không khớp !";

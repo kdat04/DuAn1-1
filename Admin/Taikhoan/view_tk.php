@@ -6,6 +6,10 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Bảng quản tài khoản User</h5>
+                            <?php
+            if (isset($message) && ($message != ""))
+                echo $message;
+            ?>
                             <div class="table-responsive">
                                 <table id="zero_config" class="table table-striped table-bordered">
                                     <thead>
@@ -64,10 +68,6 @@
             <div class="btn_dieuhuong btn btn-success">
                 <a href="./index.php?action=&act=add_user" style="color: white;">Thêm User</a>
             </div>
-            <?php
-            if (isset($message) && ($message != ""))
-                echo $message;
-            ?>
         </div>
     </div>
 </div>

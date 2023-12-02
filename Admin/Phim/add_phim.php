@@ -7,6 +7,12 @@
             <form class="form-horizontal" action="index.php?action=&act=add_phim" method="post" enctype="multipart/form-data">
                 <div class="card-body" style="width: 1000px;">
                     <h4 class="card-title">Thêm Phim</h4>
+                    <div style="font-weight: 400; font-size: 20px; ; color: black; font-weight: 700;">
+                        <?php
+                        if (isset($message) && ($message != ""))
+                            echo $message;
+                        ?>
+                    </div><br>
                     <div class="form-group row">
                         <label for="fname" class="col-sm-3 text-right control-label col-form-label">Id phim</label>
                         <div class="col-sm-9">
@@ -107,7 +113,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="cono1"  class="col-sm-3 text-right control-label col-form-label">Thể loại phim</label>
+                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Thể loại phim</label>
                         <div class="col-sm-9">
 
                             <select class="select2 form-control custom-select" name="id_loaiphim" id="">
@@ -121,16 +127,10 @@
                         </div>
                     </div>
                 </div><br>
-                <div class="border-top" >
-                    <div class="card-body" >
+                <div class="border-top">
+                    <div class="card-body">
                         <br><input style="margin-top: 20px;" type="submit" name="themmoi" class="btn btn-primary" value="Gửi dữ liệu">
                     </div>
-                    <div style="font-weight: 500; font-size: 20px; ; color: black; font-weight: 700;">
-                        <?php
-                        if (isset($message) && ($message != ""))
-                            echo $message;
-                        ?>
-                    </div><br>
                 </div>
             </form>
         </div>

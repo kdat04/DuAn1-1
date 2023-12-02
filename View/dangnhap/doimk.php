@@ -7,7 +7,7 @@
             <div class="text" style="margin-bottom: 15px;">
                 Vui lòng nhớ mật khẩu đặt mới để đăng nhập.
             </div>
-            <form action="./index.php?action=doimk" method="post">
+            <form action="./index.php?action=doimk&id=<?= $email?>" method="post">
                 <div class="general_register_input">
                     <fieldset>
                         <input type="password" name="pass" placeholder=" Nhập mật khẩu mới">

@@ -44,7 +44,7 @@ function upd_pass($idkh, $pass_new)
 
 function upd_pass_qmk($email, $pass_new)
 {
-    $sql = "UPDATE users SET matkhau = '$pass_new' WHERE email like '$email'";
+    $sql = "UPDATE users SET matkhau = '$pass_new' WHERE email ='" . $email . "'";
     pdo_execute($sql);
 }
 function khach_hang_update2($id, $role)

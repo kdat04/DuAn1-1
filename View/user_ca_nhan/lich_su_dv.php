@@ -14,7 +14,7 @@
                 <div class="date_chieu">
                     <h4>
                         Xuất chiếu:<span><?= $list['ngay_chieu'] ?>,<?= $list['gio_chieu'] ?>,<?= $list['phong_phim'] ?></span>
-                        <hr>Ghế ngồi:<span> <?= $list['ghe'] ?></span>
+                        <hr>Ghế ngồi:<span> <?= $list['ghe_ngoi'] ?></span>
                     </h4>
 
                 </div>

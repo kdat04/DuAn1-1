@@ -6,12 +6,6 @@
                    <div class="chon-pttt">
                        <ul>
                            <li>
-                               <form action="">
-                                   <img src="./IMG/mb-bank.jpg" alt="">
-                                   <input type="submit" name="momo" value="MB-BANK">
-                               </form>
-                           </li>
-                           <li>
                                <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="./thanhtoan/xuly_momo_qr.php">
                                    <img src="./IMG/momo.jpg" alt="">
                                    <input type="submit" name="momo" value="QR-MOMO">
@@ -27,12 +21,6 @@
                                <form action="">
                                    <img src="./IMG/vn-pay.jpg" alt="">
                                    <input type="submit" name="momo" value="VN-PAY">
-                               </form>
-                           </li>
-                           <li>
-                               <form action="">
-                                   <img src="./IMG/shoppe-pay.jpg" alt="">
-                                   <input type="submit" name="momo" value="Ví ShoppePay">
                                </form>
                            </li>
                        </ul>

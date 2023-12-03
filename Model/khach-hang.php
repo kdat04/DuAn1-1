@@ -76,6 +76,14 @@ function khach_hang_update_thongtin($id, $diachi, $sdt, $email, $ngaysinh)
     $sql = "UPDATE users SET email='$email', diachi='$diachi', nam_sinh='$ngaysinh', sdt='$sdt' WHERE id='$id'";
     pdo_execute($sql);
 }
+
+function tk_search_keyword($key){
+    $sql = 'SELECT * FROM users WHERE 1 AND role = 0 ';
+    if ($key != "") {
+        $sql .= " and email like '%" . $key . "%'";
+    }
+    return pdo_query($sql);
+}
 // function khach_hang_exist($ma_kh){
 //     $sql = "SELECT count(*) FROM khach_hang WHERE $ma_kh=?";
 //     return pdo_query_value($sql, $ma_kh) > 0;

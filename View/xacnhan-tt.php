@@ -33,7 +33,7 @@
                     </li>
                     <li>
                         <h4>Thành tiền:</h4>
-                        <span> <?= $list_xc['thanh_tien'] ?> VNĐ</span>
+                        <span><?= number_format($list_xc['thanh_tien'], 0, ",", ".") ?> VNĐ</span>
                     </li>
                    
                 </ul>

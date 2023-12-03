@@ -20,13 +20,16 @@ if (isset($_GET['action'])) {
             require_once './Dangnhap/signup.php';
             break;
         default:
-
             if (isset($_GET['act'])) {
                 switch ($_GET['act']) {
-
                     case 'danhmuc':
                         require_once './home.php';
-                        $list_danhmuc = loai_select_all();
+                        if (isset($_POST['listseacher']) && ($_POST['listseacher'])) {
+                            $key = $_POST['kyw'];
+                        } else {
+                            $key = '';
+                        }
+                        $list_danhmuc = loai_search_keyword($key);
                         require_once './Danhmuc/view_danhmuc.php';
                         require_once './footer-home.php';
                         break;
@@ -34,8 +37,15 @@ if (isset($_GET['action'])) {
                         require_once './home.php';
                         if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                             $ten_loaiphim = $_POST['ten_loaiphim'];
+                            if (check_theloai($ten_loaiphim) != '') {
+                                $check_tl = check_theloai($ten_loaiphim);
+                            } else {
+                                $check_tl['ten_loaiphim'] = '';
+                            }
                             if ($ten_loaiphim == '') {
                                 $message = "Không được để trắng";
+                            } else if ($ten_loaiphim ==  $check_tl['ten_loaiphim']) {
+                                $message = "Thể loai đã tồn tại !";
                             } else {
                                 loai_insert($ten_loaiphim);
                                 $message = "Thêm thành công";
@@ -112,8 +122,15 @@ if (isset($_GET['action'])) {
                             move_uploaded_file($file['tmp_name'], "./Img_ad/" . $img_phim);
                             move_uploaded_file($file2['tmp_name'], "./Img_ad/" . $img_banner_phim);
 
+                            if (check_phim($ten_phim) != '') {
+                                $check_phim = check_phim($ten_phim);
+                            } else {
+                                $check_phim['ten_phim'] = '';
+                            }
                             if ($ten_phim == "" || $nsx == "" || $nph == "" || $mota == "") {
                                 $message = "Thêm không  thành công vì có ô để trống  ";
+                            } else if ($ten_phim == $check_phim['ten_phim']) {
+                                $message = "Phim đã tồn tại !";
                             } else {
 
                                 phim_insert($ten_phim, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $thoi_luong_phim, $cs_danh_gia, $qg, $dv1, $dv2, $dv3, $tt, $id_loaiphim);
@@ -190,7 +207,7 @@ if (isset($_GET['action'])) {
                                 if ($checkuser) {
                                     if ($checkuser['role'] != 0) {
                                         $_SESSION['user'] = $checkuser;
-                                        header('location: index.php?action=&act=danhmuc');
+                                        header('location: index.php?action=&act=');
                                         exit;
                                     } else {
                                         $thongbao['dangnhap'] = "Tài khoản hoặc mật khẩu không đúng";
@@ -210,7 +227,7 @@ if (isset($_GET['action'])) {
                             $nhaplaimatkhau = $_POST['lmk'];
                             if (check_email($email) != '') {
                                 $email_check = check_email($email);
-                            }else{
+                            } else {
                                 $email_check['email'] = '';
                             }
                             if ($ten_dangnhap == '' || $_POST['mk'] == '' || $email == '' || $nhaplaimatkhau == '') {
@@ -233,7 +250,12 @@ if (isset($_GET['action'])) {
                         break;
                     case 'taikhoan':
                         require_once './home.php';
-                        $list_users  = users_select_all();
+                        if (isset($_POST['listseacher']) && ($_POST['listseacher'])) {
+                            $key = $_POST['kyw'];
+                        } else {
+                            $key = '';
+                        }
+                        $list_users  = tk_search_keyword($key);
                         require_once './Taikhoan/view_tk.php';
                         require_once './footer-home.php';
                         break;
@@ -247,8 +269,16 @@ if (isset($_GET['action'])) {
                             $nam_sinh = $_POST['nam_sinh'];
                             $role = $_POST['role'];
                             $sdt = $_POST['sdt'];
+
+                            if (check_email($email) != '') {
+                                $check_user = check_email($email);
+                            } else {
+                                $check_user['email'] = '';
+                            }
                             if ($ten_user == "" || $matkhau == "" || $email == "" || $diachi == "" || $nam_sinh == "" || $role == "" || $sdt == "") {
                                 $message = "Thêm không  thành công vì có ô để trống  ";
+                            } else if ($email ==  $check_user['email']) {
+                                $message = "Emai đã tồn tại !";
                             } else {
                                 khach_hang_insert2($ten_user, $matkhau, $email, $diachi, $nam_sinh, $role, $sdt);
                                 $message = "Thêm thành công ";
@@ -288,16 +318,22 @@ if (isset($_GET['action'])) {
                         break;
                     case 'binhluan':
                         require_once './home.php';
-                        $listbl = binhluan_select_all();
+                        if (isset($_POST['listseacher']) && ($_POST['listseacher'])) {
+                            $key = $_POST['kyw'];
+                        } else {
+                            $key = '';
+                        }
+                        $listbl = binhluan_select_all($key);
                         require_once './Binhluan/view_bl.php';
                         require_once './footer-home.php';
                         break;
                     case 'xoa_binhluan':
                         require_once './home.php';
+                        $key = '';
                         if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                             delete_bl($_GET['id']);
                         }
-                        $listbl = binhluan_select_all();
+                        $listbl = binhluan_select_all($key);
                         require_once './Binhluan/view_bl.php';
                         require_once './footer-home.php';
                         break;
@@ -436,6 +472,11 @@ if (isset($_GET['action'])) {
                         require_once './home.php';
                         $listtk_phim = binh_luan_thongke();
                         require_once './Thongke/tk_bl.php';
+                        require_once './footer-home.php';
+                        break;
+                    default:
+                        require_once './home.php';
+                        require_once './trangchu.php';
                         require_once './footer-home.php';
                         break;
                 }

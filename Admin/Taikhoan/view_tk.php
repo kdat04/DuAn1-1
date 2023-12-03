@@ -11,6 +11,10 @@
                 echo $message;
             ?>
                             <div class="table-responsive">
+                            <form class="search_phim" action="index.php?action=&act=taikhoan" method="post">
+                                    <input type="text" name="kyw" placeholder="Tra cứu theo Email">
+                                    <input class="btn btn-primary" type="submit" name="listseacher" value="Gửi">
+                                </form>
                                 <table id="zero_config" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>

@@ -28,8 +28,8 @@
                                                 <td><?= $ve['id'] ?></td>
                                                 <td><?= $ve['ten_user'] ?></td>
                                                 <td><?= $ve['ten_phim'] ?></td>
-                                                <td><?= $ve['gia_ve'] ?></td>
-                                                <td><?= $ve['ghe'] ?></td> 
+                                                <td> <?= number_format( $ve['gia_ve'], 0, ",", ".")?> VND</td>
+                                                <td><?= $ve['ghe_ngoi'] ?></td> 
                                                 <td><?= $ve['ngay_chieu'] ?></td>   
                                                 <td><?= $ve['gio_chieu'] ?></td>
                                                 <td><?= $ve['phong_phim'] ?></td>

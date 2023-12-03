@@ -7,7 +7,7 @@
                 <!-- ============================================================== -->
                 <!-- Logo -->
                 <!-- ============================================================== -->
-                <a class="navbar-brand" href="index.php?action=">
+                <a class="navbar-brand" href="index.php?action=&act=">
                     <!-- Logo icon -->
                     <b class="logo-icon p-l-10">
                         <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -98,8 +98,8 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31"></a>
                         <div class="dropdown-menu dropdown-menu-right user-dd animated">
-                            <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i><?= $_SESSION['user']['ten_user']?></a>
-                            <a class="dropdown-item" href="index.php?action=&act=dx"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>    
+                            <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i><?= $_SESSION['user']['ten_user'] ?></a>
+                            <a class="dropdown-item" href="index.php?action=&act=dx"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
                         </div>
                     </li>
                     <!-- ============================================================== -->
@@ -115,22 +115,22 @@
             <!-- Sidebar navigation-->
             <nav class="sidebar-nav">
                 <ul id="sidebarnav" class="p-t-30">
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=" aria-expanded="false"><i class="fa-solid fa-house"></i><span class="hide-menu">Trang chủ</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=danhmuc" aria-expanded="false"><i class="fa-solid fa-bars"></i><span class="hide-menu">Danh mục</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=phim" aria-expanded="false"><i class="fa-solid fa-film"></i><span class="hide-menu">Phim</span></a></li>
-                    <?php if($_SESSION['user']['role'] == 1){?>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=taikhoan" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu">Tài khoản</span></a></li>
-                    <?php }?>
+                    <?php if ($_SESSION['user']['role'] == 1) { ?>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=taikhoan" aria-expanded="false"><i class="mdi mdi-account-key"></i><span class="hide-menu">Tài khoản</span></a></li>
+                    <?php } ?>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=binhluan" aria-expanded="false"><i class="fa-solid fa-comment"></i><span class="hide-menu">Bình luận</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=xuatchieu" aria-expanded="false"><i class="fa-solid fa-calendar"></i><span class="hide-menu">Xuất chiếu</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=khunggio" aria-expanded="false"><i class="fa-solid fa-clock"></i></i><span class="hide-menu">Khung giờ chiếu</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=ve" aria-expanded="false"><i class="fa-solid fa-ticket"></i><span class="hide-menu">Vé</span></a></li>
-                    <?php if($_SESSION['user']['role'] == 1){?>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=thongke" aria-expanded="false"><i class="fa-solid fa-percent"></i><span class="hide-menu">Thống kê</span></a></li>
-                    <?php }?>
+                    <?php if ($_SESSION['user']['role'] == 1) { ?>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=thongke" aria-expanded="false"><i class="fa-solid fa-percent"></i><span class="hide-menu">Thống kê</span></a></li>
+                    <?php } ?>
                 </ul>
             </nav>
             <!-- End Sidebar navigation -->
         </div>
         <!-- End Sidebar scroll-->
     </aside>
-

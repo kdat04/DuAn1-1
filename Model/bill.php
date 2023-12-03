@@ -9,7 +9,7 @@ function bill_insert($ngay_tt, $gia_ghe)
 
 function ve_insert($gia_ghe, $ngay_tt, $ghe, $id_user, $id_kgc, $id_bill)
 {
-    $sql = 'INSERT INTO `ve` (`id`, `gia_ve`, `ngay_dat`, `ghe`, `id_user`, `id_kgc`,`id_bill`) VALUES (NULL,?,?,?,?,?,?)';
+    $sql = 'INSERT INTO `ve` (`id`, `gia_ve`, `ngay_dat`, `ghe_ngoi`, `id_user`, `id_kgc`,`id_bill`) VALUES (NULL,?,?,?,?,?,?)';
     return pdo_execute_return_interlastid($sql, $gia_ghe, $ngay_tt, $ghe, $id_user, $id_kgc, $id_bill);
 }
 

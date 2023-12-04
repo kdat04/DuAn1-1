@@ -17,12 +17,6 @@
                                    <input type="submit" name="momo" value="ATM-MOMO">
                                </form>
                            </li>
-                           <li>
-                               <form action="">
-                                   <img src="./IMG/vn-pay.jpg" alt="">
-                                   <input type="submit" name="momo" value="VN-PAY">
-                               </form>
-                           </li>
                        </ul>
                    </div>
                    <div class="tt-ghichu" style="width: 600px;">

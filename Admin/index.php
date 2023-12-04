@@ -451,7 +451,12 @@ if (isset($_GET['action'])) {
                         break;
                     case 've':
                         require_once './home.php';
-                        $listve = ve_select_all();
+                        if (isset($_POST['listseacher']) && ($_POST['listseacher'])) {
+                            $key = $_POST['kyw'];
+                        } else {
+                            $key = '';
+                        }
+                        $listve = ve_select_all($key);
                         require_once './Datve/view_ve.php';
                         require_once './footer-home.php';
                         break;
@@ -463,8 +468,13 @@ if (isset($_GET['action'])) {
                         break;
                     case 'thongke_doanh_thu':
                         require_once './home.php';
+                        if(isset($_POST['listseacher']) && ($_POST['listseacher'])){
+                            $kyw = $_POST['thang'];
+                        }else{
+                            $kyw = '';
+                        }
+                        $list_tong_dt = load_thongke_doanhthu_thang($kyw);
                         $listtk_doanh_thu = load_thongke_doanhthu();
-
                         require_once './Thongke/thong_ke_doanh_thu.php';
                         require_once './footer-home.php';
                         break;

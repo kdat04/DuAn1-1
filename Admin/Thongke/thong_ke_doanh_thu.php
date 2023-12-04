@@ -7,11 +7,40 @@
                         <div class="card-body">
                             <h5 class="card-title">Bảng thống kê</h5>
                             <div class="btn_dieuhuong btn btn-success">
-                                <a href="./index.php?action=&act=thong_ke" style="color: white;">Thống kê </a>
+                                <a href="./index.php?action=&act=thongke" style="color: white;">Thống kê </a>
                             </div>
                             <div class="table-responsive">
                                 <table id="zero_config" class="table table-striped table-bordered">
+                                    <div class="thong_ke">
+                                        <form class="search_phim" action="index.php?action=&act=thongke_doanh_thu" method="post">
+                                            <label for="thang">Thống Kê Theo Tháng</label>
+                                            <select class="thongke_thang" name="thang" id="thang">
+                                                <option value="0" hidden>Tất cả</option>
+                                                <option value="1">Tháng 1</option>
+                                                <option value="2">Tháng 2</option>
+                                                <option value="3">Tháng 3</option>
+                                                <option value="4">Tháng 4</option>
+                                                <option value="5">Tháng 5</option>
+                                                <option value="6">Tháng 6</option>
+                                                <option value="7">Tháng 7</option>
+                                                <option value="8">Tháng 8</option>
+                                                <option value="9">Tháng 9</option>
+                                                <option value="10">Tháng 10</option>
+                                                <option value="11">Tháng 11</option>
+                                                <option value="12">Tháng 12</option>
+                                            </select>
+                                            <input class="btn btn-primary" type="submit" name="listseacher" value="Gửi">
+                                        </form>
 
+                                    </div>
+                                    <div class="tong_dt2">
+                                    <label>Tổng Doanh Thu</label>
+                                        <span >
+                                            <?php foreach ($list_tong_dt as $list) : ?>
+                                                <?= number_format($list['tong_dt'], 0, ",", ".") ?> VND
+                                            <?php endforeach ?>
+                                        </span>
+                                    </div>
                                     <thead>
                                         <tr>
                                             <th style="width: 50px;">Id Phim </th>

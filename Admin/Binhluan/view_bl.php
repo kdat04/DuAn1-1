@@ -8,7 +8,7 @@
                             <h5 class="card-title">Bảng quản lý bình luận</h5>
                             <div class="table-responsive">
                             <form class="search_phim" action="index.php?action=&act=binhluan" method="post">
-                                    <input type="text" name="kyw" placeholder="Tra cứu theo Tên">
+                                    <input type="text" name="kyw" placeholder="Tra cứu theo Tên Khách Hàng">
                                     <input class="btn btn-primary" type="submit" name="listseacher" value="Gửi">
                                 </form>
                                 <table id="zero_config" class="table table-striped table-bordered">

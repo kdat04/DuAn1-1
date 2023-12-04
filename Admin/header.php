@@ -42,6 +42,30 @@
         #zero_config_filter {
             display: none;
         }
+
+        .thong_ke {
+            margin-top: 10px;
+        }
+
+        .thong_ke label {
+            margin-right: 10px;
+        }
+
+        .thong_ke select {
+            width: 200px;
+            padding: 6px;
+        }
+
+        .tong_dt2{
+            margin-top: 20px;
+        }
+        .tong_dt2 span{
+            margin-left:45px;
+            margin-top: 20px;
+            border: 1px solid #FF953F;
+            padding: 6px;
+            border-radius: 5px;
+        }
     </style>
     <!-- Custom CSS -->
     <link href="./dist/css/style.min.css" rel="stylesheet">

@@ -10,7 +10,7 @@
                                 <a href="./index.php?action=&act=thongke_doanh_thu" style="color: white;">Doanh Thu</a>
                             </div>
                             <div class="btn_dieuhuong btn btn-success">
-                                <a href="./index.php?action=&act=thongke_bl" style="color: white;">Bình luận </a>
+                                <a href="./index.php?action=&act=thongke" style="color: white;">Phim </a>
                             </div>
                             <div class="table-responsive">
                                 <table id="zero_config" class="table table-striped table-bordered">

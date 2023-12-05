@@ -34,8 +34,8 @@
 
                                     </div>
                                     <div class="tong_dt2">
-                                    <label>Tổng Doanh Thu</label>
-                                        <span >
+                                        <label>Tổng Doanh Thu</label>
+                                        <span>
                                             <?php foreach ($list_tong_dt as $list) : ?>
                                                 <?= number_format($list['tong_dt'], 0, ",", ".") ?> VND
                                             <?php endforeach ?>
@@ -73,49 +73,81 @@
                                     </tfoot>
                                 </table>
                             </div>
-                            <div class="table-responsive">
-                                <div id="myChart" style="width:100%; max-width:600px; height:500px;">
-                                </div>
+                            <div style="display: flex;">
+                                <div class="table-responsive">
+                                    <div id="myChart" style="width:500px; max-width:600px; height:500px; overflow: hidden;">
+                                    </div>
 
-                                <script src="https://www.gstatic.com/charts/loader.js"></script>
-                                <script>
-                                    google.charts.load('current', {
-                                        'packages': ['corechart']
-                                    });
-                                    google.charts.setOnLoadCallback(drawChart);
+                                    <script src="https://www.gstatic.com/charts/loader.js"></script>
+                                    <script>
+                                        google.charts.load('current', {
+                                            'packages': ['corechart']
+                                        });
+                                        google.charts.setOnLoadCallback(drawChart);
 
-                                    function drawChart() {
+                                        function drawChart() {
 
-                                        // Set Data
-                                        const data = google.visualization.arrayToDataTable([
-                                            ['Danh mục', 'Số lượng sản phẩm'],
-                                            <?php
+                                            // Set Data
+                                            const data = google.visualization.arrayToDataTable([
+                                                ['Danh mục', 'Số lượng sản phẩm'],
+                                                <?php
 
-                                            $tongdoanhthu = count($listtk_doanh_thu);
-                                            $dem = 0;
-                                            foreach ($listtk_doanh_thu as $list) {
-                                                if ($dem == $tongdoanhthu) {
-                                                    $dau = '';
-                                                } else {
-                                                    $dau = ',';
+                                                $tongdoanhthu = count($listtk_doanh_thu);
+                                                $dem = 0;
+                                                foreach ($listtk_doanh_thu as $list) {
+                                                    if ($dem == $tongdoanhthu) {
+                                                        $dau = '';
+                                                    } else {
+                                                        $dau = ',';
+                                                    }
+                                                    echo "['" . $list['ten_phim'] . "'," . $list['so_luong_ve_dat'] . "]" . $dau . "";
                                                 }
-                                                echo "['" . $list['ten_phim'] . "'," . $list['so_luong_ve_dat'] . "]" . $dau . "";
-                                            }
-                                            ?>
-                                        ]);
+                                                ?>
+                                            ]);
 
-                                        // Set Options
-                                        const options = {
-                                            title: 'Biểu đồ thống kê'
+                                            // Set Options
+                                            const options = {
+                                                title: 'Biểu đồ thống kê'
+                                            };
+
+                                            // Draw
+                                            const chart = new google.visualization.PieChart(document.getElementById('myChart'));
+                                            chart.draw(data, options);
+
+                                        }
+                                    </script>
+                                </div>
+                                <div class="table-responsive">
+                                    <div id="myPlot" style="width:100%;max-width:700px"></div>
+                                    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                                    <script>
+                                        const xArray = ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"];
+                                        <?php $dem = 0 ?>
+                                        const yArray = [<?php foreach ($list_bieudo as $list) : ?>
+                                                <?php if ($dem == 12) {
+                                                                $dau = '';
+                                                            } else {
+                                                                $dau = ',';
+                                                            } ?>
+                                                <?= $list['tong_dt'] . $dau ?>
+                                            <?php endforeach ?>
+                                        ];
+
+                                        const data = [{
+                                            x: xArray,
+                                            y: yArray,
+                                            type: "bar"
+                                        }];
+
+                                        const layout = {
+                                            title: "Biểu đồ thống kê doanh thu theo tháng"
                                         };
 
-                                        // Draw
-                                        const chart = new google.visualization.PieChart(document.getElementById('myChart'));
-                                        chart.draw(data, options);
-
-                                    }
-                                </script>
+                                        Plotly.newPlot("myPlot", data, layout);
+                                    </script>
+                                </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

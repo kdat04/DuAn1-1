@@ -72,6 +72,16 @@ function load_thongke_doanhthu_thang($kyw)
     return $listtk;
 }
 
+function load_bieudo_doanhthu_thang()
+{
+    $sql = "SELECT sum(bill.thanh_tien) as tong_dt, ngay_tt 
+  from bill group by MONTH(ngay_tt)";
+
+    $listtk = pdo_query($sql);
+
+    return $listtk;
+}
+
 function load_thongke_doanhthu()
 {
     $sql = "SELECT phim.id as id, phim.ten_phim as ten_phim, loai_phim.ten_loaiphim as ten_loaiphim,count(bill.tt_bill = 1) as so_luong_ve_dat, sum(bill.thanh_tien) as sum_thanhtien, bill.ngay_tt as ngay_tt

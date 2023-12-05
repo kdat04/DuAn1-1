@@ -474,6 +474,7 @@ if (isset($_GET['action'])) {
                             $kyw = '';
                         }
                         $list_tong_dt = load_thongke_doanhthu_thang($kyw);
+                        $list_bieudo = load_bieudo_doanhthu_thang();
                         $listtk_doanh_thu = load_thongke_doanhthu();
                         require_once './Thongke/thong_ke_doanh_thu.php';
                         require_once './footer-home.php';

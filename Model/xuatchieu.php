@@ -2,7 +2,7 @@
 
 function xuatchieu_select_all()
 {
-    $sql = "SELECT xuat_chieu.id, xuat_chieu.ngay_chieu, phim.ten_phim, phim.img_phim  FROM xuat_chieu INNER JOIN phim ON phim.id = xuat_chieu.id_phim";
+    $sql = "SELECT xuat_chieu.id, xuat_chieu.ngay_chieu, phim.ten_phim, phim.img_phim  FROM xuat_chieu INNER JOIN phim ON phim.id = xuat_chieu.id_phim order by xuat_chieu.id DESC ";
     return pdo_query($sql);
 }
 

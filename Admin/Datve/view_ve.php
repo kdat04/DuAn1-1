@@ -5,8 +5,12 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Bảng quản lý bình luận</h5>
+                            <h5 class="card-title">Bảng quản lý Vé</h5>
                             <div class="table-responsive">
+                                <form class="search_phim" action="index.php?action=&act=ve" method="post">
+                                    <input type="text" name="kyw" placeholder="Tra cứu theo Tên Khách Hàng ">
+                                    <input class="btn btn-primary" type="submit" name="listseacher" value="Gửi">
+                                </form>
                                 <table id="zero_config" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
@@ -28,9 +32,9 @@
                                                 <td><?= $ve['id'] ?></td>
                                                 <td><?= $ve['ten_user'] ?></td>
                                                 <td><?= $ve['ten_phim'] ?></td>
-                                                <td> <?= number_format( $ve['gia_ve'], 0, ",", ".")?> VND</td>
-                                                <td><?= $ve['ghe_ngoi'] ?></td> 
-                                                <td><?= $ve['ngay_chieu'] ?></td>   
+                                                <td> <?= number_format($ve['gia_ve'], 0, ",", ".") ?> VND</td>
+                                                <td><?= $ve['ghe_ngoi'] ?></td>
+                                                <td><?= $ve['ngay_chieu'] ?></td>
                                                 <td><?= $ve['gio_chieu'] ?></td>
                                                 <td><?= $ve['phong_phim'] ?></td>
                                                 <td><?= $ve['ngay_dat'] ?></td>

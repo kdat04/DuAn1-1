@@ -1,10 +1,10 @@
 <div>
     <div class="page-wrapper">
         <div class="card">
-            <form class="form-horizontal" action="index.php?action=&act=up_xuat_chieu" method="post">
+            <form class="form-horizontal" action="index.php?action=&act=up_xuat_chieu&id=<?= $list['id'] ?>" method="post">
                 <div class="card-body" style="width: 1000px;">
                     <h4 class="card-title">Sửa Xuất chiếu</h4>
-                    <div style="font-weight: 400; font-size: 20px; ; color: black;">
+                    <div style="font-weight: 400; font-size: 20px; ; color: red;">
                         <?php
                         if (isset($message) && ($message != ""))
                             echo $message;

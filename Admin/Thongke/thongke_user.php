@@ -5,22 +5,23 @@
         left: 300px;
         display: flex;
         align-items: center;
-        
+
 
     }
-   .tong_dt1{
-display: flex;
-gap: 30px;
-}
+
+    .tong_dt1 {
+        display: flex;
+        gap: 30px;
+    }
+
     .tong_dt1 span {
-       background-color:rgb(255, 177, 32);
-       padding: 10px;
-       border-radius: 10px 0 0 10px;
-       color: white;
-       font-weight: 700;
-       border: 1px solid rgb(238, 174, 54);
+        background-color: rgb(255, 177, 32);
+        padding: 10px;
+        border-radius: 10px;
+        color: white;
+        font-weight: 700;
+        border: 1px solid rgb(238, 174, 54);
     }
-
 </style>
 <div>
     <div class="page-wrapper">
@@ -33,14 +34,14 @@ gap: 30px;
                             <div class="tong_dt">
                                 <div class="tong_dt1">
                                     <span>
-                                        Tổng Admin  : <?php foreach ($list_tong_user as $list) : ?>
-                                            <?= $list['tong_ad'] ?> 
+                                        Tổng Admin : <?php foreach ($list_tong_user as $list) : ?>
+                                            <?= $list['tong_ad'] ?>
                                         <?php endforeach ?>
                                     </span><br><br>
 
                                     <span>
-                                        Tổng khách hàng  :  <?php foreach ($list_tong_user as $list) : ?>
-                                            <?= $list['tong_kh'] ?> 
+                                        Tổng khách hàng : <?php foreach ($list_tong_user as $list) : ?>
+                                            <?= $list['tong_kh'] ?>
                                         <?php endforeach ?>
                                     </span><br><br>
                                     <span>
@@ -49,7 +50,7 @@ gap: 30px;
                                         <?php endforeach ?>
                                     </span>
                                 </div>
-                            
+
                             </div>
                             <div class="btn_dieuhuong btn btn-success">
                                 <a href="./index.php?action=&act=thongke_doanh_thu" style="color: white;">Doanh Thu</a>
@@ -78,10 +79,10 @@ gap: 30px;
                                                 <td><?= $list['user'] ?></td>
                                                 <td><?php if ($list['role'] == 1) {
                                                         echo "Admin";
-                                                    } else if ($list['role' == 0]) {
-                                                        echo "khách hàng";
+                                                    } else if ($list['role'] == 0) {
+                                                        echo "Khách hàng";
                                                     } else {
-                                                        echo "nhân viên ";
+                                                        echo "Nhân viên ";
                                                     } ?></td>
 
                                             </tr>

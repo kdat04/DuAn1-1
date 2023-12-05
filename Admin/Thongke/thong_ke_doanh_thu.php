@@ -1,5 +1,3 @@
-
-
 <div>
     <div class="page-wrapper">
         <div class="container-fluid">
@@ -8,7 +6,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Bảng thống kê</h5>
-                    
+
 
 
                             <div class="btn_dieuhuong btn btn-success">

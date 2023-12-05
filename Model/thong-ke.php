@@ -63,7 +63,7 @@ function load_thongke_doanhthu_thang($kyw)
         $sql .= "AND MONTH(ngay_tt) = 11 AND tt_bill = 1";
     } elseif ($kyw == 12) {
         $sql .= "AND MONTH(ngay_tt) = 12 AND tt_bill = 1";
-    }else{
+    } else {
         $sql .= 'AND tt_bill = 1';
     }
 
@@ -107,7 +107,7 @@ function binh_luan_thongke()
 function user_thongke()
 {
     $sql = "SELECT users.id as id,users.ten_user as user,users.role as role   from users ";
-  
+
     $sql .= "  group by users.id order by users.id desc";
     $listtk = pdo_query($sql);
     return $listtk;
@@ -116,7 +116,6 @@ function load_thongke_count_user()
 {
     $sql = "SELECT count(users.role = 1) as tong_ad,count(users.role = 0) as tong_kh,count(users.role != 0 || users.role != 1 ) as tong_nv
   from users";
-   $sql .= "  group by users.role ";
     $list = pdo_query($sql);
 
     return $list;

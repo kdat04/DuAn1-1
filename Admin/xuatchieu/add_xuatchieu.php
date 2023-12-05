@@ -1,10 +1,10 @@
 <div>
     <div class="page-wrapper">
         <div class="card">
-            <form class="form-horizontal" action="index.php?action=&act=add_xuatchieu" method="post">
+            <form class="form-horizontal" action="index.php?action=&act=add_xuatchieu&id=<?= $_GET['id'] ?>" method="post">
                 <div class="card-body" style="width: 1000px;">
                     <h4 class="card-title">Thêm mới Xuất chiếu <?= $phim_id['ten_phim'] ?></h4>
-                    <div style="font-weight: 400; font-size: 20px; ; color: black;">
+                    <div style="font-weight: 400; font-size: 20px; ; color: red;">
                         <?php
                         if (isset($message) && ($message != ""))
                             echo $message;

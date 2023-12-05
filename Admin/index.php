@@ -485,6 +485,13 @@ if (isset($_GET['action'])) {
                         require_once './Thongke/tk_bl.php';
                         require_once './footer-home.php';
                         break;
+                        case 'thongke_user':
+                            require_once './home.php';
+                            $listtk_phim = user_thongke();
+                            $list_tong_user = load_thongke_count_user();
+                            require_once './Thongke/thongke_user.php';
+                            require_once './footer-home.php';
+                            break;
                     default:
                         require_once './home.php';
                         require_once './trangchu.php';

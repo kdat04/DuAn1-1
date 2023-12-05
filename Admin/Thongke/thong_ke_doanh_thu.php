@@ -1,3 +1,5 @@
+
+
 <div>
     <div class="page-wrapper">
         <div class="container-fluid">
@@ -6,9 +8,19 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Bảng thống kê</h5>
+                    
+
+
                             <div class="btn_dieuhuong btn btn-success">
                                 <a href="./index.php?action=&act=thongke" style="color: white;">Thống kê </a>
                             </div>
+                            <div class="btn_dieuhuong btn btn-success">
+                                <a href="./index.php?action=&act=thongke_bl" style="color: white;">Bình luận </a>
+                            </div>
+                            <div class="btn_dieuhuong btn btn-success">
+                                <a href="./index.php?action=&act=thongke_user" style="color: white;">User </a>
+                            </div>
+
                             <div class="table-responsive">
                                 <table id="zero_config" class="table table-striped table-bordered">
                                     <div class="thong_ke">

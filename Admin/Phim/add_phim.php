@@ -7,7 +7,7 @@
             <form class="form-horizontal" action="index.php?action=&act=add_phim" method="post" enctype="multipart/form-data">
                 <div class="card-body" style="width: 1000px;">
                     <h4 class="card-title">Thêm Phim</h4>
-                    <div style="font-weight: 400; font-size: 20px; ; color: black; font-weight: 700;">
+                    <div style="font-weight: 400; font-size: 20px; ; color: red; font-weight: 700;">
                         <?php
                         if (isset($message) && ($message != ""))
                             echo $message;
@@ -51,7 +51,7 @@
                         <label for="lname" class="col-sm-3 text-right control-label col-form-label">Ảnh phim</label>
                         <div class="col-sm-9">
                             <div class="custom-file">
-                                <input type="file" name="img_phim" class="custom-file-input" id="validatedCustomFile" required>
+                                <input type="file" name="img_phim" class="custom-file-input" id="validatedCustomFile" >
                                 <label class="custom-file-label" for="validatedCustomFile">Ảnh phim...</label>
                                 <div class="invalid-feedback">Example invalid custom file feedback</div>
                             </div>
@@ -62,7 +62,7 @@
                         <label for="lname" class="col-sm-3 text-right control-label col-form-label">Ảnh banner phim</label>
                         <div class="col-sm-9">
                             <div class="custom-file">
-                                <input type="file" name="img_banner_phim" class="custom-file-input" id="validatedCustomFile" required>
+                                <input type="file" name="img_banner_phim" class="custom-file-input" id="validatedCustomFile" >
                                 <label class="custom-file-label" for="validatedCustomFile">Ảnh phim...</label>
                                 <div class="invalid-feedback">Example invalid custom file feedback</div>
                             </div>

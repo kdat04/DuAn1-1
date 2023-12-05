@@ -76,8 +76,14 @@ if (isset($_GET['action'])) {
                         if (isset($_POST['capnhat']) && ($_POST['capnhat'])) { {
                                 $ma_loai = $_POST['id'];
                                 $ten_loaiphim = $_POST['ten_loaiphim'];
-
-                                loai_update($ma_loai, $ten_loaiphim);
+                                if ($ten_loaiphim == '') {
+                                    $dm = loai_select_by_id($_GET['id']);
+                                    $message = "Không được để trắng";
+                                    require_once './Danhmuc/sua_danhmuc.php';
+                                    break;
+                                } else {
+                                    loai_update($ma_loai, $ten_loaiphim);
+                                }
                             }
                         }
                         $list_danhmuc = loai_select_all();
@@ -348,9 +354,17 @@ if (isset($_GET['action'])) {
                         if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
                             $ngay_xc = $_POST['ngay_xc'];
 
-                            $ten_phim = $_POST['id'];
-                            xuatchieu_insert($ngay_xc, $ten_phim);
-                            $message = "Thêm thành công ";
+                            if ($ngay_xc == '') {
+                                $phim_id = phim_select_by_id($_GET['id']);
+                                $message = "Không được để trắng";
+                                require_once './xuatchieu/add_xuatchieu.php';
+                                break;
+                            } else {
+                                $ten_phim = $_POST['id'];
+                                xuatchieu_insert($ngay_xc, $ten_phim);
+                                $message = "Thêm thành công ";
+                            }
+
 
                             $phim_id = phim_select_by_id($ten_phim);
                             $list_xuatchieu = xuatchieu_select_all();
@@ -380,7 +394,14 @@ if (isset($_GET['action'])) {
                             $id = $_POST['id'];
                             $ngay_chieu = $_POST['ngay_chieu'];
 
+                            if ($ngay_chieu == '') {
+                                $message = "Không được để trắng";
+                                $list = xuatchieu_select_by_id($_GET['id']);
+                                require_once './xuatchieu/sua_xuatchieu.php';
+                                break;
+                            }else{
                             xuat_chieu_update($ngay_chieu, $id);
+                            }
                         }
                         $list_xuatchieu = xuatchieu_select_all();
                         require_once './xuatchieu/view_xuatchieu.php';
@@ -408,8 +429,14 @@ if (isset($_GET['action'])) {
                             $khung_gio = $_POST['khung_gio'];
                             $xuat_chieu = $_POST['id_xc'];
                             $phong_chieu = $_POST['phong_chieu'];
-                            // $phim_id = phim_select_by_id($_GET['id']);
-                            khunggio_insert($khung_gio, $xuat_chieu, $phong_chieu);
+                            if($khung_gio == '' && $phong_chieu == ''){
+                                $xc_id = khunggio_select_by_idxc($_GET['id_xc']);
+                                $message = "Không được để trắng";
+                                require_once './khunggio/add_khunggio.php';
+                                break;
+                            }else{
+                                khunggio_insert($khung_gio, $xuat_chieu, $phong_chieu);
+                            }
                             $list_khunggio = khunggiochieu_select_all();
                             require_once './khunggio/view_khunggio.php';
                         } else {
@@ -433,7 +460,15 @@ if (isset($_GET['action'])) {
                             $id = $_POST['id'];
                             $khung_gio = $_POST['khung_gio'];
                             $phong_chieu = $_POST['phong_chieu'];
-                            khunggio_update($id, $khung_gio, $phong_chieu);
+                            if($khung_gio == '' && $phong_chieu == ''){
+                                $list = khunggiochieu_select_by_id($_GET['id']);
+                                $message = "Không được để trắng";
+                                require_once './khunggio/sua_khunggio.php';
+                                break;
+                            }else{
+                               khunggio_update($id, $khung_gio, $phong_chieu); 
+                            }
+                            
                         }
                         $list_khunggio = khunggiochieu_select_all();
                         $xuat_chieu = xuatchieu_select_all();
@@ -451,7 +486,12 @@ if (isset($_GET['action'])) {
                         break;
                     case 've':
                         require_once './home.php';
-                        $listve = ve_select_all();
+                        if (isset($_POST['listseacher']) && ($_POST['listseacher'])) {
+                            $key = $_POST['kyw'];
+                        } else {
+                            $key = '';
+                        }
+                        $listve = ve_select_all($key);
                         require_once './Datve/view_ve.php';
                         require_once './footer-home.php';
                         break;
@@ -463,8 +503,14 @@ if (isset($_GET['action'])) {
                         break;
                     case 'thongke_doanh_thu':
                         require_once './home.php';
+                        if (isset($_POST['listseacher']) && ($_POST['listseacher'])) {
+                            $kyw = $_POST['thang'];
+                        } else {
+                            $kyw = '';
+                        }
+                        $list_tong_dt = load_thongke_doanhthu_thang($kyw);
+                        $list_bieudo = load_bieudo_doanhthu_thang();
                         $listtk_doanh_thu = load_thongke_doanhthu();
-
                         require_once './Thongke/thong_ke_doanh_thu.php';
                         require_once './footer-home.php';
                         break;
@@ -472,6 +518,13 @@ if (isset($_GET['action'])) {
                         require_once './home.php';
                         $listtk_phim = binh_luan_thongke();
                         require_once './Thongke/tk_bl.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'thongke_user':
+                        require_once './home.php';
+                        $listtk_phim = user_thongke();
+                        $list_tong_user = load_thongke_count_user();
+                        require_once './Thongke/thongke_user.php';
                         require_once './footer-home.php';
                         break;
                     default:

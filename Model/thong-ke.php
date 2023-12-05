@@ -94,3 +94,20 @@ function binh_luan_thongke()
     $listtk = pdo_query($sql);
     return $listtk;
 }
+function user_thongke()
+{
+    $sql = "SELECT users.id as id,users.ten_user as user,users.role as role   from users ";
+  
+    $sql .= "  group by users.id order by users.id desc";
+    $listtk = pdo_query($sql);
+    return $listtk;
+}
+function load_thongke_count_user()
+{
+    $sql = "SELECT count(users.role = 1) as tong_ad,count(users.role = 0) as tong_kh,count(users.role != 0 || users.role != 1 ) as tong_nv
+  from users";
+   $sql .= "  group by users.role ";
+    $list = pdo_query($sql);
+
+    return $list;
+}

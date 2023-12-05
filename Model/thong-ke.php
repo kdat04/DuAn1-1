@@ -51,6 +51,16 @@ function load_thongke_doanhthu()
     return $listtk;
 }
 
+function load_thongke_tong_doanhthu()
+{
+    $sql = "SELECT sum(bill.thanh_tien) as tong_dt
+  from bill";
+
+    $list = pdo_query($sql);
+
+    return $list;
+}
+
 
 function binh_luan_thongke()
 {

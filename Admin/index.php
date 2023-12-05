@@ -463,6 +463,7 @@ if (isset($_GET['action'])) {
                         break;
                     case 'thongke_doanh_thu':
                         require_once './home.php';
+                        $list_tong_dt = load_thongke_tong_doanhthu();
                         $listtk_doanh_thu = load_thongke_doanhthu();
 
                         require_once './Thongke/thong_ke_doanh_thu.php';

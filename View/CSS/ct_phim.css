@@ -4,6 +4,7 @@
 }
 
 .video {
+  color: rgb(255, 177, 32);
   position: relative;
   opacity: 0, 8;
   background-color: rgb(17, 0, 0);

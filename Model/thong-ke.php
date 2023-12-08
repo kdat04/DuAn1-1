@@ -114,7 +114,7 @@ function user_thongke()
 }
 function load_thongke_count_user()
 {
-    $sql = "SELECT count(users.role = 1) as tong_ad,count(users.role = 0) as tong_kh,count(users.role != 0 || users.role != 1 ) as tong_nv
+    $sql = "SELECT COUNTIF(role = 1) as tong_ad,count(users.role = 0) as tong_kh,count(users.role != 0 || users.role != 1 ) as tong_nv
   from users";
     $list = pdo_query($sql);
 

@@ -11,7 +11,8 @@ require_once '../Model/khung-gio-chieu.php';
 require_once '../Model/ve.php';
 require_once "./header.php";
 
-if (isset($_GET['action'])) {
+
+   if (isset($_GET['action'])) {
     switch ($_GET['action']) {
         case 'dn':
             require_once './Dangnhap/login.php';
@@ -133,7 +134,7 @@ if (isset($_GET['action'])) {
                             } else {
                                 $check_phim['ten_phim'] = '';
                             }
-                            if ($ten_phim == "" || $nsx == "" || $nph == "" || $mota == "") {
+                            if ($ten_phim == '' || $nsx == '' || $nph == '' || $mota == '' || $thoi_luong_phim ==  '' || $cs_danh_gia == '' || $dv1 == '' || $dv2 == '' || $dv3 == '' || $qg == '' || $tt == '' ) {
                                 $message = "Thêm không  thành công vì có ô để trống  ";
                             } else if ($ten_phim == $check_phim['ten_phim']) {
                                 $message = "Phim đã tồn tại !";
@@ -195,7 +196,15 @@ if (isset($_GET['action'])) {
                                 $img_banner_phim = $file2['name'];
                                 move_uploaded_file($file2['tmp_name'], "./Img_ad/" . $img_banner_phim);
                             }
-                            phim_update($ten_phim, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $thoi_luong_phim, $cs_danh_gia, $qg, $dv1, $dv2, $dv3, $tt, $id_loaiphim, $id);
+                            if($ten_phim == '' || $nsx == '' || $nph == '' || $mota == '' || $thoi_luong_phim ==  '' || $cs_danh_gia == '' || $dv1 == '' || $dv2 == '' || $dv3 == '' || $qg == '' || $tt == '' ){
+                                $phim = phim_select_by_id($_GET['id']);
+                                $message = "Thêm không  thành công vì có ô để trống  ";
+                                require_once './Phim/sua_phim.php';
+                                break;
+                            }else{
+                               phim_update($ten_phim, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $thoi_luong_phim, $cs_danh_gia, $qg, $dv1, $dv2, $dv3, $tt, $id_loaiphim, $id); 
+                            }
+                            
                         }
                         $ds_phim = phim_select_all();
                         $list_danhmuc = loai_select_all();
@@ -541,6 +550,8 @@ if (isset($_GET['action'])) {
         require_once './Dangnhap/login.php';
         exit;
     }
-}
+} 
+
+
 
 require_once './footer.php';

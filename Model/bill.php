@@ -45,6 +45,6 @@ function dv_update($id)
 }
 function list_xc($id)
 {
-    $sql = "SELECT bill.thanh_tien, ve.id, users.ten_user, khung_gio_chieu.gio_chieu ,xuat_chieu.ngay_chieu, phim.ten_phim FROM bill JOIN ve ON ve.id_bill = bill.id JOIN users ON ve.id_user = users.id JOIN khung_gio_chieu ON khung_gio_chieu.id = ve.id_kgc JOIN xuat_chieu ON xuat_chieu.id = khung_gio_chieu.id_xuat_chieu JOIN phim ON phim.id = xuat_chieu.id_phim WHERE bill.id = ?";
+    $sql = "SELECT bill.thanh_tien,bill.ngay_tt, ve.id, ve.ghe_ngoi, users.ten_user, khung_gio_chieu.gio_chieu ,xuat_chieu.ngay_chieu, phim.ten_phim FROM bill JOIN ve ON ve.id_bill = bill.id JOIN users ON ve.id_user = users.id JOIN khung_gio_chieu ON khung_gio_chieu.id = ve.id_kgc JOIN xuat_chieu ON xuat_chieu.id = khung_gio_chieu.id_xuat_chieu JOIN phim ON phim.id = xuat_chieu.id_phim WHERE bill.id = ?";
     return pdo_query_one($sql, $id);
 }

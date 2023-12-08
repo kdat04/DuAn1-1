@@ -469,7 +469,7 @@ require_once "./header.php";
                             $id = $_POST['id'];
                             $khung_gio = $_POST['khung_gio'];
                             $phong_chieu = $_POST['phong_chieu'];
-                            if($khung_gio == '' && $phong_chieu == ''){
+                            if($khung_gio == '' || $phong_chieu == ''){
                                 $list = khunggiochieu_select_by_id($_GET['id']);
                                 $message = "Không được để trắng";
                                 require_once './khunggio/sua_khunggio.php';
@@ -533,6 +533,9 @@ require_once "./header.php";
                         require_once './home.php';
                         $listtk_phim = user_thongke();
                         $list_tong_user = load_thongke_count_user();
+                        $list_tong_ad = load_thongke_count_admin();
+                        $list_tong_nv = load_thongke_count_nv();
+
                         require_once './Thongke/thongke_user.php';
                         require_once './footer-home.php';
                         break;

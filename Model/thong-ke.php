@@ -112,10 +112,24 @@ function user_thongke()
     $listtk = pdo_query($sql);
     return $listtk;
 }
+function load_thongke_count_admin()
+{
+    $sql = "SELECT COUNT(users.role ) as tong_ad from users where users.role = 1 ";
+    $list = pdo_query($sql);
+
+    return $list;
+}
+
 function load_thongke_count_user()
 {
-    $sql = "SELECT COUNTIF(role = 1) as tong_ad,count(users.role = 0) as tong_kh,count(users.role != 0 || users.role != 1 ) as tong_nv
-  from users";
+    $sql = "SELECT COUNT(users.role ) as tong_user from users where users.role = 0 ";
+    $list = pdo_query($sql);
+
+    return $list;
+}
+function load_thongke_count_nv()
+{
+    $sql = "SELECT COUNT(users.role ) as tong_nv from users where users.role <> 0 and users.role <> 1 ";
     $list = pdo_query($sql);
 
     return $list;

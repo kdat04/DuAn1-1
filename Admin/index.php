@@ -524,6 +524,9 @@ if (isset($_GET['action'])) {
                         require_once './home.php';
                         $listtk_phim = user_thongke();
                         $list_tong_user = load_thongke_count_user();
+                        $list_tong_ad = load_thongke_count_admin();
+                        $list_tong_nv = load_thongke_count_nv();
+
                         require_once './Thongke/thongke_user.php';
                         require_once './footer-home.php';
                         break;

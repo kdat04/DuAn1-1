@@ -34,18 +34,18 @@
                             <div class="tong_dt">
                                 <div class="tong_dt1">
                                     <span>
-                                        Tổng Admin : <?php foreach ($list_tong_user as $list) : ?>
+                                        Tổng Admin : <?php foreach ($list_tong_ad as $list) : ?>
                                             <?= $list['tong_ad'] ?>
                                         <?php endforeach ?>
                                     </span><br><br>
 
                                     <span>
                                         Tổng khách hàng : <?php foreach ($list_tong_user as $list) : ?>
-                                            <?= $list['tong_kh'] ?>
+                                            <?= $list['tong_user'] ?>
                                         <?php endforeach ?>
                                     </span><br><br>
                                     <span>
-                                        Tổng nhân viên : <?php foreach ($list_tong_user as $list) : ?>
+                                        Tổng nhân viên : <?php foreach ($list_tong_nv as $list) : ?>
                                             <?= $list['tong_nv'] ?>
                                         <?php endforeach ?>
                                     </span>

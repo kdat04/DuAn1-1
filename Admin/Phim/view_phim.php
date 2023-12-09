@@ -46,11 +46,11 @@
                                                     </button>
                                                 </td>
                                                 <td>
-                                                    <button class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa sản phẩm không ?')">
+                                                    <button class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa phim không ?')">
                                                         <a style="color: white;" href="index.php?action=&act=xoa_phim&id=<?= $phim['id'] ?>">Xoá</a>
                                                     </button>
                                                 </td>
-                                                <td><button class="btn btn-info" onclick="return confirm('Bạn có muốn sửa sản phẩm không ?')">
+                                                <td><button class="btn btn-info" onclick="return confirm('Bạn có muốn sửa phim không ?')">
                                                         <a style="color: white;" href="index.php?action=&act=sua_phim&id=<?= $phim['id'] ?>">Sửa</a>
                                                     </button>
                                                 </td>

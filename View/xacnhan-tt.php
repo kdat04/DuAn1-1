@@ -28,8 +28,12 @@
                         <span><?= $list_xc['ten_phim'] ?></span>
                     </li>
                     <li>
-                        <h4>Suất chiếu:</h4>
+                        <h4>Xuất chiếu:</h4>
                         <span><?= $list_xc['ngay_chieu'] ?>,<?= $list_xc['gio_chieu']?></span>
+                    </li>
+                    <li>
+                        <h4>Ghế ngồi:</h4>
+                        <span><?= $list_xc['ghe_ngoi'] ?></span>
                     </li>
                     <li>
                         <h4>Thành tiền:</h4>

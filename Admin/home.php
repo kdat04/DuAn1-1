@@ -125,7 +125,9 @@
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=xuatchieu" aria-expanded="false"><i class="fa-solid fa-calendar"></i><span class="hide-menu">Xuất chiếu</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=khunggio" aria-expanded="false"><i class="fa-solid fa-clock"></i></i><span class="hide-menu">Khung giờ chiếu</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=ve" aria-expanded="false"><i class="fa-solid fa-ticket"></i><span class="hide-menu">Vé</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=bill" aria-expanded="false"><i class="fa-solid fa-ticket"></i><span class="hide-menu">Bill</span></a></li>
+                    <?php if ($_SESSION['user']['role'] == 1) { ?>
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=bill" aria-expanded="false"><i class="fa-solid fa-money-bill"></i><span class="hide-menu">Bill</span></a></li>
+                    <?php } ?>
                     <?php if ($_SESSION['user']['role'] == 1) { ?>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php?action=&act=thongke" aria-expanded="false"><i class="fa-solid fa-percent"></i><span class="hide-menu">Thống kê</span></a></li>
                     <?php } ?>

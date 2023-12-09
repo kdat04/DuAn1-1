@@ -17,6 +17,7 @@ require_once '../Model/PHPMailer/src/Exception.php';
 require_once "./header.php";
 
 
+
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {
         case 'dn':
@@ -270,11 +271,6 @@ if (isset($_GET['action'])) {
                         break;
                     case 'doi_mk':
                         require_once './home.php';
-                        // $email = '';
-                        // if (isset($_GET['id'])) {
-                        //     $email = $_GET['id'];
-                        // }
-                        // var_dump($_SESSION['luu_email']);
                         if (isset($_POST['doimk']) && ($_POST['doimk'])) {
                             $idkh = $_SESSION['user']['id'];
                             $pass_now = md5($_POST['pass_now']);
@@ -287,11 +283,9 @@ if (isset($_GET['action'])) {
                                 if ($pass_now == $matkhau) {
                                     if ($pass_new == $pass_current) {
                                         upd_pass($idkh, $pass_new);
-                                        session_unset();
-                                        require_once './home.php';
                                         require_once './trangchu.php';
-                                        require_once './footer-home.php';
-                                        $thongbao = "Đổi mật khẩu thành công.";
+                                        $thongbao['dangnhap'] = "Đổi mật khẩu thành công.";
+                                        break;
                                     } else {
                                         $thongbao = "Mật khẩu không khớp.";
                                     }

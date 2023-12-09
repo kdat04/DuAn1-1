@@ -9,6 +9,7 @@ require_once '../Model/binh-luan.php';
 require_once '../Model/xuatchieu.php';
 require_once '../Model/khung-gio-chieu.php';
 require_once '../Model/ve.php';
+require_once '../Model/bill.php';
 require_once "./header.php";
 
 if (isset($_GET['action'])) {
@@ -495,6 +496,29 @@ if (isset($_GET['action'])) {
                         require_once './Datve/view_ve.php';
                         require_once './footer-home.php';
                         break;
+                        case 'bill':
+                            require_once './home.php';
+                            // if (isset($_POST['listseacher']) && ($_POST['listseacher'])) {
+                            //     $key = $_POST['kyw'];
+                            //     $category_id = $_POST['category_id'];
+                            // } else {
+                            //     $key = '';
+                            //     $category_id = 0;
+                            // }
+                            $list_bill =  bill_xem();
+                          
+                            require_once './bill/viewbill.php';
+                            require_once './footer-home.php';
+                            break;
+                            case 'xoa_bill':
+                                require_once './home.php';
+                                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                                    bill_delete($_GET['id']);
+                                }
+                                $list_bill =  bill_xem();
+                                require_once './bill/viewbill.php';
+                                require_once './footer-home.php';
+                                break;
                     case 'thongke':
                         require_once './home.php';
                         $listtk_phim = loadall_thongke();

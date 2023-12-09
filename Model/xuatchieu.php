@@ -32,3 +32,9 @@ function xuat_chieu_delete($id)
     $sql = "DELETE FROM xuat_chieu WHERE id = ?";
     pdo_execute($sql, $id);
 }
+
+function xoa_tonggio_delete($id)
+{
+    $sql = "DELETE FROM khung_gio_chieu WHERE id_xuat_chieu = ?";
+    pdo_execute($sql, $id);
+}

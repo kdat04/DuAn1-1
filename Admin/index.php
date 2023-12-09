@@ -263,6 +263,11 @@ if (isset($_GET['action'])) {
                     case 'dx':
                         require_once './Dangnhap/log_out.php';
                         break;
+                    case 'doi_mk':
+                        require_once './home.php';
+                        require_once './Dangnhap/doi_mk.php';
+                        require_once './footer-home.php';
+                        break;
                     case 'taikhoan':
                         require_once './home.php';
                         if (isset($_POST['listseacher']) && ($_POST['listseacher'])) {
@@ -419,6 +424,7 @@ if (isset($_GET['action'])) {
                     case 'xoa_xuatchieu':
                         require_once './home.php';
                         if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                            xoa_tonggio_delete($_GET['id']);
                             xuat_chieu_delete($_GET['id']);
                         }
 

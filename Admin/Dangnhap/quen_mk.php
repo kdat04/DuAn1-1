@@ -21,33 +21,23 @@
                         <span class="db"><img src="assets/images/logo.png" alt="logo" /></span>
                     </div>
                     <!-- Form -->
-                        <form class="form-horizontal m-t-20" action="index.php?action=&act=dn" method="post">
-                        <div class="row p-b-30">
-                            <div class="col-12">
-                            <font color="red"><?= $thongbao['dangnhap'] ?? "" ?></font>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text bg-success text-white" id="basic-addon1"><i class="ti-user"></i></span>
-                                    </div>
-                                    <input name="email" type="text" class="form-control form-control-lg" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
-                                </div>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
-                                    </div>
-                                    <input name="mk" type="password" class="form-control form-control-lg" placeholder="Mật khẩu" aria-label="Password" aria-describedby="basic-addon1" >
-                                </div>
+                    <div class="text-center">
+                        <span class="text-white">Nhập địa chỉ email của bạn bên dưới và chúng tôi sẽ gửi cho bạn hướng dẫn cách khôi phục mật khẩu.</span>
+                    </div>
+                    <font color="red"><?= $thongbao['dangnhap'] ?? "" ?></font>
+                    <form class="form-horizontal m-t-20" class="col-12" action="index.php?action=&act=quen_mk_admin" method="post">
+                        <!-- email -->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-danger text-white" id="basic-addon1"><i class="ti-email"></i></span>
                             </div>
+                            <input type="text" class="form-control form-control-lg" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" name='email'>
                         </div>
-                        <div class="row border-top border-secondary">
+                        <!-- pwd -->
+                        <div class="row m-t-20 p-t-20 border-top border-secondary">
                             <div class="col-12">
-                                <div class="form-group">
-                                    <div class="p-t-20">
-                                        <a href="index.php?action=&act=quen_mk_admin" class="btn btn-info">Quên mật khẩu?</a>
-                                        <input name="dangnhap" style="margin-left: 5px;" class="btn btn-success float-right" type="submit" value="Đăng nhập">
-                                        <a href="./index.php?action=dk" style="text-decoration: none; color: white;"><button class="btn btn-success float-right" type="button">Đăng ký</button></a>
-                                    </div>
-                                </div>
+                                <a class="btn btn-success" href="index.php?action=&act=dn" id="to-login" name="action">Quay lại</a>
+                                <input name="quenmk" class="btn btn-info float-right" type="submit" value="Gửi">
                             </div>
                         </div>
                     </form>

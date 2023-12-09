@@ -35,6 +35,7 @@ if (isset($_GET['action'])) {
                         require_once './Danhmuc/view_danhmuc.php';
                         require_once './footer-home.php';
                         break;
+
                     case 'add_dm':
                         require_once './home.php';
                         if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
@@ -265,8 +266,40 @@ if (isset($_GET['action'])) {
                         break;
                     case 'doi_mk':
                         require_once './home.php';
+                        // $email = '';
+                        // if (isset($_GET['id'])) {
+                        //     $email = $_GET['id'];
+                        // }
+                        // var_dump($_SESSION['luu_email']);
+                        if (isset($_POST['doimk']) && ($_POST['doimk'])) {
+                            $idkh = $_SESSION['user']['id'];
+                            $pass_now = md5($_POST['pass_now']);
+                            $pass_new = md5($_POST['pass_new']);
+                            $pass_current = md5($_POST['pass_current']);
+                            if ($_POST['pass_now'] == '') {
+                                $thongbao = "Vui lòng không bỏ trống.";
+                            } else {
+                                $matkhau = $_SESSION['user']['matkhau'];
+                                if ($pass_now == $matkhau) {
+                                    if ($pass_new == $pass_current) {
+                                        upd_pass($idkh, $pass_new);
+                                        session_unset();
+                                        require_once './home.php';
+                                        require_once './trangchu.php';
+                                        require_once './footer-home.php';
+                                        $thongbao = "Đổi mật khẩu thành công.";
+                                    } else {
+                                        $thongbao = "Mật khẩu không khớp.";
+                                    }
+                                } else {
+                                    $thongbao = "Sai mật khẩu hiện tại.";
+                                }
+                            }
+                        }
                         require_once './Dangnhap/doi_mk.php';
+
                         require_once './footer-home.php';
+
                         break;
                     case 'taikhoan':
                         require_once './home.php';

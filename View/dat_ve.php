@@ -160,7 +160,7 @@
                     </div>
                 </div>
                 <div class="nut-btn">
-                    <a href="./index.php?action=<?php if ($step == 0) { ?>ct_phim&id=<?= $_SESSION['ve']['id_phim'] ?><?php } else if ($step == 1) { ?>dat_ve&link=<?php } else if ($step == 2) { ?>dat_ve&link=chondoan<?php } ?>">Quay lại</a>
+                    <a href="./index.php?action=<?php if ($step == 0) { ?>ct_phim&id=<?= $_SESSION['ve']['id_phim'] ?><?php } else { ?>dat_ve&link=<?php } ?>">Quay lại</a>
                     <input type="submit" name="tiep_tuc" value="<?php if ($step == 2) { ?> Xác nhận <?php } else { ?>Tiếp Tục<?php } ?>">
                 </div>
             </div>

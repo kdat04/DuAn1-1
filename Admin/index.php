@@ -13,7 +13,7 @@ require_once '../Model/bill.php';
 require_once "./header.php";
 
 
-   if (isset($_GET['action'])) {
+if (isset($_GET['action'])) {
     switch ($_GET['action']) {
         case 'dn':
             require_once './Dangnhap/login.php';
@@ -135,7 +135,7 @@ require_once "./header.php";
                             } else {
                                 $check_phim['ten_phim'] = '';
                             }
-                            if ($ten_phim == '' || $nsx == '' || $nph == '' || $mota == '' || $thoi_luong_phim ==  '' || $cs_danh_gia == '' || $dv1 == '' || $dv2 == '' || $dv3 == '' || $qg == '' || $tt == '' ) {
+                            if ($ten_phim == '' || $nsx == '' || $nph == '' || $mota == '' || $thoi_luong_phim ==  '' || $cs_danh_gia == '' || $dv1 == '' || $dv2 == '' || $dv3 == '' || $qg == '' || $tt == '') {
                                 $message = "Thêm không  thành công vì có ô để trống  ";
                             } else if ($ten_phim == $check_phim['ten_phim']) {
                                 $message = "Phim đã tồn tại !";
@@ -197,15 +197,14 @@ require_once "./header.php";
                                 $img_banner_phim = $file2['name'];
                                 move_uploaded_file($file2['tmp_name'], "./Img_ad/" . $img_banner_phim);
                             }
-                            if($ten_phim == '' || $nsx == '' || $nph == '' || $mota == '' || $thoi_luong_phim ==  '' || $cs_danh_gia == '' || $dv1 == '' || $dv2 == '' || $dv3 == '' || $qg == '' || $tt == '' ){
+                            if ($ten_phim == '' || $nsx == '' || $nph == '' || $mota == '' || $thoi_luong_phim ==  '' || $cs_danh_gia == '' || $dv1 == '' || $dv2 == '' || $dv3 == '' || $qg == '' || $tt == '') {
                                 $phim = phim_select_by_id($_GET['id']);
                                 $message = "Thêm không  thành công vì có ô để trống  ";
                                 require_once './Phim/sua_phim.php';
                                 break;
-                            }else{
-                               phim_update($ten_phim, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $thoi_luong_phim, $cs_danh_gia, $qg, $dv1, $dv2, $dv3, $tt, $id_loaiphim, $id); 
+                            } else {
+                                phim_update($ten_phim, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $thoi_luong_phim, $cs_danh_gia, $qg, $dv1, $dv2, $dv3, $tt, $id_loaiphim, $id);
                             }
-                            
                         }
                         $ds_phim = phim_select_all();
                         $list_danhmuc = loai_select_all();
@@ -263,6 +262,11 @@ require_once "./header.php";
                         break;
                     case 'dx':
                         require_once './Dangnhap/log_out.php';
+                        break;
+                    case 'doi_mk':
+                        require_once './home.php';
+                        require_once './Dangnhap/doi_mk.php';
+                        require_once './footer-home.php';
                         break;
                     case 'taikhoan':
                         require_once './home.php';
@@ -409,8 +413,8 @@ require_once "./header.php";
                                 $list = xuatchieu_select_by_id($_GET['id']);
                                 require_once './xuatchieu/sua_xuatchieu.php';
                                 break;
-                            }else{
-                            xuat_chieu_update($ngay_chieu, $id);
+                            } else {
+                                xuat_chieu_update($ngay_chieu, $id);
                             }
                         }
                         $list_xuatchieu = xuatchieu_select_all();
@@ -420,6 +424,7 @@ require_once "./header.php";
                     case 'xoa_xuatchieu':
                         require_once './home.php';
                         if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                            xoa_tonggio_delete($_GET['id']);
                             xuat_chieu_delete($_GET['id']);
                         }
 
@@ -439,12 +444,12 @@ require_once "./header.php";
                             $khung_gio = $_POST['khung_gio'];
                             $xuat_chieu = $_POST['id_xc'];
                             $phong_chieu = $_POST['phong_chieu'];
-                            if($khung_gio == '' && $phong_chieu == ''){
+                            if ($khung_gio == '' && $phong_chieu == '') {
                                 $xc_id = khunggio_select_by_idxc($_GET['id_xc']);
                                 $message = "Không được để trắng";
                                 require_once './khunggio/add_khunggio.php';
                                 break;
-                            }else{
+                            } else {
                                 khunggio_insert($khung_gio, $xuat_chieu, $phong_chieu);
                             }
                             $list_khunggio = khunggiochieu_select_all();
@@ -470,15 +475,14 @@ require_once "./header.php";
                             $id = $_POST['id'];
                             $khung_gio = $_POST['khung_gio'];
                             $phong_chieu = $_POST['phong_chieu'];
-                            if($khung_gio == '' || $phong_chieu == ''){
+                            if ($khung_gio == '' || $phong_chieu == '') {
                                 $list = khunggiochieu_select_by_id($_GET['id']);
                                 $message = "Không được để trắng";
                                 require_once './khunggio/sua_khunggio.php';
                                 break;
-                            }else{
-                               khunggio_update($id, $khung_gio, $phong_chieu); 
+                            } else {
+                                khunggio_update($id, $khung_gio, $phong_chieu);
                             }
-                            
                         }
                         $list_khunggio = khunggiochieu_select_all();
                         $xuat_chieu = xuatchieu_select_all();
@@ -505,29 +509,27 @@ require_once "./header.php";
                         require_once './Datve/view_ve.php';
                         require_once './footer-home.php';
                         break;
-                        case 'bill':
-                            require_once './home.php';
-                            // if (isset($_POST['listseacher']) && ($_POST['listseacher'])) {
-                            //     $key = $_POST['kyw'];
-                            //     $category_id = $_POST['category_id'];
-                            // } else {
-                            //     $key = '';
-                            //     $category_id = 0;
-                            // }
-                            $list_bill =  bill_xem();
-                          
-                            require_once './bill/viewbill.php';
-                            require_once './footer-home.php';
-                            break;
-                            case 'xoa_bill':
-                                require_once './home.php';
-                                if (isset($_GET['id']) && $_GET['id'] > 0) {
-                                    bill_delete($_GET['id']);
-                                }
-                                $list_bill =  bill_xem();
-                                require_once './bill/viewbill.php';
-                                require_once './footer-home.php';
-                                break;
+                    case 'bill':
+                        require_once './home.php';
+                        if (isset($_POST['listseacher']) && ($_POST['listseacher'])) {
+                            $key = $_POST['kyw'];
+                        } else {
+                            $key = '';
+                        }
+                        $list_bill = bill_xem($key);
+
+                        require_once './bill/viewbill.php';
+                        require_once './footer-home.php';
+                        break;
+                    case 'xoa_bill':
+                        require_once './home.php';
+                        if (isset($_GET['id']) && $_GET['id'] > 0) {
+                            bill_delete($_GET['id']);
+                        }
+                        $list_bill =  bill_xem($key);
+                        require_once './bill/viewbill.php';
+                        require_once './footer-home.php';
+                        break;
                     case 'thongke':
                         require_once './home.php';
                         $listtk_phim = loadall_thongke();
@@ -577,7 +579,7 @@ require_once "./header.php";
         require_once './Dangnhap/login.php';
         exit;
     }
-} 
+}
 
 
 

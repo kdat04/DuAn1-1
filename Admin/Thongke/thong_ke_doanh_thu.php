@@ -63,6 +63,7 @@
                                     </thead>
                                     <tbody>
                                         <?php foreach ($listtk_doanh_thu as $list) : ?>
+                                            <?php if($list['sum_thanhtien'] != 0):?>
                                             <tr>
                                                 <td><?= $list['id'] ?></td>
                                                 <td><?= $list['ten_phim'] ?></td>
@@ -70,6 +71,7 @@
                                                 <td><?= $list['so_luong_ve_dat'] ?></td>
                                                 <td><?= number_format($list['sum_thanhtien'], 0, ",", ".") ?> VND</td>
                                             </tr>
+                                            <?php endif ?>
                                         <?php endforeach ?>
                                     </tbody>
                                     <tfoot>

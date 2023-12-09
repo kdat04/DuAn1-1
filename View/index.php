@@ -233,8 +233,38 @@ if (isset($_GET['action'])) {
                 dv_update($_SESSION['id_ve']);
 
                 $list_xc = list_xc($_SESSION['id_bill']);
-                // var_dump($list_xc);
-                // var_dump($_SESSION['id_bill']);
+
+                $mail = new   PHPMailer\PHPMailer\PHPMailer(true);
+
+                    //Cấu hình
+                    $mail->SMTPDebug = PHPMailer\PHPMailer\SMTP::DEBUG_OFF;
+                    $mail->isSMTP();
+                    $mail->Host       = 'sandbox.smtp.mailtrap.io';
+                    $mail->SMTPAuth   = true;
+                    $mail->Username   = 'a2866bb9db072c';
+                    $mail->Password   = 'b74895e7ffadb8';
+                    $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
+                    $mail->Port       = 587;
+
+                    //Email người gửi
+                    $mail->setFrom('chiduc1611@gmail.com', '3d Cinema');
+                    $mail->addAddress($_SESSION['nguoi_dung']['email']);
+
+                    //Nội dung
+                    $mail->isHTML(true);
+                    $mail->Subject = 'Dat ve thanh cong.';
+                    $mail->Body    = '           
+                    Kinh gui, khach hang cua 3D Cinema <br> 
+                    Chung toi gui mail nay de thong bao ban da dat ve thanh cong. <br>
+                    Ma dat ve: '.$list_xc['id'].' <br>
+                    Ten phim: '.$list_xc['ten_phim'].'<br>
+                    Xuat chieu: '. $list_xc['ngay_chieu'] .','. $list_xc['gio_chieu'].' <br>
+                    Ghe ngoi: '.$list_xc['ghe_ngoi'].' <br>
+                    Thanh tien: '.number_format($list_xc['thanh_tien'], 0, ",", ".").'VND <br>
+                    Ngay dat: '.$list_xc['ngay_tt'].'<br>
+                    Tran trong!';
+
+                    $mail->send();
                 require_once "./xacnhan-tt.php";
                 break;
             } else {

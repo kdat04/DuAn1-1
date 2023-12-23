@@ -69,6 +69,7 @@
     </style>
     <!-- Custom CSS -->
     <link href="./dist/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../View/CSS/addmk.css">
     <link href="assets/libs/flot/css/float-chart.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

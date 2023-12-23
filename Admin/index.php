@@ -10,7 +10,12 @@ require_once '../Model/xuatchieu.php';
 require_once '../Model/khung-gio-chieu.php';
 require_once '../Model/ve.php';
 require_once '../Model/bill.php';
+require_once '../Model/PHPMailer/src/PHPMailer.php';
+require_once '../Model/PHPMailer/src/SMTP.php';
+require_once '../Model/PHPMailer/src/Exception.php';
+
 require_once "./header.php";
+
 
 
 if (isset($_GET['action'])) {
@@ -35,6 +40,7 @@ if (isset($_GET['action'])) {
                         require_once './Danhmuc/view_danhmuc.php';
                         require_once './footer-home.php';
                         break;
+
                     case 'add_dm':
                         require_once './home.php';
                         if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
@@ -265,8 +271,104 @@ if (isset($_GET['action'])) {
                         break;
                     case 'doi_mk':
                         require_once './home.php';
+                        if (isset($_POST['doimk']) && ($_POST['doimk'])) {
+                            $idkh = $_SESSION['user']['id'];
+                            $pass_now = md5($_POST['pass_now']);
+                            $pass_new = md5($_POST['pass_new']);
+                            $pass_current = md5($_POST['pass_current']);
+                            if ($_POST['pass_now'] == '') {
+                                $thongbao = "Vui lòng không bỏ trống.";
+                            } else {
+                                $matkhau = $_SESSION['user']['matkhau'];
+                                if ($pass_now == $matkhau) {
+                                    if ($pass_new == $pass_current) {
+                                        upd_pass($idkh, $pass_new);
+                                        require_once './trangchu.php';
+                                        $thongbao['dangnhap'] = "Đổi mật khẩu thành công.";
+                                        break;
+                                    } else {
+                                        $thongbao = "Mật khẩu không khớp.";
+                                    }
+                                } else {
+                                    $thongbao = "Sai mật khẩu hiện tại.";
+                                }
+                            }
+                        }
                         require_once './Dangnhap/doi_mk.php';
+
                         require_once './footer-home.php';
+
+                        break;
+                    case 'quen_mk_admin':
+                        if (isset($_POST['quenmk']) && ($_POST['quenmk'])) {
+                            $email = $_POST['email'];
+                            $check_email = check_email($email);
+                            // if ($check_email) {
+                            //     $md5_hash = $check_email['pass'];
+                            //     $decrypted_password = decrypt_md5_dictionary($md5_hash);
+                            // }
+                            if ($check_email != false) {
+                                $mail = new   PHPMailer\PHPMailer\PHPMailer(true);
+
+                                //Cấu hình
+                                $mail->SMTPDebug = PHPMailer\PHPMailer\SMTP::DEBUG_OFF;
+                                $mail->isSMTP();
+                                $mail->Host       = 'sandbox.smtp.mailtrap.io';
+                                $mail->SMTPAuth   = true;
+                                $mail->Username   = 'a2866bb9db072c';
+                                $mail->Password   = 'b74895e7ffadb8';
+                                $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
+                                $mail->Port       = 587;
+
+                                //Email người gửi
+                                $mail->setFrom('chiduc1611@gmail.com', '3d Cinema');
+                                $mail->addAddress($email);
+
+                                //Nội dung
+                                $mail->isHTML(true);
+                                $mail->Subject = 'Yeu cau dat lai mat khau.';
+                                $mail->Body    = '           
+                                Kinh gui, Admin cua 3D Cinema <br> 
+                                Chung toi nhan duoc yeu cau dat lai mat khau tu dia chi email cua ban. <br>
+                                De dat lai mat khau cua ban, hay truy cap vao lien ket dau: <br>
+                                <a href="http://localhost/WD18318_PHP1/DA1/Admin/index.php?action=&act=doimatkhau&id=' . $email . '">"http://localhost/WD18318_PHP1/DA1/Admin/index.php?action=&act=doimatkhau</a> <br>
+                                Neu ban khong yeu cau dat lau mat khau, vui long bo qua email nay. <br>
+                                Tran trong!';
+
+                                $mail->send();
+
+                                $thongbao['dangnhap'] = 'Gửi email thành công.';
+                            } else if ($check_email == false && $email != "") {
+                                $thongbao['dangnhap'] = 'Email này không tồn tại, vui lòng nhập lại';
+                            } else if ($check_email == "") {
+                                $thongbao['dangnhap'] = 'Vui lòng không bỏ trống !';
+                            }
+                        }
+                        require_once './Dangnhap/quen_mk.php';
+                        break;
+                    case 'doimatkhau':
+                        $email = '';
+                        if (isset($_GET['id'])) {
+                            $email = $_GET['id'];
+                        }
+                        if (isset($_POST['doimatkhau']) && ($_POST['doimatkhau'])) {
+                            $pass_new = md5($_POST['pass']);
+                            $pass_now = $_POST['pass_now'];
+                            if ($_POST['pass'] == '' || $_POST['pass_now'] == '') {
+                                $thongbao['pass'] = " Vui lòng không bỏ trống !";
+                            } else {
+                                if ($_POST['pass'] == $pass_now) {
+                                    upd_pass_qmk($email, $pass_new);
+                                    session_unset();
+                                    $thongbao['dangnhap'] = 'Đổi mật khẩu thành công, vui lòng đăng nhập.';
+                                    require_once './Dangnhap/login.php';
+                                    break;
+                                } else {
+                                    $thongbao['pass'] = " Nhập lại mật khẩu không khớp !";
+                                }
+                            }
+                        }
+                        require_once './Dangnhap/doimatkhau.php';
                         break;
                     case 'taikhoan':
                         require_once './home.php';

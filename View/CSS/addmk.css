@@ -1,0 +1,50 @@
+.tongad_dmk {
+    margin-left: 800px;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.dmk_ad {
+    background-color: white;
+    box-shadow: 0 0 10px 0 black;
+    border-radius: 10px;
+    width: 450px;
+    height: 500px;
+    padding-left: 80px;
+}
+
+.dmk_ad img {
+    width: 100px;
+    height: 100px;
+    margin-left: 0%;
+}
+
+.dmk_ad .textad_dmk h5 {
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+}
+
+.formad_dmk input {
+    border-radius: 5px;
+    width: 300px;
+    height: 35px;
+    padding-left: 10px;
+}
+
+.addmk_click input {
+    margin-left: 110px;
+    margin-top: 20px;
+    background-color: orange;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 10px;
+    width: 85%;
+    transform: translateX(-38%);
+}
+
+.addmk_click input:hover{
+    cursor: pointer;
+}

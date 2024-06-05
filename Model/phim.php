@@ -12,7 +12,23 @@ function       phim_update($ten_phim, $img_phim, $img_banner_phim, $mota,  $nsx,
     $sql = "UPDATE phim SET ten_phim=?,img_phim=?,img_banner=?,mota=?,nsx=?,nph=?,thoi_luong_phim=? ,cs_danh_gia=?, quocgia=?,dienvien1=?,dienvien2=?,dienvien3=?,tt=?,id_loaiphim=? WHERE id=?";
     pdo_execute($sql, $ten_phim, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $thoi_luong_phim, $cs_danh_gia, $qg, $dv1, $dv2, $dv3, $tt, $id_loaiphim, $id);
 }
-
+function validateTenPhim($ten_phim) {
+    $validLength = strlen($ten_phim) >= 3 && strlen($ten_phim) <= 50;
+ 
+  
+    return $validLength ;
+  }
+  function validatemota($mota) {
+    $validLength = strlen($mota) >= 10 && strlen($mota) <= 250;
+ 
+  
+    return $validLength ;
+  }
+  function validateThoiLuongPhim($thoi_luong_phim) {
+    $validRange = filter_var($thoi_luong_phim, FILTER_VALIDATE_INT) !== false && $thoi_luong_phim >= 90 && $thoi_luong_phim <= 330;
+  
+    return $validRange;
+  }
 function phim_delete($ma_hh)
 {
     $sql = "DELETE FROM phim WHERE id=?";

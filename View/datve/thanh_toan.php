@@ -5,12 +5,12 @@
                    <h3>Phương thức thanh toán</h3>
                    <div class="chon-pttt">
                        <ul>
-                           <li>
+                           <!-- <li>
                                <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="./thanhtoan/xuly_momo_qr.php">
                                    <img src="./IMG/momo.jpg" alt="">
                                    <input type="submit" name="momo" value="QR-MOMO">
                                </form>
-                           </li>
+                           </li> -->
                            <li>
                                <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="./thanhtoan/xuly_momo_atm.php">
                                    <img src="./IMG/momo.jpg" alt="">

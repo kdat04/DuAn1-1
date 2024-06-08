@@ -142,9 +142,19 @@ if (isset($_GET['action'])) {
                                 $check_phim['ten_phim'] = '';
                             }
                             if ($ten_phim == '' || $nsx == '' || $nph == '' || $mota == '' || $thoi_luong_phim ==  '' || $cs_danh_gia == '' || $dv1 == '' || $dv2 == '' || $dv3 == '' || $qg == '' || $tt == '') {
-                                $message = "Thêm không  thành công vì có ô để trống  ";
+                                $message = "Thêm không  thành công vì có ô để trống   ";
                             } else if ($ten_phim == $check_phim['ten_phim']) {
-                                $message = "Phim đã tồn tại !";
+                                $message = " thêm tên phim  không hợp lệ  !";
+                            } else if (!is_numeric($cs_danh_gia)) {
+                                $message = " Chỉ số đánh giá phải là số !";
+                            } else if (!is_numeric($thoi_luong_phim)) {
+                                $message = " Chỉ số thời lượng phim  phải là số !";
+                            } else if (!validateThoiLuongPhim($thoi_luong_phim)) {
+                                $message = " Thời lượng phim không hợp lệ: Vui lòng nhập thời lượng phim từ 90 đến 330 phút.";
+                            } else if (!validateTenPhim($ten_phim)) {
+                                $message = "Tên phim không hợp lệ. Vui lòng nhập tên phim có độ dài từ 3 đến 50 ký tự và chỉ chứa các ký tự chữ cái, số, dấu gạch ngang, dấu gạch dưới và khoảng trắng.";
+                            } else if (!validatemota($mota)) {
+                                $message = "Mô tả không hợp lệ. Vui lòng nhập tên phim có độ dài từ 10 đến 250 ký tự và chỉ chứa các ký tự chữ cái, số, dấu gạch ngang, dấu gạch dưới và khoảng trắng.";
                             } else {
 
                                 phim_insert($ten_phim, $img_phim, $img_banner_phim, $mota,  $nsx, $nph, $thoi_luong_phim, $cs_danh_gia, $qg, $dv1, $dv2, $dv3, $tt, $id_loaiphim);
@@ -208,7 +218,37 @@ if (isset($_GET['action'])) {
                             }
                             if ($ten_phim == '' || $nsx == '' || $nph == '' || $mota == '' || $thoi_luong_phim ==  '' || $cs_danh_gia == '' || $dv1 == '' || $dv2 == '' || $dv3 == '' || $qg == '' || $tt == '') {
                                 $phim = phim_select_by_id($_GET['id']);
-                                $message = "Thêm không  thành công vì có ô để trống  ";
+                                $message = "sửa không  thành công vì có ô để trống  ";
+                                require_once './Phim/sua_phim.php';
+                                break;
+                            } else if (!is_numeric($cs_danh_gia)) {
+                                $phim = phim_select_by_id($_GET['id']);
+                                $message = " Chỉ số đánh giá phải là số !";
+                                require_once './Phim/sua_phim.php';
+                                break;
+                            } else if (!is_numeric($thoi_luong_phim)) {
+                                $phim = phim_select_by_id($_GET['id']);
+                                $message = " Chỉ số thời lượng phim  phải là số !";
+                                require_once './Phim/sua_phim.php';
+                                break;
+                            } else if (!validateThoiLuongPhim($thoi_luong_phim)) {
+                                $phim = phim_select_by_id($_GET['id']);
+                                $message = " Thời lượng phim không hợp lệ: Vui lòng nhập thời lượng phim từ 90 đến 330 phút.";
+                                require_once './Phim/sua_phim.php';
+                                break;
+                            } else if (!validateTenPhim($ten_phim)) {
+                                $phim = phim_select_by_id($_GET['id']);
+                                $message = "Tên phim không hợp lệ. Vui lòng nhập tên phim có độ dài từ 3 đến 50 ký tự và chỉ chứa các ký tự chữ cái, số, dấu gạch ngang, dấu gạch dưới và khoảng trắng.";
+                                require_once './Phim/sua_phim.php';
+                                break;
+                            } else if (!validatemota($mota)) {
+                                $phim = phim_select_by_id($_GET['id']);
+                                $message = "Mô tả không hợp lệ. Vui lòng nhập tên phim có độ dài từ 10 đến 250 ký tự và chỉ chứa các ký tự chữ cái, số, dấu gạch ngang, dấu gạch dưới và khoảng trắng.";
+                                require_once './Phim/sua_phim.php';
+                                break;
+                            } else if (!validateTenPhim($ten_phim)) {
+                                $phim = phim_select_by_id($_GET['id']);
+                                $message = "Tên phim không hợp lệ. Vui lòng nhập tên phim có độ dài từ 3 đến 50 ký tự và chỉ chứa các ký tự chữ cái, số, dấu gạch ngang, dấu gạch dưới và khoảng trắng.";
                                 require_once './Phim/sua_phim.php';
                                 break;
                             } else {

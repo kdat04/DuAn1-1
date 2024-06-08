@@ -191,10 +191,13 @@ if (isset($_GET['action'])) {
                             $qg = $_POST['qg'];
                             $tt = $_POST['tt'];
                             $id_loaiphim = $_POST['id_loaiphim'];
+
                             $img_phim = $_POST['img_phim'];
                             $file = $_FILES['img_phim'];
+                            
                             $img_banner_phim = $_POST['img_banner_phim'];
                             $file2 = $_FILES['img_banner_phim'];
+
                             if ($file['size'] > 0) {
                                 $img_phim = $file['name'];
                                 move_uploaded_file($file['tmp_name'], "./Img_ad/" . $img_phim);
